@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+issueTrackerURL = "https://github.com/GenerationsMod"
+license = "Insert License Here"
+
+[[mods]]
+modId = "modulename"
+version = "${version}"
+displayName = "Generations ModuleName"
+authors = "The Generations Team"
+description = '''
+'''
+#logoFile = ""
+
+[[dependencies.generations_modulename]]
+modId = "forge"
+mandatory = true
+versionRange = "[45,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.generations_modulename]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.generations_modulename]]
+modId = "generations_core"
+mandatory = true
+versionRange = "[)"
+ordering = "BEFORE"
+side = "BOTH"

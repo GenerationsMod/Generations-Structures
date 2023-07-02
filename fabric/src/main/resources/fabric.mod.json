@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "generations_modulename",
+  "version": "${version}",
+  "name": "Generations Module Name",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Generations Development Team"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/GenerationsMod/Generations-UltraSpace.git"
+  },
+  "license": "Insert License Here",
+  "icon": "assets/examplemod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "generations.gg.generations.modulename.generationsmodulename.fabric.GenerationsModuleNameFabric"
+    ]
+  },
+  "mixins": [
+    "generations_modulename.mixins.json",
+    "generations_modulename-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.4",
+    "generations_core": "*"
+  }
+}
