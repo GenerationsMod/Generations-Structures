@@ -18,4 +18,4 @@ gradleEnterprise.buildScan {
 
 include("common", "fabric", "forge")
 
-rootProject.name = "generations-modulename"
+rootProject.name = "generations-structures"
