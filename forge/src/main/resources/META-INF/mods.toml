@@ -1,13 +1,13 @@
 modLoader = "javafml"
 loaderVersion = "[45,)"
-issueTrackerURL = "https://github.com/GenerationsMod"
+issueTrackerURL = "https://github.com/GenerationsMod/Generations-Structures"
 license = "Insert License Here"
 
 [[mods]]
 modId = "generations_structures"
 version = "${version}"
 displayName = "Generations Structures"
-authors = "The Generations Team"
+authors = "J.T. McQuigg (JT122406)"
 description = '''
 '''
 #logoFile = ""
