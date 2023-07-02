@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "generations_modulename",
+  "id": "generations_structures",
   "version": "${version}",
-  "name": "Generations Module Name",
+  "name": "Generations Structures",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Generations Development Team"
@@ -16,11 +16,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "generations.gg.generations.modulename.generationsmodulename.fabric.GenerationsModuleNameFabric"
+      "generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"
     ]
   },
   "mixins": [
-    "generations_modulename.mixins.json",
+    "generations_structures.mixins.json",
     "generations_modulename-common.mixins.json"
   ],
   "depends": {

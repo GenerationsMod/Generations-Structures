@@ -1,11 +1,11 @@
-package generations.gg.generations.modulename.generationsmodulename;
+package generations.gg.generations.structures.generationsstructures;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import dev.architectury.platform.Platform;
 
 import java.nio.file.Path;
 
-public class GenerationsModuleNameExpectPlatform {
+public class GenerationsStructuresExpectPlatform {
     /**
      * We can use {@link Platform#getConfigFolder()} but this is just an example of {@link ExpectPlatform}.
      * <p>
