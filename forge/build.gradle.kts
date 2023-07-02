@@ -55,6 +55,11 @@ dependencies {
     //Cobblemon
     modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
+
+    //BiomeMod Integration
+    modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
+    modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
+    modApi("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
 }
 
 tasks {

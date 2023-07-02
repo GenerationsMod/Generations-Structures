@@ -34,6 +34,10 @@ dependencies {
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
+
+    //BiomeMod Integration
+    modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
+    modApi("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
 }
 
 tasks {

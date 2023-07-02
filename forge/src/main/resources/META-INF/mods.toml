@@ -32,3 +32,15 @@ mandatory = true
 versionRange = "[)"
 ordering = "BEFORE"
 side = "BOTH"
+
+[[dependencies.generations_structures]]
+modId = "biomesoplenty"
+mandatory = false
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.generations_structures]]
+modId = "byg"
+mandatory = false
+ordering = "NONE"
+side = "BOTH"
