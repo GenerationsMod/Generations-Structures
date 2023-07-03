@@ -1,8 +1,13 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
 import com.mojang.serialization.Codec;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
@@ -17,7 +22,14 @@ public class ScarletPokeShopProcessor extends StructureProcessor {
     @Nullable
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader level, BlockPos blockPos, BlockPos pos, StructureTemplate.StructureBlockInfo blockInfo, StructureTemplate.StructureBlockInfo relativeBlockInfo, StructurePlaceSettings settings) {
-        return null;
+        Integration integration = GenerationsStructures.INTEGRATION;
+        Block block = relativeBlockInfo.state.getBlock();
+        if (block == Blocks.BIRCH_TRAPDOOR)
+            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, integration.getBirchTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state), relativeBlockInfo.nbt);
+        else if (block == GenerationsWood.GHOST_TRAPDOOR.get())
+            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, integration.getGhostTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state), relativeBlockInfo.nbt);
+
+        return relativeBlockInfo;
     }
 
     @Override

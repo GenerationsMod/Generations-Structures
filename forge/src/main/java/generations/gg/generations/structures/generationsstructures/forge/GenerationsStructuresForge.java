@@ -1,9 +1,9 @@
 package generations.gg.generations.structures.generationsstructures.forge;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.byg.BYG;
 import generations.gg.generations.structures.generationsstructures.forge.integration.BOP;
 import generations.gg.generations.structures.generationsstructures.forge.integration.BYGBOP;
-import generations.gg.generations.structures.generationsstructures.forge.integration.BYGForge;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
@@ -18,7 +18,7 @@ public class GenerationsStructuresForge {
         Integration integration;
         if (ModList.get().isLoaded("biomesoplenty") && ModList.get().isLoaded("byg")) integration = new BYGBOP();
         else if (ModList.get().isLoaded("biomesoplenty")) integration = new BOP();
-        else if (ModList.get().isLoaded("byg")) integration = new BYGForge();
+        else if (ModList.get().isLoaded("byg")) integration = new BYG();
         else integration = new Default();
         GenerationsStructures.init(integration);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
