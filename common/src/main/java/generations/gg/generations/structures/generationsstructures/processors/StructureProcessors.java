@@ -6,6 +6,11 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 
+/**
+ * Structure processor types for Generations Structures
+ * @see StructureProcessorType
+ * @author J.T. McQuigg (JT122406)
+ */
 public class StructureProcessors {
     public static StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
 

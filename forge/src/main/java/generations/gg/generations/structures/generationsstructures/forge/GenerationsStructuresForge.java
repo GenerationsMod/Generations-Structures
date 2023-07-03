@@ -12,6 +12,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+/**
+ * Forge initializer for Generations Structures
+ * @see Mod
+ * @see GenerationsStructures
+ * @author J.T. McQuigg (JT122406)
+ */
 @Mod(GenerationsStructures.MOD_ID)
 public class GenerationsStructuresForge {
     public GenerationsStructuresForge() {

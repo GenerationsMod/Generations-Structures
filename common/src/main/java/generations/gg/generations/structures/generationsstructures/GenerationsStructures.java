@@ -5,6 +5,10 @@ import generations.gg.generations.structures.generationsstructures.config.Config
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.resources.ResourceLocation;
 
+/**
+ * The main class for the Generations-Structures mod.
+ * @author J.T. McQuigg (JT122406)
+ */
 public class GenerationsStructures {
 
     /** generations_structures modid */

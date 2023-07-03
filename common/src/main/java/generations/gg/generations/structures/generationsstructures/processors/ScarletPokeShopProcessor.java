@@ -15,6 +15,12 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Processor for the Scarlet PokeShop structure
+ * This processor is used to replace blocks from other mods with blocks from the mod/vanilla
+ * @see StructureProcessor
+ * @author J.T. McQuigg (JT122406)
+ */
 public class ScarletPokeShopProcessor extends StructureProcessor {
     public static final ScarletPokeShopProcessor INSTANCE = new ScarletPokeShopProcessor();
     public static final Codec<ScarletPokeShopProcessor> CODEC = Codec.unit(() -> INSTANCE);
