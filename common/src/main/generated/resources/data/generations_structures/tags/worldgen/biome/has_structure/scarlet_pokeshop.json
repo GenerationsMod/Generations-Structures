@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "#forge:is_plains",
+      "required": false
+    },
+    "minecraft:plains"
+  ]
+}

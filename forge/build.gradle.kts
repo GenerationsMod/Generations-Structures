@@ -27,7 +27,7 @@ loom {
 
     runs.create("data") {
         data()
-        programArgs("--all", "--mod", "generations_ultraspace")
+        programArgs("--all", "--mod", "generations_structures")
         programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
         programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
     }
@@ -73,6 +73,7 @@ tasks {
 
     shadowJar {
         exclude("fabric.mod.json")
+        exclude("generations/gg/generations/structures/generationsstructures/forge/datagen/**")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }
