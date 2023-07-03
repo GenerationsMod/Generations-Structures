@@ -5,24 +5,20 @@
   "name": "Generations Structures",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Generations Development Team"
+    "J.T. McQuigg (JT122406)"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/GenerationsMod/Generations-UltraSpace.git"
   },
   "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "icon": "assets/generations_structures/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       "generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"
     ]
   },
-  "mixins": [
-    "generations_structures.mixins.json",
-    "generations_structures-common.mixins.json"
-  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.19.4",

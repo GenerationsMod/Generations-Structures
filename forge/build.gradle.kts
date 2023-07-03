@@ -23,9 +23,6 @@ loom {
     forge {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
-
-        mixinConfig("generations_structures-common.mixins.json")
-        mixinConfig("generations_structures.mixins.json")
     }
 
     runs.create("data") {
