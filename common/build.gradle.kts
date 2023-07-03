@@ -22,6 +22,9 @@ dependencies {
 
     //BiomeMod Integration
     modCompileOnly("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
+
+    //Yungs API
+    modCompileOnly("com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraftVersion}-Common-${project.properties["YUNGAPI_version"]}")
 }
 
 publishing {

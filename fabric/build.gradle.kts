@@ -40,6 +40,9 @@ dependencies {
     modApi("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
     modRuntimeOnly("curse.maven:CorgiLib-693313:4583679")
     modRuntimeOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
+
+    //Yungs API
+    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraftVersion}-Fabric-${project.properties["YUNGAPI_version"]}")
 }
 
 tasks {

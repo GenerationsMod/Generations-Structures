@@ -59,6 +59,9 @@ dependencies {
     modApi("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
     modRuntimeOnly("curse.maven:CorgiLib-693313:4583678")
     modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
+
+    //Yungs API
+    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraftVersion}-Forge-${project.properties["YUNGAPI_version"]}")
 }
 
 tasks {
