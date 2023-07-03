@@ -28,6 +28,7 @@ subprojects {
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
+        maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
     }
 
     @Suppress("UnstableApiUsage")

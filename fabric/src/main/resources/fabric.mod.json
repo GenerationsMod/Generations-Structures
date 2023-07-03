@@ -21,7 +21,7 @@
   },
   "mixins": [
     "generations_structures.mixins.json",
-    "generations_modulename-common.mixins.json"
+    "generations_structures-common.mixins.json"
   ],
   "depends": {
     "fabric": "*",

@@ -24,8 +24,8 @@ loom {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
 
-        mixinConfig("generations_modulename-common.mixins.json")
-        mixinConfig("generations_modulename.mixins.json")
+        mixinConfig("generations_structures-common.mixins.json")
+        mixinConfig("generations_structures.mixins.json")
     }
 
     runs.create("data") {
@@ -60,6 +60,8 @@ dependencies {
     modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
     modApi("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
+    modApi("curse.maven:CorgiLib-693313:4583678")
+    modApi("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
 }
 
 tasks {
