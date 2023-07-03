@@ -1,6 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.config.Config;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
@@ -13,7 +15,8 @@ public class StructureProcessors {
      * Registers all custom structure processor types.
      */
     public static void init() {
-        register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
+        if (GenerationsStructures.CONFIG.integration.AllowIntegrations)
+            register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
     }
 
     /**
