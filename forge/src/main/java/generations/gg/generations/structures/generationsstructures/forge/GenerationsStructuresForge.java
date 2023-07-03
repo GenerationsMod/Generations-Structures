@@ -6,8 +6,11 @@ import generations.gg.generations.structures.generationsstructures.forge.integra
 import generations.gg.generations.structures.generationsstructures.forge.integration.BYGForge;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
+import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(GenerationsStructures.MOD_ID)
 public class GenerationsStructuresForge {
@@ -18,5 +21,13 @@ public class GenerationsStructuresForge {
         else if (ModList.get().isLoaded("byg")) integration = new BYGForge();
         else integration = new Default();
         GenerationsStructures.init(integration);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+    }
+
+    /**
+     * Queues all custom structure processor types for safe registration.
+     */
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(StructureProcessors::init);
     }
 }
