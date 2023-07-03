@@ -44,12 +44,12 @@ description = '''
     modId = "biomesoplenty"
     mandatory = false
     versionRange = "[17.3.0.546,)"
-    ordering = "NONE"
+    ordering = "BEFORE"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "byg"
     mandatory = false
     versionRange = "[4.0.0.2,)"
-    ordering = "NONE"
+    ordering = "BEFORE"
     side = "BOTH"
