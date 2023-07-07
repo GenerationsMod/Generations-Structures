@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
+    forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
@@ -47,7 +47,7 @@ dependencies {
 
     // Generations-Core Forge
     modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}")
-    modApi(include("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
+    modApi(include("earth.terrarium:botarium-forge-1.20:${project.properties["botarium_version"]}")!!)
 
     //Cobblemon
     modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
@@ -61,7 +61,7 @@ dependencies {
     modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
 
     //Yungs API
-    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraftVersion}-Forge-${project.properties["YUNGAPI_version"]}")
+    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Forge-${project.properties["YUNGAPI_version"]}")
 }
 
 tasks {
