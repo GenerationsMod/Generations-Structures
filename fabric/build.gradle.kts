@@ -21,7 +21,7 @@ loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
-    modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
+    modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
@@ -30,7 +30,7 @@ dependencies {
 
     // Generations-Core Fabric
     modImplementation("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
-    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")
+    modImplementation("earth.terrarium:botarium-fabric-1.20:${project.properties["botarium_version"]}")
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
@@ -42,7 +42,7 @@ dependencies {
     modRuntimeOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
 
     //Yungs API
-    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraftVersion}-Fabric-${project.properties["YUNGAPI_version"]}")
+    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Fabric-${project.properties["YUNGAPI_version"]}")
 }
 
 tasks {

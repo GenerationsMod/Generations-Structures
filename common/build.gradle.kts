@@ -15,16 +15,17 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
 
     modImplementation("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}")
-    modImplementation("earth.terrarium:botarium-common-${minecraftVersion}:${project.properties["botarium_version"]}")
+    modImplementation("earth.terrarium:botarium-common-1.20:${project.properties["botarium_version"]}")
 
     //Cobblemon
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modCompileOnly("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
+    modCompileOnly("com.github.glitchfiend:TerraBlender-common:$minecraftVersion-${project.properties["terrablender_version"]}")
 
     //Yungs API
-    modCompileOnly("com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraftVersion}-Common-${project.properties["YUNGAPI_version"]}")
+    modCompileOnly("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Common-${project.properties["YUNGAPI_version"]}")
 }
 
 publishing {

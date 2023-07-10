@@ -29,11 +29,11 @@ public class ScarletPokeShopProcessor extends StructureProcessor {
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader level, BlockPos blockPos, BlockPos pos, StructureTemplate.StructureBlockInfo blockInfo, StructureTemplate.StructureBlockInfo relativeBlockInfo, StructurePlaceSettings settings) {
         Integration integration = GenerationsStructures.INTEGRATION;
-        Block block = relativeBlockInfo.state.getBlock();
+        Block block = relativeBlockInfo.state().getBlock();
         if (block == Blocks.BIRCH_TRAPDOOR)
-            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, integration.getBirchTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state), relativeBlockInfo.nbt);
+            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getBirchTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
         else if (block == GenerationsWood.GHOST_TRAPDOOR.get())
-            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, integration.getGhostTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state), relativeBlockInfo.nbt);
+            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getGhostTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
 
         return relativeBlockInfo;
     }
