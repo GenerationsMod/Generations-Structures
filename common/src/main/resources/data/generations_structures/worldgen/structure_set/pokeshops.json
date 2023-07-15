@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "generations_structures:scarlet_pokeshop",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 293756737,
+    "spacing": 15,
+    "separation": 10
+  }
+}

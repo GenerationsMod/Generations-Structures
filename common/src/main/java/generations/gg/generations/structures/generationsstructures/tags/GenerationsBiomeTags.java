@@ -8,7 +8,7 @@ import net.minecraft.world.level.biome.Biome;
 /**
  * Contains all the {@link TagKey}s for the generation of structures in the mod.
  */
-public class BiomeTags {
+public class GenerationsBiomeTags {
 
     /** the tag for biomes that have a Scarlet Pokeshop */
     public static final TagKey<Biome> HAS_SCARLET_POKESHOP = create("has_structure/scarlet_pokeshop");

@@ -30,7 +30,7 @@ dependencies {
 
     // Generations-Core Fabric
     modImplementation("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
-    modImplementation("earth.terrarium:botarium-fabric-1.20:${project.properties["botarium_version"]}")
+    modImplementation("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")

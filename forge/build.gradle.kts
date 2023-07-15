@@ -47,7 +47,7 @@ dependencies {
 
     // Generations-Core Forge
     modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}")
-    modApi(include("earth.terrarium:botarium-forge-1.20:${project.properties["botarium_version"]}")!!)
+    modApi(include("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!)
 
     //Cobblemon
     modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
@@ -56,7 +56,7 @@ dependencies {
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
-    modApi("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
+    modCompileOnly("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
     modRuntimeOnly("curse.maven:CorgiLib-693313:4583678")
     modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
 

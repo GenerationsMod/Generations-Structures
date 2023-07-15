@@ -1,6 +1,5 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -27,6 +26,6 @@ public class StructureProcessors {
      * Utility method for registering custom structure processor types.
      */
     private static void register(String name, StructureProcessorType<?> processorType) {
-        Registry.register(BuiltInRegistries.STRUCTURE_PROCESSOR, GenerationsCore.id(name), processorType);
+        Registry.register(BuiltInRegistries.STRUCTURE_PROCESSOR, GenerationsStructures.id(name), processorType);
     }
 }

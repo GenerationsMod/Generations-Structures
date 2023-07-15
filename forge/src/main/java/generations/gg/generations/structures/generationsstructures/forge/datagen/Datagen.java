@@ -1,7 +1,9 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.tags.BiomeTags;
+import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
+import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
+import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -40,7 +42,7 @@ public class Datagen {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
-            tag(BiomeTags.HAS_SCARLET_POKESHOP)
+            tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
                     .addOptionalTag(Tags.Biomes.IS_PLAINS.location())
                     .add(Biomes.PLAINS);
         }
@@ -54,7 +56,7 @@ public class Datagen {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
-
+            tag(GenerationsStructureTags.pokeshop).add(GenerationsStructuresKeys.SCARLET_POKESHOP);
         }
     }
 }

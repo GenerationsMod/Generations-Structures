@@ -1,0 +1,15 @@
+{
+  "name": "generations_structures:scarlet_pokeshop",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "generations_structures:overworld/scarlet_pokeshop",
+        "processors": "generations_structures:scarlet_pokeshop",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
