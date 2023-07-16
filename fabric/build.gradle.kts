@@ -17,8 +17,6 @@ configurations {
     getByName("developmentFabric").extendsFrom(configurations["common"])
 }
 
-loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
-
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")
@@ -61,7 +59,6 @@ tasks {
     }
 
     remapJar {
-        injectAccessWidener.set(true)
         inputFile.set(shadowJar.get().archiveFile)
         dependsOn(shadowJar)
     }

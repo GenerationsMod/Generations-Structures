@@ -17,20 +17,11 @@ configurations {
     getByName("developmentForge").extendsFrom(configurations["common"])
 }
 
-loom {
-    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
-
-    forge {
-        convertAccessWideners.set(true)
-        extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
-    }
-
-    runs.create("data") {
+loom.runs.create("data") {
         data()
         programArgs("--all", "--mod", "generations_structures")
         programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
         programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
-    }
 }
 
 repositories {
