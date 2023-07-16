@@ -1,0 +1,15 @@
+{
+  "name": "generations_structures:loot_ballon/master_balloon",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "generations_structures:overworld/loot_balloon/master_balloon",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

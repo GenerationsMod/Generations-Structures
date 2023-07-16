@@ -3,7 +3,7 @@
   "id": "generations_structures",
   "version": "${version}",
   "name": "Generations Structures",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Structures for the Generations Family of Mods",
   "authors": [
     "J.T. McQuigg (JT122406)"
   ],
@@ -23,6 +23,6 @@
     "fabric": "*",
     "minecraft": ">=1.20.1",
     "generations_core": "*",
-    "yungsapi": ">=4.0"
+    "yungsapi": "*"
   }
 }

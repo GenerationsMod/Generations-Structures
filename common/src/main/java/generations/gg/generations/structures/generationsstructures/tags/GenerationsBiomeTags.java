@@ -13,6 +13,9 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that have a Scarlet Pokeshop */
     public static final TagKey<Biome> HAS_SCARLET_POKESHOP = create("has_structure/scarlet_pokeshop");
 
+    /** the tag for biomes that have a Loot Balloon */
+    public static final TagKey<Biome> HAS_LOOT_BALLOON = create("has_structure/loot_balloon");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

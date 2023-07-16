@@ -33,11 +33,11 @@ dependencies {
     modImplementation("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
+    modCompileOnly("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
-    modApi("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
+    modCompileOnly("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
     modRuntimeOnly("curse.maven:CorgiLib-693313:4583679")
     modRuntimeOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
 

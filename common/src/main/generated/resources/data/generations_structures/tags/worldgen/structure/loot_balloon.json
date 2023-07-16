@@ -1,0 +1,10 @@
+{
+  "values": [
+    "generations_structures:loot_balloon/normal_balloon",
+    "generations_structures:loot_balloon/great_balloon",
+    "generations_structures:loot_balloon/ultra_balloon",
+    "generations_structures:loot_balloon/master_balloon",
+    "generations_structures:loot_balloon/beast_balloon",
+    "generations_structures:loot_balloon/meowth_balloon"
+  ]
+}

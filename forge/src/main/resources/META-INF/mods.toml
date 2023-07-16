@@ -29,7 +29,7 @@ description = '''
 [[dependencies.generations_structures]]
     modId = "generations_core"
     mandatory = true
-    versionRange = "[2.0-Alpha-SNAPSHOT]"
+    versionRange = "[2.1-Alpha-SNAPSHOT]"
     ordering = "BEFORE"
     side = "BOTH"
 

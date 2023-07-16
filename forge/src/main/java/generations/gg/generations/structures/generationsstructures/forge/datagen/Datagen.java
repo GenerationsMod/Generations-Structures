@@ -9,6 +9,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -45,6 +46,9 @@ public class Datagen {
             tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
                     .addOptionalTag(Tags.Biomes.IS_PLAINS.location())
                     .add(Biomes.PLAINS);
+
+            tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
+                    .addTag(BiomeTags.IS_OVERWORLD);
         }
     }
 
@@ -56,7 +60,14 @@ public class Datagen {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
-            tag(GenerationsStructureTags.pokeshop).add(GenerationsStructuresKeys.SCARLET_POKESHOP);
+            tag(GenerationsStructureTags.POKESHOP).add(GenerationsStructuresKeys.SCARLET_POKESHOP);
+            tag(GenerationsStructureTags.LOOT_BALLOON)
+                    .add(GenerationsStructuresKeys.NORMAL_BALLOON)
+                    .add(GenerationsStructuresKeys.GREAT_BALLOON)
+                    .add(GenerationsStructuresKeys.ULTRA_BALLOON)
+                    .add(GenerationsStructuresKeys.MASTER_BALLOON)
+                    .add(GenerationsStructuresKeys.BEAST_BALLOON)
+                    .add(GenerationsStructuresKeys.MEOWTH_BALLOON);
         }
     }
 }
