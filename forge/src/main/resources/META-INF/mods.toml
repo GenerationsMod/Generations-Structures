@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[45,)"
+loaderVersion = "[47,)"
 issueTrackerURL = "https://github.com/GenerationsMod/Generations-Structures"
 license = "Insert License Here"
 
