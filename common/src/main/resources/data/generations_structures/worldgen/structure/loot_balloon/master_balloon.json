@@ -1,6 +1,6 @@
 {
   "type": "yungsapi:yung_jigsaw",
-  "biomes": "#generations_structures:has_structure/balloon",
+  "biomes": "#generations_structures:has_structure/loot_balloon",
   "step": "surface_structures",
   "start_pool": "generations_structures:loot_balloon/master_balloon",
   "size": 1,

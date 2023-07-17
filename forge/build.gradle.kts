@@ -37,7 +37,7 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     // Generations-Core Forge
-    modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}")
+    modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}") { isChanging = true }
     modApi(include("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!)
 
     //Cobblemon

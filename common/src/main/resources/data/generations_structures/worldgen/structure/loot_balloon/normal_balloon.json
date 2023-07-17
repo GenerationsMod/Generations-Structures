@@ -1,8 +1,8 @@
 {
   "type": "yungsapi:yung_jigsaw",
-  "biomes": "#generations_structures:has_structure/balloon",
+  "biomes": "#generations_structures:has_structure/loot_balloon",
   "step": "surface_structures",
-  "start_pool": "generations_structures:loot_balloon/balloon_normal",
+  "start_pool": "generations_structures:loot_balloon/normal_balloon",
   "size": 1,
   "start_height": {
     "type": "minecraft:uniform",
