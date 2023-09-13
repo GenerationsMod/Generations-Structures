@@ -9,6 +9,21 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
+sourceSets.main.get().resources.srcDirs(mutableListOf(
+    project(":common").file("src/main/generated/resources").absolutePath,
+    project(":fabric").file("src/main/generated/resources").absolutePath)
+)
+
+loom.runs.create("datagen") {
+    server()
+    name("Data Generation")
+    vmArg("-Dfabric-api.datagen")
+    vmArg("-Dfabric-api.datagen.output-dir=${project(":fabric").file("src/main/generated/resources").absolutePath}")
+    vmArg("-Dfabric-api.datagen.modid=generations_structures")
+
+    runDir("build/datagen")
+}
+
 configurations {
     create("common")
     create("shadowCommon")
@@ -27,7 +42,7 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     // Generations-Core Fabric
-    modImplementation("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
+    modApi("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
     modImplementation("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
@@ -36,8 +51,8 @@ dependencies {
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
-    modRuntimeOnly("curse.maven:CorgiLib-693313:4583679")
-    modRuntimeOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
+    modCompileOnly("curse.maven:CorgiLib-693313:4583679")
+    modCompileOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
 
     //Yungs API
     modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Fabric-${project.properties["YUNGAPI_version"]}")
@@ -56,6 +71,7 @@ tasks {
     shadowJar {
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
+        exclude("generations/gg/generations/structures/generationsstructures/fabric/datagen/**")
     }
 
     remapJar {

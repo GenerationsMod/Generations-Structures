@@ -17,10 +17,15 @@ configurations {
     getByName("developmentForge").extendsFrom(configurations["common"])
 }
 
+sourceSets.main.get().resources.srcDirs(mutableListOf(
+    project(":common").file("src/main/generated/resources").absolutePath,
+    project(":forge").file("src/main/generated/resources").absolutePath)
+)
+
 loom.runs.create("data") {
         data()
         programArgs("--all", "--mod", "generations_structures")
-        programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
+        programArgs("--output", project(":forge").file("src/main/generated/resources").absolutePath)
         programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
 }
 
@@ -37,7 +42,7 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     // Generations-Core Forge
-    modImplementation("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}") { isChanging = true }
+    modApi("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}") { isChanging = true }
     modApi(include("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!)
 
     //Cobblemon

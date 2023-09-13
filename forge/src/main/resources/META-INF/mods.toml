@@ -29,27 +29,25 @@ description = '''
 [[dependencies.generations_structures]]
     modId = "generations_core"
     mandatory = true
-    versionRange = "[2.1-Alpha-SNAPSHOT]"
-    ordering = "BEFORE"
+    ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "yungsapi"
     mandatory = true
-    versionRange = "[1.20-Forge-4.0,)"
-    ordering = "BEFORE"
+    ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "biomesoplenty"
     mandatory = false
     versionRange = "[18.0.0.592,)"
-    ordering = "BEFORE"
+    ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "byg"
     mandatory = false
     versionRange = "[4.0.0.2,)"
-    ordering = "BEFORE"
+    ordering = "AFTER"
     side = "BOTH"

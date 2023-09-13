@@ -19,4 +19,5 @@ classes/
 *.launch
 
 ## Datagen .cache folder
-common/src/main/generated/resources/.cache
+forge/src/main/generated/resources/.cache
+fabric/src/main/generated/resources/.cache

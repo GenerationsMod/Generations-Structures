@@ -5,15 +5,13 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
-sourceSets.main.get().resources.srcDir("src/main/generated/resources")
-
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
 
-    modImplementation("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}")
-    modImplementation("earth.terrarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
+    modCompileOnly("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}")
+    modCompileOnly("earth.terrarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
