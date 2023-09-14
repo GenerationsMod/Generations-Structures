@@ -1,10 +1,8 @@
-pluginManagement {
-    repositories {
-        maven("https://maven.fabricmc.net/")
-        maven("https://maven.architectury.dev/")
-        maven("https://maven.minecraftforge.net/")
-        gradlePluginPortal()
-    }
+pluginManagement.repositories {
+    maven("https://maven.fabricmc.net/")
+    maven("https://maven.architectury.dev/")
+    maven("https://maven.minecraftforge.net/")
+    gradlePluginPortal()
 }
 
 plugins {
@@ -18,4 +16,4 @@ gradleEnterprise.buildScan {
 
 include("common", "fabric", "forge")
 
-rootProject.name = "generations-structures"
+rootProject.name = "Generations-Structures"

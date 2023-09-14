@@ -43,7 +43,7 @@ dependencies {
 
     // Generations-Core Forge
     modApi("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}") { isChanging = true }
-    modApi(include("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!)
+    modRuntimeOnly("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
     modRuntimeOnly("thedarkcolour:kotlinforforge:4.4.0")
