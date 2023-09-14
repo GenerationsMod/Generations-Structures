@@ -16,6 +16,9 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that have a Loot Balloon */
     public static final TagKey<Biome> HAS_LOOT_BALLOON = create("has_structure/loot_balloon");
 
+    /** the tag for biomes that can have a comet */
+    public static final TagKey<Biome> CAN_HAVE_COMET = create("has_structure/comet");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.
