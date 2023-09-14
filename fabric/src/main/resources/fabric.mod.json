@@ -16,7 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "main": ["generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"],
-    "fabic-datagen": [
+    "fabric-datagen": [
       "generations.gg.generations.structures.generationsstructures.fabric.datagen.FabricDatagen"
     ]
   },
