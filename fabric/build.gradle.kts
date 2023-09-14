@@ -46,7 +46,7 @@ dependencies {
     modRuntimeOnly("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    modCompileOnly("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
+    modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
