@@ -3,11 +3,13 @@ package generations.gg.generations.structures.generationsstructures.fabric.datag
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.world.level.biome.Biome;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,19 +21,19 @@ public class FabricDatagen implements DataGeneratorEntrypoint {
 	}
 }
 
-class BiomeTagsProvider extends net.minecraft.data.tags.BiomeTagsProvider {
+class BiomeTagsProvider extends FabricTagProvider<Biome> {
 
-	public BiomeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-		super(output, provider);
+	public BiomeTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+		super(output, Registries.BIOME, registriesFuture);
 	}
 
 	@Override
-	protected void addTags(HolderLookup.@NotNull Provider provider) {
-		tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
-				.addTag(ConventionalBiomeTags.PLAINS);
+	protected void addTags(HolderLookup.Provider arg) {
+		getOrCreateTagBuilder(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
+				.forceAddTag(ConventionalBiomeTags.PLAINS);
 
-		tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
-				.addTag(BiomeTags.IS_OVERWORLD)
-				.addTag(ConventionalBiomeTags.IN_OVERWORLD);
+		getOrCreateTagBuilder(GenerationsBiomeTags.HAS_LOOT_BALLOON)
+				.forceAddTag(BiomeTags.IS_OVERWORLD)
+				.forceAddTag(ConventionalBiomeTags.IN_OVERWORLD);
 	}
 }
