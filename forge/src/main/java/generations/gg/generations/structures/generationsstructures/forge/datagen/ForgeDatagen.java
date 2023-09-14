@@ -47,6 +47,10 @@ public class ForgeDatagen {
 
             tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
                     .addTag(BiomeTags.IS_OVERWORLD);
+
+            tag(GenerationsBiomeTags.HAS_COMET)
+                    .addTag(BiomeTags.IS_OVERWORLD)
+                    .addTag(BiomeTags.IS_END);
         }
     }
 
@@ -66,6 +70,8 @@ public class ForgeDatagen {
                     .add(GenerationsStructuresKeys.MASTER_BALLOON)
                     .add(GenerationsStructuresKeys.BEAST_BALLOON)
                     .add(GenerationsStructuresKeys.MEOWTH_BALLOON);
+            tag(GenerationsStructureTags.COMET)
+                    .add(GenerationsStructuresKeys.COMET);
         }
     }
 }

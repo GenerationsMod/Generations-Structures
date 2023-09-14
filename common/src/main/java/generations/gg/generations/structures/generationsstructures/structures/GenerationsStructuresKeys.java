@@ -22,6 +22,9 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> BEAST_BALLOON = createKey("loot_balloon/beast_balloon");
     ResourceKey<Structure> MEOWTH_BALLOON = createKey("loot_balloon/meowth_balloon");
 
+    /** Comet Structure ResourceKey **/
+    ResourceKey<Structure> COMET = createKey("comet");
+
     /**
      * Creates a ResourceKey for the structure.
      * @param name The name of the structure or directory with name.
