@@ -21,7 +21,7 @@ public class FabricDatagen implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(GenerationsBiomeTagsProvider::new);
-		//pack.addProvider(GenerationsStructureTagsProvider::new);
+		pack.addProvider(GenerationsStructureTagsProvider::new);
 	}
 
 
@@ -56,18 +56,18 @@ public class FabricDatagen implements DataGeneratorEntrypoint {
 		@Override
 		protected void addTags(HolderLookup.Provider arg) {
 			getOrCreateTagBuilder(GenerationsStructureTags.POKESHOP)
-					.add(GenerationsStructuresKeys.SCARLET_POKESHOP);
+					.addOptional(GenerationsStructuresKeys.SCARLET_POKESHOP);
 
 			getOrCreateTagBuilder(GenerationsStructureTags.LOOT_BALLOON)
-					.add(GenerationsStructuresKeys.NORMAL_BALLOON)
-					.add(GenerationsStructuresKeys.GREAT_BALLOON)
-					.add(GenerationsStructuresKeys.ULTRA_BALLOON)
-					.add(GenerationsStructuresKeys.MASTER_BALLOON)
-					.add(GenerationsStructuresKeys.BEAST_BALLOON)
-					.add(GenerationsStructuresKeys.MEOWTH_BALLOON);
+					.addOptional(GenerationsStructuresKeys.NORMAL_BALLOON)
+					.addOptional(GenerationsStructuresKeys.GREAT_BALLOON)
+					.addOptional(GenerationsStructuresKeys.ULTRA_BALLOON)
+					.addOptional(GenerationsStructuresKeys.MASTER_BALLOON)
+					.addOptional(GenerationsStructuresKeys.BEAST_BALLOON)
+					.addOptional(GenerationsStructuresKeys.MEOWTH_BALLOON);
 
 			getOrCreateTagBuilder(GenerationsStructureTags.COMET)
-					.add(GenerationsStructuresKeys.COMET);
+					.addOptional(GenerationsStructuresKeys.COMET);
 		}
 	}
 }
