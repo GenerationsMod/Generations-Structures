@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
+license="GNU GPL 3.0"
 issueTrackerURL = "https://github.com/GenerationsMod/Generations-Structures"
-license = "Insert License Here"
 
 [[mods]]
 modId = "generations_structures"
@@ -9,6 +9,7 @@ version = "${version}"
 displayName = "Generations Structures"
 authors = "J.T. McQuigg (JT122406)"
 description = '''
+Adds structures for the Generations Mod Family
 '''
 #logoFile = ""
 
@@ -29,12 +30,14 @@ description = '''
 [[dependencies.generations_structures]]
     modId = "generations_core"
     mandatory = true
+    versionRange="*"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "yungsapi"
     mandatory = true
+    versionRange = "[1.20-Forge-4.0.1]"
     ordering = "AFTER"
     side = "BOTH"
 
