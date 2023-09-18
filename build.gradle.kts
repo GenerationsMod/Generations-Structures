@@ -5,6 +5,7 @@ plugins {
     id("dev.architectury.loom") version "1.3-SNAPSHOT" apply false
     idea
     java
+    kotlin("jvm") version "1.9.10"
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
@@ -49,6 +50,7 @@ allprojects {
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
+    apply(plugin = "org.jetbrains.kotlin.jvm")
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String
