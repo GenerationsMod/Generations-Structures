@@ -17,10 +17,7 @@ configurations {
     getByName("developmentForge").extendsFrom(configurations["common"])
 }
 
-sourceSets.main.get().resources.srcDirs(mutableListOf(
-    project(":common").file("src/main/generated/resources").absolutePath,
-    project(":forge").file("src/main/generated/resources").absolutePath)
-)
+sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 
 loom.runs.create("data") {
         data()
