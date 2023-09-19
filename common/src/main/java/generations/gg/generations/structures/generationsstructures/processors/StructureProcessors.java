@@ -18,8 +18,7 @@ public class StructureProcessors {
      * Registers all custom structure processor types.
      */
     public static void init() {
-        if (GenerationsStructures.CONFIG.integration.AllowIntegrations && GenerationsStructures.INTEGRATION.getModId() != null)
-            register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
+        register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
     }
 
     /**

@@ -1,6 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.integration;
 
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -17,11 +19,11 @@ public class Default implements Integration {
 
     @Override
     public Block getBirchTrapdoorReplacement() {
-        return null;
+        return Blocks.BIRCH_TRAPDOOR;
     }
 
     @Override
     public Block getGhostTrapdoorReplacement() {
-        return null;
+        return GenerationsWood.GHOST_TRAPDOOR.get();
     }
 }
