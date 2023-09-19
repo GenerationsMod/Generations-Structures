@@ -1,9 +1,5 @@
 {
-  "replace": false,
   "values": [
-    {
-      "id": "generations_structures:comet",
-      "required": false
-    }
+    "generations_structures:comet"
   ]
 }

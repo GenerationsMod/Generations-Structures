@@ -18,9 +18,15 @@ public class GenerationsStructures {
     /** generations_structures config */
     public static Config CONFIG;
 
+    /** External Mod Integration Hook */
     public static Integration INTEGRATION;
+
+    /**
+     * Initializes the Generations-Structures mod.
+     * @param integration The integration to use.
+     */
     public static void init(Integration integration) {
-        CONFIG = ConfigLoader.loaderConfig(Config.class, "structures", "config");
+        CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
         INTEGRATION = !CONFIG.integration.AllowIntegrations ? new Default() : integration;
     }
 
