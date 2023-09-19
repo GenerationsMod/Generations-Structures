@@ -1,5 +1,5 @@
 {
-  "type": "yungsapi:yung_jigsaw",
+  "type": "minecraft:jigsaw",
   "biomes": "#generations_structures:has_structure/loot_balloon",
   "step": "surface_structures",
   "start_pool": "generations_structures:loot_balloon/beast_balloon",
