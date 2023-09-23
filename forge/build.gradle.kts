@@ -39,8 +39,9 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     // Generations-Core Forge
-    modApi("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}") { isChanging = true }
+    modApi("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
     modRuntimeOnly("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
+    modRuntimeOnly("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     //Cobblemon
     modRuntimeOnly("thedarkcolour:kotlinforforge:4.4.0")
