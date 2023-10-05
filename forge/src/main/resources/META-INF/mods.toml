@@ -37,7 +37,7 @@ Adds structures for the Generations Mod Family
 [[dependencies.generations_structures]]
     modId = "yungsapi"
     mandatory = true
-    versionRange = "[1.20-Forge-4.0.1]"
+    versionRange = "[1.20-Forge-4.0.2,)"
     ordering = "AFTER"
     side = "BOTH"
 
