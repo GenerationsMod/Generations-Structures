@@ -22,9 +22,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class GenerationsStructuresForge {
     public GenerationsStructuresForge() {
         Integration integration;
-        if (ModList.get().isLoaded("biomesoplenty") && ModList.get().isLoaded("byg")) integration = new BYGBOP();
-        else if (ModList.get().isLoaded("biomesoplenty")) integration = new BOP();
-        else if (ModList.get().isLoaded("byg")) integration = new BYG();
+        if (ModList.get().isLoaded(biomesoplenty.core.BiomesOPlenty.MOD_ID) && ModList.get().isLoaded(potionstudios.byg.BYG.MOD_ID)) integration = new BYGBOP();
+        else if (ModList.get().isLoaded(biomesoplenty.core.BiomesOPlenty.MOD_ID)) integration = new BOP();
+        else if (ModList.get().isLoaded(potionstudios.byg.BYG.MOD_ID)) integration = new BYG();
         else integration = new Default();
         GenerationsStructures.init(integration);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);

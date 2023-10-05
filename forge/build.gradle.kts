@@ -40,18 +40,18 @@ dependencies {
 
     // Generations-Core Forge
     modApi("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
-    modRuntimeOnly("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
     modRuntimeOnly("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
+    modRuntimeOnly("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    modRuntimeOnly("thedarkcolour:kotlinforforge:4.4.0")
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.5.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
     modCompileOnly("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
-    modRuntimeOnly("curse.maven:CorgiLib-693313:4583678")
+    modRuntimeOnly("curse.maven:CorgiLib-693313:4681375")
     modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
 
     //Yungs API

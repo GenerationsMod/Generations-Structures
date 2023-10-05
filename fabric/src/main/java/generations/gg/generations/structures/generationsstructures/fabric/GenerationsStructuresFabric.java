@@ -16,7 +16,7 @@ import net.fabricmc.loader.api.FabricLoader;
 public class GenerationsStructuresFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        GenerationsStructures.init(FabricLoader.getInstance().isModLoaded("byg") ? new BYG() : new Default());
+        GenerationsStructures.init(FabricLoader.getInstance().isModLoaded(potionstudios.byg.BYG.MOD_ID) ? new BYG() : new Default());
         StructureProcessors.init();
     }
 }

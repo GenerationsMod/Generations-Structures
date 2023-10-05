@@ -32,7 +32,6 @@ configurations {
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")
-    modRuntimeOnly("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
@@ -41,6 +40,7 @@ dependencies {
 
     // Generations-Core Fabric
     modApi("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
+    modRuntimeOnly("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
     modRuntimeOnly("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
@@ -49,7 +49,7 @@ dependencies {
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
-    modCompileOnly("curse.maven:CorgiLib-693313:4583679")
+    modCompileOnly("curse.maven:CorgiLib-693313:4681375")
     modCompileOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
 
     //Yungs API
