@@ -39,18 +39,18 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     // Generations-Core Fabric
-    modApi("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}")
+    modApi("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}") { isChanging = true }
     modRuntimeOnly("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
     modRuntimeOnly("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
+    modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}") { isChanging = true }
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("curse.maven:Oh The Biomes You'll Go Refabricated-391378:${project.properties["BYGFabric_version"]}")
-    modCompileOnly("curse.maven:CorgiLib-693313:4681375")
-    modCompileOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
+    //modCompileOnly("curse.maven:CorgiLib-693313:4681375")
+    //modCompileOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
 
     //Yungs API
     modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Fabric-${project.properties["YUNGAPI_version"]}")

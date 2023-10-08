@@ -10,11 +10,11 @@ dependencies {
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
 
-    modCompileOnly("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}")
+    modCompileOnly("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}") { isChanging = true }
     modCompileOnly("earth.terrarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
+    modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}") { isChanging = true }
 
     //BiomeMod Integration
     modCompileOnly("curse.maven:Oh The Biomes You'll Go-247560:${project.properties["BYGForge_version"]}")
