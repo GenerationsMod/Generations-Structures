@@ -10,6 +10,7 @@ public class GenerationsStructureTags {
     public static final TagKey<Structure> POKESHOP = create("pokeshop");
     public static final TagKey<Structure> LOOT_BALLOON = create("loot_balloon");
     public static final TagKey<Structure> COMET = create("comet");
+    public static final TagKey<Structure> SPIKE = create("spike");
 
     /**
      * Creates a new {@link TagKey} for the given name.

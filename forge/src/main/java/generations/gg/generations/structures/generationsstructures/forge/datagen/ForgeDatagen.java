@@ -51,6 +51,10 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_COMET)
                     .addTag(BiomeTags.IS_OVERWORLD)
                     .addTag(BiomeTags.IS_END);
+
+            tag(GenerationsBiomeTags.HAS_SPIKE)
+                    .addTag(BiomeTags.IS_NETHER)
+                    .addTag(Tags.Biomes.IS_SPARSE_NETHER);
         }
     }
 
@@ -72,6 +76,8 @@ public class ForgeDatagen {
                     .add(GenerationsStructuresKeys.MEOWTH_BALLOON);
             tag(GenerationsStructureTags.COMET)
                     .add(GenerationsStructuresKeys.COMET);
+            tag(GenerationsStructureTags.SPIKE)
+                    .add(GenerationsStructuresKeys.SPIKE);
         }
     }
 }

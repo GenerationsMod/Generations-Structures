@@ -45,6 +45,10 @@ public class FabricDatagen implements DataGeneratorEntrypoint {
 					.forceAddTag(BiomeTags.IS_END)
 					.forceAddTag(ConventionalBiomeTags.IN_OVERWORLD)
 					.forceAddTag(ConventionalBiomeTags.IN_THE_END);
+
+			getOrCreateTagBuilder(GenerationsBiomeTags.HAS_SPIKE)
+					.forceAddTag(BiomeTags.IS_NETHER)
+					.forceAddTag(ConventionalBiomeTags.IN_NETHER);
 		}
 	}
 
@@ -68,6 +72,9 @@ public class FabricDatagen implements DataGeneratorEntrypoint {
 
 			getOrCreateTagBuilder(GenerationsStructureTags.COMET)
 					.addOptional(GenerationsStructuresKeys.COMET);
+
+			getOrCreateTagBuilder(GenerationsStructureTags.SPIKE)
+					.addOptional(GenerationsStructuresKeys.SPIKE);
 		}
 	}
 }
