@@ -53,8 +53,7 @@ public class ForgeDatagen {
                     .addTag(BiomeTags.IS_END);
 
             tag(GenerationsBiomeTags.HAS_SPIKE)
-                    .addTag(BiomeTags.IS_NETHER)
-                    .addTag(Tags.Biomes.IS_SPARSE_NETHER);
+                    .addTag(BiomeTags.IS_NETHER);
         }
     }
 
