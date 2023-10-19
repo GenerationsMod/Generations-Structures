@@ -9,18 +9,6 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
-sourceSets.main.get().resources.srcDir("src/main/generated/resources")
-
-loom.runs.create("datagen") {
-    server()
-    name("Data Generation")
-    vmArg("-Dfabric-api.datagen")
-    vmArg("-Dfabric-api.datagen.output-dir=${project(":fabric").file("src/main/generated/resources").absolutePath}")
-    vmArg("-Dfabric-api.datagen.modid=generations_structures")
-
-    runDir("build/datagen")
-}
-
 configurations {
     create("common")
     create("shadowCommon")
@@ -69,7 +57,6 @@ tasks {
     shadowJar {
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
-        exclude("generations/gg/generations/structures/generationsstructures/fabric/datagen/**")
     }
 
     remapJar {

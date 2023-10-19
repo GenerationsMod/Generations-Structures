@@ -15,10 +15,7 @@
   "icon": "assets/generations_structures/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"],
-    "fabric-datagen": [
-      "generations.gg.generations.structures.generationsstructures.fabric.datagen.FabricDatagen"
-    ]
+    "main": ["generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"]
   },
   "depends": {
     "fabric": "*",

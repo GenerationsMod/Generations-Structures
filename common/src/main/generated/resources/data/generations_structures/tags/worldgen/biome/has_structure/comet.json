@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#minecraft:is_overworld",
+    "#minecraft:is_end",
+    {
+      "id": "#c:in_overworld",
+      "required": false
+    },
+    {
+      "id": "#c:in_the_end",
+      "required": false
+    }
+  ]
+}

@@ -17,12 +17,10 @@ configurations {
     getByName("developmentForge").extendsFrom(configurations["common"])
 }
 
-sourceSets.main.get().resources.srcDir("src/main/generated/resources")
-
 loom.runs.create("data") {
         data()
         programArgs("--all", "--mod", "generations_structures")
-        programArgs("--output", project(":forge").file("src/main/generated/resources").absolutePath)
+        programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
         programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
 }
 

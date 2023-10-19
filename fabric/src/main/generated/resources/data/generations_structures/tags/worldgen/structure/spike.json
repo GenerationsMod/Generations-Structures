@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "generations_structures:spike",
-      "required": false
-    }
-  ]
-}

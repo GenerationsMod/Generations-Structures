@@ -9,6 +9,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -43,17 +44,22 @@ public class ForgeDatagen {
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
             tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
-                    .addTag(Tags.Biomes.IS_PLAINS);
+                    .addTag(Tags.Biomes.IS_PLAINS)
+                    .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
-                    .addTag(BiomeTags.IS_OVERWORLD);
+                    .addTag(BiomeTags.IS_OVERWORLD)
+                    .addOptionalTag(fabricTagMaker("in_overworld"));
 
             tag(GenerationsBiomeTags.HAS_COMET)
                     .addTag(BiomeTags.IS_OVERWORLD)
-                    .addTag(BiomeTags.IS_END);
+                    .addTag(BiomeTags.IS_END)
+                    .addOptionalTag(fabricTagMaker("in_overworld"))
+                    .addOptionalTag(fabricTagMaker("in_the_end"));
 
             tag(GenerationsBiomeTags.HAS_SPIKE)
-                    .addTag(BiomeTags.IS_NETHER);
+                    .addTag(BiomeTags.IS_NETHER)
+                    .addOptionalTag(fabricTagMaker("in_nether"));
         }
     }
 
@@ -78,5 +84,9 @@ public class ForgeDatagen {
             tag(GenerationsStructureTags.SPIKE)
                     .add(GenerationsStructuresKeys.SPIKE);
         }
+    }
+
+    private static ResourceLocation fabricTagMaker(String name) {
+        return new ResourceLocation("c", name);
     }
 }
