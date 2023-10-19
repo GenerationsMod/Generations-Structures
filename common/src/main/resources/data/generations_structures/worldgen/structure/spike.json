@@ -1,6 +1,6 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "generations_structures:has_spike",
+  "biomes": "#generations_structures:has_structure/spike",
   "step": "surface_structures",
   "spawn_overrides": {},
   "start_pool": "generations_structures:spike",

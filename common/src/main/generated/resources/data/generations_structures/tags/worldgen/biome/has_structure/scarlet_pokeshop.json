@@ -1,6 +1,10 @@
 {
   "values": [
-    "#forge:is_plains",
+    "#minecraft:is_overworld",
+    {
+      "id": "#forge:is_plains",
+      "required": false
+    },
     {
       "id": "#c:plains",
       "required": false

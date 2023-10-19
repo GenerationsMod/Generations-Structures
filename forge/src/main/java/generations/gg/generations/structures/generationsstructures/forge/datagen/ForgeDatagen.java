@@ -44,7 +44,8 @@ public class ForgeDatagen {
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
             tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
-                    .addTag(Tags.Biomes.IS_PLAINS)
+                    .addTag(BiomeTags.IS_OVERWORLD)
+                    .addOptionalTag(Tags.Biomes.IS_PLAINS.location())
                     .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
