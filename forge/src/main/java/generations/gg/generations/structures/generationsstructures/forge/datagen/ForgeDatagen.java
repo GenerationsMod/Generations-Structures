@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
@@ -11,6 +12,7 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -20,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 /**
  * This class is used to register the data generators for the mod.
@@ -33,6 +36,7 @@ public class ForgeDatagen {
         DataGenerator generator = event.getGenerator();
         generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(generator.getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
         generator.addProvider(true, new GenerationsStructureTagsProvider(generator.getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
+        generator.addProvider(true, new GenerationsProcessorProvider(generator.getPackOutput()));
     }
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
@@ -89,5 +93,17 @@ public class ForgeDatagen {
 
     private static ResourceLocation fabricTagMaker(String name) {
         return new ResourceLocation("c", name);
+    }
+
+    private static class GenerationsProcessorProvider extends StructureProcessorProvider{
+
+        protected GenerationsProcessorProvider(PackOutput output) {
+            super(output);
+        }
+
+        @Override
+        public void generateStructureProcessors(Consumer<StructureProcessorType<?>> consumer) {
+            consumer.accept(StructureProcessors.SCARLET_POKESHOP_PROCESSOR);
+        }
     }
 }
