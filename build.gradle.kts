@@ -2,10 +2,10 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
-    id("dev.architectury.loom") version "1.3-SNAPSHOT" apply false
+    id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
     idea
     java
-    kotlin("jvm") version "1.9.10"
+    kotlin("jvm") version "1.9.20"
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String

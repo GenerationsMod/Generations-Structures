@@ -26,4 +26,9 @@ public class Default implements Integration {
     public Block getGhostTrapdoorReplacement() {
         return GenerationsWood.GHOST_TRAPDOOR.get();
     }
+
+    @Override
+    public Block getOakLeavesReplacement() {
+        return Blocks.OAK_LEAVES;
+    }
 }

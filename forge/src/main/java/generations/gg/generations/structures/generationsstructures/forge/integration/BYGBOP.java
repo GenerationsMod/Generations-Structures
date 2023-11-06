@@ -1,5 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.forge.integration;
 
+import biomesoplenty.api.block.BOPBlocks;
 import biomesoplenty.core.BiomesOPlenty;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.world.level.block.Block;
@@ -27,5 +28,10 @@ public class BYGBOP implements Integration {
     @Override
     public Block getGhostTrapdoorReplacement() {
         return BYGWoodTypes.EBONY.trapdoor().get();
+    }
+
+    @Override
+    public Block getOakLeavesReplacement() {
+        return BOPBlocks.FLOWERING_OAK_LEAVES.get();
     }
 }

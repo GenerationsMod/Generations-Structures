@@ -2,6 +2,7 @@ package generations.gg.generations.structures.generationsstructures.byg;
 
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import potionstudios.byg.common.block.BYGWoodTypes;
 
 /**
@@ -24,5 +25,10 @@ public class BYG implements Integration {
     @Override
     public Block getGhostTrapdoorReplacement() {
         return BYGWoodTypes.EBONY.trapdoor().get();
+    }
+
+    @Override
+    public Block getOakLeavesReplacement() {
+        return Blocks.OAK_LEAVES;
     }
 }

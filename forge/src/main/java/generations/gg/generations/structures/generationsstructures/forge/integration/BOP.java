@@ -27,4 +27,9 @@ public class BOP implements Integration {
     public Block getGhostTrapdoorReplacement() {
         return BOPBlocks.HELLBARK_TRAPDOOR.get();
     }
+
+    @Override
+    public Block getOakLeavesReplacement() {
+        return BOPBlocks.FLOWERING_OAK_LEAVES.get();
+    }
 }

@@ -27,4 +27,10 @@ public interface Integration {
      * @return Block to replace ghost trapdoors with
      */
     Block getGhostTrapdoorReplacement();
+
+    /**
+     * Returns the block to replace Oak Leaves with
+     * @return Block to replace oak leaves with
+     */
+    Block getOakLeavesReplacement();
 }

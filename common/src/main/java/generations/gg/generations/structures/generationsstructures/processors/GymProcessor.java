@@ -1,7 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
 import com.mojang.serialization.Codec;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.core.BlockPos;
@@ -16,14 +15,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Processor for the Scarlet PokeShop structure
+ * Processor for the Generations Gyms
  * This processor is used to replace blocks from other mods with blocks from the mod/vanilla
  * @see StructureProcessor
  * @author J.T. McQuigg (JT122406)
  */
-public class ScarletPokeShopProcessor extends StructureProcessor {
-    public static final ScarletPokeShopProcessor INSTANCE = new ScarletPokeShopProcessor();
-    public static final Codec<ScarletPokeShopProcessor> CODEC = Codec.unit(() -> INSTANCE);
+public class GymProcessor extends StructureProcessor {
+
+    public static final GymProcessor INSTANCE = new GymProcessor();
+    public static final Codec<GymProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     @Nullable
     @Override
@@ -32,16 +32,14 @@ public class ScarletPokeShopProcessor extends StructureProcessor {
         if (integration.getModId() == null) return relativeBlockInfo;
 
         Block block = relativeBlockInfo.state().getBlock();
-        if (block == Blocks.BIRCH_TRAPDOOR)
-            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getBirchTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
-        else if (block == GenerationsWood.GHOST_TRAPDOOR.get())
-            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getGhostTrapdoorReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
+        if (block == Blocks.OAK_LEAVES)
+            return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getOakLeavesReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
 
         return relativeBlockInfo;
     }
 
     @Override
     protected @NotNull StructureProcessorType<?> getType() {
-        return StructureProcessors.SCARLET_POKESHOP_PROCESSOR;
+        return StructureProcessors.GYM_PROCESSOR;
     }
 }

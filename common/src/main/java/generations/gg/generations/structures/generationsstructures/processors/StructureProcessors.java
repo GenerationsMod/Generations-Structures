@@ -12,6 +12,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
  */
 public class StructureProcessors {
     public static StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
+    public static StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
 
 
     /**
@@ -19,6 +20,7 @@ public class StructureProcessors {
      */
     public static void init() {
         register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
+        register("gym_processor", GYM_PROCESSOR);
     }
 
     /**
