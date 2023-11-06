@@ -77,7 +77,7 @@ public class ForgeDatagen {
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
             tag(GenerationsStructureTags.POKESHOP).add(GenerationsStructuresKeys.SCARLET_POKESHOP);
-            tag(GenerationsStructureTags.LOOT_BALLOON)
+            tag(GenerationsStructureTags.LOOT_BALLOONS)
                     .add(GenerationsStructuresKeys.NORMAL_BALLOON)
                     .add(GenerationsStructuresKeys.GREAT_BALLOON)
                     .add(GenerationsStructuresKeys.ULTRA_BALLOON)
