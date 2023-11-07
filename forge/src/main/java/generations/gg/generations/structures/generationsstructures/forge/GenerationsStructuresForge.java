@@ -7,6 +7,9 @@ import generations.gg.generations.structures.generationsstructures.forge.integra
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
+import generations.gg.generations.structures.generationsstructures.village.PlaceInVillage;
+import net.minecraftforge.event.server.ServerAboutToStartEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,7 +30,10 @@ public class GenerationsStructuresForge {
         else if (ModList.get().isLoaded(potionstudios.byg.BYG.MOD_ID)) integration = new BYG();
         else integration = new Default();
         GenerationsStructures.init(integration);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addListener(this::commonSetup);
+        bus.addListener(this::aboutToStartEvent);
+
     }
 
     /**
@@ -35,5 +41,9 @@ public class GenerationsStructuresForge {
      */
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(StructureProcessors::init);
+    }
+
+    private void aboutToStartEvent(final ServerAboutToStartEvent event) {
+        PlaceInVillage.addStructuresToVillages(event.getServer());
     }
 }
