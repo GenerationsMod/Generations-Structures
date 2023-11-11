@@ -1,19 +1,21 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
+import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.TemplatePools;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,8 +23,8 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 /**
  * This class is used to register the data generators for the mod.
@@ -34,10 +36,15 @@ public class ForgeDatagen {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(generator.getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
-        generator.addProvider(true, new GenerationsStructureTagsProvider(generator.getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
-        generator.addProvider(true, new GenerationsProcessorProvider(generator.getPackOutput()));
+        PackOutput output = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
+        generator.addProvider(false, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
+        generator.addProvider(false, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
+        generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
     }
+
+    private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.TEMPLATE_POOL, TemplatePools::bootstrap);
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 
@@ -95,15 +102,4 @@ public class ForgeDatagen {
         return new ResourceLocation("c", name);
     }
 
-    private static class GenerationsProcessorProvider extends StructureProcessorProvider{
-
-        protected GenerationsProcessorProvider(PackOutput output) {
-            super(output);
-        }
-
-        @Override
-        public void generateStructureProcessors(Consumer<StructureProcessorType<?>> consumer) {
-            consumer.accept(StructureProcessors.SCARLET_POKESHOP_PROCESSOR);
-        }
-    }
 }
