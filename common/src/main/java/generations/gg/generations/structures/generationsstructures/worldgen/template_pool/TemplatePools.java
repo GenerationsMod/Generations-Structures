@@ -3,12 +3,15 @@ package generations.gg.generations.structures.generationsstructures.worldgen.tem
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.Pools;
+import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 
 import java.util.List;
 import java.util.function.Function;
@@ -28,32 +31,32 @@ public class TemplatePools {
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
         register(context, BEAST_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/beast_balloon")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/beast_balloon"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, GREAT_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/great_balloon")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/great_balloon"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, MASTER_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/master_balloon")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/master_balloon"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, MEOWTH_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/meowth_balloon")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/meowth_balloon"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, NORMAL_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("normal_balloon/beast_balloon")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("normal_balloon/beast_balloon"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, ULTRA_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/ultra_balloon")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("loot_balloon/ultra_balloon"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
 
         register(context, COMET, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(getOverworldPath("comet")), 1)
+                Pair.of(StructurePoolElement.single(getOverworldPath("comet"), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, SCARLET_POKESHOP, Pools.EMPTY, ImmutableList.of(
@@ -62,7 +65,7 @@ public class TemplatePools {
 
 
         register(context, SPIKE, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single("generations_structures:nether/spike"), 1)
+                Pair.of(StructurePoolElement.single("generations_structures:nether/spike", getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
     }
 
@@ -78,4 +81,7 @@ public class TemplatePools {
         return "generations_structures:overworld/" + name;
     }
 
+    private static Holder.Reference<StructureProcessorList> getProcessor(BootstapContext<StructureTemplatePool> context, ResourceKey<StructureProcessorList> processorList) {
+        return context.lookup(Registries.PROCESSOR_LIST).getOrThrow(processorList);
+    }
 }
