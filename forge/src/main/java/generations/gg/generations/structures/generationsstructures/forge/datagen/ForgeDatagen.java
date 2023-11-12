@@ -4,6 +4,7 @@ import generations.gg.generations.structures.generationsstructures.GenerationsSt
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
+import generations.gg.generations.structures.generationsstructures.worldgen.structureset.StructureSets;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.TemplatePools;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -44,7 +45,9 @@ public class ForgeDatagen {
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.TEMPLATE_POOL, TemplatePools::bootstrap);
+            .add(Registries.TEMPLATE_POOL, TemplatePools::bootstrap)
+            .add(Registries.STRUCTURE, generations.gg.generations.structures.generationsstructures.structures.GenerationsStructures::bootstrap)
+            .add(Registries.STRUCTURE_SET, StructureSets::bootstrap);
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 
