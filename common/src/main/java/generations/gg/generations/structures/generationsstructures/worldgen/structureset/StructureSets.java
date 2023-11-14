@@ -2,8 +2,6 @@ package generations.gg.generations.structures.generationsstructures.worldgen.str
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -13,10 +11,8 @@ import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStruct
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
 import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
 
-import java.util.Optional;
-
 public class StructureSets {
-    public static ResourceKey<StructureSet> LOOTBALL = create("lootball");
+    public static ResourceKey<StructureSet> LOOT_BALLOON = create("loot_balloon");
     public static ResourceKey<StructureSet> COMET = create("comet");
     public static ResourceKey<StructureSet> POKESHOPS = create("pokeshops");
     public static ResourceKey<StructureSet> SPIKE = create("spike");
@@ -24,6 +20,12 @@ public class StructureSets {
     public static void bootstrap(BootstapContext<StructureSet> context) {
         register(context, COMET, GenerationsStructuresKeys.COMET,
                 new RandomSpreadStructurePlacement(25, 15, RandomSpreadType.LINEAR, 1189082690));
+
+        register(context, POKESHOPS, GenerationsStructuresKeys.SCARLET_POKESHOP,
+                new RandomSpreadStructurePlacement(15, 10, RandomSpreadType.LINEAR, 293756737));
+
+        register(context, SPIKE, GenerationsStructuresKeys.SPIKE,
+                new RandomSpreadStructurePlacement(10, 5, RandomSpreadType.LINEAR, 732790531));
     }
 
     private static void register(BootstapContext<StructureSet> context, ResourceKey<StructureSet> key, ResourceKey<Structure> structure, StructurePlacement placement) {
