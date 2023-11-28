@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
+import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
@@ -41,14 +42,10 @@ public class GenerationsStructureSettings {
         context.register(structureResourceKey, structure);
     }
 
-    private static JigsawStructure createJigsaw(Structure.StructureSettings settings,
-                                                Holder<StructureTemplatePool> startPool,
-                                                Optional<ResourceLocation> startJigsawName,
-                                                int maxDepth,
-                                                HeightProvider startHeight,
-                                                boolean useExpansionHack,
-                                                Optional<Heightmap.Types> projectStartToHeightmap,
-                                                int maxDistanceToCenter){
+    private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool,
+                                                Optional<ResourceLocation> startJigsawName, int maxDepth,
+                                                HeightProvider startHeight, boolean useExpansionHack,
+                                                Optional<Heightmap.Types> projectStartToHeightmap, int maxDistanceToCenter){
         return new JigsawStructure(settings, startPool, startJigsawName, maxDepth, startHeight, useExpansionHack, projectStartToHeightmap, maxDistanceToCenter);
     }
 
@@ -62,7 +59,7 @@ public class GenerationsStructureSettings {
                 poolHolderGetter,
                 Optional.empty(),
                 1,
-                ConstantHeight.of(VerticalAnchor.aboveBottom(150)),
+                UniformHeight.of(VerticalAnchor.absolute(260), VerticalAnchor.belowTop(160)),
                 false,
                 Optional.empty(),
                 80);

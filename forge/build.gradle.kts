@@ -52,7 +52,7 @@ dependencies {
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.7.0")
-    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}") { isChanging = true }
+    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")

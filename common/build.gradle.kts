@@ -18,7 +18,7 @@ dependencies {
     modCompileOnly("earth.terrarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}") { isChanging = true }
+    modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modCompileOnly("maven.modrinth:biomesyougo:${project.properties["BYGForge_version"]}")
