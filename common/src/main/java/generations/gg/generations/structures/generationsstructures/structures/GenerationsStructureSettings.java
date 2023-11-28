@@ -3,12 +3,11 @@ package generations.gg.generations.structures.generationsstructures.structures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 
-public class GenerationsStructures {
+public class GenerationsStructureSettings {
 
     public static void bootstrap(BootstapContext<Structure> context) {
 

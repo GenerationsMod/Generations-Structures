@@ -19,7 +19,7 @@ import java.util.List;
  * @see StructureSet
  * @author Joseph T. McQuigg
  */
-public class StructureSets {
+public class GenerationsStructureSets {
     public static ResourceKey<StructureSet> LOOT_BALLOON = create("loot_balloon");
     public static ResourceKey<StructureSet> COMET = create("comet");
     public static ResourceKey<StructureSet> POKESHOPS = create("pokeshops");

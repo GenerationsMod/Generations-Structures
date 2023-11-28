@@ -1,11 +1,12 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
-import generations.gg.generations.structures.generationsstructures.worldgen.structureset.StructureSets;
-import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.TemplatePools;
+import generations.gg.generations.structures.generationsstructures.worldgen.structureset.GenerationsStructureSets;
+import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -45,9 +46,9 @@ public class ForgeDatagen {
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.TEMPLATE_POOL, TemplatePools::bootstrap)
-            .add(Registries.STRUCTURE, generations.gg.generations.structures.generationsstructures.structures.GenerationsStructures::bootstrap)
-            .add(Registries.STRUCTURE_SET, StructureSets::bootstrap);
+            .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap)
+            .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
+            .add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap);
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 
