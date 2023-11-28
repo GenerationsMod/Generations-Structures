@@ -21,7 +21,8 @@ dependencies {
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}") { isChanging = true }
 
     //BiomeMod Integration
-    modCompileOnly("curse.maven:oh-the-biomes-youll-go-247560:${project.properties["BYGForge_version"]}")
+    modCompileOnly("maven.modrinth:biomesyougo:${project.properties["BYGForge_version"]}")
+    //modCompileOnly("curse.maven:oh-the-biomes-youll-go-247560:${project.properties["BYGForge_version"]}")
     modCompileOnly("com.github.glitchfiend:TerraBlender-common:$minecraftVersion-${project.properties["terrablender_version"]}")
 
     //Yungs API
