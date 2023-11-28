@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "generations_structures:nether/spike",
+        "location": "generations_structures:spike",
         "processors": "minecraft:empty",
         "projection": "terrain_matching"
       },

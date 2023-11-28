@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "generations_structures:overworld/comet",
+        "location": "generations_structures:comet",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },

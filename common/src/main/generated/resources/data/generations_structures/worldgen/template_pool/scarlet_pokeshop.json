@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "generations_structures:overworld/scarlet_pokeshop",
+        "location": "generations_structures:scarlet_pokeshop",
         "processors": {
           "processors": []
         },
