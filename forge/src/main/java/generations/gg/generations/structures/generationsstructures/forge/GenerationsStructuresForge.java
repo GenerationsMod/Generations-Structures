@@ -32,8 +32,7 @@ public class GenerationsStructuresForge {
         GenerationsStructures.init(integration);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::commonSetup);
-        bus.addListener(this::aboutToStartEvent);
-
+        //bus.addListener(this::aboutToStartEvent);
     }
 
     /**

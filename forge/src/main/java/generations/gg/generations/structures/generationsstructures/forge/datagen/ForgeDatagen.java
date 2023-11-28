@@ -46,9 +46,9 @@ public class ForgeDatagen {
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap);
-            //.add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
-            //.add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap);
+            .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap)
+            .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
+            .add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap);
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 

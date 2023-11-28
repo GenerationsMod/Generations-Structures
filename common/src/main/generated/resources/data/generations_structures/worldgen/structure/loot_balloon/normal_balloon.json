@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#generations_structures:has_structure/loot_balloon",
+  "max_distance_from_center": 80,
+  "size": 1,
+  "spawn_overrides": {},
+  "start_height": {
+    "above_bottom": 150
+  },
+  "start_pool": "generations_structures:loot_balloon/normal_balloon",
+  "step": "surface_structures",
+  "use_expansion_hack": false
+}
