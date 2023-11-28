@@ -5,7 +5,7 @@ plugins {
     id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
     idea
     java
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "1.9.21"
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
@@ -40,7 +40,7 @@ subprojects {
             parchment("org.parchmentmc.data:parchment-$minecraftVersion:${project.properties["parchment"]}@zip")
         })
 
-        compileOnly("org.jetbrains:annotations:24.0.1")
+        compileOnly("org.jetbrains:annotations:24.1.0")
     }
     loom.silentMojangMappingsLicense()
 }

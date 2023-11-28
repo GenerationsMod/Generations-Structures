@@ -51,7 +51,7 @@ dependencies {
     modRuntimeOnly("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.5.0")
+    implementation("thedarkcolour:kotlinforforge:4.7.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}") { isChanging = true }
 
     //BiomeMod Integration
@@ -104,7 +104,7 @@ components {
 }
 
 publishing {
-    publications.create<MavenPublication>("mavenCommon") {
+    publications.create<MavenPublication>("mavenForge") {
         artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
         from(components["java"])
     }
