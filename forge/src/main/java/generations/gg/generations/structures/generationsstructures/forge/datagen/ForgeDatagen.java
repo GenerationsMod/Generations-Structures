@@ -40,15 +40,15 @@ public class ForgeDatagen {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
-        generator.addProvider(false, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
-        generator.addProvider(false, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
+        generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
+        generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap)
-            .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
-            .add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap);
+            .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap);
+            //.add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
+            //.add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap);
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 
