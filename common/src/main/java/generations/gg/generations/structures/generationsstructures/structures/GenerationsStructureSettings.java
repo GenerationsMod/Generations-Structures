@@ -36,6 +36,37 @@ public class GenerationsStructureSettings {
         registerJigsaw(context, GenerationsStructuresKeys.NORMAL_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.NORMAL_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
         registerJigsaw(context, GenerationsStructuresKeys.ULTRA_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.ULTRA_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
         registerJigsaw(context, GenerationsStructuresKeys.MEOWTH_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MEOWTH_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerJigsaw(context, GenerationsStructuresKeys.COMET, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_COMET),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.NONE
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.COMET),
+                Optional.empty(),
+                1,
+                UniformHeight.of(VerticalAnchor.absolute(250), VerticalAnchor.belowTop(150)),
+                false,
+                Optional.empty(),
+                80
+        ));
+        registerJigsaw(context, GenerationsStructuresKeys.SCARLET_POKESHOP, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SCARLET_POKESHOP),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.SCARLET_POKESHOP),
+                Optional.empty(),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                false,
+                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                80
+        ));
+
     }
 
     private static void registerJigsaw(BootstapContext<Structure> context, ResourceKey<Structure> structureResourceKey, Structure structure){
