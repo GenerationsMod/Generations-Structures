@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.village;
 
 import com.mojang.datafixers.util.Pair;
+import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -51,6 +52,7 @@ public class PlaceInVillage {
     }
 
     public static void addStructuresToVillages(MinecraftServer server) {
+        GenerationsStructures.LOGGER.info("Adding structures to villages");
         Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
         Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
     }

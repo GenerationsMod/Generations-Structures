@@ -5,6 +5,8 @@ import generations.gg.generations.structures.generationsstructures.config.Config
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.resources.ResourceLocation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * The main class for the Generations-Structures mod.
@@ -14,6 +16,9 @@ public class GenerationsStructures {
 
     /** generations_structures modid */
     public static final String MOD_ID = "generations_structures";
+
+    /** generations_structures logger */
+    public static final Logger LOGGER = LogManager.getLogger();
 
     /** generations_structures config */
     public static Config CONFIG;
