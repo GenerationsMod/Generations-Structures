@@ -58,6 +58,7 @@ tasks {
     }
 
     shadowJar {
+        exclude(".cache/**", "architectury.common.json")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }
