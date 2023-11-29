@@ -1,3 +1,6 @@
-accessWidener   v2  named
+accessWidener v2  named
 
 accessible field net/minecraft/data/worldgen/ProcessorLists EMPTY Lnet/minecraft/resources/ResourceKey;
+accessible field net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool templates Lit/unimi/dsi/fastutil/objects/ObjectArrayList;
+mutable field net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool rawTemplates Ljava/util/List;
+accessible field net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool rawTemplates Ljava/util/List;
