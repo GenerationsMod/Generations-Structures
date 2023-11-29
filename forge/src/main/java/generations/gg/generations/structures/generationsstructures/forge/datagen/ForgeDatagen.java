@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
@@ -48,7 +49,8 @@ public class ForgeDatagen {
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap)
             .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
-            .add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap);
+            .add(Registries.STRUCTURE_SET, GenerationsStructureSets::bootstrap)
+            .add(Registries.PROCESSOR_LIST, GenerationsProcessorLists::bootstrap);
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 
