@@ -5,7 +5,13 @@
   "size": 1,
   "spawn_overrides": {},
   "start_height": {
-    "above_bottom": 150
+    "type": "minecraft:uniform",
+    "max_inclusive": {
+      "below_top": 160
+    },
+    "min_inclusive": {
+      "absolute": 260
+    }
   },
   "start_pool": "generations_structures:loot_balloon/normal_balloon",
   "step": "surface_structures",

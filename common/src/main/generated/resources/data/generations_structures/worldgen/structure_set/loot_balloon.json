@@ -1,0 +1,34 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 738478911,
+    "separation": 10,
+    "spacing": 20
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:loot_balloon/great_balloon",
+      "weight": 1
+    },
+    {
+      "structure": "generations_structures:loot_balloon/master_balloon",
+      "weight": 1
+    },
+    {
+      "structure": "generations_structures:loot_balloon/ultra_balloon",
+      "weight": 1
+    },
+    {
+      "structure": "generations_structures:loot_balloon/beast_balloon",
+      "weight": 1
+    },
+    {
+      "structure": "generations_structures:loot_balloon/meowth_balloon",
+      "weight": 1
+    },
+    {
+      "structure": "generations_structures:loot_balloon/normal_balloon",
+      "weight": 1
+    }
+  ]
+}

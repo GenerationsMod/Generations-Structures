@@ -41,7 +41,7 @@ public class ForgeDatagen {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
         generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
-        generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
+        generator.addProvider(false, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
     }
 

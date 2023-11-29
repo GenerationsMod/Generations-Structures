@@ -66,7 +66,21 @@ public class GenerationsStructureSettings {
                 Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                 80
         ));
-
+        registerJigsaw(context, GenerationsStructuresKeys.SPIKE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SPIKE),
+                        Map.of(),
+                        GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.SPIKE),
+                Optional.empty(),
+                1,
+                UniformHeight.of(VerticalAnchor.absolute(0), VerticalAnchor.belowTop(120)),
+                false,
+                Optional.empty(),
+                75
+        ));
     }
 
     private static void registerJigsaw(BootstapContext<Structure> context, ResourceKey<Structure> structureResourceKey, Structure structure){

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1189082690,
+    "separation": 15,
+    "spacing": 25
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:comet",
+      "weight": 1
+    }
+  ]
+}
