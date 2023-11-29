@@ -30,13 +30,13 @@ public class GenerationsStructureSettings {
         HolderGetter<Biome> biomeHolderGetter = context.lookup(Registries.BIOME);
         HolderGetter<StructureTemplatePool> poolHolderGetter = context.lookup(Registries.TEMPLATE_POOL);
 
-        registerJigsaw(context, GenerationsStructuresKeys.BEAST_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.BEAST_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerJigsaw(context, GenerationsStructuresKeys.GREAT_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.GREAT_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerJigsaw(context, GenerationsStructuresKeys.MASTER_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MASTER_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerJigsaw(context, GenerationsStructuresKeys.NORMAL_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.NORMAL_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerJigsaw(context, GenerationsStructuresKeys.ULTRA_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.ULTRA_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerJigsaw(context, GenerationsStructuresKeys.MEOWTH_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MEOWTH_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerJigsaw(context, GenerationsStructuresKeys.COMET, createJigsaw(
+        registerStructure(context, GenerationsStructuresKeys.BEAST_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.BEAST_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerStructure(context, GenerationsStructuresKeys.GREAT_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.GREAT_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerStructure(context, GenerationsStructuresKeys.MASTER_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MASTER_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerStructure(context, GenerationsStructuresKeys.NORMAL_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.NORMAL_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerStructure(context, GenerationsStructuresKeys.ULTRA_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.ULTRA_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerStructure(context, GenerationsStructuresKeys.MEOWTH_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MEOWTH_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
+        registerStructure(context, GenerationsStructuresKeys.COMET, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_COMET),
                         Map.of(),
@@ -51,7 +51,7 @@ public class GenerationsStructureSettings {
                 Optional.empty(),
                 80
         ));
-        registerJigsaw(context, GenerationsStructuresKeys.SCARLET_POKESHOP, createJigsaw(
+        registerStructure(context, GenerationsStructuresKeys.SCARLET_POKESHOP, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SCARLET_POKESHOP),
                         Map.of(),
@@ -66,24 +66,24 @@ public class GenerationsStructureSettings {
                 Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                 80
         ));
-        registerJigsaw(context, GenerationsStructuresKeys.SPIKE, createJigsaw(
+        registerStructure(context, GenerationsStructuresKeys.SPIKE, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SPIKE),
                         Map.of(),
-                        GenerationStep.Decoration.UNDERGROUND_DECORATION,
-                        TerrainAdjustment.BEARD_THIN
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.NONE
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.SPIKE),
                 Optional.empty(),
                 1,
-                UniformHeight.of(VerticalAnchor.absolute(0), VerticalAnchor.belowTop(120)),
+                ConstantHeight.of(VerticalAnchor.absolute(10)),
                 false,
                 Optional.empty(),
                 75
         ));
     }
 
-    private static void registerJigsaw(BootstapContext<Structure> context, ResourceKey<Structure> structureResourceKey, Structure structure){
+    private static void registerStructure(BootstapContext<Structure> context, ResourceKey<Structure> structureResourceKey, Structure structure){
         context.register(structureResourceKey, structure);
     }
 

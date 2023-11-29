@@ -31,24 +31,24 @@ public class GenerationsStructureSets {
      */
     public static void bootstrap(BootstapContext<StructureSet> context) {
         register(context, COMET, GenerationsStructuresKeys.COMET,
-                new RandomSpreadStructurePlacement(25, 15, RandomSpreadType.LINEAR, 1189082690));
+                new RandomSpreadStructurePlacement(150, 85, RandomSpreadType.LINEAR, 1189082690));
 
         register(context, POKESHOPS, GenerationsStructuresKeys.SCARLET_POKESHOP,
-                new RandomSpreadStructurePlacement(15, 10, RandomSpreadType.LINEAR, 293756737));
+                new RandomSpreadStructurePlacement(500, 250, RandomSpreadType.LINEAR, 293756737));
 
         register(context, SPIKE, GenerationsStructuresKeys.SPIKE,
-                new RandomSpreadStructurePlacement(10, 5, RandomSpreadType.LINEAR, 732790531));
+                new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.LINEAR, 732790531));
 
         register(context,
           LOOT_BALLOON,
                 List.of(
-                        createStructureSelectionEntry(context, GenerationsStructuresKeys.GREAT_BALLOON, 1),
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.GREAT_BALLOON, 4),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.MASTER_BALLOON, 1),
-                        createStructureSelectionEntry(context, GenerationsStructuresKeys.ULTRA_BALLOON, 1),
-                        createStructureSelectionEntry(context, GenerationsStructuresKeys.BEAST_BALLOON, 1),
-                        createStructureSelectionEntry(context, GenerationsStructuresKeys.MEOWTH_BALLOON, 1),
-                        createStructureSelectionEntry(context, GenerationsStructuresKeys.NORMAL_BALLOON, 1)
-                ), new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.LINEAR, 738478911)
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.ULTRA_BALLOON, 2),
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.BEAST_BALLOON, 2),
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.MEOWTH_BALLOON, 3),
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.NORMAL_BALLOON, 5)
+                ), new RandomSpreadStructurePlacement(100, 50, RandomSpreadType.LINEAR, 738478911)
         );
     }
 

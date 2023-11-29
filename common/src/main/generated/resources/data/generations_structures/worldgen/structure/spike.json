@@ -5,16 +5,9 @@
   "size": 1,
   "spawn_overrides": {},
   "start_height": {
-    "type": "minecraft:uniform",
-    "max_inclusive": {
-      "below_top": 120
-    },
-    "min_inclusive": {
-      "absolute": 0
-    }
+    "absolute": 10
   },
   "start_pool": "generations_structures:spike",
-  "step": "underground_decoration",
-  "terrain_adaptation": "beard_thin",
+  "step": "surface_structures",
   "use_expansion_hack": false
 }
