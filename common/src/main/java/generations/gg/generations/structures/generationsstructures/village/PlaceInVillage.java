@@ -24,16 +24,14 @@ import java.util.List;
 public class PlaceInVillage {
 
     private static void addBuildingToPool(Registry<StructureTemplatePool> templatePoolRegistry, Registry<StructureProcessorList> processorListRegistry,
-                                          ResourceLocation poolRL, String nbtPieceRL, int weight) {
-
-        Holder<StructureProcessorList> emptyProcessorList = processorListRegistry.getHolderOrThrow(ProcessorLists.EMPTY);
+                                          ResourceLocation poolRL, StructureProcessorList processorList, String nbtPieceRL, int weight) {
 
         // Grab the pool we want to add to
         StructureTemplatePool pool = templatePoolRegistry.get(poolRL);
         if (pool == null) return;
 
         SinglePoolElement piece = SinglePoolElement.legacy(nbtPieceRL,
-                emptyProcessorList).apply(StructureTemplatePool.Projection.RIGID);
+                Holder.direct(processorList)).apply(StructureTemplatePool.Projection.RIGID);
 
         for (int i = 0; i < weight; i++)
             pool.templates.add(piece);
