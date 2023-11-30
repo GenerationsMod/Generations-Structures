@@ -1,6 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;

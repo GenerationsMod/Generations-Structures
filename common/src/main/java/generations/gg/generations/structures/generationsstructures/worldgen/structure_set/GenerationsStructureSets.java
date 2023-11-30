@@ -1,4 +1,4 @@
-package generations.gg.generations.structures.generationsstructures.worldgen.structureset;
+package generations.gg.generations.structures.generationsstructures.worldgen.structure_set;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;

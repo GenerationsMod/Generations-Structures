@@ -6,7 +6,7 @@ import generations.gg.generations.structures.generationsstructures.structures.Ge
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
-import generations.gg.generations.structures.generationsstructures.worldgen.structureset.GenerationsStructureSets;
+import generations.gg.generations.structures.generationsstructures.worldgen.structure_set.GenerationsStructureSets;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;

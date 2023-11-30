@@ -2,6 +2,8 @@ package generations.gg.generations.structures.generationsstructures.processors;
 
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
