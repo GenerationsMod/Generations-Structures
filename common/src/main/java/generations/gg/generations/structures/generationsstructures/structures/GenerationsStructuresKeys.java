@@ -15,7 +15,7 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> SCARLET_POKESHOP = createKey("scarlet_pokeshop");
 
     /** Loot Balloon Structure ResourceKeys **/
-    ResourceKey<Structure> NORMAL_BALLOON = createKey("loot_balloon/normal_balloon");
+    ResourceKey<Structure> POKE_BALLOON = createKey("loot_balloon/poke_balloon");
     ResourceKey<Structure> GREAT_BALLOON = createKey("loot_balloon/great_balloon");
     ResourceKey<Structure> ULTRA_BALLOON = createKey("loot_balloon/ultra_balloon");
     ResourceKey<Structure> MASTER_BALLOON = createKey("loot_balloon/master_balloon");

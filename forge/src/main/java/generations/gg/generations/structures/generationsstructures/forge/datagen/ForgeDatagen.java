@@ -95,7 +95,7 @@ public class ForgeDatagen {
         protected void addTags(HolderLookup.@NotNull Provider provider) {
             tag(GenerationsStructureTags.POKESHOP).addOptional(GenerationsStructuresKeys.SCARLET_POKESHOP.location());
             tag(GenerationsStructureTags.LOOT_BALLOONS)
-                    .addOptional(GenerationsStructuresKeys.NORMAL_BALLOON.location())
+                    .addOptional(GenerationsStructuresKeys.POKE_BALLOON.location())
                     .addOptional(GenerationsStructuresKeys.GREAT_BALLOON.location())
                     .addOptional(GenerationsStructuresKeys.ULTRA_BALLOON.location())
                     .addOptional(GenerationsStructuresKeys.MASTER_BALLOON.location())

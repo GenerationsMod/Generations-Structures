@@ -47,7 +47,7 @@ public class GenerationsStructureSets {
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.ULTRA_BALLOON, 2),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.BEAST_BALLOON, 2),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.MEOWTH_BALLOON, 3),
-                        createStructureSelectionEntry(context, GenerationsStructuresKeys.NORMAL_BALLOON, 5)
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.POKE_BALLOON, 5)
                 ), new RandomSpreadStructurePlacement(100, 50, RandomSpreadType.LINEAR, 738478911)
         );
     }

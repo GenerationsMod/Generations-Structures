@@ -13,7 +13,7 @@
       "absolute": 180
     }
   },
-  "start_pool": "generations_structures:loot_balloon/normal_balloon",
+  "start_pool": "generations_structures:loot_balloon/poke_balloon",
   "step": "surface_structures",
   "use_expansion_hack": false
 }

@@ -24,7 +24,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> GREAT_BALLOON = create("loot_balloon/great_balloon");
     public static final ResourceKey<StructureTemplatePool> MASTER_BALLOON = create("loot_balloon/master_balloon");
     public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = create("loot_balloon/meowth_balloon");
-    public static final ResourceKey<StructureTemplatePool> NORMAL_BALLOON = create("loot_balloon/normal_balloon");
+    public static final ResourceKey<StructureTemplatePool> POKE_BALLOON = create("loot_balloon/poke_balloon");
     public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = create("loot_balloon/ultra_balloon");
 
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
@@ -48,8 +48,8 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.MEOWTH_BALLOON.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
-        register(context, NORMAL_BALLOON, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.NORMAL_BALLOON.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+        register(context, POKE_BALLOON, Pools.EMPTY, ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.POKE_BALLOON.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, ULTRA_BALLOON, Pools.EMPTY, ImmutableList.of(
