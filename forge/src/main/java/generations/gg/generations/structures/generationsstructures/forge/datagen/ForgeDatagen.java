@@ -42,7 +42,7 @@ public class ForgeDatagen {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
         generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
-        generator.addProvider(false, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
+        generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
     }
 
@@ -60,19 +60,23 @@ public class ForgeDatagen {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
+            tag(GenerationsBiomeTags.IS_NOT_MOUNTAIN)
+                    .addTag(BiomeTags.IS_BADLANDS).addTag(BiomeTags.IS_BEACH).addTag(BiomeTags.IS_OCEAN).addTag(BiomeTags.IS_FOREST)
+                            .addTag(BiomeTags.IS_HILL).addTag(BiomeTags.IS_JUNGLE).addTag(BiomeTags.IS_TAIGA).addTag(BiomeTags.IS_RIVER)
+                            .addOptionalTag(Tags.Biomes.IS_PLAINS.location()).addOptionalTag(Tags.Biomes.IS_DESERT.location())
+                            .addOptionalTag(fabricTagMaker("plains"));
+
             tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
                     .addTag(BiomeTags.IS_OVERWORLD)
                     .addOptionalTag(Tags.Biomes.IS_PLAINS.location())
                     .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
-                    .addTag(BiomeTags.IS_OVERWORLD)
-                    .addOptionalTag(fabricTagMaker("in_overworld"));
+                    .addTag(GenerationsBiomeTags.IS_NOT_MOUNTAIN);
 
             tag(GenerationsBiomeTags.HAS_COMET)
-                    .addTag(BiomeTags.IS_OVERWORLD)
+                    .addTag(GenerationsBiomeTags.IS_NOT_MOUNTAIN)
                     .addTag(BiomeTags.IS_END)
-                    .addOptionalTag(fabricTagMaker("in_overworld"))
                     .addOptionalTag(fabricTagMaker("in_the_end"));
 
             tag(GenerationsBiomeTags.HAS_SPIKE)

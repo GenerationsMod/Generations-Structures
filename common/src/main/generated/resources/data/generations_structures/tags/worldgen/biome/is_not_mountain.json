@@ -1,0 +1,24 @@
+{
+  "values": [
+    "#minecraft:is_badlands",
+    "#minecraft:is_beach",
+    "#minecraft:is_ocean",
+    "#minecraft:is_forest",
+    "#minecraft:is_hill",
+    "#minecraft:is_jungle",
+    "#minecraft:is_taiga",
+    "#minecraft:is_river",
+    {
+      "id": "#forge:is_plains",
+      "required": false
+    },
+    {
+      "id": "#forge:is_desert",
+      "required": false
+    },
+    {
+      "id": "#c:plains",
+      "required": false
+    }
+  ]
+}

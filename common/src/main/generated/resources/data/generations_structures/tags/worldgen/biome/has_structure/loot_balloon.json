@@ -1,9 +1,5 @@
 {
   "values": [
-    "#minecraft:is_overworld",
-    {
-      "id": "#c:in_overworld",
-      "required": false
-    }
+    "#generations_structures:is_not_mountain"
   ]
 }

@@ -7,10 +7,10 @@
   "start_height": {
     "type": "minecraft:uniform",
     "max_inclusive": {
-      "below_top": 160
+      "below_top": 110
     },
     "min_inclusive": {
-      "absolute": 260
+      "absolute": 180
     }
   },
   "start_pool": "generations_structures:loot_balloon/meowth_balloon",

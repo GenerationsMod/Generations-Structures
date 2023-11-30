@@ -10,6 +10,8 @@ import net.minecraft.world.level.biome.Biome;
  */
 public class GenerationsBiomeTags {
 
+    public static final TagKey<Biome> IS_NOT_MOUNTAIN = create("is_not_mountain");
+
     /** the tag for biomes that have a Scarlet Pokeshop */
     public static final TagKey<Biome> HAS_SCARLET_POKESHOP = create("has_structure/scarlet_pokeshop");
 

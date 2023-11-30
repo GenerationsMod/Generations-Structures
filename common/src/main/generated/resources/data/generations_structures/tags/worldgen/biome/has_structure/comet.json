@@ -1,11 +1,7 @@
 {
   "values": [
-    "#minecraft:is_overworld",
+    "#generations_structures:is_not_mountain",
     "#minecraft:is_end",
-    {
-      "id": "#c:in_overworld",
-      "required": false
-    },
     {
       "id": "#c:in_the_end",
       "required": false
