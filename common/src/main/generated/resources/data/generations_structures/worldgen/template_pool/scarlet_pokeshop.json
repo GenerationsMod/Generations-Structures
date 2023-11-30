@@ -4,9 +4,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "generations_structures:scarlet_pokeshop",
-        "processors": {
-          "processors": []
-        },
+        "processors": "generations_structures:scarlet_pokeshop_processor_list",
         "projection": "rigid"
       },
       "weight": 1

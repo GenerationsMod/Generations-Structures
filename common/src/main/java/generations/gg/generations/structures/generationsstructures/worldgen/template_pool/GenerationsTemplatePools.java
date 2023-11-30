@@ -3,6 +3,7 @@ package generations.gg.generations.structures.generationsstructures.worldgen.tem
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -61,7 +62,7 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, SCARLET_POKESHOP, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SCARLET_POKESHOP.location().toString()), 1)
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SCARLET_POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.SCARLET_POKESHOP_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
 
