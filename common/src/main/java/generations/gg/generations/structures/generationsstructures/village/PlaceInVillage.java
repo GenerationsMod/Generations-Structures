@@ -50,6 +50,7 @@ public class PlaceInVillage {
      * @param server The server to add the structures to.
      */
     public static void addStructuresToVillages(MinecraftServer server) {
+        if (!GenerationsStructures.CONFIG.generation.AllowStructuresInVillages) return;
         GenerationsStructures.LOGGER.info("Adding structures to villages");
         Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
         Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();

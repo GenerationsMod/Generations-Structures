@@ -13,4 +13,10 @@ public class Config {
         public boolean AllowBiomesOPlentyIntegration = true;
     }
 
+    public Generation generation = new Generation();
+
+    public static class Generation {
+        public boolean AllowStructuresInVillages = true;
+    }
+
 }
