@@ -1,10 +1,28 @@
 {
   "values": [
-    "generations_structures:loot_balloon/normal_balloon",
-    "generations_structures:loot_balloon/great_balloon",
-    "generations_structures:loot_balloon/ultra_balloon",
-    "generations_structures:loot_balloon/master_balloon",
-    "generations_structures:loot_balloon/beast_balloon",
-    "generations_structures:loot_balloon/meowth_balloon"
+    {
+      "id": "generations_structures:loot_balloon/normal_balloon",
+      "required": false
+    },
+    {
+      "id": "generations_structures:loot_balloon/great_balloon",
+      "required": false
+    },
+    {
+      "id": "generations_structures:loot_balloon/ultra_balloon",
+      "required": false
+    },
+    {
+      "id": "generations_structures:loot_balloon/master_balloon",
+      "required": false
+    },
+    {
+      "id": "generations_structures:loot_balloon/beast_balloon",
+      "required": false
+    },
+    {
+      "id": "generations_structures:loot_balloon/meowth_balloon",
+      "required": false
+    }
   ]
 }

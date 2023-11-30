@@ -93,18 +93,18 @@ public class ForgeDatagen {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
-            tag(GenerationsStructureTags.POKESHOP).add(GenerationsStructuresKeys.SCARLET_POKESHOP);
+            tag(GenerationsStructureTags.POKESHOP).addOptional(GenerationsStructuresKeys.SCARLET_POKESHOP.location());
             tag(GenerationsStructureTags.LOOT_BALLOONS)
-                    .add(GenerationsStructuresKeys.NORMAL_BALLOON)
-                    .add(GenerationsStructuresKeys.GREAT_BALLOON)
-                    .add(GenerationsStructuresKeys.ULTRA_BALLOON)
-                    .add(GenerationsStructuresKeys.MASTER_BALLOON)
-                    .add(GenerationsStructuresKeys.BEAST_BALLOON)
-                    .add(GenerationsStructuresKeys.MEOWTH_BALLOON);
+                    .addOptional(GenerationsStructuresKeys.NORMAL_BALLOON.location())
+                    .addOptional(GenerationsStructuresKeys.GREAT_BALLOON.location())
+                    .addOptional(GenerationsStructuresKeys.ULTRA_BALLOON.location())
+                    .addOptional(GenerationsStructuresKeys.MASTER_BALLOON.location())
+                    .addOptional(GenerationsStructuresKeys.BEAST_BALLOON.location())
+                    .addOptional(GenerationsStructuresKeys.MEOWTH_BALLOON.location());
             tag(GenerationsStructureTags.COMET)
-                    .add(GenerationsStructuresKeys.COMET);
+                    .addOptional(GenerationsStructuresKeys.COMET.location());
             tag(GenerationsStructureTags.SPIKE)
-                    .add(GenerationsStructuresKeys.SPIKE);
+                    .addOptional(GenerationsStructuresKeys.SPIKE.location());
         }
     }
 

@@ -1,5 +1,8 @@
 {
   "values": [
-    "generations_structures:scarlet_pokeshop"
+    {
+      "id": "generations_structures:scarlet_pokeshop",
+      "required": false
+    }
   ]
 }

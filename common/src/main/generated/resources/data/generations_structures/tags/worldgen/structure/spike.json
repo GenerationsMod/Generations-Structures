@@ -1,5 +1,8 @@
 {
   "values": [
-    "generations_structures:spike"
+    {
+      "id": "generations_structures:spike",
+      "required": false
+    }
   ]
 }
