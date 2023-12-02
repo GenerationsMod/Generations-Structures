@@ -8,6 +8,7 @@ modId = "generations_structures"
 version = "${version}"
 displayName = "Generations Structures"
 authors = "J.T. McQuigg (JT122406)"
+credits = "C. Inglis"
 description = '''
 Adds structures for the Generations Mod Family
 '''
@@ -51,7 +52,7 @@ Adds structures for the Generations Mod Family
 [[dependencies.generations_structures]]
     modId = "byg"
     mandatory = false
-    versionRange = "[4.0.0.2,)"
+    versionRange = "[4.0.0.0,)"
     ordering = "AFTER"
     side = "BOTH"
 
