@@ -35,7 +35,7 @@ dependencies {
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
-    modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.10.15+kotlin.1.9.21")
+    modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.10.16+kotlin.1.9.21")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
