@@ -1,5 +1,8 @@
+import me.hypherionmc.modpublisher.plugin.ModPublisherGradleExtension.ApiKeys
+
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("me.hypherionmc.modutils.modpublisher") version "1.+"
 }
 
 architectury {
@@ -102,6 +105,31 @@ components {
         if (this is AdhocComponentWithVariants)
             withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) { skip() }
     }
+}
+
+publisher {
+    val apiKeys = ApiKeys()
+    apiKeys.curseforge = project.properties["curseforge_token"].toString()
+    apiKeys.modrinth = project.properties["modrinth_token"].toString()
+    apiKeys.github = project.properties["github_token"].toString()
+
+    curseID = "944403"
+    modrinthID = "e1GvDbBX"  //TODO I need to change this later
+    githubRepo = "https://github.com/GenerationsMod/Generations-Structures"
+    versionType = "beta"
+    version = project.version.toString()
+    displayName = tasks.remapJar.get().archiveBaseName.get() + '-' + version
+    changelog = "test changelog"
+    artifact = tasks.remapJar
+    gameVersions = listOf(minecraftVersion)
+    loaders = listOf("forge")
+    curseEnvironment = "both"
+    val depends = mutableListOf(
+        "architectury-api",
+        "generations"
+    )
+    curseDepends.required = depends
+    modrinthDepends.required = depends
 }
 
 publishing {
