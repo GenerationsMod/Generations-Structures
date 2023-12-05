@@ -63,7 +63,7 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.IS_NOT_MOUNTAIN)
                     .addTag(BiomeTags.IS_BADLANDS).addTag(BiomeTags.IS_BEACH).addTag(BiomeTags.IS_OCEAN).addTag(BiomeTags.IS_FOREST)
                             .addTag(BiomeTags.IS_HILL).addTag(BiomeTags.IS_JUNGLE).addTag(BiomeTags.IS_TAIGA).addTag(BiomeTags.IS_RIVER)
-                            .addOptionalTag(Tags.Biomes.IS_PLAINS.location()).addOptionalTag(Tags.Biomes.IS_DESERT.location())
+                            .addOptionalTag(Tags.Biomes.IS_PLAINS).addOptionalTag(Tags.Biomes.IS_DESERT)
                             .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_SCARLET_POKESHOP)
