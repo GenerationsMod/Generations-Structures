@@ -117,7 +117,7 @@ publisher {
     }
 
     curseID.set("944403")
-    modrinthID.set("e1GvDbBX")  //TODO I need to change this later
+    modrinthID.set("vuBdsrzF")  //TODO I need to change this later
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
     versionType.set("beta")
     version.set(project.version.toString())
