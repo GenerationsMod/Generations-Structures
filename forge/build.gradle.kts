@@ -12,6 +12,7 @@ architectury {
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
+val jarName = base.archivesName.get() + "-Forge"
 
 configurations {
     create("common")
@@ -70,7 +71,7 @@ dependencies {
 }
 
 tasks {
-    base.archivesName.set(base.archivesName.get() + "-Forge")
+    base.archivesName.set(jarName)
     processResources {
         inputs.property("version", project.version)
 
@@ -120,7 +121,7 @@ publisher {
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
     versionType.set("beta")
     version.set(project.version.toString())
-    displayName.set(tasks.remapJar.get().archiveBaseName.get() + '-' + version)
+    displayName.set("$jarName-${version.get()}")
     changelog.set("test changelog")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
@@ -137,7 +138,7 @@ publisher {
 
 publishing {
     publications.create<MavenPublication>("mavenForge") {
-        artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
+        artifactId = jarName
         from(components["java"])
     }
 

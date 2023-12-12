@@ -12,6 +12,7 @@ architectury {
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
+val jarName = base.archivesName.get() + "-Fabric"
 
 configurations {
     create("common")
@@ -52,7 +53,7 @@ dependencies {
 }
 
 tasks {
-    base.archivesName.set(base.archivesName.get() + "-Fabric")
+    base.archivesName.set(jarName)
     processResources {
         inputs.property("version", project.version)
 
@@ -101,7 +102,7 @@ publisher {
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
     versionType.set("beta")
     version.set(project.version.toString())
-    displayName.set(tasks.remapJar.get().archiveBaseName.get() + '-' + version)
+    displayName.set("$jarName-${version.get()}")
     changelog.set("test changelog")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
@@ -118,7 +119,7 @@ publisher {
 
 publishing {
     publications.create<MavenPublication>("mavenFabric") {
-        artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
+        artifactId = jarName
         from(components["java"])
     }
 
