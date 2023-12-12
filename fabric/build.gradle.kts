@@ -104,7 +104,7 @@ publisher {
     displayName.set(tasks.remapJar.get().archiveBaseName.get() + '-' + version)
     changelog.set("test changelog")
     artifact.set(tasks.remapJar)
-    gameVersions = listOf(minecraftVersion)
+    setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
     setCurseEnvironment(CurseEnvironment.BOTH)
     val depends = mutableListOf(
@@ -112,8 +112,8 @@ publisher {
         "architectury-api",
         "generations"
     )
-    curseDepends.required = depends
-    modrinthDepends.required = depends
+    curseDepends.required.set(depends)
+    modrinthDepends.required.set(depends)
 }
 
 publishing {
