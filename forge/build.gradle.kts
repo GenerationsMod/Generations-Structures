@@ -1,8 +1,9 @@
-import me.hypherionmc.modpublisher.plugin.ModPublisherGradleExtension.ApiKeys
+import com.hypherionmc.modpublisher.properties.CurseEnvironment
+import com.hypherionmc.modpublisher.properties.ModLoader
 
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("me.hypherionmc.modutils.modpublisher") version "1.+"
+    id("com.hypherionmc.modutils.modpublisher") version "2.+"
 }
 
 architectury {
@@ -108,22 +109,23 @@ components {
 }
 
 publisher {
-    val apiKeys = ApiKeys()
-    apiKeys.curseforge = project.properties["curseforge_token"].toString()
-    apiKeys.modrinth = project.properties["modrinth_token"].toString()
-    apiKeys.github = project.properties["github_token"].toString()
+    apiKeys {
+        curseforge(project.properties["curseforge_token"].toString())
+        modrinth(project.properties["modrinth_token"].toString())
+        github(project.properties["github_token"].toString())
+    }
 
-    curseID = "944403"
-    modrinthID = "e1GvDbBX"  //TODO I need to change this later
-    githubRepo = "https://github.com/GenerationsMod/Generations-Structures"
-    versionType = "beta"
-    version = project.version.toString()
-    displayName = tasks.remapJar.get().archiveBaseName.get() + '-' + version
-    changelog = "test changelog"
-    artifact = tasks.remapJar
+    curseID.set("944403")
+    modrinthID.set("e1GvDbBX")  //TODO I need to change this later
+    githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
+    versionType.set("beta")
+    version.set(project.version.toString())
+    displayName.set(tasks.remapJar.get().archiveBaseName.get() + '-' + version)
+    changelog.set("test changelog")
+    artifact.set(tasks.remapJar)
     gameVersions = listOf(minecraftVersion)
-    loaders = listOf("forge")
-    curseEnvironment = "both"
+    setLoaders(ModLoader.FORGE)
+    setCurseEnvironment(CurseEnvironment.BOTH)
     val depends = mutableListOf(
         "architectury-api",
         "generations"
@@ -131,6 +133,7 @@ publisher {
     curseDepends.required = depends
     modrinthDepends.required = depends
 }
+
 
 publishing {
     publications.create<MavenPublication>("mavenForge") {
