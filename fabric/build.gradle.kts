@@ -1,5 +1,6 @@
 import com.hypherionmc.modpublisher.properties.CurseEnvironment
 import com.hypherionmc.modpublisher.properties.ModLoader
+import com.hypherionmc.modpublisher.properties.ReleaseType
 
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
@@ -100,7 +101,7 @@ publisher {
     curseID.set("944403")
     modrinthID.set("vuBdsrzF")  //TODO I need to change this later
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
-    versionType.set("beta")
+    setReleaseType(ReleaseType.BETA)
     version.set(project.version.toString())
     displayName.set("$jarName-${version.get()}")
     changelog.set("test changelog")
@@ -110,7 +111,6 @@ publisher {
     setCurseEnvironment(CurseEnvironment.BOTH)
     val depends = mutableListOf(
         "fabric-api",
-        "architectury-api",
         "generations"
     )
     curseDepends.required.set(depends)
