@@ -1,5 +1,10 @@
+import com.hypherionmc.modpublisher.properties.CurseEnvironment
+import com.hypherionmc.modpublisher.properties.ModLoader
+import com.hypherionmc.modpublisher.properties.ReleaseType
+
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.hypherionmc.modutils.modpublisher") version "2.+"
 }
 
 architectury {
@@ -8,6 +13,7 @@ architectury {
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
+val jarName = base.archivesName.get() + "-Fabric"
 
 configurations {
     create("common")
@@ -48,7 +54,7 @@ dependencies {
 }
 
 tasks {
-    base.archivesName.set(base.archivesName.get() + "-Fabric")
+    base.archivesName.set(jarName)
     processResources {
         inputs.property("version", project.version)
 
@@ -85,9 +91,35 @@ components {
     }
 }
 
+publisher {
+    apiKeys {
+        curseforge(project.properties["curseforge_token"].toString())
+        modrinth(project.properties["modrinth_token"].toString())
+        github(project.properties["github_token"].toString())
+    }
+
+    curseID.set("944403")
+    modrinthID.set("vuBdsrzF")  //TODO I need to change this later
+    githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
+    setReleaseType(ReleaseType.BETA)
+    version.set(project.version.toString())
+    displayName.set("$jarName-${version.get()}")
+    changelog.set("test changelog")
+    artifact.set(tasks.remapJar)
+    setGameVersions(minecraftVersion)
+    setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
+    setCurseEnvironment(CurseEnvironment.BOTH)
+    val depends = mutableListOf(
+        "fabric-api",
+        "generations"
+    )
+    curseDepends.required.set(depends)
+    modrinthDepends.required.set(depends)
+}
+
 publishing {
     publications.create<MavenPublication>("mavenFabric") {
-        artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
+        artifactId = jarName
         from(components["java"])
     }
 
