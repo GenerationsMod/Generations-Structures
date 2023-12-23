@@ -37,6 +37,7 @@ public class GenerationsStructuresForge {
 
     /**
      * Queues all custom structure processor types for safe registration.
+     * @see FMLCommonSetupEvent
      */
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(StructureProcessors::init);
