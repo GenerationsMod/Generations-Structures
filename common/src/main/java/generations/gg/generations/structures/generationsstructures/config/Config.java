@@ -13,10 +13,13 @@ public class Config {
         public boolean AllowBiomesOPlentyIntegration = true;
     }
 
-    public Generation generation = new Generation();
+    public VillageStructureGeneration villageStructureGeneration = new VillageStructureGeneration();
 
-    public static class Generation {
+    public static class VillageStructureGeneration {
         public boolean AllowStructuresInVillages = true;
+        public int GymVillageWeight = 200;
+        public int PokeCenterVillageWeight = 200;
+        public int PokeStopVillageWeight = 200;
     }
 
 }

@@ -55,11 +55,12 @@ public class PlaceInVillage {
      * @param server The server to add the structures to.
      */
     public static void addStructuresToVillages(MinecraftServer server) {
-        if (!GenerationsStructures.CONFIG.generation.AllowStructuresInVillages) return;
+        var config = GenerationsStructures.CONFIG.villageStructureGeneration;
+        if (!config.AllowStructuresInVillages) return;
         GenerationsStructures.LOGGER.info("Adding structures to villages");
         RegistryAccess.Frozen serverRegistry = server.registryAccess();
 
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("gym/darkgym"), 250);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("gym/darkgym"), config.GymVillageWeight);
     }
 
     private static ResourceLocation getPoolRL(String poolName) {
