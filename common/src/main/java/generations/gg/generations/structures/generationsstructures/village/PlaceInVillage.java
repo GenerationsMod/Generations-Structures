@@ -4,8 +4,10 @@ import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.ProcessorLists;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.levelgen.structure.pools.SinglePoolElement;
@@ -23,24 +25,29 @@ import java.util.List;
  */
 public class PlaceInVillage {
 
-    private static void addBuildingToPool(Registry<StructureTemplatePool> templatePoolRegistry, Registry<StructureProcessorList> processorListRegistry,
-                                          ResourceLocation poolRL, StructureProcessorList processorList, String nbtPieceRL, int weight) {
-
-        // Grab the pool we want to add to
+    /**
+     * Adds a building to a village structure pool.
+     * @param serverRegistry The server registry.
+     * @param poolRL The pool to add the building to.
+     * @param processorList The processor list to use.
+     * @param nbtPieceRL The nbt piece to add.
+     * @param weight The weight of the building.
+     */
+    private static void addBuildingToPool(RegistryAccess.Frozen serverRegistry, ResourceLocation poolRL, ResourceKey<StructureProcessorList> processorList, ResourceLocation nbtPieceRL, int weight) {
+        Registry<StructureTemplatePool> templatePoolRegistry = serverRegistry.registry(Registries.TEMPLATE_POOL).orElseThrow();
+        Registry<StructureProcessorList> processorListRegistry = serverRegistry.registry(Registries.PROCESSOR_LIST).orElseThrow();
         StructureTemplatePool pool = templatePoolRegistry.get(poolRL);
+        Holder<StructureProcessorList> processorList1 = processorListRegistry.getHolderOrThrow(processorList);
         if (pool == null) return;
 
-        SinglePoolElement piece = SinglePoolElement.legacy(nbtPieceRL,
-                Holder.direct(processorList)).apply(StructureTemplatePool.Projection.RIGID);
+        SinglePoolElement piece = SinglePoolElement.legacy(nbtPieceRL.toString(), processorList1).apply(StructureTemplatePool.Projection.RIGID);
 
         for (int i = 0; i < weight; i++)
             pool.templates.add(piece);
 
-
         List<Pair<StructurePoolElement, Integer>> listOfPieceEntries = new ArrayList<>(pool.rawTemplates);
         listOfPieceEntries.add(new Pair<>(piece, weight));
         pool.rawTemplates = listOfPieceEntries;
-
     }
 
     /**
@@ -50,7 +57,12 @@ public class PlaceInVillage {
     public static void addStructuresToVillages(MinecraftServer server) {
         if (!GenerationsStructures.CONFIG.generation.AllowStructuresInVillages) return;
         GenerationsStructures.LOGGER.info("Adding structures to villages");
-        Registry<StructureTemplatePool> templatePoolRegistry = server.registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
-        Registry<StructureProcessorList> processorListRegistry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
+        RegistryAccess.Frozen serverRegistry = server.registryAccess();
+
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("gym/darkgym"), 250);
+    }
+
+    private static ResourceLocation getPoolRL(String poolName) {
+        return new ResourceLocation("minecraft", "village/" + poolName);
     }
 }
