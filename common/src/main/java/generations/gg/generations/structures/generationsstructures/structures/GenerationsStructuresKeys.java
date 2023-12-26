@@ -34,6 +34,14 @@ public interface GenerationsStructuresKeys {
     /** PokeCenter Structure ResourceKey **/
     ResourceKey<Structure> POKECENTER = createKey("pokecenter");
 
+
+    /**
+     * Holds the ResourceKeys for the village roads.
+     */
+    interface GenerationsStreetKeys {
+        ResourceKey<Structure> POKE_STREET = createKey("streets/poke_street");
+    }
+
     /**
      * Creates a ResourceKey for the structure.
      * @param name The name of the structure or directory with name.
