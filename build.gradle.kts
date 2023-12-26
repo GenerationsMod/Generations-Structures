@@ -5,7 +5,7 @@ plugins {
     id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
     idea
     java
-    kotlin("jvm") version "1.9.21"
+    kotlin("jvm") version "1.9.22"
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
@@ -31,6 +31,7 @@ subprojects {
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
         maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
+        maven("https://maven.enginehub.org/repo")
     }
 
     @Suppress("UnstableApiUsage")

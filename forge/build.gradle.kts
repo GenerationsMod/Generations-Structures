@@ -57,18 +57,15 @@ dependencies {
     modRuntimeOnly("earth.terrarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.7.0")
+    implementation("thedarkcolour:kotlinforforge:4.9.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
-    modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
+    modCompileOnly("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
     modCompileOnly("maven.modrinth:biomesyougo:${project.properties["BYGForge_version"]}")
     //modRuntimeOnly("curse.maven:CorgiLib-693313:4681375")
     //modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
-
-    //Yungs API
-    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Forge-${project.properties["YUNGAPI_version"]}")
 }
 
 tasks {
