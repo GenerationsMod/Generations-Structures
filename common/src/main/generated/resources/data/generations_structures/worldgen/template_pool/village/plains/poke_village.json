@@ -1,0 +1,23 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "generations_structures:pokeshop",
+        "processors": "generations_structures:pokecenter_processor_list",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "generations_structures:pokecenter",
+        "processors": "generations_structures:pokecenter_processor_list",
+        "projection": "rigid"
+      },
+      "weight": 100
+    }
+  ],
+  "fallback": "minecraft:village/plains/terminators"
+}

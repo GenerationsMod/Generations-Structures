@@ -31,7 +31,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKESHOP = create("scarlet_pokeshop");
     public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
-    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("poke_village");
+    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/plains/poke_village");
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
         register(context, BEAST_BALLOON, Pools.EMPTY, ImmutableList.of(
