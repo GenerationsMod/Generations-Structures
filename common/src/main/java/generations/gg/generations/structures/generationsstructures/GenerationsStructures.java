@@ -39,6 +39,7 @@ public class GenerationsStructures {
 
     /**
      * Creates a {@link ResourceLocation} with the Generations-Structures Mod id.
+     * @param path The path of the resource location.
      */
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID, path);
