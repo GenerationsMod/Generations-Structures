@@ -1,0 +1,7 @@
+{
+  "processors": [
+    {
+      "processor_type": "generations_structures:pokecenter_processor"
+    }
+  ]
+}

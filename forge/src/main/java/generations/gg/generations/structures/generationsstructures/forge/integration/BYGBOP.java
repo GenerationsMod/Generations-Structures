@@ -2,6 +2,7 @@ package generations.gg.generations.structures.generationsstructures.forge.integr
 
 import biomesoplenty.api.block.BOPBlocks;
 import biomesoplenty.core.BiomesOPlenty;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.world.level.block.Block;
 import potionstudios.byg.BYG;
@@ -33,5 +34,20 @@ public class BYGBOP implements Integration {
     @Override
     public Block getOakLeavesReplacement() {
         return BOPBlocks.FLOWERING_OAK_LEAVES.get();
+    }
+
+    @Override
+    public Block getMirroredFloorReplacement() {
+       return null;
+    }
+
+    @Override
+    public Block getRedTulipReplacement() {
+        return null;
+    }
+
+    @Override
+    public Block getPinkTulipReplacement() {
+        return null;
     }
 }

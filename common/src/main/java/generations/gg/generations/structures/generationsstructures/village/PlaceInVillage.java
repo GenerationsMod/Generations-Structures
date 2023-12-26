@@ -2,6 +2,7 @@ package generations.gg.generations.structures.generationsstructures.village;
 
 import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
@@ -60,7 +61,9 @@ public class PlaceInVillage {
         GenerationsStructures.LOGGER.info("Adding structures to villages");
         RegistryAccess.Frozen serverRegistry = server.registryAccess();
 
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("gym/darkgym"), config.GymVillageWeight);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST, GenerationsStructures.id("pokecenter"), 10000);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("plains_jump_master"), 10000);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("brick_house"), 500);
     }
 
     private static ResourceLocation getPoolRL(String poolName) {

@@ -17,9 +17,7 @@ public class Config {
 
     public static class VillageStructureGeneration {
         public boolean AllowStructuresInVillages = true;
-        public int GymVillageWeight = 200;
-        public int PokeCenterVillageWeight = 200;
-        public int PokeStopVillageWeight = 200;
+        public int PokeCenterWeight = 200;
     }
 
 }

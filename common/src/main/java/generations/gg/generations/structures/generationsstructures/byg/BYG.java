@@ -1,5 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.byg;
 
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -30,5 +31,20 @@ public class BYG implements Integration {
     @Override
     public Block getOakLeavesReplacement() {
         return Blocks.OAK_LEAVES;
+    }
+
+    @Override
+    public Block getMirroredFloorReplacement() {
+        return GenerationsBlocks.MIRRORED_FLOOR_3.get();
+    }
+
+    @Override
+    public Block getRedTulipReplacement() {
+        return Blocks.POTTED_RED_TULIP;
+    }
+
+    @Override
+    public Block getPinkTulipReplacement() {
+        return Blocks.POTTED_PINK_TULIP;
     }
 }

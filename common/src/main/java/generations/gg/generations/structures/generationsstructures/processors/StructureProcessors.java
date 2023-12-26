@@ -2,6 +2,7 @@ package generations.gg.generations.structures.generationsstructures.processors;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 public class StructureProcessors {
     public static StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
     public static StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
+    public static StructureProcessorType<PokeCenterProcessor> POKECENTER_PROCESSOR = () -> PokeCenterProcessor.CODEC;
 
 
     /**
@@ -23,6 +25,7 @@ public class StructureProcessors {
     public static void init() {
         register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
         register("gym_processor", GYM_PROCESSOR);
+        register("pokecenter_processor", POKECENTER_PROCESSOR);
     }
 
     /**

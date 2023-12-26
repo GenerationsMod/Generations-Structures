@@ -32,4 +32,19 @@ public class BOP implements Integration {
     public Block getOakLeavesReplacement() {
         return BOPBlocks.FLOWERING_OAK_LEAVES.get();
     }
+
+    @Override
+    public Block getMirroredFloorReplacement() {
+        return BOPBlocks.SMOOTH_WHITE_SANDSTONE.get();
+    }
+
+    @Override
+    public Block getRedTulipReplacement() {
+        return BOPBlocks.POTTED_ROSE.get();
+    }
+
+    @Override
+    public Block getPinkTulipReplacement() {
+        return BOPBlocks.POTTED_VIOLET.get();
+    }
 }

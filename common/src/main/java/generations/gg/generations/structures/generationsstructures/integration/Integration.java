@@ -33,4 +33,22 @@ public interface Integration {
      * @return Block to replace oak leaves with
      */
     Block getOakLeavesReplacement();
+
+    /**
+     * Returns the block to replace the mirrored floor with
+     * @return Block to replace the mirrored floor with
+     */
+    Block getMirroredFloorReplacement();
+
+    /**
+     * Returns the block to replace the red tulip with
+     * @return Block to replace the red tulip with
+     */
+    Block getRedTulipReplacement();
+
+    /**
+     * Returns the block to replace the pink tulip with
+     * @return Block to replace the pink tulip with
+     */
+    Block getPinkTulipReplacement();
 }
