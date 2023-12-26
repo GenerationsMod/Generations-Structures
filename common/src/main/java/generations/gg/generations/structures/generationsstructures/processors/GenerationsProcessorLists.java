@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
  * @author Joseph T. McQuigg
  */
 public class GenerationsProcessorLists {
+	public static void init() {}
 
 	public static ResourceKey<StructureProcessorList> GYM_PROCESSOR_LIST = create("gym_processor_list");
 	public static ResourceKey<StructureProcessorList> SCARLET_POKESHOP_PROCESSOR_LIST = create("scarlet_pokeshop_processor_list");

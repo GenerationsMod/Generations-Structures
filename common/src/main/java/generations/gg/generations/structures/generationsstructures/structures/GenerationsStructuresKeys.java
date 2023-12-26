@@ -28,6 +28,12 @@ public interface GenerationsStructuresKeys {
     /** Comet Structure ResourceKey **/
     ResourceKey<Structure> COMET = createKey("comet");
 
+    /** PokeShop Structure ResourceKey **/
+    ResourceKey<Structure> POKESHOP = createKey("pokeshop");
+
+    /** PokeCenter Structure ResourceKey **/
+    ResourceKey<Structure> POKECENTER = createKey("pokecenter");
+
     /**
      * Creates a ResourceKey for the structure.
      * @param name The name of the structure or directory with name.

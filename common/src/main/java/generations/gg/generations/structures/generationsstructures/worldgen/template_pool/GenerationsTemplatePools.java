@@ -8,6 +8,7 @@ import generations.gg.generations.structures.generationsstructures.structures.Ge
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.PlainVillagePools;
 import net.minecraft.data.worldgen.Pools;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
@@ -30,6 +31,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKESHOP = create("scarlet_pokeshop");
     public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
+    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("poke_village");
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
         register(context, BEAST_BALLOON, Pools.EMPTY, ImmutableList.of(
@@ -69,6 +71,11 @@ public class GenerationsTemplatePools {
         register(context, SPIKE, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SPIKE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
+
+        register(context, POKE_VILLAGE, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2)
+        ), StructureTemplatePool.Projection.RIGID);
     }
 
     private static ResourceKey<StructureTemplatePool> create(String name) {

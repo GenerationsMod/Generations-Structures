@@ -2,7 +2,7 @@ package generations.gg.generations.structures.generationsstructures.village;
 
 import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
+import generations.gg.generations.structures.generationsstructures.config.Config;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
@@ -56,14 +56,15 @@ public class PlaceInVillage {
      * @param server The server to add the structures to.
      */
     public static void addStructuresToVillages(MinecraftServer server) {
-        var config = GenerationsStructures.CONFIG.villageStructureGeneration;
+        Config.VillageStructureGeneration config = GenerationsStructures.CONFIG.villageStructureGeneration;
         if (!config.AllowStructuresInVillages) return;
         GenerationsStructures.LOGGER.info("Adding structures to villages");
         RegistryAccess.Frozen serverRegistry = server.registryAccess();
-
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST, GenerationsStructures.id("pokecenter"), 10000);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("plains_jump_master"), 10000);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructures.id("brick_house"), 500);
+        addBuildingToPool(serverRegistry, getPoolRL("village/plains/streets"), ProcessorLists.STREET_PLAINS, GenerationsStructures.id("streets/poke_street"), 2);
+        addBuildingToPool(serverRegistry, getPoolRL("village/desert/streets"), ProcessorLists.EMPTY, GenerationsStructures.id("streets/poke_street"), 2);
+        addBuildingToPool(serverRegistry, getPoolRL("village/savanna/streets"), ProcessorLists.STREET_SAVANNA, GenerationsStructures.id("streets/poke_street"), 2);
+        addBuildingToPool(serverRegistry, getPoolRL("village/snowy/streets"), ProcessorLists.STREET_SNOWY_OR_TAIGA, GenerationsStructures.id("streets/poke_street"), 2);
+        addBuildingToPool(serverRegistry, getPoolRL("village/taiga/streets"), ProcessorLists.STREET_SNOWY_OR_TAIGA, GenerationsStructures.id("streets/poke_street"), 2);
     }
 
     private static ResourceLocation getPoolRL(String poolName) {
