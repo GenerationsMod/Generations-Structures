@@ -36,13 +36,6 @@ Adds structures for the Generations Mod Family
     side = "BOTH"
 
 [[dependencies.generations_structures]]
-    modId = "yungsapi"
-    mandatory = true
-    versionRange = "[1.20-Forge-4.0.2,)"
-    ordering = "AFTER"
-    side = "BOTH"
-
-[[dependencies.generations_structures]]
     modId = "biomesoplenty"
     mandatory = false
     versionRange = "[18.0.0.592,)"

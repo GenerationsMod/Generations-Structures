@@ -48,9 +48,6 @@ dependencies {
     //modCompileOnly("curse.maven:oh-the-biomes-youll-go-fabric-391378:${project.properties["BYGFabric_version"]}")
     //modCompileOnly("curse.maven:CorgiLib-693313:4681375")
     //modCompileOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
-
-    //Yungs API
-    modApi("com.yungnickyoung.minecraft.yungsapi:YungsApi:1.20-Fabric-${project.properties["YUNGAPI_version"]}")
 }
 
 tasks {
