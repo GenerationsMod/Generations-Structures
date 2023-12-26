@@ -2,9 +2,11 @@ package generations.gg.generations.structures.generationsstructures.processors.s
 
 import com.mojang.serialization.Codec;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.VendingMachineBlock;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
+import generations.gg.generations.structures.generationsstructures.randomizer.VendingMachineRandomizer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -36,6 +38,10 @@ public class PokeCenterProcessor extends StructureProcessor {
             return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getPinkTulipReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
         else if (block == Blocks.BIRCH_LEAVES)
             return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getOakLeavesReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
+        else if (block instanceof VendingMachineBlock)
+            if (GenerationsStructures.CONFIG.villageStructureGeneration.randomizeVendingMachineColors)
+                return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), VendingMachineRandomizer.getRandomVendingMachine().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
+
 
         return relativeBlockInfo;
     }
