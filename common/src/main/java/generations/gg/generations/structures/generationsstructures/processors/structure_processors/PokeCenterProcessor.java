@@ -30,7 +30,7 @@ public class PokeCenterProcessor extends StructureProcessor {
 
         Block block = relativeBlockInfo.state().getBlock();
 
-        if (block == GenerationsBlocks.MIRRORED_FLOOR_3)
+        if (block == GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock())
             return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getMirroredFloorReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());
         else if (block == Blocks.POTTED_RED_TULIP)
             return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), integration.getRedTulipReplacement().withPropertiesOf(relativeBlockInfo.state()), relativeBlockInfo.nbt());

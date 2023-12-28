@@ -35,7 +35,7 @@ public class Default implements Integration {
 
     @Override
     public Block getMirroredFloorReplacement() {
-        return GenerationsBlocks.MIRRORED_FLOOR_3.get();
+        return GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock();
     }
 
     @Override
