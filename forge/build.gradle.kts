@@ -66,6 +66,7 @@ dependencies {
     modCompileOnly("maven.modrinth:biomesyougo:${project.properties["BYGForge_version"]}")
     //modRuntimeOnly("curse.maven:CorgiLib-693313:4681375")
     //modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
+    modRuntimeOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 }
 
 tasks {
