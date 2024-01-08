@@ -8,7 +8,7 @@ modId = "generations_structures"
 version = "${version}"
 displayName = "Generations Structures"
 authors = "J.T. McQuigg (JT122406)"
-credits = "C. Inglis"
+credits = "C. Inglis, Strwbry_Moon, CyborgPixel"
 description = '''
 Adds structures for the Generations Mod Family
 '''
