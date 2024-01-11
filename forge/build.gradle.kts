@@ -116,7 +116,7 @@ publisher {
     }
 
     curseID.set("944403")
-    modrinthID.set("vuBdsrzF")  //TODO I need to change this later
+    modrinthID.set("vuBdsrzF")
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
     setReleaseType(ReleaseType.BETA)
     version.set(project.version.toString())
@@ -129,8 +129,13 @@ publisher {
     val depends = mutableListOf(
         "generations"
     )
+    val softDepends = mutableListOf(
+        "biomes-o-plenty"
+    )
     curseDepends.required.set(depends)
+    curseDepends.optional.set(softDepends)
     modrinthDepends.required.set(depends)
+    modrinthDepends.optional.set(softDepends)
 }
 
 
