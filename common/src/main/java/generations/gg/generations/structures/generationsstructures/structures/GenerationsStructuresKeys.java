@@ -34,6 +34,9 @@ public interface GenerationsStructuresKeys {
     /** PokeCenter Structure ResourceKey **/
     ResourceKey<Structure> POKECENTER = createKey("pokecenter");
 
+    /** Shrines Structure ResourceKeys **/
+    ResourceKey<Structure> FROZEN_SHRINE = createKey("shrines/frozen_shrine");
+
 
     /**
      * Holds the ResourceKeys for the village roads.

@@ -7,7 +7,7 @@
         "processors": "generations_structures:pokecenter_processor_list",
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
     },
     {
       "element": {
@@ -16,7 +16,7 @@
         "processors": "generations_structures:pokecenter_processor_list",
         "projection": "rigid"
       },
-      "weight": 100
+      "weight": 2
     }
   ],
   "fallback": "minecraft:village/plains/terminators"

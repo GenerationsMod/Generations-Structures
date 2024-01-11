@@ -1,0 +1,10 @@
+{
+  "values": [
+    {
+      "id": "#c:icy",
+      "required": false
+    },
+    "minecraft:ice_spikes",
+    "minecraft:frozen_peaks"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 989914746,
+    "separation": 500,
+    "spacing": 4096
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/frozen_shrine",
+      "weight": 1
+    }
+  ]
+}

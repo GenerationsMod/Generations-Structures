@@ -24,6 +24,9 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that can have a spike */
     public static final TagKey<Biome> HAS_SPIKE = create("has_structure/spike");
 
+    /** the tag for biomes that can have a frozen shrine */
+    public static final TagKey<Biome> HAS_FROZEN_SHRINE = create("has_structure/frozen_shrine");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

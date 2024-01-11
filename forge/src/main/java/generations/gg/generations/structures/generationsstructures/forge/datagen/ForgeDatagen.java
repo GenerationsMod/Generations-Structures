@@ -17,6 +17,7 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -82,6 +83,10 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_SPIKE)
                     .addTag(BiomeTags.IS_NETHER)
                     .addOptionalTag(fabricTagMaker("in_nether"));
+
+            tag(GenerationsBiomeTags.HAS_FROZEN_SHRINE)
+                    .addOptionalTag(fabricTagMaker("icy"))
+                    .add(Biomes.ICE_SPIKES, Biomes.FROZEN_PEAKS);
         }
     }
 
@@ -105,6 +110,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructuresKeys.COMET.location());
             tag(GenerationsStructureTags.SPIKE)
                     .addOptional(GenerationsStructuresKeys.SPIKE.location());
+            tag(GenerationsStructureTags.SHRINES)
+                    .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location());
         }
     }
 
