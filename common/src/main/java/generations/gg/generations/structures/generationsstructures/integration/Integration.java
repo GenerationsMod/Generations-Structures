@@ -51,4 +51,10 @@ public interface Integration {
      * @return Block to replace the pink tulip with
      */
     Block getPinkTulipReplacement();
+
+    /**
+     * Returns the block to replace the white castle brick 2 set slab with
+     * @return Block to replace the white castle brick 2 set slab with
+     */
+    Block getWhiteCastleBrick2SetSlabReplacement();
 }

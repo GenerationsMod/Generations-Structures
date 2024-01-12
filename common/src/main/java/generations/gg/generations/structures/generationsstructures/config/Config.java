@@ -21,4 +21,10 @@ public class Config {
         public boolean randomizeVendingMachineColors = true;
     }
 
+    public Randomization randomization = new Randomization();
+
+    public static class Randomization {
+        public boolean randomizeFrozenShrineBlocks = true;
+    }
+
 }

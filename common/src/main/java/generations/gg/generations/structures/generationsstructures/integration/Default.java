@@ -47,4 +47,9 @@ public class Default implements Integration {
     public Block getPinkTulipReplacement() {
         return Blocks.POTTED_PINK_TULIP;
     }
+
+    @Override
+    public Block getWhiteCastleBrick2SetSlabReplacement() {
+        return GenerationsBlocks.WHITE_CASTLE_BRICK_2_SET.getSlab();
+    }
 }

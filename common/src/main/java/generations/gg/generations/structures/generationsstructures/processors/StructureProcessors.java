@@ -1,6 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
@@ -17,6 +19,8 @@ public class StructureProcessors {
     public static StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
     public static StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
     public static StructureProcessorType<PokeCenterProcessor> POKECENTER_PROCESSOR = () -> PokeCenterProcessor.CODEC;
+    public static StructureProcessorType<FrozenShrineRandomizerProcessor> FROZEN_SHRINE_RANDOMIZER_PROCESSOR = () -> FrozenShrineRandomizerProcessor.CODEC;
+    public static StructureProcessorType<FrozenShrineProcessor> FROZEN_SHRINE_PROCESSOR = () -> FrozenShrineProcessor.CODEC;
 
 
     /**
@@ -26,6 +30,8 @@ public class StructureProcessors {
         register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
         register("gym_processor", GYM_PROCESSOR);
         register("pokecenter_processor", POKECENTER_PROCESSOR);
+        register("frozen_shrine_randomizer_processor", FROZEN_SHRINE_RANDOMIZER_PROCESSOR);
+        register("frozen_shrine_processor", FROZEN_SHRINE_PROCESSOR);
     }
 
     /**

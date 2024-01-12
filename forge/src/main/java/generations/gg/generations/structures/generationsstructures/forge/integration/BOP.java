@@ -2,6 +2,7 @@ package generations.gg.generations.structures.generationsstructures.forge.integr
 
 import biomesoplenty.api.block.BOPBlocks;
 import biomesoplenty.core.BiomesOPlenty;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -46,5 +47,10 @@ public class BOP implements Integration {
     @Override
     public Block getPinkTulipReplacement() {
         return BOPBlocks.POTTED_VIOLET.get();
+    }
+
+    @Override
+    public Block getWhiteCastleBrick2SetSlabReplacement() {
+        return GenerationsBlocks.WHITE_CASTLE_BRICK_2_SET.getSlab();
     }
 }

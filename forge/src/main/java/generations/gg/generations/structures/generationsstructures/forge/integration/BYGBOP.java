@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import net.minecraft.world.level.block.Block;
 import potionstudios.byg.BYG;
+import potionstudios.byg.common.block.BYGBlocks;
 import potionstudios.byg.common.block.BYGWoodTypes;
 
 /**
@@ -49,5 +50,10 @@ public class BYGBOP implements Integration {
     @Override
     public Block getPinkTulipReplacement() {
         return null;
+    }
+
+    @Override
+    public Block getWhiteCastleBrick2SetSlabReplacement() {
+        return BYGBlocks.TRAVERTINE_SLAB.get();
     }
 }
