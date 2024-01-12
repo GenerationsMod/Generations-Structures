@@ -1,5 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
+import biomesoplenty.api.biome.BOPBiomes;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
@@ -84,6 +85,9 @@ public class ForgeDatagen {
                     .addTag(BiomeTags.IS_NETHER)
                     .addOptionalTag(fabricTagMaker("in_nether"));
 
+            tag(GenerationsBiomeTags.HAS_ISLANDS)
+                    .addTag(GenerationsBiomeTags.IS_NOT_MOUNTAIN);
+
             tag(GenerationsBiomeTags.HAS_FROZEN_SHRINE)
                     .addOptionalTag(fabricTagMaker("icy"))
                     .add(Biomes.ICE_SPIKES, Biomes.FROZEN_PEAKS);
@@ -91,7 +95,8 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_FIERY_SHRINE)
                     .addTag(BiomeTags.IS_NETHER)
                     .addOptionalTag(Tags.Biomes.IS_DESERT)
-                    .addOptionalTag(fabricTagMaker("desert"));
+                    .addOptionalTag(fabricTagMaker("desert"))
+                    .addOptional(BOPBiomes.VOLCANIC_PLAINS.location());
         }
     }
 
@@ -115,6 +120,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructuresKeys.COMET.location());
             tag(GenerationsStructureTags.SPIKE)
                     .addOptional(GenerationsStructuresKeys.SPIKE.location());
+            tag(GenerationsStructureTags.ISLANDS)
+                    .addOptional(GenerationsStructuresKeys.ISLANDS.location());
             tag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location());

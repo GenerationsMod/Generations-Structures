@@ -8,6 +8,10 @@
     {
       "id": "#c:desert",
       "required": false
+    },
+    {
+      "id": "biomesoplenty:volcanic_plains",
+      "required": false
     }
   ]
 }

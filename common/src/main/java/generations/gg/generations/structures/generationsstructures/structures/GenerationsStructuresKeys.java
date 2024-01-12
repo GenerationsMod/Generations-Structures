@@ -34,6 +34,9 @@ public interface GenerationsStructuresKeys {
     /** PokeCenter Structure ResourceKey **/
     ResourceKey<Structure> POKECENTER = createKey("pokecenter");
 
+    /** Island Structure ResourceKey **/
+    ResourceKey<Structure> ISLANDS = createKey("islands");
+
     /** Shrines Structure ResourceKeys **/
     ResourceKey<Structure> FROZEN_SHRINE = createKey("shrines/frozen_shrine");
     ResourceKey<Structure> FIERY_SHRINE = createKey("shrines/fiery_shrine");

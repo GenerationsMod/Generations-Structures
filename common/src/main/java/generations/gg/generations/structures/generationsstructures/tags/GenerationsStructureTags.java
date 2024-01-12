@@ -12,6 +12,7 @@ public class GenerationsStructureTags {
     public static final TagKey<Structure> COMET = create("comet");
     public static final TagKey<Structure> SPIKE = create("spike");
     public static final TagKey<Structure> GYMS = create("gyms");
+    public static final TagKey<Structure> ISLANDS = create("islands");
     public static final TagKey<Structure> SHRINES = create("shrines");
 
     /**

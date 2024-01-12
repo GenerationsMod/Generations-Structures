@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 347680677,
+    "separation": 50,
+    "spacing": 100
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:islands",
+      "weight": 1
+    }
+  ]
+}
