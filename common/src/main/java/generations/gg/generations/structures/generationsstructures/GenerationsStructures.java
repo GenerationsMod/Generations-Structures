@@ -9,6 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Objects;
+
 /**
  * The main class for the Generations-Structures mod.
  * @author J.T. McQuigg (JT122406)
@@ -35,6 +37,8 @@ public class GenerationsStructures {
         CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
         INTEGRATION = !CONFIG.integration.AllowIntegrations ? new Default() : integration;
         GenerationsProcessorLists.init();
+        if (integration.getModId().equals("biomesoplenty")  && !CONFIG.integration.AllowBiomesOPlentyIntegration)
+            INTEGRATION = new Default();
     }
 
     /**
