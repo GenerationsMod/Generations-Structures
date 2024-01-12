@@ -36,6 +36,7 @@ public interface GenerationsStructuresKeys {
 
     /** Shrines Structure ResourceKeys **/
     ResourceKey<Structure> FROZEN_SHRINE = createKey("shrines/frozen_shrine");
+    ResourceKey<Structure> FIERY_SHRINE = createKey("shrines/fiery_shrine");
 
 
     /**

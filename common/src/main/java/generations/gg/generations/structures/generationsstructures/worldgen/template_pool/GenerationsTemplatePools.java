@@ -34,6 +34,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/plains/poke_village");
 
     public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = create("shrines/frozen_shrine");
+    public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = create("shrines/fiery_shrine");
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
         register(context, BEAST_BALLOON, Pools.EMPTY, ImmutableList.of(
@@ -81,6 +82,10 @@ public class GenerationsTemplatePools {
 
         register(context, FROZEN_SHRINE, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.FROZEN_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.FROZEN_SHRINE_PROCESSOR_LIST)), 1)
+        ), StructureTemplatePool.Projection.RIGID);
+
+        register(context, FIERY_SHRINE, Pools.EMPTY, ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.FIERY_SHRINE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 

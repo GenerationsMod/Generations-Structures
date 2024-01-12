@@ -97,6 +97,22 @@ public class GenerationsStructureSettings {
                 Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                 40
         ));
+
+        registerStructure(context, GenerationsStructuresKeys.FIERY_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_FIERY_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.FIERY_SHRINE),
+                Optional.empty(),
+                1,
+                        ConstantHeight.of(VerticalAnchor.absolute(1)),
+                false,
+                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                40
+        ));
     }
 
     private static void registerStructure(BootstapContext<Structure> context, ResourceKey<Structure> structureResourceKey, Structure structure){

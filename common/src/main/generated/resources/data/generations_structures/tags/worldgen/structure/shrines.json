@@ -3,6 +3,10 @@
     {
       "id": "generations_structures:shrines/frozen_shrine",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/fiery_shrine",
+      "required": false
     }
   ]
 }

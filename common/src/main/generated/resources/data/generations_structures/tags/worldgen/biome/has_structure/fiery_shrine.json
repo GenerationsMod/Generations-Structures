@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#minecraft:is_nether",
+    {
+      "id": "#forge:is_desert",
+      "required": false
+    },
+    {
+      "id": "#c:desert",
+      "required": false
+    }
+  ]
+}

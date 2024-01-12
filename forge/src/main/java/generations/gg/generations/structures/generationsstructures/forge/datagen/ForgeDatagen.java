@@ -87,6 +87,11 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_FROZEN_SHRINE)
                     .addOptionalTag(fabricTagMaker("icy"))
                     .add(Biomes.ICE_SPIKES, Biomes.FROZEN_PEAKS);
+
+            tag(GenerationsBiomeTags.HAS_FIERY_SHRINE)
+                    .addTag(BiomeTags.IS_NETHER)
+                    .addOptionalTag(Tags.Biomes.IS_DESERT)
+                    .addOptionalTag(fabricTagMaker("desert"));
         }
     }
 
@@ -111,7 +116,8 @@ public class ForgeDatagen {
             tag(GenerationsStructureTags.SPIKE)
                     .addOptional(GenerationsStructuresKeys.SPIKE.location());
             tag(GenerationsStructureTags.SHRINES)
-                    .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location());
+                    .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location());
         }
     }
 

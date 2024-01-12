@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 333897074,
+    "separation": 500,
+    "spacing": 4096
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/fiery_shrine",
+      "weight": 1
+    }
+  ]
+}
