@@ -25,6 +25,8 @@ public class Config {
 
     public static class Randomization {
         public boolean randomizeFrozenShrineBlocks = true;
+        public boolean randomizeFieryShrineBlocks = true;
+        public boolean randomizeStaticShrineBlocks = true;
     }
 
 }

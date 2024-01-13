@@ -91,11 +91,11 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, FIERY_SHRINE, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.FIERY_SHRINE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.FIERY_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.FIERY_SHRINE_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, STATIC_SHRINE, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.STATIC_SHRINE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.STATIC_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.STATIC_SHRINE_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 

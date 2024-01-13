@@ -1,0 +1,10 @@
+{
+  "processors": [
+    {
+      "processor_type": "generations_structures:frozen_shrine_randomizer_processor"
+    },
+    {
+      "processor_type": "generations_structures:frozen_shrine_processor"
+    }
+  ]
+}

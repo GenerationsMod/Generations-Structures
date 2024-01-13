@@ -24,6 +24,8 @@ public class GenerationsProcessorLists {
 	public static ResourceKey<StructureProcessorList> SCARLET_POKESHOP_PROCESSOR_LIST = create("scarlet_pokeshop_processor_list");
 	public static ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = create("pokecenter_processor_list");
 	public static ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("frozen_shrine_processor_list");
+	public static ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("fiery_shrine_processor_list");
+	public static ResourceKey<StructureProcessorList> STATIC_SHRINE_PROCESSOR_LIST = create("static_shrine_processor_list");
 
 	/**
 	 * This method is used to bootstrap the processorlists.
@@ -35,6 +37,8 @@ public class GenerationsProcessorLists {
 		register(context, GYM_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new GymProcessor())));
 		register(context, POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new PokeCenterProcessor())));
 		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
+		register(context, FIERY_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
+		register(context, STATIC_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
 	}
 
 	/**
