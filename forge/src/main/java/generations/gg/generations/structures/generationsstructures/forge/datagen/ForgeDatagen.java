@@ -97,6 +97,9 @@ public class ForgeDatagen {
                     .addOptionalTag(Tags.Biomes.IS_DESERT)
                     .addOptionalTag(fabricTagMaker("desert"))
                     .addOptional(BOPBiomes.VOLCANIC_PLAINS.location());
+
+            tag(GenerationsBiomeTags.HAS_STATIC_SHRINE)
+                    .addTag(BiomeTags.IS_SAVANNA);
         }
     }
 
@@ -124,7 +127,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructuresKeys.ISLANDS.location());
             tag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
-                    .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location());
+                    .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.STATIC_SHRINE.location());
         }
     }
 

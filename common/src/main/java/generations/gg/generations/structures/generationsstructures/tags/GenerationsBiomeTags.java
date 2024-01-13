@@ -33,6 +33,9 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that can have a fiery shrine */
     public static final TagKey<Biome> HAS_FIERY_SHRINE = create("has_structure/fiery_shrine");
 
+    /** the tag for biomes that can have a static shrine */
+    public static final TagKey<Biome> HAS_STATIC_SHRINE = create("has_structure/static_shrine");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

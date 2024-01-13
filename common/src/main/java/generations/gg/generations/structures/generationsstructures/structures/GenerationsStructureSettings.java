@@ -114,6 +114,22 @@ public class GenerationsStructureSettings {
                 40
         ));
 
+        registerStructure(context, GenerationsStructuresKeys.STATIC_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_STATIC_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.STATIC_SHRINE),
+                Optional.empty(),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                false,
+                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                40
+        ));
+
         registerStructure(context, GenerationsStructuresKeys.ISLANDS, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_ISLANDS),

@@ -9,8 +9,6 @@ import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Objects;
-
 /**
  * The main class for the Generations-Structures mod.
  * @author J.T. McQuigg (JT122406)

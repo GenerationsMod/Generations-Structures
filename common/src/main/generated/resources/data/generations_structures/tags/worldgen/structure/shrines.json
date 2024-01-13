@@ -7,6 +7,10 @@
     {
       "id": "generations_structures:shrines/fiery_shrine",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/static_shrine",
+      "required": false
     }
   ]
 }
