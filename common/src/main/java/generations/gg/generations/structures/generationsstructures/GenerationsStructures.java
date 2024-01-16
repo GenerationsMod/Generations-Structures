@@ -35,8 +35,9 @@ public class GenerationsStructures {
         CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
         INTEGRATION = !CONFIG.integration.AllowIntegrations ? new Default() : integration;
         GenerationsProcessorLists.init();
-        if (integration.getModId().equals("biomesoplenty")  && !CONFIG.integration.AllowBiomesOPlentyIntegration)
-            INTEGRATION = new Default();
+        if (integration.getModId() != null)
+            if (integration.getModId().equals("biomesoplenty")  && !CONFIG.integration.AllowBiomesOPlentyIntegration)
+                INTEGRATION = new Default();
     }
 
     /**

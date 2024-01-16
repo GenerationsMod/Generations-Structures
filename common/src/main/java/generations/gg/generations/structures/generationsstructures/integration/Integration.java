@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.integration;
 
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Integration interface for Generations Structures
@@ -14,7 +15,7 @@ public interface Integration {
      * Returns the mod id of the integration
      * @return the mod id of the integration
      */
-    String getModId();
+    @Nullable String getModId();
 
     /**
      * Returns the block to replace birch trapdoors with
