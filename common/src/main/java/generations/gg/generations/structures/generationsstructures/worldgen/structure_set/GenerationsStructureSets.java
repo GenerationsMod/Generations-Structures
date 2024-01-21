@@ -27,6 +27,7 @@ public class GenerationsStructureSets {
     public static ResourceKey<StructureSet> FROZEN_SHRINE = create("frozen_shrine");
     public static ResourceKey<StructureSet> FIERY_SHRINE = create("fiery_shrine");
     public static ResourceKey<StructureSet> STATIC_SHRINE = create("static_shrine");
+    public static ResourceKey<StructureSet> LUGIA_SHRINE = create("lugia_shrine");
     public static ResourceKey<StructureSet> ISLANDS = create("islands");
 
     /**
@@ -66,6 +67,9 @@ public class GenerationsStructureSets {
 
         register(context, STATIC_SHRINE, GenerationsStructuresKeys.STATIC_SHRINE,
                 new RandomSpreadStructurePlacement(4096, 500, RandomSpreadType.LINEAR, 442038945));
+
+        register(context, LUGIA_SHRINE, GenerationsStructuresKeys.LUGIA_SHRINE,
+                new RandomSpreadStructurePlacement(4096, 500, RandomSpreadType.LINEAR, 751341351));
     }
 
     /**

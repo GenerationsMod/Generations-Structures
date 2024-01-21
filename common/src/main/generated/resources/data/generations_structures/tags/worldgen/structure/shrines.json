@@ -11,6 +11,10 @@
     {
       "id": "generations_structures:shrines/static_shrine",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/lugia_shrine",
+      "required": false
     }
   ]
 }

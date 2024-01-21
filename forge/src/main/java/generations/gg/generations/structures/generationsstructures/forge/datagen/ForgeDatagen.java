@@ -100,6 +100,10 @@ public class ForgeDatagen {
 
             tag(GenerationsBiomeTags.HAS_STATIC_SHRINE)
                     .addTag(BiomeTags.IS_SAVANNA);
+
+            tag(GenerationsBiomeTags.HAS_LUGIA_SHRINE)
+                    .addTag(BiomeTags.IS_MOUNTAIN)
+                    .addTag(BiomeTags.IS_FOREST);
         }
     }
 
@@ -128,7 +132,8 @@ public class ForgeDatagen {
             tag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location())
-                    .addOptional(GenerationsStructuresKeys.STATIC_SHRINE.location());
+                    .addOptional(GenerationsStructuresKeys.STATIC_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.LUGIA_SHRINE.location());
         }
     }
 

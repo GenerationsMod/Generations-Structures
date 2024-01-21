@@ -41,6 +41,7 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> FROZEN_SHRINE = createKey("shrines/frozen_shrine");
     ResourceKey<Structure> FIERY_SHRINE = createKey("shrines/fiery_shrine");
     ResourceKey<Structure> STATIC_SHRINE = createKey("shrines/static_shrine");
+    ResourceKey<Structure> LUGIA_SHRINE = createKey("shrines/lugia_shrine");
 
     /**
      * Holds the ResourceKeys for the village roads.
