@@ -124,14 +124,10 @@ publisher {
     changelog.set("test changelog")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
-    setLoaders(ModLoader.FORGE)
-    setCurseEnvironment(CurseEnvironment.BOTH)
-    val depends = mutableListOf(
-        "generations"
-    )
-    val softDepends = mutableListOf(
-        "biomes-o-plenty"
-    )
+    setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
+    setCurseEnvironment(CurseEnvironment.SERVER)
+    val depends = mutableListOf("generations-core")
+    val softDepends = mutableListOf("biomes-o-plenty")
     curseDepends.required.set(depends)
     curseDepends.optional.set(softDepends)
     modrinthDepends.required.set(depends)
