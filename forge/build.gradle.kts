@@ -110,8 +110,8 @@ components {
 
 publisher {
     apiKeys {
-        curseforge(project.properties["curseforge_token"].toString())
-        modrinth(project.properties["modrinth_token"].toString())
+        curseforge(getPublishingCredentials().first)
+        modrinth(getPublishingCredentials().second)
         github(project.properties["github_token"].toString())
     }
 
@@ -160,4 +160,10 @@ private fun getGensCredentials(): Pair<String?, String?> {
     val username = (project.findProperty("gensUsername") ?: System.getenv("GENS_USERNAME") ?: "") as String?
     val password = (project.findProperty("gensPassword") ?: System.getenv("GENS_PASSWORD") ?: "") as String?
     return Pair(username, password)
+}
+
+private fun getPublishingCredentials(): Pair<String?, String?> {
+    val curseForgeToken = (project.findProperty("curseforge_token") ?: System.getenv("CURSEFORGE_TOKEN") ?: "") as String?
+    val modrinthToken = (project.findProperty("modrinth_token") ?: System.getenv("MODRINTH_TOKEN") ?: "") as String?
+    return Pair(curseForgeToken, modrinthToken)
 }
