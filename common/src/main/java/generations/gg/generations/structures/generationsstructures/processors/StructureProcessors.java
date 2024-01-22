@@ -8,6 +8,7 @@ import generations.gg.generations.structures.generationsstructures.processors.st
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.lugia.LugiaShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineRandomizerProcessor;
 import net.minecraft.core.Registry;
@@ -29,6 +30,7 @@ public class StructureProcessors {
     public static StructureProcessorType<FieryShrineProcessor> FIERY_SHRINE_PROCESSOR = () -> FieryShrineProcessor.CODEC;
     public static StructureProcessorType<StaticShrineRandomizerProcessor> STATIC_SHRINE_RANDOMIZER_PROCESSOR = () -> StaticShrineRandomizerProcessor.CODEC;
     public static StructureProcessorType<StaticShrineProcessor> STATIC_SHRINE_PROCESSOR = () -> StaticShrineProcessor.CODEC;
+    public static StructureProcessorType<LugiaShrineRandomizerProcessor> LUGIA_SHRINE_RANDOMIZER_PROCESSOR = () -> LugiaShrineRandomizerProcessor.CODEC;
 
 
     /**
@@ -44,6 +46,7 @@ public class StructureProcessors {
         register("fiery_shrine_processor", FIERY_SHRINE_PROCESSOR);
         register("static_shrine_randomizer_processor", STATIC_SHRINE_RANDOMIZER_PROCESSOR);
         register("static_shrine_processor", STATIC_SHRINE_PROCESSOR);
+        register("lugia_shrine_randomizer_processor", LUGIA_SHRINE_RANDOMIZER_PROCESSOR);
     }
 
     /**

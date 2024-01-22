@@ -7,6 +7,7 @@ import generations.gg.generations.structures.generationsstructures.processors.st
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.lugia.LugiaShrineRandomizerProcessor;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -26,6 +27,7 @@ public class GenerationsProcessorLists {
 	public static ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("frozen_shrine_processor_list");
 	public static ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("fiery_shrine_processor_list");
 	public static ResourceKey<StructureProcessorList> STATIC_SHRINE_PROCESSOR_LIST = create("static_shrine_processor_list");
+	public static ResourceKey<StructureProcessorList> LUGIA_SHRINE_PROCESSOR_LIST = create("lugia_shrine_processor_list");
 
 	/**
 	 * This method is used to bootstrap the processorlists.
@@ -39,6 +41,7 @@ public class GenerationsProcessorLists {
 		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
 		register(context, FIERY_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
 		register(context, STATIC_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
+		register(context, LUGIA_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new LugiaShrineRandomizerProcessor())));
 	}
 
 	/**
