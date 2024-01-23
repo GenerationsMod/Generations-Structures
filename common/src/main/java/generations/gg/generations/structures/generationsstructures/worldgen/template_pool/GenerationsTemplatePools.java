@@ -100,7 +100,7 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, LUGIA_SHRINE, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LUGIA_SHRINE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LUGIA_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.LUGIA_SHRINE_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 

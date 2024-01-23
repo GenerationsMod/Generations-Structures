@@ -37,6 +37,7 @@ public class StructureProcessors {
      * Registers all custom structure processor types.
      */
     public static void init() {
+        GenerationsStructures.LOGGER.info("Registering Structure Processors");
         register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
         register("gym_processor", GYM_PROCESSOR);
         register("pokecenter_processor", POKECENTER_PROCESSOR);

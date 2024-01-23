@@ -42,5 +42,4 @@ public class GenerationsStructuresForge {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(StructureProcessors::init);
     }
-
 }

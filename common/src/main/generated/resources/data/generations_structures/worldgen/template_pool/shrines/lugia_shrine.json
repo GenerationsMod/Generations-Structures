@@ -4,7 +4,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "generations_structures:shrines/lugia_shrine",
-        "processors": "minecraft:empty",
+        "processors": "generations_structures:lugia_shrine_processor_list",
         "projection": "rigid"
       },
       "weight": 1

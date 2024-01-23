@@ -32,9 +32,8 @@ public class FrozenShrineRandomizerProcessor extends StructureProcessor {
         return relativeBlockInfo;
     }
 
-    public static Block randomizeBlock(Block block) {
-        int random = new Random().nextInt(6);
-        switch (random) {
+    private Block randomizeBlock(Block block) {
+        switch (new Random().nextInt(6)) {
             case 0, 1 -> {
                 return Blocks.SNOW_BLOCK;
             }

@@ -2,12 +2,16 @@ package generations.gg.generations.structures.generationsstructures.processors;
 
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.lugia.LugiaShrineRandomizerProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineRandomizerProcessor;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -39,8 +43,8 @@ public class GenerationsProcessorLists {
 		register(context, GYM_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new GymProcessor())));
 		register(context, POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new PokeCenterProcessor())));
 		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
-		register(context, FIERY_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
-		register(context, STATIC_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
+		register(context, FIERY_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FieryShrineRandomizerProcessor(), new FieryShrineProcessor())));
+		register(context, STATIC_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new StaticShrineRandomizerProcessor(), new StaticShrineProcessor())));
 		register(context, LUGIA_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new LugiaShrineRandomizerProcessor())));
 	}
 
