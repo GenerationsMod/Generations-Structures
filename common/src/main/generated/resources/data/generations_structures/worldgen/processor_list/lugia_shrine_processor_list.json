@@ -1,7 +1,0 @@
-{
-  "processors": [
-    {
-      "processor_type": "generations_structures:lugia_shrine_randomizer_processor"
-    }
-  ]
-}

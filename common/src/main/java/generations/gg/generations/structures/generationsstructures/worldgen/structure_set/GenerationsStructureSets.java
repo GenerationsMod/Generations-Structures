@@ -24,10 +24,10 @@ public class GenerationsStructureSets {
     public static ResourceKey<StructureSet> COMET = create("comet");
     public static ResourceKey<StructureSet> POKESHOPS = create("pokeshops");
     public static ResourceKey<StructureSet> SPIKE = create("spike");
-    public static ResourceKey<StructureSet> FROZEN_SHRINE = create("frozen_shrine");
-    public static ResourceKey<StructureSet> FIERY_SHRINE = create("fiery_shrine");
-    public static ResourceKey<StructureSet> STATIC_SHRINE = create("static_shrine");
-    public static ResourceKey<StructureSet> LUGIA_SHRINE = create("lugia_shrine");
+    public static ResourceKey<StructureSet> FROZEN_SHRINE = create("shrines/frozen_shrine");
+    public static ResourceKey<StructureSet> FIERY_SHRINE = create("shrines/fiery_shrine");
+    public static ResourceKey<StructureSet> STATIC_SHRINE = create("shrines/static_shrine");
+    public static ResourceKey<StructureSet> LUGIA_SHRINE = create("shrines/lugia_shrine");
     public static ResourceKey<StructureSet> ISLANDS = create("islands");
 
     /**

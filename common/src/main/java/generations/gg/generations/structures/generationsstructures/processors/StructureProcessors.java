@@ -41,13 +41,13 @@ public class StructureProcessors {
         register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
         register("gym_processor", GYM_PROCESSOR);
         register("pokecenter_processor", POKECENTER_PROCESSOR);
-        register("frozen_shrine_randomizer_processor", FROZEN_SHRINE_RANDOMIZER_PROCESSOR);
-        register("frozen_shrine_processor", FROZEN_SHRINE_PROCESSOR);
-        register("fiery_shrine_randomizer_processor", FIERY_SHRINE_RANDOMIZER_PROCESSOR);
-        register("fiery_shrine_processor", FIERY_SHRINE_PROCESSOR);
-        register("static_shrine_randomizer_processor", STATIC_SHRINE_RANDOMIZER_PROCESSOR);
-        register("static_shrine_processor", STATIC_SHRINE_PROCESSOR);
-        register("lugia_shrine_randomizer_processor", LUGIA_SHRINE_RANDOMIZER_PROCESSOR);
+        register("shrines/frozen_shrine_randomizer_processor", FROZEN_SHRINE_RANDOMIZER_PROCESSOR);
+        register("shrines/frozen_shrine_processor", FROZEN_SHRINE_PROCESSOR);
+        register("shrines/fiery_shrine_randomizer_processor", FIERY_SHRINE_RANDOMIZER_PROCESSOR);
+        register("shrines/fiery_shrine_processor", FIERY_SHRINE_PROCESSOR);
+        register("shrines/static_shrine_randomizer_processor", STATIC_SHRINE_RANDOMIZER_PROCESSOR);
+        register("shrines/static_shrine_processor", STATIC_SHRINE_PROCESSOR);
+        register("shrines/lugia_shrine_randomizer_processor", LUGIA_SHRINE_RANDOMIZER_PROCESSOR);
     }
 
     /**
