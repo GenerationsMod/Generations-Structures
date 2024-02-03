@@ -38,6 +38,8 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = create("shrines/static_shrine");
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = create("shrines/lugia_shrine");
 
+    public static final ResourceKey<StructureTemplatePool> GENERATIONS = create("generations");
+
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
         register(context, BEAST_BALLOON, Pools.EMPTY, ImmutableList.of(
@@ -101,6 +103,10 @@ public class GenerationsTemplatePools {
 
         register(context, LUGIA_SHRINE, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LUGIA_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.LUGIA_SHRINE_PROCESSOR_LIST)), 1)
+        ), StructureTemplatePool.Projection.RIGID);
+
+        register(context, GENERATIONS, Pools.EMPTY, ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/poke_street").toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 

@@ -9,6 +9,6 @@ public class LifeCycleEvents {
 	 * @see ServerAboutToStartEvent
 	 */
 	public static void aboutToStartEvent(final ServerAboutToStartEvent event) {
-		PlaceInVillage.addStructuresToVillages(event.getServer());
+		//PlaceInVillage.addStructuresToVillages(event.getServer());
 	}
 }
