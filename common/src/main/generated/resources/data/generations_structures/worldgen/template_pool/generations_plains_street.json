@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "generations_structures:streets/poke_street",
+        "location": "generations_structures:streets/plains/poke_street",
         "processors": "minecraft:street_plains",
         "projection": "rigid"
       },

@@ -30,10 +30,12 @@ public abstract class GeneratePieceMixin {
 
         String poolPath = resourceKey.location().getPath();
         if (poolPath.endsWith("/streets")) {
-            ResourceKey<StructureTemplatePool> generationsPoolKey = GenerationsTemplatePools.GENERATIONS;
-            if (pools.getHolder(generationsPoolKey).isPresent()) {
-                hasGenerationsStructure = true;
-                return generationsPoolKey;
+            if (poolPath.contains("plains")) {
+                ResourceKey<StructureTemplatePool> generationsPoolKey = GenerationsTemplatePools.GENERATIONS_PLAINS_STREET;
+                if (pools.getHolder(generationsPoolKey).isPresent()) {
+                    hasGenerationsStructure = true;
+                    return generationsPoolKey;
+                }
             }
         }
 
