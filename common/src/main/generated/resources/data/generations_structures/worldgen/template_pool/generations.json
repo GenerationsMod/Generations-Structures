@@ -4,7 +4,7 @@
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "generations_structures:streets/poke_street",
-        "processors": "minecraft:empty",
+        "processors": "minecraft:street_plains",
         "projection": "rigid"
       },
       "weight": 1

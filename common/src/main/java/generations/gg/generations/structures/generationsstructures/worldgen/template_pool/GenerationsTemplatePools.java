@@ -106,7 +106,7 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, GENERATIONS, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/poke_street").toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+                Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/poke_street").toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 

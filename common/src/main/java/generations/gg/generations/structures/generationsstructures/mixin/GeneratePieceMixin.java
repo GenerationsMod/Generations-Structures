@@ -25,12 +25,10 @@ public abstract class GeneratePieceMixin {
 
     @ModifyArg(method = "tryPlacingChildren", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/Registry;getHolder(Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;"))
     private ResourceKey<StructureTemplatePool> limitVillageStructures(ResourceKey<StructureTemplatePool> resourceKey) {
-        if (hasGenerationsStructure)
+        if (hasGenerationsStructure || !GenerationsStructures.CONFIG.villageStructureGeneration.AllowStructuresInVillages)
             return resourceKey;
 
-
         String poolPath = resourceKey.location().getPath();
-        GenerationsStructures.LOGGER.info("Pool Path: " + poolPath);
         if (poolPath.endsWith("/streets")) {
             ResourceKey<StructureTemplatePool> generationsPoolKey = GenerationsTemplatePools.GENERATIONS;
             if (pools.getHolder(generationsPoolKey).isPresent()) {
