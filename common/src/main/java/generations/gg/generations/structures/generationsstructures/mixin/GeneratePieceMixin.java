@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.mixin;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
+import generations.gg.generations.structures.generationsstructures.village.VanillaVillages;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -30,14 +31,9 @@ public abstract class GeneratePieceMixin {
 
         String poolPath = resourceKey.location().getPath();
         if (poolPath.endsWith("/streets")) {
-            if (poolPath.contains("plains")) {
-                ResourceKey<StructureTemplatePool> generationsPoolKey = GenerationsTemplatePools.GENERATIONS_PLAINS_STREET;
-                if (pools.getHolder(generationsPoolKey).isPresent()) {
-                    hasGenerationsStructure = true;
-                    return generationsPoolKey;
-                }
-            } else if (poolPath.contains("desert")) {
-                ResourceKey<StructureTemplatePool> generationsPoolKey = GenerationsTemplatePools.GENERATIONS_DESERT_STREET;
+            VanillaVillages village;
+            if ((village = VanillaVillages.containsName(poolPath)) != null) {
+                ResourceKey<StructureTemplatePool> generationsPoolKey = village.getPool();
                 if (pools.getHolder(generationsPoolKey).isPresent()) {
                     hasGenerationsStructure = true;
                     return generationsPoolKey;
