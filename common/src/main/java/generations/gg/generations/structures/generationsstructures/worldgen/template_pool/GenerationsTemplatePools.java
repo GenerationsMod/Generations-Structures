@@ -7,10 +7,7 @@ import generations.gg.generations.structures.generationsstructures.processors.Ge
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.PlainVillagePools;
-import net.minecraft.data.worldgen.Pools;
-import net.minecraft.data.worldgen.ProcessorLists;
+import net.minecraft.data.worldgen.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
@@ -106,13 +103,13 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LUGIA_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.LUGIA_SHRINE_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
-        register(context, GENERATIONS_PLAINS_STREET, Pools.EMPTY, ImmutableList.of(
+        register(context, GENERATIONS_PLAINS_STREET, PlainVillagePools.TERMINATORS_KEY, ImmutableList.of(
                 Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/plains/poke_street").toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
-        ), StructureTemplatePool.Projection.RIGID);
+        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
-        register(context, GENERATIONS_DESERT_STREET, Pools.EMPTY, ImmutableList.of(
+        register(context, GENERATIONS_DESERT_STREET, DesertVillagePools.TERMINATORS_KEY, ImmutableList.of(
                 Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/desert/poke_street").toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
-        ), StructureTemplatePool.Projection.RIGID);
+        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
     }
 
     private static ResourceKey<StructureTemplatePool> create(String name) {

@@ -5,10 +5,10 @@
         "element_type": "minecraft:legacy_single_pool_element",
         "location": "generations_structures:streets/desert/poke_street",
         "processors": "minecraft:empty",
-        "projection": "rigid"
+        "projection": "terrain_matching"
       },
       "weight": 1
     }
   ],
-  "fallback": "minecraft:empty"
+  "fallback": "minecraft:village/desert/terminators"
 }
