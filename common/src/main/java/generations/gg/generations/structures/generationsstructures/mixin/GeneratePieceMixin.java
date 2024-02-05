@@ -36,6 +36,12 @@ public abstract class GeneratePieceMixin {
                     hasGenerationsStructure = true;
                     return generationsPoolKey;
                 }
+            } else if (poolPath.contains("desert")) {
+                ResourceKey<StructureTemplatePool> generationsPoolKey = GenerationsTemplatePools.GENERATIONS_DESERT_STREET;
+                if (pools.getHolder(generationsPoolKey).isPresent()) {
+                    hasGenerationsStructure = true;
+                    return generationsPoolKey;
+                }
             }
         }
 

@@ -31,7 +31,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKESHOP = create("scarlet_pokeshop");
     public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
-    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/plains/poke_village");
+    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/common/poke_village");
     public static final ResourceKey<StructureTemplatePool> ISLANDS = create("islands");
     public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = create("shrines/frozen_shrine");
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = create("shrines/fiery_shrine");
@@ -39,6 +39,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = create("shrines/lugia_shrine");
 
     public static final ResourceKey<StructureTemplatePool> GENERATIONS_PLAINS_STREET = create("generations_plains_street");
+    public static final ResourceKey<StructureTemplatePool> GENERATIONS_DESERT_STREET = create("generations_desert_street");
 
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
@@ -81,7 +82,7 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
         register(context, POKE_VILLAGE, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
+                //Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
                 Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2)
         ), StructureTemplatePool.Projection.RIGID);
 
@@ -107,6 +108,10 @@ public class GenerationsTemplatePools {
 
         register(context, GENERATIONS_PLAINS_STREET, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/plains/poke_street").toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
+        ), StructureTemplatePool.Projection.RIGID);
+
+        register(context, GENERATIONS_DESERT_STREET, Pools.EMPTY, ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/desert/poke_street").toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 
