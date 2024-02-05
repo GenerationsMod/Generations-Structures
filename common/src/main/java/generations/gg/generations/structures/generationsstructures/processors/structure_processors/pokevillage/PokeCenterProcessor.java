@@ -1,10 +1,11 @@
-package generations.gg.generations.structures.generationsstructures.processors.structure_processors;
+package generations.gg.generations.structures.generationsstructures.processors.structure_processors.pokevillage;
 
 import com.mojang.serialization.Codec;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
+import generations.gg.generations.structures.generationsstructures.village.VanillaVillages;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;

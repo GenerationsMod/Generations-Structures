@@ -2,6 +2,9 @@
   "processors": [
     {
       "processor_type": "generations_structures:pokecenter_processor"
+    },
+    {
+      "processor_type": "generations_structures:pokecenter_mart_desert_processor"
     }
   ]
 }
