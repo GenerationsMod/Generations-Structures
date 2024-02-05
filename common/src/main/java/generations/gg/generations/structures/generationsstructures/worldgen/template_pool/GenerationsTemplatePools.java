@@ -28,15 +28,19 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKESHOP = create("scarlet_pokeshop");
     public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
-    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/common/poke_village");
+    public static final ResourceKey<StructureTemplatePool> POKE_CENTER = create("village/common/poke_center");
+    public static final ResourceKey<StructureTemplatePool> POKE_MART = create("village/common/poke_mart");
+
     public static final ResourceKey<StructureTemplatePool> ISLANDS = create("islands");
     public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = create("shrines/frozen_shrine");
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = create("shrines/fiery_shrine");
     public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = create("shrines/static_shrine");
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = create("shrines/lugia_shrine");
 
-    public static final ResourceKey<StructureTemplatePool> GENERATIONS_PLAINS_STREET = create("village/plains/streets");
-    public static final ResourceKey<StructureTemplatePool> GENERATIONS_DESERT_STREET = create("village/desert/streets");
+    public static final ResourceKey<StructureTemplatePool> POKECENTER_PLAINS_STREET = create("village/plains/streets/pokecenter");
+    public static final ResourceKey<StructureTemplatePool> POKEMART_PLAINS_STREET = create("village/plains/streets/pokemart");
+    public static final ResourceKey<StructureTemplatePool> POKECENTER_DESERT_STREET = create("village/desert/streets/pokecenter");
+    public static final ResourceKey<StructureTemplatePool> POKEMART_DESERT_STREET = create("village/desert/streets/pokemart");
 
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
@@ -78,9 +82,12 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SPIKE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
-        register(context, POKE_VILLAGE, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKEMART.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2)
+        register(context, POKE_CENTER, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 1)
+        ), StructureTemplatePool.Projection.RIGID);
+
+        register(context, POKE_MART, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKEMART.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, ISLANDS, Pools.EMPTY, ImmutableList.of(
@@ -103,12 +110,20 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LUGIA_SHRINE.location().toString(), getProcessor(context, GenerationsProcessorLists.LUGIA_SHRINE_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
-        register(context, GENERATIONS_PLAINS_STREET, PlainVillagePools.TERMINATORS_KEY, ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_PLAINS_STREET.location().toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
+        register(context, POKECENTER_PLAINS_STREET, PlainVillagePools.TERMINATORS_KEY, ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_CENTER_PLAINS_STREET.location().toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
-        register(context, GENERATIONS_DESERT_STREET, DesertVillagePools.TERMINATORS_KEY, ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_DESERT_STREET.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+        register(context, POKEMART_PLAINS_STREET, PlainVillagePools.TERMINATORS_KEY, ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_MART_PLAINS_STREET.location().toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
+        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
+
+        register(context, POKECENTER_DESERT_STREET, DesertVillagePools.TERMINATORS_KEY, ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_CENTER_DESERT_STREET.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
+
+        register(context, POKEMART_DESERT_STREET, DesertVillagePools.TERMINATORS_KEY, ImmutableList.of(
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_MART_DESERT_STREET.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
     }
 

@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.village;
 
 
+import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
@@ -12,21 +13,21 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import org.jetbrains.annotations.NotNull;
 
 public enum VanillaVillages {
-    PLAINS("plains", ProcessorLists.STREET_PLAINS, GenerationsTemplatePools.GENERATIONS_PLAINS_STREET, BiomeTags.HAS_VILLAGE_PLAINS),
-    DESERT("desert", ProcessorLists.EMPTY, GenerationsTemplatePools.GENERATIONS_DESERT_STREET, BiomeTags.HAS_VILLAGE_DESERT),
+    PLAINS("plains", ProcessorLists.STREET_PLAINS, TemplateLists.of(GenerationsTemplatePools.POKECENTER_PLAINS_STREET, GenerationsTemplatePools.POKEMART_PLAINS_STREET), BiomeTags.HAS_VILLAGE_PLAINS),
+    DESERT("desert", ProcessorLists.EMPTY, TemplateLists.of(GenerationsTemplatePools.POKECENTER_DESERT_STREET, GenerationsTemplatePools.POKEMART_DESERT_STREET), BiomeTags.HAS_VILLAGE_DESERT),
     SAVANNA("savanna", ProcessorLists.STREET_SAVANNA, null, BiomeTags.HAS_VILLAGE_SAVANNA),
     SNOWY("snowy", ProcessorLists.STREET_SNOWY_OR_TAIGA, null, BiomeTags.HAS_VILLAGE_SNOWY),
     TAIGA("taiga", ProcessorLists.STREET_SNOWY_OR_TAIGA, null, BiomeTags.HAS_VILLAGE_TAIGA);
 
     private final String name;
     private final ResourceKey<StructureProcessorList> processorList;
-    private final ResourceKey<StructureTemplatePool> pool;
+    private final TemplateLists pools;
     private final TagKey<Biome> hasVillage;
 
-    VanillaVillages(String name, ResourceKey<StructureProcessorList> processorList, ResourceKey<StructureTemplatePool> pool, TagKey<Biome> hasVillage) {
+    VanillaVillages(String name, ResourceKey<StructureProcessorList> processorList, TemplateLists pools, TagKey<Biome> hasVillage) {
         this.name = name;
         this.processorList = processorList;
-        this.pool = pool;
+        this.pools = pools;
         this.hasVillage = hasVillage;
     }
 
@@ -38,8 +39,8 @@ public enum VanillaVillages {
         return processorList;
     }
 
-    public @NotNull ResourceKey<StructureTemplatePool> getPool() {
-        return pool;
+    public @NotNull TemplateLists getPools() {
+        return pools;
     }
 
     public @NotNull TagKey<Biome> getVillageTag() {

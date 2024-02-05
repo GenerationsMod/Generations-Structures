@@ -18,7 +18,11 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public abstract class GeneratePieceMixin {
 
     @Unique
-    private boolean hasGenerationsStructure;
+    private boolean hasPokeCenter;
+
+    @Unique
+    private boolean hasPokeMart;
+
     @Final
     @Shadow
     private Registry<StructureTemplatePool> pools;
@@ -32,12 +36,12 @@ public abstract class GeneratePieceMixin {
 
     @ModifyArg(method = "tryPlacingChildren", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/Registry;getHolder(Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;"))
     private ResourceKey<StructureTemplatePool> limitVillageStructures(ResourceKey<StructureTemplatePool> resourceKey) {
-        if (hasGenerationsStructure || !GenerationsStructures.CONFIG.villageStructureGeneration.AllowStructuresInVillages)
+        if ((hasPokeCenter && hasPokeMart) || !GenerationsStructures.CONFIG.villageStructureGeneration.AllowStructuresInVillages)
             return resourceKey;
 
         GenerationsStructures.LOGGER.info("randomInt = " + randomInt);
         if (randomInt == -1) {
-            randomInt = new Random().nextInt(4);
+            randomInt = new Random().nextInt(3);
             randomCheck = 0;
         }
 
@@ -51,12 +55,20 @@ public abstract class GeneratePieceMixin {
             if ((village = VanillaVillages.containsName(poolPath)) != null) {
                 if (village != VanillaVillages.PLAINS && village != VanillaVillages.DESERT)
                     return resourceKey;
-                ResourceKey<StructureTemplatePool> generationsPoolKey = village.getPool();
-                if (pools.getHolder(generationsPoolKey).isPresent()) {
-                    hasGenerationsStructure = true;
+                GenerationsStructures.LOGGER.info("We are in a village we can spawn shit in");
+
+                if (!hasPokeCenter && pools.getHolder(village.getPools().getPokeCenter()).isEmpty()) {
+                    GenerationsStructures.LOGGER.info("Spawning PokeCenter");
                     randomInt = -1;
                     randomCheck = 0;
-                    return generationsPoolKey;
+                    hasPokeCenter = true;
+                    return village.getPools().getPokeCenter();
+                } else if (hasPokeMart && pools.getHolder(village.getPools().getPokeMart()).isEmpty()){
+                    GenerationsStructures.LOGGER.info("Spawning PokeMart");
+                    randomInt = -1;
+                    randomCheck = 0;
+                    hasPokeMart = true;
+                    return village.getPools().getPokeMart();
                 }
             }
         }
