@@ -35,8 +35,8 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = create("shrines/static_shrine");
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = create("shrines/lugia_shrine");
 
-    public static final ResourceKey<StructureTemplatePool> GENERATIONS_PLAINS_STREET = create("generations_plains_street");
-    public static final ResourceKey<StructureTemplatePool> GENERATIONS_DESERT_STREET = create("generations_desert_street");
+    public static final ResourceKey<StructureTemplatePool> GENERATIONS_PLAINS_STREET = create("village/plains/streets");
+    public static final ResourceKey<StructureTemplatePool> GENERATIONS_DESERT_STREET = create("village/desert/streets");
 
 
     public static void bootstrap(BootstapContext<StructureTemplatePool> context) {
@@ -104,11 +104,11 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, GENERATIONS_PLAINS_STREET, PlainVillagePools.TERMINATORS_KEY, ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/plains/poke_street").toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_PLAINS_STREET.location().toString(), getProcessor(context, ProcessorLists.STREET_PLAINS)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
         register(context, GENERATIONS_DESERT_STREET, DesertVillagePools.TERMINATORS_KEY, ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructures.id("streets/desert/poke_street").toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.GENERATIONS_DESERT_STREET.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
     }
 

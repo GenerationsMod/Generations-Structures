@@ -3,12 +3,12 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "generations_structures:streets/plains/poke_street",
-        "processors": "minecraft:street_plains",
+        "location": "generations_structures:village/desert/streets/gens_street_1",
+        "processors": "minecraft:empty",
         "projection": "terrain_matching"
       },
       "weight": 1
     }
   ],
-  "fallback": "minecraft:village/plains/terminators"
+  "fallback": "minecraft:village/desert/terminators"
 }

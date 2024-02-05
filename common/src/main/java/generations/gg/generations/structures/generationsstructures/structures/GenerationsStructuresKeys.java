@@ -46,6 +46,9 @@ public interface GenerationsStructuresKeys {
     /**
      * Holds the ResourceKeys for the village roads.
      */
+    ResourceKey<Structure> GENERATIONS_PLAINS_STREET = createKey("village/plains/streets/gens_street_1");
+    ResourceKey<Structure> GENERATIONS_DESERT_STREET = createKey("village/desert/streets/gens_street_1");
+
     interface GenerationsStreetKeys {
         ResourceKey<Structure> POKE_STREET = createKey("streets/poke_street");
     }
