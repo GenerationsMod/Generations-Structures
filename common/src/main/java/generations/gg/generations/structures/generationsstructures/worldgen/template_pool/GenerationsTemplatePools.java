@@ -82,7 +82,7 @@ public class GenerationsTemplatePools {
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
         register(context, POKE_VILLAGE, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
-                //Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
+                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKEMART.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
                 Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2)
         ), StructureTemplatePool.Projection.RIGID);
 
