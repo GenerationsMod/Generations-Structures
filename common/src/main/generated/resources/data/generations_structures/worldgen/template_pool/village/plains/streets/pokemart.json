@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "generations_structures:village/plains/streets/gens_street_1",
+        "location": "generations_structures:village/plains/streets/gens_mart_street_1",
         "processors": "minecraft:street_plains",
         "projection": "terrain_matching"
       },

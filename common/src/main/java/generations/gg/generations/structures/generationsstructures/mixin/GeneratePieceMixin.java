@@ -28,10 +28,10 @@ public abstract class GeneratePieceMixin {
     private Registry<StructureTemplatePool> pools;
 
     @Unique
-    private static int randomCheck = 0;
+    private int randomCheck = 0;
 
     @Unique
-    private static int randomInt = -1;
+    private int randomInt = -1;
 
 
     @ModifyArg(method = "tryPlacingChildren", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/Registry;getHolder(Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;"))
@@ -39,35 +39,44 @@ public abstract class GeneratePieceMixin {
         if ((hasPokeCenter && hasPokeMart) || !GenerationsStructures.CONFIG.villageStructureGeneration.AllowStructuresInVillages)
             return resourceKey;
 
+        GenerationsStructures.LOGGER.info(resourceKey.location().getPath());
+        /*
         GenerationsStructures.LOGGER.info("randomInt = " + randomInt);
         if (randomInt == -1) {
             randomInt = new Random().nextInt(3);
             randomCheck = 0;
         }
 
+         */
+
         String poolPath = resourceKey.location().getPath();
         if (poolPath.endsWith("/streets")) {
+            /*
             if (randomCheck != randomInt) {
                 randomCheck++;
                 return resourceKey;
             }
+
+             */
             VanillaVillages village;
             if ((village = VanillaVillages.containsName(poolPath)) != null) {
                 if (village != VanillaVillages.PLAINS && village != VanillaVillages.DESERT)
                     return resourceKey;
                 GenerationsStructures.LOGGER.info("We are in a village we can spawn shit in");
-
-                if (!hasPokeCenter && pools.getHolder(village.getPools().getPokeCenter()).isEmpty()) {
+                GenerationsStructures.LOGGER.info(hasPokeCenter);
+                if (!hasPokeCenter && pools.getHolder(village.getPools().getPokeCenter()).isPresent()) {
                     GenerationsStructures.LOGGER.info("Spawning PokeCenter");
-                    randomInt = -1;
-                    randomCheck = 0;
+                    //reset();
                     hasPokeCenter = true;
+                    GenerationsStructures.LOGGER.info(village.getPools().getPokeCenter().toString());
                     return village.getPools().getPokeCenter();
-                } else if (hasPokeMart && pools.getHolder(village.getPools().getPokeMart()).isEmpty()){
+                }
+
+                if (!hasPokeMart && pools.getHolder(village.getPools().getPokeMart()).isPresent()){
                     GenerationsStructures.LOGGER.info("Spawning PokeMart");
-                    randomInt = -1;
-                    randomCheck = 0;
+                    //reset();
                     hasPokeMart = true;
+                    GenerationsStructures.LOGGER.info(village.getPools().getPokeMart().toString());
                     return village.getPools().getPokeMart();
                 }
             }
@@ -75,4 +84,13 @@ public abstract class GeneratePieceMixin {
 
         return resourceKey;
     }
+
+
+    @Unique
+    private void reset(){
+        randomInt = -1;
+        randomCheck = 0;
+    }
 }
+
+
