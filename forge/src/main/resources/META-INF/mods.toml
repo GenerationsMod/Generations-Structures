@@ -43,13 +43,6 @@ Adds structures for the Generations Mod Family
     side = "BOTH"
 
 [[dependencies.generations_structures]]
-    modId = "byg"
-    mandatory = false
-    versionRange = "[4.0.0.0,)"
-    ordering = "AFTER"
-    side = "BOTH"
-
-[[dependencies.generations_structures]]
     modId="cobblemon"
     mandatory = true
     versionRange = "1.4.0+1.20.1"

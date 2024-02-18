@@ -9,7 +9,6 @@ public class Config {
 
     public static class Integration {
         public boolean AllowIntegrations = true;
-        public boolean AllowBYGIntegration = true;
         public boolean AllowBiomesOPlentyIntegration = true;
     }
 
