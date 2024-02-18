@@ -17,7 +17,7 @@ Adds structures for the Generations Mod Family
 [[dependencies.generations_structures]]
     modId = "forge"
     mandatory = true
-    versionRange = "[47.2,)"
+    versionRange = "[47.1.100,)"
     ordering = "NONE"
     side = "BOTH"
 
