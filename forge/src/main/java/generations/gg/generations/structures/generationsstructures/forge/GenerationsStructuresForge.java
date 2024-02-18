@@ -1,10 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.forge;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.byg.BYG;
 import generations.gg.generations.structures.generationsstructures.forge.events.LifeCycleEvents;
 import generations.gg.generations.structures.generationsstructures.forge.integration.BOP;
-import generations.gg.generations.structures.generationsstructures.forge.integration.BYGBOP;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
@@ -25,9 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class GenerationsStructuresForge {
     public GenerationsStructuresForge() {
         Integration integration;
-        if (ModList.get().isLoaded(biomesoplenty.core.BiomesOPlenty.MOD_ID) && ModList.get().isLoaded(potionstudios.byg.BYG.MOD_ID)) integration = new BYGBOP();
-        else if (ModList.get().isLoaded(biomesoplenty.core.BiomesOPlenty.MOD_ID)) integration = new BOP();
-        else if (ModList.get().isLoaded(potionstudios.byg.BYG.MOD_ID)) integration = new BYG();
+        if (ModList.get().isLoaded(biomesoplenty.core.BiomesOPlenty.MOD_ID)) integration = new BOP();
         else integration = new Default();
         GenerationsStructures.init(integration);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

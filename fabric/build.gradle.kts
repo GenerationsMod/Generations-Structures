@@ -45,9 +45,6 @@ dependencies {
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
-    //modCompileOnly("curse.maven:oh-the-biomes-youll-go-fabric-391378:${project.properties["BYGFabric_version"]}")
-    //modCompileOnly("curse.maven:CorgiLib-693313:4681375")
-    //modCompileOnly("software.bernie.geckolib:geckolib-fabric-$minecraftVersion:${project.properties["geckolib_version"]}")
 }
 
 tasks {

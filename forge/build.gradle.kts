@@ -63,9 +63,6 @@ dependencies {
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
-    modCompileOnly("maven.modrinth:biomesyougo:${project.properties["BYGForge_version"]}")
-    //modRuntimeOnly("curse.maven:CorgiLib-693313:4681375")
-    //modRuntimeOnly("software.bernie.geckolib:geckolib-forge-$minecraftVersion:${project.properties["geckolib_version"]}")
     modRuntimeOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 }
 
