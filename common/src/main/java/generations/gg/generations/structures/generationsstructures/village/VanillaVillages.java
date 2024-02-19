@@ -1,14 +1,12 @@
 package generations.gg.generations.structures.generationsstructures.village;
 
 
-import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 import org.jetbrains.annotations.NotNull;
 

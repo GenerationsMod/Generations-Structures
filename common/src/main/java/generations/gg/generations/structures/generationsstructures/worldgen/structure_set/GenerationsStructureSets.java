@@ -39,7 +39,7 @@ public class GenerationsStructureSets {
                 new RandomSpreadStructurePlacement(150, 85, RandomSpreadType.LINEAR, 1189082690));
 
         register(context, POKESHOPS, GenerationsStructuresKeys.SCARLET_POKESHOP,
-                new RandomSpreadStructurePlacement(500, 250, RandomSpreadType.LINEAR, 293756737));
+                new RandomSpreadStructurePlacement(400, 250, RandomSpreadType.LINEAR, 293756737));
 
         register(context, SPIKE, GenerationsStructuresKeys.SPIKE,
                 new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.LINEAR, 732790531));
@@ -53,23 +53,23 @@ public class GenerationsStructureSets {
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.BEAST_BALLOON, 2),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.MEOWTH_BALLOON, 3),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.POKE_BALLOON, 5)
-                ), new RandomSpreadStructurePlacement(100, 50, RandomSpreadType.LINEAR, 738478911)
+                ), new RandomSpreadStructurePlacement(100, 45, RandomSpreadType.LINEAR, 738478911)
         );
 
         register(context, ISLANDS, GenerationsStructuresKeys.ISLANDS,
-                new RandomSpreadStructurePlacement(100, 50, RandomSpreadType.LINEAR, 347680677));
+                new RandomSpreadStructurePlacement(100, 45, RandomSpreadType.LINEAR, 347680677));
 
         register(context, FROZEN_SHRINE, GenerationsStructuresKeys.FROZEN_SHRINE,
-                new RandomSpreadStructurePlacement(4096, 500, RandomSpreadType.LINEAR, 989914746));
+                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 989914746));
 
         register(context, FIERY_SHRINE, GenerationsStructuresKeys.FIERY_SHRINE,
-                new RandomSpreadStructurePlacement(4096, 500, RandomSpreadType.LINEAR, 333897074));
+                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 333897074));
 
         register(context, STATIC_SHRINE, GenerationsStructuresKeys.STATIC_SHRINE,
-                new RandomSpreadStructurePlacement(4096, 500, RandomSpreadType.LINEAR, 442038945));
+                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 442038945));
 
         register(context, LUGIA_SHRINE, GenerationsStructuresKeys.LUGIA_SHRINE,
-                new RandomSpreadStructurePlacement(4096, 500, RandomSpreadType.LINEAR, 751341351));
+                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 751341351));
     }
 
     /**
