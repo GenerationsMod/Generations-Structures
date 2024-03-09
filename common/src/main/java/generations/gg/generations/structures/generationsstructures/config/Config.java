@@ -23,7 +23,6 @@ public class Config {
     public Randomization randomization = new Randomization();
 
     public static class Randomization {
-        public boolean randomizeFrozenShrineBlocks = true;
         public boolean randomizeFieryShrineBlocks = true;
         public boolean randomizeStaticShrineBlocks = true;
         public boolean randomizeLugiaShrineBlocks = true;

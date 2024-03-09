@@ -5,7 +5,6 @@ import generations.gg.generations.structures.generationsstructures.GenerationsSt
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
@@ -15,7 +14,8 @@ import generations.gg.generations.structures.generationsstructures.processors.st
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.structure.templatesystem.*;
 
 /**
  * This class is used to hold all the ProcessorLists
@@ -42,7 +42,36 @@ public class GenerationsProcessorLists {
 		register(context, SCARLET_POKESHOP_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new ScarletPokeShopProcessor())));
 		register(context, GYM_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new GymProcessor())));
 		register(context, POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new PokeCenterProcessor())));
-		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineRandomizerProcessor(), new FrozenShrineProcessor())));
+		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineProcessor(),
+						new RuleProcessor(
+								ImmutableList.of(
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE_POWDER, 0.15F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE_POWDER, 0.3F), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE_POWDER, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_WOOL, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_WOOL, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
+										new ProcessorRule(
+												new RandomBlockMatchTest(Blocks.WHITE_WOOL, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState())
+								)
+						)
+				)));
 		register(context, FIERY_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FieryShrineRandomizerProcessor(), new FieryShrineProcessor())));
 		register(context, STATIC_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new StaticShrineRandomizerProcessor(), new StaticShrineProcessor())));
 		register(context, LUGIA_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new LugiaShrineRandomizerProcessor())));

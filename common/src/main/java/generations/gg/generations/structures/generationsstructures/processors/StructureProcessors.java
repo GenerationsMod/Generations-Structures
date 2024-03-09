@@ -4,7 +4,6 @@ import generations.gg.generations.structures.generationsstructures.GenerationsSt
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
@@ -24,7 +23,6 @@ public class StructureProcessors {
     public static StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
     public static StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
     public static StructureProcessorType<PokeCenterProcessor> POKECENTER_PROCESSOR = () -> PokeCenterProcessor.CODEC;
-    public static StructureProcessorType<FrozenShrineRandomizerProcessor> FROZEN_SHRINE_RANDOMIZER_PROCESSOR = () -> FrozenShrineRandomizerProcessor.CODEC;
     public static StructureProcessorType<FrozenShrineProcessor> FROZEN_SHRINE_PROCESSOR = () -> FrozenShrineProcessor.CODEC;
     public static StructureProcessorType<FieryShrineRandomizerProcessor> FIERY_SHRINE_RANDOMIZER_PROCESSOR = () -> FieryShrineRandomizerProcessor.CODEC;
     public static StructureProcessorType<FieryShrineProcessor> FIERY_SHRINE_PROCESSOR = () -> FieryShrineProcessor.CODEC;
@@ -41,7 +39,6 @@ public class StructureProcessors {
         register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
         register("gym_processor", GYM_PROCESSOR);
         register("pokecenter_processor", POKECENTER_PROCESSOR);
-        register("shrines/frozen_shrine_randomizer_processor", FROZEN_SHRINE_RANDOMIZER_PROCESSOR);
         register("shrines/frozen_shrine_processor", FROZEN_SHRINE_PROCESSOR);
         register("shrines/fiery_shrine_randomizer_processor", FIERY_SHRINE_RANDOMIZER_PROCESSOR);
         register("shrines/fiery_shrine_processor", FIERY_SHRINE_PROCESSOR);
