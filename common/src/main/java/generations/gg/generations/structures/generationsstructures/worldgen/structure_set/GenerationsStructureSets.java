@@ -60,16 +60,16 @@ public class GenerationsStructureSets {
                 new RandomSpreadStructurePlacement(100, 45, RandomSpreadType.LINEAR, 347680677));
 
         register(context, FROZEN_SHRINE, GenerationsStructuresKeys.FROZEN_SHRINE,
-                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 989914746));
+                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 989914746));
 
         register(context, FIERY_SHRINE, GenerationsStructuresKeys.FIERY_SHRINE,
-                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 333897074));
+                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 333897074));
 
         register(context, STATIC_SHRINE, GenerationsStructuresKeys.STATIC_SHRINE,
-                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 442038945));
+                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 442038945));
 
         register(context, LUGIA_SHRINE, GenerationsStructuresKeys.LUGIA_SHRINE,
-                new RandomSpreadStructurePlacement(2048, 350, RandomSpreadType.LINEAR, 751341351));
+                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 751341351));
     }
 
     /**
