@@ -103,6 +103,7 @@ publisher {
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
     setCurseEnvironment(CurseEnvironment.SERVER)
+    setJavaVersions("java 17", "java 18")
     val depends = mutableListOf("fabric-api", "generations-core")
     curseDepends.required.set(depends)
     modrinthDepends.required.set(depends)

@@ -123,6 +123,7 @@ publisher {
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.SERVER)
+    setJavaVersions("java 17", "java 18")
     val depends = mutableListOf("generations-core")
     val softDepends = mutableListOf("biomes-o-plenty")
     curseDepends.required.set(depends)
