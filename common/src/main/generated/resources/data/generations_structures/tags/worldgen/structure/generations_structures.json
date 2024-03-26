@@ -1,0 +1,19 @@
+{
+  "values": [
+    "#generations_structures:pokeshop",
+    "#generations_structures:loot_balloons",
+    "#generations_structures:shrines",
+    {
+      "id": "generations_structures:comet",
+      "required": false
+    },
+    {
+      "id": "generations_structures:spike",
+      "required": false
+    },
+    {
+      "id": "generations_structures:islands",
+      "required": false
+    }
+  ]
+}

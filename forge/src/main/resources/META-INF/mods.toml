@@ -45,6 +45,6 @@ Adds structures for the Generations Mod Family
 [[dependencies.generations_structures]]
     modId="cobblemon"
     mandatory = true
-    versionRange = "1.4.0+1.20.1"
+    versionRange = "1.4.1+1.20.1"
     ordering = "AFTER"
     side = "BOTH"

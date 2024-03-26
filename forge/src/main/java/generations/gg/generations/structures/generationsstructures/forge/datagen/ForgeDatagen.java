@@ -123,17 +123,21 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructuresKeys.MASTER_BALLOON.location())
                     .addOptional(GenerationsStructuresKeys.BEAST_BALLOON.location())
                     .addOptional(GenerationsStructuresKeys.MEOWTH_BALLOON.location());
-            tag(GenerationsStructureTags.COMET)
-                    .addOptional(GenerationsStructuresKeys.COMET.location());
-            tag(GenerationsStructureTags.SPIKE)
-                    .addOptional(GenerationsStructuresKeys.SPIKE.location());
-            tag(GenerationsStructureTags.ISLANDS)
-                    .addOptional(GenerationsStructuresKeys.ISLANDS.location());
             tag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.STATIC_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.LUGIA_SHRINE.location());
+
+            tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
+                    .addTag(GenerationsStructureTags.POKESHOP)
+                    .addTag(GenerationsStructureTags.LOOT_BALLOONS)
+                    //.addTag(GenerationsStructureTags.GYMS)
+                    .addTag(GenerationsStructureTags.SHRINES)
+                    .addOptional(GenerationsStructuresKeys.COMET.location())
+                    .addOptional(GenerationsStructuresKeys.SPIKE.location())
+                    .addOptional(GenerationsStructuresKeys.ISLANDS.location());
+
         }
     }
 
