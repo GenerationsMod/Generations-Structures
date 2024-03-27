@@ -9,6 +9,10 @@
     {
       "structure": "generations_structures:scarlet_pokecenter",
       "weight": 1
+    },
+    {
+      "structure": "generations_structures:large_pokecenter",
+      "weight": 1
     }
   ]
 }

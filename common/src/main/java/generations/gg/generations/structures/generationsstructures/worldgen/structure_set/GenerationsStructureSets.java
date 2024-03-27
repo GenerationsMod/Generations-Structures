@@ -39,7 +39,11 @@ public class GenerationsStructureSets {
         register(context, COMET, GenerationsStructuresKeys.COMET,
                 new RandomSpreadStructurePlacement(150, 85, RandomSpreadType.LINEAR, 1189082690));
 
-        register(context, POKESHOPS, GenerationsStructuresKeys.SCARLET_POKECENTER,
+        register(context, POKESHOPS,
+                ImmutableList.of(
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.SCARLET_POKECENTER, 1),
+                        createStructureSelectionEntry(context, GenerationsStructuresKeys.LARGE_POKECENTER, 1)
+                ),
                 new RandomSpreadStructurePlacement(400, 250, RandomSpreadType.LINEAR, 293756737));
 
         register(context, SPIKE, GenerationsStructuresKeys.SPIKE,

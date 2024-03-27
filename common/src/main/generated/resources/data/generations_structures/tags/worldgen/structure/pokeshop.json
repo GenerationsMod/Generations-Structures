@@ -3,6 +3,10 @@
     {
       "id": "generations_structures:scarlet_pokecenter",
       "required": false
+    },
+    {
+      "id": "generations_structures:large_pokecenter",
+      "required": false
     }
   ]
 }

@@ -50,12 +50,25 @@ public class GenerationsStructureSettings {
         ));
         registerStructure(context, GenerationsStructuresKeys.SCARLET_POKECENTER, createJigsaw(
                 new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SCARLET_POKECENTER),
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_POKECENTER),
                         Map.of(),
                         GenerationStep.Decoration.SURFACE_STRUCTURES,
                         TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.SCARLET_POKECENTER),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.LARGE_POKECENTER, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_POKECENTER),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.LARGE_POKECENTER),
                 1,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
                 Heightmap.Types.WORLD_SURFACE_WG

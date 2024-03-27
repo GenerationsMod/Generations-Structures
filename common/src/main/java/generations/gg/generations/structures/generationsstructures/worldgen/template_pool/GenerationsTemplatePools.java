@@ -8,7 +8,6 @@ import generations.gg.generations.structures.generationsstructures.structures.Ge
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.PlainVillagePools;
 import net.minecraft.data.worldgen.Pools;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
@@ -31,8 +30,8 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER = create("scarlet_pokecenter");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER_ANTENNA = create("scarlet_pokecenter_antenna");
+    public static final ResourceKey<StructureTemplatePool> LARGE_POKECENTER = create("large_pokecenter");
     public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
-    public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/plains/poke_village");
     public static final ResourceKey<StructureTemplatePool> ISLANDS = create("islands");
     public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = create("shrines/frozen_shrine");
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = create("shrines/fiery_shrine");
@@ -65,7 +64,6 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.ULTRA_BALLOON.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
-
         register(context, COMET, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.COMET.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
@@ -82,9 +80,8 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SPIKE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
-        register(context, POKE_VILLAGE, context.lookup(Registries.TEMPLATE_POOL).getOrThrow(PlainVillagePools.TERMINATORS_KEY).key(), ImmutableList.of(
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2),
-                Pair.of(StructurePoolElement.legacy(GenerationsStructuresKeys.POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 2)
+        register(context, LARGE_POKECENTER, Pools.EMPTY, ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LARGE_POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
         register(context, ISLANDS, Pools.EMPTY, ImmutableList.of(
