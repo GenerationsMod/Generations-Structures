@@ -44,12 +44,9 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.NONE
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.COMET),
-                Optional.empty(),
                 1,
                 UniformHeight.of(VerticalAnchor.absolute(250), VerticalAnchor.belowTop(150)),
-                false,
-                Optional.empty(),
-                80
+                false
         ));
         registerStructure(context, GenerationsStructuresKeys.SCARLET_POKESHOP, createJigsaw(
                 new Structure.StructureSettings(
@@ -59,27 +56,23 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.SCARLET_POKESHOP),
-                Optional.empty(),
                 1,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
-                false,
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-                80
+                Heightmap.Types.WORLD_SURFACE_WG
         ));
-        registerStructure(context, GenerationsStructuresKeys.SPIKE, createJigsaw(
+
+        registerStructure(context, GenerationsStructuresKeys.SPIKE,
+                createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SPIKE),
                         Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.NONE
+                        GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                        TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.SPIKE),
-                Optional.empty(),
                 1,
-                ConstantHeight.of(VerticalAnchor.absolute(10)),
-                false,
-                Optional.empty(),
-                75
+                UniformHeight.of(VerticalAnchor.absolute(5), VerticalAnchor.belowTop(100)),
+                false
         ));
 
         registerStructure(context, GenerationsStructuresKeys.FROZEN_SHRINE, createJigsaw(
@@ -90,12 +83,9 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.FROZEN_SHRINE),
-                Optional.empty(),
                 1,
-                        ConstantHeight.of(VerticalAnchor.absolute(1)),
-                false,
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-                40
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
         ));
 
         registerStructure(context, GenerationsStructuresKeys.FIERY_SHRINE, createJigsaw(
@@ -106,12 +96,9 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.FIERY_SHRINE),
-                Optional.empty(),
                 1,
-                        ConstantHeight.of(VerticalAnchor.absolute(1)),
-                false,
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-                40
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
         ));
 
         registerStructure(context, GenerationsStructuresKeys.STATIC_SHRINE, createJigsaw(
@@ -122,12 +109,9 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.STATIC_SHRINE),
-                Optional.empty(),
                 1,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
-                false,
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-                40
+                Heightmap.Types.WORLD_SURFACE_WG
         ));
 
         registerStructure(context, GenerationsStructuresKeys.LUGIA_SHRINE, createJigsaw(
@@ -138,12 +122,9 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.BEARD_THIN
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.LUGIA_SHRINE),
-                Optional.empty(),
                 1,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
-                false,
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-                40
+                Heightmap.Types.WORLD_SURFACE_WG
         ));
 
         registerStructure(context, GenerationsStructuresKeys.ISLANDS, createJigsaw(
@@ -154,12 +135,9 @@ public class GenerationsStructureSettings {
                         TerrainAdjustment.NONE
                 ),
                 poolHolderGetter.getOrThrow(GenerationsTemplatePools.ISLANDS),
-                Optional.empty(),
                 1,
                 UniformHeight.of(VerticalAnchor.absolute(150), VerticalAnchor.belowTop(100)),
-                false,
-                Optional.empty(),
-                80
+                false
         ));
     }
 
@@ -172,6 +150,16 @@ public class GenerationsStructureSettings {
                                                 HeightProvider startHeight, boolean useExpansionHack,
                                                 Optional<Heightmap.Types> projectStartToHeightmap, int maxDistanceToCenter){
         return new JigsawStructure(settings, startPool, startJigsawName, maxDepth, startHeight, useExpansionHack, projectStartToHeightmap, maxDistanceToCenter);
+    }
+
+    private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool, int maxDepth,
+                                                HeightProvider startHeight, boolean useExpansionHack){
+        return new JigsawStructure(settings, startPool, maxDepth, startHeight, useExpansionHack);
+    }
+
+    private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool, int maxDepth,
+                                                HeightProvider startHeight, Heightmap.Types projectStartToHeightmap){
+        return new JigsawStructure(settings, startPool, maxDepth, startHeight, false, projectStartToHeightmap);
     }
 
     private static JigsawStructure balloonJigsawStructure(Holder<StructureTemplatePool> poolHolderGetter, HolderSet<Biome> biomeHolderGetter){
