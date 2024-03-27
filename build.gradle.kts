@@ -5,7 +5,7 @@ plugins {
     id("dev.architectury.loom") version "1.5-SNAPSHOT" apply false
     idea
     java
-    kotlin("jvm") version "1.9.22"
+    kotlin("jvm") version "1.9.23"
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String

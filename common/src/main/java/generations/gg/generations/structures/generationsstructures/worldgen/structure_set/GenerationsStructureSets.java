@@ -20,15 +20,15 @@ import java.util.List;
  * @author Joseph T. McQuigg
  */
 public class GenerationsStructureSets {
-    public static ResourceKey<StructureSet> LOOT_BALLOON = create("loot_balloon");
-    public static ResourceKey<StructureSet> COMET = create("comet");
-    public static ResourceKey<StructureSet> POKESHOPS = create("pokeshops");
-    public static ResourceKey<StructureSet> SPIKE = create("spike");
-    public static ResourceKey<StructureSet> FROZEN_SHRINE = create("shrines/frozen_shrine");
-    public static ResourceKey<StructureSet> FIERY_SHRINE = create("shrines/fiery_shrine");
-    public static ResourceKey<StructureSet> STATIC_SHRINE = create("shrines/static_shrine");
-    public static ResourceKey<StructureSet> LUGIA_SHRINE = create("shrines/lugia_shrine");
-    public static ResourceKey<StructureSet> ISLANDS = create("islands");
+    private static final ResourceKey<StructureSet> LOOT_BALLOON = create("loot_balloon");
+    private static final ResourceKey<StructureSet> COMET = create("comet");
+    private static final ResourceKey<StructureSet> POKESHOPS = create("pokeshops");
+    private static final ResourceKey<StructureSet> SPIKE = create("spike");
+    private static final ResourceKey<StructureSet> FROZEN_SHRINE = create("shrines/frozen_shrine");
+    private static final ResourceKey<StructureSet> FIERY_SHRINE = create("shrines/fiery_shrine");
+    private static final ResourceKey<StructureSet> STATIC_SHRINE = create("shrines/static_shrine");
+    private static final ResourceKey<StructureSet> LUGIA_SHRINE = create("shrines/lugia_shrine");
+    private static final ResourceKey<StructureSet> ISLANDS = create("islands");
 
     /**
      * This method is used to bootstrap the structure sets.

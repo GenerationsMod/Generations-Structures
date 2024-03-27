@@ -20,15 +20,15 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
  * @author J.T. McQuigg (JT122406)
  */
 public class StructureProcessors {
-    public static StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
-    public static StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
-    public static StructureProcessorType<PokeCenterProcessor> POKECENTER_PROCESSOR = () -> PokeCenterProcessor.CODEC;
-    public static StructureProcessorType<FrozenShrineProcessor> FROZEN_SHRINE_PROCESSOR = () -> FrozenShrineProcessor.CODEC;
-    public static StructureProcessorType<FieryShrineRandomizerProcessor> FIERY_SHRINE_RANDOMIZER_PROCESSOR = () -> FieryShrineRandomizerProcessor.CODEC;
-    public static StructureProcessorType<FieryShrineProcessor> FIERY_SHRINE_PROCESSOR = () -> FieryShrineProcessor.CODEC;
-    public static StructureProcessorType<StaticShrineRandomizerProcessor> STATIC_SHRINE_RANDOMIZER_PROCESSOR = () -> StaticShrineRandomizerProcessor.CODEC;
-    public static StructureProcessorType<StaticShrineProcessor> STATIC_SHRINE_PROCESSOR = () -> StaticShrineProcessor.CODEC;
-    public static StructureProcessorType<LugiaShrineRandomizerProcessor> LUGIA_SHRINE_RANDOMIZER_PROCESSOR = () -> LugiaShrineRandomizerProcessor.CODEC;
+    public static final StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
+    public static final StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
+    public static final StructureProcessorType<PokeCenterProcessor> POKECENTER_PROCESSOR = () -> PokeCenterProcessor.CODEC;
+    public static final StructureProcessorType<FrozenShrineProcessor> FROZEN_SHRINE_PROCESSOR = () -> FrozenShrineProcessor.CODEC;
+    public static final StructureProcessorType<FieryShrineRandomizerProcessor> FIERY_SHRINE_RANDOMIZER_PROCESSOR = () -> FieryShrineRandomizerProcessor.CODEC;
+    public static final StructureProcessorType<FieryShrineProcessor> FIERY_SHRINE_PROCESSOR = () -> FieryShrineProcessor.CODEC;
+    public static final StructureProcessorType<StaticShrineRandomizerProcessor> STATIC_SHRINE_RANDOMIZER_PROCESSOR = () -> StaticShrineRandomizerProcessor.CODEC;
+    public static final StructureProcessorType<StaticShrineProcessor> STATIC_SHRINE_PROCESSOR = () -> StaticShrineProcessor.CODEC;
+    public static final StructureProcessorType<LugiaShrineRandomizerProcessor> LUGIA_SHRINE_RANDOMIZER_PROCESSOR = () -> LugiaShrineRandomizerProcessor.CODEC;
 
 
     /**
