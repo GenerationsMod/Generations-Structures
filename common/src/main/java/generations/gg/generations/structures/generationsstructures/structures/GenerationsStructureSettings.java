@@ -163,13 +163,7 @@ public class GenerationsStructureSettings {
     }
 
     private static JigsawStructure balloonJigsawStructure(Holder<StructureTemplatePool> poolHolderGetter, HolderSet<Biome> biomeHolderGetter){
-        return new JigsawStructure(new Structure.StructureSettings(biomeHolderGetter, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
-                poolHolderGetter,
-                Optional.empty(),
-                1,
-                UniformHeight.of(VerticalAnchor.absolute(180), VerticalAnchor.belowTop(110)),
-                false,
-                Optional.empty(),
-                80);
+        return createJigsaw(new Structure.StructureSettings(biomeHolderGetter, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
+                poolHolderGetter, 1, UniformHeight.of(VerticalAnchor.absolute(180), VerticalAnchor.belowTop(110)), false);
     }
 }
