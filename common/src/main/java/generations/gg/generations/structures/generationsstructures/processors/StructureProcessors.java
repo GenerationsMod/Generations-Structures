@@ -6,7 +6,7 @@ import generations.gg.generations.structures.generationsstructures.processors.st
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.lugia.LugiaShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineRandomizerProcessor;
@@ -20,7 +20,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
  * @author J.T. McQuigg (JT122406)
  */
 public class StructureProcessors {
-    public static final StructureProcessorType<ScarletPokeShopProcessor> SCARLET_POKESHOP_PROCESSOR = () -> ScarletPokeShopProcessor.CODEC;
+    public static final StructureProcessorType<ScarletPokeCenterProcessor> SCARLET_POKECENTER_PROCESSOR = () -> ScarletPokeCenterProcessor.CODEC;
     public static final StructureProcessorType<GymProcessor> GYM_PROCESSOR = () -> GymProcessor.CODEC;
     public static final StructureProcessorType<PokeCenterProcessor> POKECENTER_PROCESSOR = () -> PokeCenterProcessor.CODEC;
     public static final StructureProcessorType<FrozenShrineProcessor> FROZEN_SHRINE_PROCESSOR = () -> FrozenShrineProcessor.CODEC;
@@ -36,7 +36,7 @@ public class StructureProcessors {
      */
     public static void init() {
         GenerationsStructures.LOGGER.info("Registering Structure Processors");
-        register("scarlet_pokeshop_processor", SCARLET_POKESHOP_PROCESSOR);
+        register("scarlet_pokeshop_processor", SCARLET_POKECENTER_PROCESSOR);
         register("gym_processor", GYM_PROCESSOR);
         register("pokecenter_processor", POKECENTER_PROCESSOR);
         register("shrines/frozen_shrine_processor", FROZEN_SHRINE_PROCESSOR);

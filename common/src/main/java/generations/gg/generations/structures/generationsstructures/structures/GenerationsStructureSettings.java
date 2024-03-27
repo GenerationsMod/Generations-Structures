@@ -48,14 +48,14 @@ public class GenerationsStructureSettings {
                 UniformHeight.of(VerticalAnchor.absolute(250), VerticalAnchor.belowTop(150)),
                 false
         ));
-        registerStructure(context, GenerationsStructuresKeys.SCARLET_POKESHOP, createJigsaw(
+        registerStructure(context, GenerationsStructuresKeys.SCARLET_POKECENTER, createJigsaw(
                 new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SCARLET_POKESHOP),
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SCARLET_POKECENTER),
                         Map.of(),
                         GenerationStep.Decoration.SURFACE_STRUCTURES,
                         TerrainAdjustment.BEARD_THIN
                 ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.SCARLET_POKESHOP),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.SCARLET_POKECENTER),
                 1,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
                 Heightmap.Types.WORLD_SURFACE_WG

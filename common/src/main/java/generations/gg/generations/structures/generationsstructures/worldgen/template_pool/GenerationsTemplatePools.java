@@ -29,7 +29,8 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = create("loot_balloon/ultra_balloon");
 
     public static final ResourceKey<StructureTemplatePool> COMET = create("comet");
-    public static final ResourceKey<StructureTemplatePool> SCARLET_POKESHOP = create("scarlet_pokeshop");
+    public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER = create("scarlet_pokecenter");
+    public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER_ANTENNA = create("scarlet_pokecenter_antenna");
     public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
     public static final ResourceKey<StructureTemplatePool> POKE_VILLAGE = create("village/plains/poke_village");
     public static final ResourceKey<StructureTemplatePool> ISLANDS = create("islands");
@@ -69,10 +70,13 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.COMET.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
-        register(context, SCARLET_POKESHOP, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SCARLET_POKESHOP.location().toString(), getProcessor(context, GenerationsProcessorLists.SCARLET_POKESHOP_PROCESSOR_LIST)), 1)
+        register(context, SCARLET_POKECENTER, Pools.EMPTY, ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SCARLET_POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.SCARLET_POKECENTER_PROCESSOR_LIST)), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
+        register(context, SCARLET_POKECENTER_ANTENNA, SCARLET_POKECENTER_ANTENNA, ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SCARLET_POKECENTER_ANTENNA.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+        ), StructureTemplatePool.Projection.RIGID);
 
         register(context, SPIKE, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SPIKE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)

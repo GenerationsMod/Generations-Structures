@@ -13,7 +13,7 @@ public class GenerationsBiomeTags {
     public static final TagKey<Biome> IS_NOT_MOUNTAIN = create("is_not_mountain");
 
     /** the tag for biomes that have a Scarlet Pokeshop */
-    public static final TagKey<Biome> HAS_SCARLET_POKESHOP = create("has_structure/scarlet_pokeshop");
+    public static final TagKey<Biome> HAS_SCARLET_POKECENTER = create("has_structure/scarlet_pokecenter");
 
     /** the tag for biomes that have a Loot Balloon */
     public static final TagKey<Biome> HAS_LOOT_BALLOON = create("has_structure/loot_balloon");

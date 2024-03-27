@@ -22,9 +22,9 @@ import org.jetbrains.annotations.Nullable;
  * @see StructureProcessor
  * @author J.T. McQuigg (JT122406)
  */
-public class ScarletPokeShopProcessor extends StructureProcessor {
-    public static final ScarletPokeShopProcessor INSTANCE = new ScarletPokeShopProcessor();
-    public static final Codec<ScarletPokeShopProcessor> CODEC = Codec.unit(() -> INSTANCE);
+public class ScarletPokeCenterProcessor extends StructureProcessor {
+    public static final ScarletPokeCenterProcessor INSTANCE = new ScarletPokeCenterProcessor();
+    public static final Codec<ScarletPokeCenterProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     @Nullable
     @Override
@@ -43,6 +43,6 @@ public class ScarletPokeShopProcessor extends StructureProcessor {
 
     @Override
     protected @NotNull StructureProcessorType<?> getType() {
-        return StructureProcessors.SCARLET_POKESHOP_PROCESSOR;
+        return StructureProcessors.SCARLET_POKECENTER_PROCESSOR;
     }
 }

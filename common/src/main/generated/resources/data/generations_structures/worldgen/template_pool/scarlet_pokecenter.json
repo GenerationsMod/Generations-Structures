@@ -3,8 +3,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "generations_structures:scarlet_pokeshop",
-        "processors": "generations_structures:scarlet_pokeshop_processor_list",
+        "location": "generations_structures:scarlet_pokecenter",
+        "processors": "generations_structures:scarlet_pokecenter_processor_list",
         "projection": "rigid"
       },
       "weight": 1

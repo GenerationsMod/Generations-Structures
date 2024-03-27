@@ -12,7 +12,8 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 public interface GenerationsStructuresKeys {
 
     /** Scarlet Pokeshop Structure ResourceKey **/
-    ResourceKey<Structure> SCARLET_POKESHOP = createKey("scarlet_pokeshop");
+    ResourceKey<Structure> SCARLET_POKECENTER = createKey("scarlet_pokecenter");
+    ResourceKey<Structure> SCARLET_POKECENTER_ANTENNA = createKey("scarlet_pokecenter_antenna");
 
     /** Loot Balloon Structure ResourceKeys **/
     ResourceKey<Structure> POKE_BALLOON = createKey("loot_balloon/poke_balloon");

@@ -3,11 +3,11 @@
     "type": "minecraft:random_spread",
     "salt": 293756737,
     "separation": 250,
-    "spacing": 500
+    "spacing": 400
   },
   "structures": [
     {
-      "structure": "generations_structures:scarlet_pokeshop",
+      "structure": "generations_structures:scarlet_pokecenter",
       "weight": 1
     }
   ]

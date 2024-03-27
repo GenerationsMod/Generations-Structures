@@ -1,5 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.worldgen.structure_set;
 
+import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import net.minecraft.core.registries.Registries;
@@ -38,7 +39,7 @@ public class GenerationsStructureSets {
         register(context, COMET, GenerationsStructuresKeys.COMET,
                 new RandomSpreadStructurePlacement(150, 85, RandomSpreadType.LINEAR, 1189082690));
 
-        register(context, POKESHOPS, GenerationsStructuresKeys.SCARLET_POKESHOP,
+        register(context, POKESHOPS, GenerationsStructuresKeys.SCARLET_POKECENTER,
                 new RandomSpreadStructurePlacement(400, 250, RandomSpreadType.LINEAR, 293756737));
 
         register(context, SPIKE, GenerationsStructuresKeys.SPIKE,
@@ -46,7 +47,7 @@ public class GenerationsStructureSets {
 
         register(context,
           LOOT_BALLOON,
-                List.of(
+                ImmutableList.of(
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.GREAT_BALLOON, 4),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.MASTER_BALLOON, 1),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.ULTRA_BALLOON, 2),

@@ -7,7 +7,7 @@ import generations.gg.generations.structures.generationsstructures.processors.st
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeShopProcessor;
+import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeCenterProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.lugia.LugiaShrineRandomizerProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineProcessor;
 import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineRandomizerProcessor;
@@ -26,7 +26,7 @@ public class GenerationsProcessorLists {
 	public static void init() {}
 
 	public static final ResourceKey<StructureProcessorList> GYM_PROCESSOR_LIST = create("gym_processor_list");
-	public static final ResourceKey<StructureProcessorList> SCARLET_POKESHOP_PROCESSOR_LIST = create("scarlet_pokeshop_processor_list");
+	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = create("scarlet_pokecenter_processor_list");
 	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = create("pokecenter_processor_list");
 	public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("shrines/frozen_shrine_processor_list");
 	public static final ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("shrines/fiery_shrine_processor_list");
@@ -39,7 +39,7 @@ public class GenerationsProcessorLists {
 	 */
 	public static void bootstrap(BootstapContext<StructureProcessorList> context) {
 		StructureProcessors.init();
-		register(context, SCARLET_POKESHOP_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new ScarletPokeShopProcessor())));
+		register(context, SCARLET_POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new ScarletPokeCenterProcessor())));
 		register(context, GYM_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new GymProcessor())));
 		register(context, POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new PokeCenterProcessor())));
 		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineProcessor(),
