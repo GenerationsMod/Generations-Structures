@@ -23,9 +23,6 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> BEAST_BALLOON = createKey("loot_balloon/beast_balloon");
     ResourceKey<Structure> MEOWTH_BALLOON = createKey("loot_balloon/meowth_balloon");
 
-    /** Nether Spike Structure ResourceKey **/
-    ResourceKey<Structure> SPIKE = createKey("spike");
-
     /** Comet Structure ResourceKey **/
     ResourceKey<Structure> COMET = createKey("comet");
 

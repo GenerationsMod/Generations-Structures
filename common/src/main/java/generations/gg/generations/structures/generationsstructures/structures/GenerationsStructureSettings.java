@@ -74,20 +74,6 @@ public class GenerationsStructureSettings {
                 Heightmap.Types.WORLD_SURFACE_WG
         ));
 
-        registerStructure(context, GenerationsStructuresKeys.SPIKE,
-                createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_SPIKE),
-                        Map.of(),
-                        GenerationStep.Decoration.UNDERGROUND_DECORATION,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.SPIKE),
-                1,
-                UniformHeight.of(VerticalAnchor.absolute(5), VerticalAnchor.belowTop(100)),
-                false
-        ));
-
         registerStructure(context, GenerationsStructuresKeys.FROZEN_SHRINE, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_FROZEN_SHRINE),

@@ -8,10 +8,6 @@
       "required": false
     },
     {
-      "id": "generations_structures:spike",
-      "required": false
-    },
-    {
       "id": "generations_structures:islands",
       "required": false
     }

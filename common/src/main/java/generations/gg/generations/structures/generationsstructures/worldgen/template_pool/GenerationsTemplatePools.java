@@ -31,7 +31,6 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER = create("scarlet_pokecenter");
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER_ANTENNA = create("scarlet_pokecenter_antenna");
     public static final ResourceKey<StructureTemplatePool> LARGE_POKECENTER = create("large_pokecenter");
-    public static final ResourceKey<StructureTemplatePool> SPIKE = create("spike");
     public static final ResourceKey<StructureTemplatePool> ISLANDS = create("islands");
     public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = create("shrines/frozen_shrine");
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = create("shrines/fiery_shrine");
@@ -75,10 +74,6 @@ public class GenerationsTemplatePools {
         register(context, SCARLET_POKECENTER_ANTENNA, SCARLET_POKECENTER_ANTENNA, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SCARLET_POKECENTER_ANTENNA.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
         ), StructureTemplatePool.Projection.RIGID);
-
-        register(context, SPIKE, Pools.EMPTY, ImmutableList.of(
-                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.SPIKE.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
-        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
 
         register(context, LARGE_POKECENTER, Pools.EMPTY, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.LARGE_POKECENTER.location().toString(), getProcessor(context, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST)), 1)

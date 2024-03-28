@@ -46,9 +46,6 @@ public class GenerationsStructureSets {
                 ),
                 new RandomSpreadStructurePlacement(400, 250, RandomSpreadType.LINEAR, 293756737));
 
-        register(context, SPIKE, GenerationsStructuresKeys.SPIKE,
-                new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.LINEAR, 732790531));
-
         register(context,
           LOOT_BALLOON,
                 ImmutableList.of(

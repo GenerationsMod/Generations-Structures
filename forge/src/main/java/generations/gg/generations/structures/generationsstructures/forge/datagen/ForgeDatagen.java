@@ -81,10 +81,6 @@ public class ForgeDatagen {
                     .addTag(BiomeTags.IS_END)
                     .addOptionalTag(fabricTagMaker("in_the_end"));
 
-            tag(GenerationsBiomeTags.HAS_SPIKE)
-                    .addTag(BiomeTags.IS_NETHER)
-                    .addOptionalTag(fabricTagMaker("in_nether"));
-
             tag(GenerationsBiomeTags.HAS_ISLANDS)
                     .addTag(GenerationsBiomeTags.IS_NOT_MOUNTAIN);
 
@@ -137,7 +133,6 @@ public class ForgeDatagen {
                     //.addTag(GenerationsStructureTags.GYMS)
                     .addTag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructuresKeys.COMET.location())
-                    .addOptional(GenerationsStructuresKeys.SPIKE.location())
                     .addOptional(GenerationsStructuresKeys.ISLANDS.location());
 
         }

@@ -21,9 +21,6 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that can have a comet */
     public static final TagKey<Biome> HAS_COMET = create("has_structure/comet");
 
-    /** the tag for biomes that can have a spike */
-    public static final TagKey<Biome> HAS_SPIKE = create("has_structure/spike");
-
     /** the tag for biomes that can have an island */
     public static final TagKey<Biome> HAS_ISLANDS = create("has_structure/islands");
 
