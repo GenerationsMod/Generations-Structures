@@ -43,7 +43,9 @@ public interface GenerationsStructuresKeys {
 
     /** Villages Structure ResourceKeys **/
     ResourceKey<Structure> PLAINS_POKEMART_1 = createKey("village/plains/pokemart_1");
+    ResourceKey<Structure> PLAINS_POKEMART_2 = createKey("village/plains/pokemart_2");
     ResourceKey<Structure> PLAINS_POKECENTER_1 = createKey("village/plains/pokecenter_1");
+    ResourceKey<Structure> PLAINS_POKECENTER_2 = createKey("village/plains/pokecenter_2");
 
     /**
      * Creates a ResourceKey for the structure.

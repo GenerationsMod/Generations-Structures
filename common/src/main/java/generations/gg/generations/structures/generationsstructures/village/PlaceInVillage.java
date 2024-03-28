@@ -67,6 +67,8 @@ public class PlaceInVillage {
         addBuildingToPool(serverRegistry, getPoolRL("plains/streets"), ProcessorLists.STREET_PLAINS, new ResourceLocation("village/plains/streets/straight_05"), StructureTemplatePool.Projection.TERRAIN_MATCHING, 10);
         addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_1.location(), StructureTemplatePool.Projection.RIGID, 10);
         addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_1.location(), StructureTemplatePool.Projection.RIGID, 10);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_2.location(), StructureTemplatePool.Projection.RIGID, 10);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_2.location(), StructureTemplatePool.Projection.RIGID, 10);
         //addBuildingToPool(serverRegistry, getPoolRL("desert/streets"), ProcessorLists.EMPTY, GenerationsStructuresKeys.GenerationsStreetKeys.POKE_STREET.location(), StructureTemplatePool.Projection.TERRAIN_MATCHING, 3);
         //addBuildingToPool(serverRegistry, getPoolRL("savanna/streets"), ProcessorLists.STREET_SAVANNA, GenerationsStructuresKeys.GenerationsStreetKeys.POKE_STREET.location(), StructureTemplatePool.Projection.TERRAIN_MATCHING, 3);
         //addBuildingToPool(serverRegistry, getPoolRL("snowy/streets"), ProcessorLists.STREET_SNOWY_OR_TAIGA, GenerationsStructuresKeys.GenerationsStreetKeys.POKE_STREET.location(), StructureTemplatePool.Projection.TERRAIN_MATCHING, 3);
