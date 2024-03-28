@@ -44,6 +44,9 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> STATIC_SHRINE = createKey("shrines/static_shrine");
     ResourceKey<Structure> LUGIA_SHRINE = createKey("shrines/lugia_shrine");
 
+    /** Villages Structure ResourceKeys **/
+    ResourceKey<Structure> PLAINS_POKEMART_1 = createKey("village/plains/pokemart_1");
+
     /**
      * Holds the ResourceKeys for the village roads.
      */

@@ -18,6 +18,6 @@ public class GenerationsStructuresFabric implements ModInitializer {
     public void onInitialize() {
         GenerationsStructures.init(new Default());  //TODO: FabricLoader.getInstance().isModLoaded(potionstudios.byg.BYG.MOD_ID) ? new BYG() : new Default()
         StructureProcessors.init();
-        //ServerLifecycleEvents.SERVER_STARTING.register(PlaceInVillage::addStructuresToVillages);
+        ServerLifecycleEvents.SERVER_STARTING.register(PlaceInVillage::addStructuresToVillages);
     }
 }
