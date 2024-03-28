@@ -27,7 +27,7 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> COMET = createKey("comet");
 
     /** PokeShop Structure ResourceKey **/
-    ResourceKey<Structure> LARGE_POKESHOP = createKey("large_pokeshop");
+    ResourceKey<Structure> LARGE_POKEMART = createKey("large_pokemart");
 
     /** PokeCenter Structure ResourceKey **/
     ResourceKey<Structure> LARGE_POKECENTER = createKey("large_pokecenter");

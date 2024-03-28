@@ -69,8 +69,9 @@ public class ForgeDatagen {
                             .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_POKECENTER)
-                    .addTag(BiomeTags.IS_OVERWORLD)
+                    .addTag(BiomeTags.IS_SAVANNA)
                     .addOptionalTag(Tags.Biomes.IS_PLAINS.location())
+                    .addOptionalTag(Tags.Biomes.IS_SPARSE_OVERWORLD)
                     .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
