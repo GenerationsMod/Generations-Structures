@@ -12,7 +12,7 @@ credits = "C. Inglis, Strwbry_Moon, CyborgPixel"
 description = '''
 Adds structures for the Generations Mod Family
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.generations_structures]]
     modId = "forge"

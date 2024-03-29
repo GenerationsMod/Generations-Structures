@@ -17,7 +17,7 @@
     "sources": "https://github.com/GenerationsMod/Generations-Structures"
   },
   "license": "Insert License Here",
-  "icon": "assets/generations_structures/icon.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": ["generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"]
