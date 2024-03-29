@@ -3,7 +3,6 @@ package generations.gg.generations.structures.generationsstructures.village;
 import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.config.Config;
-import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -69,6 +68,8 @@ public class PlaceInVillage {
         addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_1.location(), StructureTemplatePool.Projection.RIGID, 10);
         addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_2.location(), StructureTemplatePool.Projection.RIGID, 10);
         addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_2.location(), StructureTemplatePool.Projection.RIGID, 10);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_3.location(), StructureTemplatePool.Projection.RIGID, 10);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_3.location(), StructureTemplatePool.Projection.RIGID, 10);
         //addBuildingToPool(serverRegistry, getPoolRL("desert/streets"), ProcessorLists.EMPTY, GenerationsStructuresKeys.GenerationsStreetKeys.POKE_STREET.location(), StructureTemplatePool.Projection.TERRAIN_MATCHING, 3);
         //addBuildingToPool(serverRegistry, getPoolRL("savanna/streets"), ProcessorLists.STREET_SAVANNA, GenerationsStructuresKeys.GenerationsStreetKeys.POKE_STREET.location(), StructureTemplatePool.Projection.TERRAIN_MATCHING, 3);
         //addBuildingToPool(serverRegistry, getPoolRL("snowy/streets"), ProcessorLists.STREET_SNOWY_OR_TAIGA, GenerationsStructuresKeys.GenerationsStreetKeys.POKE_STREET.location(), StructureTemplatePool.Projection.TERRAIN_MATCHING, 3);
