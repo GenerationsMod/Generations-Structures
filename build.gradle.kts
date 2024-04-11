@@ -2,7 +2,7 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
-    id("dev.architectury.loom") version "1.5-SNAPSHOT" apply false
+    id("dev.architectury.loom") version "1.6-SNAPSHOT" apply false
     idea
     java
     kotlin("jvm") version "1.9.23"
@@ -16,6 +16,7 @@ subprojects {
     apply(plugin = "dev.architectury.loom")
 
     val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
+    loom.silentMojangMappingsLicense()
 
     repositories {
         mavenCentral()
@@ -44,7 +45,6 @@ subprojects {
 
         compileOnly("org.jetbrains:annotations:24.1.0")
     }
-    loom.silentMojangMappingsLicense()
 }
 
 allprojects {
