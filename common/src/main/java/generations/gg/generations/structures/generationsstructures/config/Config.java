@@ -16,7 +16,6 @@ public class Config {
 
     public static class VillageStructureGeneration {
         public boolean AllowStructuresInVillages = true;
-        public int PokeCenterWeight = 200;
         public boolean randomizeVendingMachineColors = true;
     }
 

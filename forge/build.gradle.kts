@@ -29,6 +29,7 @@ loom {
     forge {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
+        mixinConfig("GenerationsStructures-common.mixins.json")
     }
 
     runs.create("data") {
@@ -125,7 +126,7 @@ publisher {
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.SERVER)
-    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18)
+    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18, JavaVersion.VERSION_19, JavaVersion.VERSION_20, JavaVersion.VERSION_21)
     val depends = mutableListOf("generations-core")
     val softDepends = mutableListOf("biomes-o-plenty")
     curseDepends.required.set(depends)

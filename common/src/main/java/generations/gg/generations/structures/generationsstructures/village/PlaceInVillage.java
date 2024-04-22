@@ -63,13 +63,13 @@ public class PlaceInVillage {
         if (!config.AllowStructuresInVillages) return;
         GenerationsStructures.LOGGER.info("Adding structures to villages");
         RegistryAccess.Frozen serverRegistry = server.registryAccess();
-        addBuildingToPool(serverRegistry, getPoolRL("plains/streets"), ProcessorLists.STREET_PLAINS, new ResourceLocation("village/plains/streets/straight_05"), StructureTemplatePool.Projection.TERRAIN_MATCHING, 5);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_1.location(), StructureTemplatePool.Projection.RIGID, 8);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_1.location(), StructureTemplatePool.Projection.RIGID, 8);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_2.location(), StructureTemplatePool.Projection.RIGID, 8);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_2.location(), StructureTemplatePool.Projection.RIGID, 8);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_3.location(), StructureTemplatePool.Projection.RIGID, 8);
-        addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_3.location(), StructureTemplatePool.Projection.RIGID, 8);
+        addBuildingToPool(serverRegistry, getPoolRL("plains/streets"), ProcessorLists.STREET_PLAINS, new ResourceLocation("village/plains/streets/straight_05"), StructureTemplatePool.Projection.TERRAIN_MATCHING, 1000);
+        //addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_1.location(), StructureTemplatePool.Projection.RIGID, 8);
+        //addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_1.location(), StructureTemplatePool.Projection.RIGID, 8);
+        //addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_2.location(), StructureTemplatePool.Projection.RIGID, 8);
+        //addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_2.location(), StructureTemplatePool.Projection.RIGID, 8);
+        //addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKEMART_3.location(), StructureTemplatePool.Projection.RIGID, 8);
+        //addBuildingToPool(serverRegistry, getPoolRL("plains/houses"), ProcessorLists.EMPTY, GenerationsStructuresKeys.PLAINS_POKECENTER_3.location(), StructureTemplatePool.Projection.RIGID, 8);
     }
 
     private static ResourceLocation getPoolRL(String poolName) {

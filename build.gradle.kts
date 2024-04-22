@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
 
 plugins {
@@ -17,6 +19,7 @@ subprojects {
 
     val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
     loom.silentMojangMappingsLicense()
+    loom.mixin.useLegacyMixinAp.set(false)
 
     repositories {
         mavenCentral()
@@ -35,7 +38,7 @@ subprojects {
         maven("https://maven.enginehub.org/repo")
     }
 
-    @Suppress("UnstableApiUsage")
+
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
         "mappings"(loom.layered{

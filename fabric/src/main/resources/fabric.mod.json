@@ -23,6 +23,9 @@
   "entrypoints": {
     "main": ["generations.gg.generations.structures.generationsstructures.fabric.GenerationsStructuresFabric"]
   },
+  "mixins": [
+    "GenerationsStructures-common.mixins.json"
+  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20.1",
