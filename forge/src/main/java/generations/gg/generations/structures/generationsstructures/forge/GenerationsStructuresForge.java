@@ -1,12 +1,10 @@
 package generations.gg.generations.structures.generationsstructures.forge;
 
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.forge.events.LifeCycleEvents;
 import generations.gg.generations.structures.generationsstructures.forge.integration.BOP;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -28,7 +26,6 @@ public class GenerationsStructuresForge {
         GenerationsStructures.init(integration);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::commonSetup);
-        MinecraftForge.EVENT_BUS.addListener(LifeCycleEvents::aboutToStartEvent);
     }
 
     /**
