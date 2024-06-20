@@ -13,6 +13,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.heightproviders.BiasedToBottomHeight;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
@@ -163,6 +164,6 @@ public class GenerationsStructureSettings {
 
     private static JigsawStructure balloonJigsawStructure(Holder<StructureTemplatePool> poolHolderGetter, HolderSet<Biome> biomeHolderGetter){
         return createJigsaw(new Structure.StructureSettings(biomeHolderGetter, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
-                poolHolderGetter, 1, UniformHeight.of(VerticalAnchor.absolute(180), VerticalAnchor.belowTop(110)), false);
+                poolHolderGetter, 1, BiasedToBottomHeight.of(VerticalAnchor.absolute(80), VerticalAnchor.belowTop(135), 1), Heightmap.Types.WORLD_SURFACE_WG);
     }
 }
