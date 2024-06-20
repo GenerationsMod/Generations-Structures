@@ -45,6 +45,7 @@ dependencies {
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
+    modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}")
 }
 
 tasks {

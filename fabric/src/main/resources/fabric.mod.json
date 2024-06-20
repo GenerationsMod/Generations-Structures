@@ -30,5 +30,8 @@
     "fabric": "*",
     "minecraft": ">=1.20.1",
     "generations_core": "*"
+  },
+  "suggests": {
+      "ohthebiomeswevegone" : ">=1.2.1-Alpha"
   }
 }

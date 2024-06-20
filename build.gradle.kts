@@ -36,6 +36,7 @@ subprojects {
         maven("https://maven.parchmentmc.org")
         maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
         maven("https://maven.enginehub.org/repo")
+        maven("https://maven.jt-dev.tech/releases")
     }
 
 
