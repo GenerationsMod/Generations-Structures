@@ -21,33 +21,22 @@ import java.util.List;
  * @author Joseph T. McQuigg
  */
 public class GenerationsStructureSets {
-    private static final ResourceKey<StructureSet> LOOT_BALLOON = create("loot_balloon");
-    private static final ResourceKey<StructureSet> COMET = create("comet");
-    private static final ResourceKey<StructureSet> POKESHOPS = create("pokeshops");
-    private static final ResourceKey<StructureSet> SPIKE = create("spike");
-    private static final ResourceKey<StructureSet> FROZEN_SHRINE = create("shrines/frozen_shrine");
-    private static final ResourceKey<StructureSet> FIERY_SHRINE = create("shrines/fiery_shrine");
-    private static final ResourceKey<StructureSet> STATIC_SHRINE = create("shrines/static_shrine");
-    private static final ResourceKey<StructureSet> LUGIA_SHRINE = create("shrines/lugia_shrine");
-    private static final ResourceKey<StructureSet> ISLANDS = create("islands");
 
     /**
      * This method is used to bootstrap the structure sets.
      * @param context The bootstrap context
      */
     public static void bootstrap(BootstapContext<StructureSet> context) {
-        register(context, COMET, GenerationsStructuresKeys.COMET,
-                new RandomSpreadStructurePlacement(150, 85, RandomSpreadType.LINEAR, 1189082690));
+        register(context, "comet", GenerationsStructuresKeys.COMET, 150, 85, 1189082690);
 
-        register(context, POKESHOPS,
+        register(context, "pokeshops",
                 ImmutableList.of(
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.SCARLET_POKECENTER, 1),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.LARGE_POKECENTER, 1)
-                ),
-                new RandomSpreadStructurePlacement(400, 250, RandomSpreadType.LINEAR, 293756737));
+                ), 400, 250, 293756737);
 
         register(context,
-          LOOT_BALLOON,
+                "loot_balloon",
                 ImmutableList.of(
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.GREAT_BALLOON, 4),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.MASTER_BALLOON, 1),
@@ -55,46 +44,55 @@ public class GenerationsStructureSets {
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.BEAST_BALLOON, 2),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.MEOWTH_BALLOON, 3),
                         createStructureSelectionEntry(context, GenerationsStructuresKeys.POKE_BALLOON, 5)
-                ), new RandomSpreadStructurePlacement(100, 45, RandomSpreadType.LINEAR, 738478911)
-        );
+                ), 100, 45, 738478911);
 
-        register(context, ISLANDS, GenerationsStructuresKeys.ISLANDS,
-                new RandomSpreadStructurePlacement(100, 45, RandomSpreadType.LINEAR, 347680677));
+        register(context, "islands", GenerationsStructuresKeys.ISLANDS, 100, 45, 347680677);
 
-        register(context, FROZEN_SHRINE, GenerationsStructuresKeys.FROZEN_SHRINE,
-                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 989914746));
+        register(context, "shrines/frozen_shrine", GenerationsStructuresKeys.FROZEN_SHRINE, 2000, 350, 989914746);
 
-        register(context, FIERY_SHRINE, GenerationsStructuresKeys.FIERY_SHRINE,
-                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 333897074));
+        register(context, "shrines/fiery_shrine", GenerationsStructuresKeys.FIERY_SHRINE, 2000, 350, 333897074);
 
-        register(context, STATIC_SHRINE, GenerationsStructuresKeys.STATIC_SHRINE,
-                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 442038945));
+        register(context, "shrines/static_shrine", GenerationsStructuresKeys.STATIC_SHRINE, 2000, 350, 442038945);
 
-        register(context, LUGIA_SHRINE, GenerationsStructuresKeys.LUGIA_SHRINE,
-                new RandomSpreadStructurePlacement(2000, 350, RandomSpreadType.LINEAR, 751341351));
+        register(context, "shrines/lugia_shrine", GenerationsStructuresKeys.LUGIA_SHRINE, 2000, 350, 751341351);
     }
 
     /**
      * Registers a structure set with the given key and structure.
      * @param context The bootstrap context
-     * @param key The key for the structure set
+     * @param id The key for the structure set ResourceKey
+     * @param structure The structure to register
+     * @param spacing The spacing for the structure set
+     * @param seperation The seperation for the structure set
+     * @param salt The salt for the structure set
+     */
+    private static void register(BootstapContext<StructureSet> context, String id, ResourceKey<Structure> structure, int spacing, int seperation, int salt) {
+        register(context, id, structure, new RandomSpreadStructurePlacement(spacing, seperation, RandomSpreadType.LINEAR, salt));
+    }
+
+    /**
+     * Registers a structure set with the given key and structure.
+     * @param context The bootstrap context
+     * @param id The id for the structure set ResourceKey
      * @param structure The structure to register
      * @param placement The placement for the structure set
      */
-    private static void register(BootstapContext<StructureSet> context, ResourceKey<StructureSet> key, ResourceKey<Structure> structure, StructurePlacement placement) {
-        context.register(key, new StructureSet(context.lookup(Registries.STRUCTURE).getOrThrow(structure), placement));
+    private static void register(BootstapContext<StructureSet> context, String id, ResourceKey<Structure> structure, StructurePlacement placement) {
+        context.register(create(id), new StructureSet(context.lookup(Registries.STRUCTURE).getOrThrow(structure), placement));
     }
 
 
     /**
      * Registers a structure set with the given key and structure selection entries.
      * @param context The bootstrap context
-     * @param key The key for the structure set
+     * @param id The id for the structure set ResourceKey
      * @param structureSelectionEntries The structure selection entries to register
-     * @param placement The placement for the structure set
+     * @param spacing The spacing for the structure set
+     * @param seperation The seperation for the structure set
+     * @param salt The salt for the structure set
      */
-    private static void register(BootstapContext<StructureSet> context, ResourceKey<StructureSet> key, List<StructureSet.StructureSelectionEntry> structureSelectionEntries, StructurePlacement placement) {
-        context.register(key, new StructureSet(structureSelectionEntries, placement));
+    private static void register(BootstapContext<StructureSet> context, String id, List<StructureSet.StructureSelectionEntry> structureSelectionEntries, int spacing, int seperation, int salt) {
+        context.register(create(id), new StructureSet(structureSelectionEntries, new RandomSpreadStructurePlacement(spacing, seperation, RandomSpreadType.LINEAR, salt)));
     }
 
     /**
