@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures;
 
-import generations.gg.generations.core.generationscore.config.ConfigLoader;
+
+import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.structures.generationsstructures.config.Config;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;

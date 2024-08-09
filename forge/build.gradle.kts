@@ -129,7 +129,7 @@ publisher {
     setCurseEnvironment(CurseEnvironment.SERVER)
     setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18, JavaVersion.VERSION_19, JavaVersion.VERSION_20, JavaVersion.VERSION_21)
     val depends = mutableListOf("generations-core")
-    val softDepends = mutableListOf("biomes-o-plenty")
+    val softDepends = mutableListOf("biomes-o-plenty", "oh-the-biomes-weve-gone")
     curseDepends.required.set(depends)
     curseDepends.optional.set(softDepends)
     modrinthDepends.required.set(depends)

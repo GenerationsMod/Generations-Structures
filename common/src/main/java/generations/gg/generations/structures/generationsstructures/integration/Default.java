@@ -1,7 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.integration;
 
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;

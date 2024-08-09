@@ -1,7 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.processors.structure_processors;
 
 import com.mojang.serialization.Codec;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
