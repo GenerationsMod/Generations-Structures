@@ -3,7 +3,7 @@ import com.hypherionmc.modpublisher.properties.ModLoader
 import com.hypherionmc.modpublisher.properties.ReleaseType
 
 plugins {
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.github.johnrengelman.shadow")
     id("com.hypherionmc.modutils.modpublisher") version "2.+"
 }
 
@@ -13,14 +13,21 @@ architectury {
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
-val jarName = base.archivesName.get() + "-Fabric"
 
 configurations {
     create("common")
-    create("shadowCommon")
+    "common" {
+        isCanBeResolved = true
+        isCanBeConsumed = false
+    }
+    create("shadowBundle")
     compileClasspath.get().extendsFrom(configurations["common"])
     runtimeClasspath.get().extendsFrom(configurations["common"])
     getByName("developmentFabric").extendsFrom(configurations["common"])
+    "shadowBundle" {
+        isCanBeResolved = true
+        isCanBeConsumed = false
+    }
 }
 
 loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
@@ -30,7 +37,7 @@ dependencies {
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
-    "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
+    "shadowBundle"(project(":common", "transformProductionFabric"))
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
@@ -45,11 +52,10 @@ dependencies {
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
-    modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}")
+    modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}") { isTransitive = false }
 }
 
 tasks {
-    base.archivesName.set(jarName)
     processResources {
         inputs.property("version", project.version)
 
@@ -60,7 +66,7 @@ tasks {
 
     shadowJar {
         exclude(".cache/**", "architectury.common.json")
-        configurations = listOf(project.configurations.getByName("shadowCommon"))
+        configurations = listOf(project.configurations.getByName("shadowBundle"))
         archiveClassifier.set("dev-shadow")
     }
 
@@ -68,21 +74,6 @@ tasks {
         injectAccessWidener.set(true)
         inputFile.set(shadowJar.get().archiveFile)
         dependsOn(shadowJar)
-    }
-
-    jar.get().archiveClassifier.set("dev")
-
-    sourcesJar {
-        val commonSources = project(":common").tasks.sourcesJar
-        dependsOn(commonSources)
-        from(commonSources.get().archiveFile.map { zipTree(it) })
-    }
-}
-
-components {
-    java.run {
-        if (this is AdhocComponentWithVariants)
-            withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) { skip() }
     }
 }
 
@@ -98,8 +89,8 @@ publisher {
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
     setReleaseType(ReleaseType.BETA)
     projectVersion.set(project.version.toString())
-    displayName.set("$jarName-${projectVersion.get()}")
-    changelog.set("test changelog")
+    displayName.set(base.archivesName.get() + "-Fabric")
+    changelog.set(projectDir.toPath().parent.resolve("CHANGELOG.md").toFile().readText())
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
@@ -111,33 +102,6 @@ publisher {
     curseDepends.optional.set(softDepends)
     modrinthDepends.required.set(depends)
     modrinthDepends.optional.set(softDepends)
-}
-
-publishing {
-    publications.create<MavenPublication>("mavenFabric") {
-        artifactId = jarName
-        from(components["java"])
-    }
-
-    repositories {
-        mavenLocal()
-        maven {
-            val releasesRepoUrl = "https://maven.generations.gg/releases"
-            val snapshotsRepoUrl = "https://maven.generations.gg/snapshots"
-            url = uri(if (project.version.toString().endsWith("SNAPSHOT") || project.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
-            name = "Generations-Repo"
-            credentials {
-                username = getGensCredentials().first
-                password = getGensCredentials().second
-            }
-        }
-    }
-}
-
-private fun getGensCredentials(): Pair<String?, String?> {
-    val username = (project.findProperty("gensUsername") ?: System.getenv("GENS_USERNAME") ?: "") as String?
-    val password = (project.findProperty("gensPassword") ?: System.getenv("GENS_PASSWORD") ?: "") as String?
-    return Pair(username, password)
 }
 
 private fun getPublishingCredentials(): Pair<String?, String?> {
