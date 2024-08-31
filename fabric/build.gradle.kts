@@ -35,13 +35,13 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     // Generations-Core Fabric
-    modApi("generations.gg.generations.core:Generations-Core-Fabric:${project.properties["generations-core_version"]}") { isChanging = true }
+    modApi("generations.gg.generations.core:Generations-Core-fabric:${project.properties["generations-core_version"]}") { isChanging = true }
     modRuntimeOnly("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
     modRuntimeOnly("earth.terrarium.botarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
-    modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.10.19+kotlin.1.9.23")
+    modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.12.1+kotlin.2.0.20")
 
     //BiomeMod Integration
     modApi("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")

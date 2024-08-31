@@ -14,7 +14,7 @@ dependencies {
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
 
-    modCompileOnly("generations.gg.generations.core:Generations-Core-Common:${project.properties["generations-core_version"]}") { isChanging = true }
+    modCompileOnly("generations.gg.generations.core:Generations-Core-common:${project.properties["generations-core_version"]}") { isChanging = true }
     modCompileOnly("earth.terrarium.botarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon

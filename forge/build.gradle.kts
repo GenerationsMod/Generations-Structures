@@ -55,12 +55,12 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     // Generations-Core Forge
-    modApi("generations.gg.generations.core:Generations-Core-Forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
+    modApi("generations.gg.generations.core:Generations-Core-forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
     modRuntimeOnly("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
     modRuntimeOnly("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.10.0")
+    implementation("thedarkcolour:kotlinforforge:4.11.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration

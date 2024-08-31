@@ -2,7 +2,6 @@ package generations.gg.generations.structures.generationsstructures.integration;
 
 import net.minecraft.world.level.block.Block;
 import net.potionstudios.biomeswevegone.BiomesWeveGone;
-import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +23,7 @@ public class BWG implements Integration {
 
     @Override
     public Block getOakLeavesReplacement() {
-        return BWGBlocks.FLOWERING_ORCHARD_LEAVES.get();
+        return BWGWood.FLOWERING_ORCHARD_LEAVES.get();
     }
 
     @Override
