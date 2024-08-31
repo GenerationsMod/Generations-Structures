@@ -38,7 +38,7 @@ public abstract class JigsawPlacementPlacerMixin {
         String poolPath = key.location().getPath();
         if (poolPath.endsWith("/streets")) {
             VanillaVillages village = VanillaVillages.containsName(poolPath);
-            if (village != VanillaVillages.PLAINS) return key;
+            if (village != VanillaVillages.PLAINS && village != VanillaVillages.DESERT) return key;
             if (!hasPokeCenter && pools.getHolder(village.getPokeCenterStreets()).isPresent()) {
                 hasPokeCenter = true;
                 return village.getPokeCenterStreets();

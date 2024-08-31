@@ -11,9 +11,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.Pools;
 import net.minecraft.data.worldgen.ProcessorLists;
-import net.minecraft.data.worldgen.VillagePools;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
@@ -145,10 +143,26 @@ public class GenerationsTemplatePools {
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.PLAINS_POKEMART_3.location().toString()), 1)
         ), StructureTemplatePool.Projection.RIGID);
 
+        register(context, DESERT_VILLAGE_POKEMART_STREETS, VanillaVillages.DESERT.getVillagePool("streets"), ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKEMART_STREET_CORNER_01.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1),
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKEMART_STREET_STRAIGHT_05.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
+
+        register(context, DESERT_VILLAGE_POKECENTER_STREETS, VanillaVillages.DESERT.getVillagePool("streets"), ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKECENTER_STREET_CORNER_01.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1),
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKECENTER_STREET_STRAIGHT_05.location().toString(), getProcessor(context, ProcessorLists.EMPTY)), 1)
+        ), StructureTemplatePool.Projection.TERRAIN_MATCHING);
+
         register(context, DESERT_VILLAGE_POKEMART, DESERT_VILLAGE_POKEMART, ImmutableList.of(
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKEMART_1.location().toString()), 1),
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKEMART_2.location().toString()), 1),
                 Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKEMART_3.location().toString()), 1)
+        ), StructureTemplatePool.Projection.RIGID);
+
+        register(context, DESERT_VILLAGE_POKECENTER, DESERT_VILLAGE_POKECENTER, ImmutableList.of(
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKECENTER_1.location().toString()), 1),
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKECENTER_2.location().toString()), 1),
+                Pair.of(StructurePoolElement.single(GenerationsStructuresKeys.DESERT_POKECENTER_3.location().toString()), 1)
         ), StructureTemplatePool.Projection.RIGID);
     }
 

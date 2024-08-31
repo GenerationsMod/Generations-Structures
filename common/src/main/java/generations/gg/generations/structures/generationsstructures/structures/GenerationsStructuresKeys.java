@@ -54,9 +54,16 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> PLAINS_POKECENTER_3 = createKey("village/plains/pokecenter_3");
 
 
+    ResourceKey<Structure> DESERT_POKEMART_STREET_STRAIGHT_05 = createKey("village/desert/streets/pokemart/straight_05");
+    ResourceKey<Structure> DESERT_POKEMART_STREET_CORNER_01 = createKey("village/desert/streets/pokemart/corner_01");
+    ResourceKey<Structure> DESERT_POKECENTER_STREET_STRAIGHT_05 = createKey("village/desert/streets/pokecenter/straight_05");
+    ResourceKey<Structure> DESERT_POKECENTER_STREET_CORNER_01 = createKey("village/desert/streets/pokecenter/corner_01");
     ResourceKey<Structure> DESERT_POKEMART_1 = createKey("village/desert/pokemart_1");
     ResourceKey<Structure> DESERT_POKEMART_2 = createKey("village/desert/pokemart_2");
     ResourceKey<Structure> DESERT_POKEMART_3 = createKey("village/desert/pokemart_3");
+    ResourceKey<Structure> DESERT_POKECENTER_1 = createKey("village/desert/pokecenter_1");
+    ResourceKey<Structure> DESERT_POKECENTER_2 = createKey("village/desert/pokecenter_2");
+    ResourceKey<Structure> DESERT_POKECENTER_3 = createKey("village/desert/pokecenter_3");
     /**
      * Creates a ResourceKey for the structure.
      * @param name The name of the structure or directory with name.
