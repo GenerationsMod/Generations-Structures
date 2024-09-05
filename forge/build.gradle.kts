@@ -59,7 +59,7 @@ dependencies {
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowBundle"(project(":common", "transformProductionForge"))
 
-    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
+    modLocalRuntime("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     // Generations-Core Forge
     modApi("generations.gg.generations.core:Generations-Core-forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
