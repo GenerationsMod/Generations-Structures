@@ -29,9 +29,10 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20.1",
-    "generations_core": "*"
+    "generations_core": "*",
+    "cobblemon": "1.5.2+1.20.1"
   },
   "suggests": {
-      "ohthebiomeswevegone" : ">=1.2.1-Alpha"
+      "biomeswevegone" : ">=1.2.3"
   }
 }

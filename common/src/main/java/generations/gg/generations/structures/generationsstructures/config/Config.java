@@ -10,6 +10,7 @@ public class Config {
     public static class Integration {
         public boolean AllowIntegrations = true;
         public boolean AllowBiomesOPlentyIntegration = true;
+        public boolean AllowBiomesWeveGoneIntegration = true;
     }
 
     public VillageStructureGeneration villageStructureGeneration = new VillageStructureGeneration();

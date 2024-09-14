@@ -1,6 +1,5 @@
 package generations.gg.generations.structures.generationsstructures;
 
-
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.structures.generationsstructures.config.Config;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
@@ -37,7 +36,8 @@ public class GenerationsStructures {
         INTEGRATION = !CONFIG.integration.AllowIntegrations ? new Default() : integration;
         GenerationsProcessorLists.init();
         if (integration.getModId() != null)
-            if (integration.getModId().equals("biomesoplenty")  && !CONFIG.integration.AllowBiomesOPlentyIntegration)
+            if ((integration.getModId().equals("biomesoplenty") && !CONFIG.integration.AllowBiomesOPlentyIntegration)
+                || (integration.getModId().equals("biomeswevegone") && !CONFIG.integration.AllowBiomesWeveGoneIntegration))
                 INTEGRATION = new Default();
     }
 
