@@ -127,6 +127,110 @@ public class GenerationsStructureSettings {
                 Heightmap.Types.WORLD_SURFACE_WG
         ));
 
+        registerStructure(context, GenerationsStructuresKeys.BURNED_TOWER_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_BURNED_TOWER_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.BURNED_TOWER_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.CREATION_TRIO_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_CREATION_TRIO_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.CREATION_TRIO_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.LUNAR_DUO_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LUNAR_DUO_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.LUNAR_DUO_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.FORCES_OF_NATURE_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_FORCES_OF_NATURE_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.FORCES_OF_NATURE_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.GROUDON_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_GROUDON_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.GROUDON_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.REGI_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_REGI_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.REGI_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.KYOGRE_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_KYOGRE_SHINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.KYOGRE_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.OCEAN_FLOOR_WG
+        ));
+
+        registerStructure(context, GenerationsStructuresKeys.TAPU_SHRINE, createJigsaw(
+                new Structure.StructureSettings(
+                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_TAPU_SHRINE),
+                        Map.of(),
+                        GenerationStep.Decoration.SURFACE_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ),
+                poolHolderGetter.getOrThrow(GenerationsTemplatePools.TAPU_SHRINE),
+                1,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
         registerStructure(context, GenerationsStructuresKeys.ISLANDS, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_ISLANDS),

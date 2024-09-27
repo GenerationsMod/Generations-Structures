@@ -37,6 +37,14 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = create("shrines/fiery_shrine");
     public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = create("shrines/static_shrine");
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = create("shrines/lugia_shrine");
+    public static final ResourceKey<StructureTemplatePool> BURNED_TOWER_SHRINE = create("shrines/burned_tower_shrine");
+    public static final ResourceKey<StructureTemplatePool> CREATION_TRIO_SHRINE = create("shrines/creation_trio_shrine");
+    public static final ResourceKey<StructureTemplatePool> LUNAR_DUO_SHRINE = create("shrines/lunar_duo_shrine");
+    public static final ResourceKey<StructureTemplatePool> FORCES_OF_NATURE_SHRINE = create("shrines/forces_of_nature_shrine");
+    public static final ResourceKey<StructureTemplatePool> GROUDON_SHRINE = create("shrines/groudon_shrine");
+    public static final ResourceKey<StructureTemplatePool> KYOGRE_SHRINE = create("shrines/kyogre_shrine");
+    public static final ResourceKey<StructureTemplatePool> REGI_SHRINE = create("shrines/regi_shrine");
+    public static final ResourceKey<StructureTemplatePool> TAPU_SHRINE = create("shrines/tapu_shrine");
 
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = create("village/plains/streets/pokecenter");
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER = create("village/plains/pokecenter");

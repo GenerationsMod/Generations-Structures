@@ -36,6 +36,30 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that can have a Lugia shrine */
     public static final TagKey<Biome> HAS_LUGIA_SHRINE = create("has_structure/lugia_shrine");
 
+    /** the tag for biomes that can have a burned tower shrine */
+    public static final TagKey<Biome> HAS_BURNED_TOWER_SHRINE = create("has_structure/burned_tower_shrine");
+
+    /** the tag for biomes that can have a creation trio shrine */
+    public static final TagKey<Biome> HAS_CREATION_TRIO_SHRINE = create("has_structure/creation_trio_shrine");
+
+    /** the tag for biomes that can have a lunar duo shrine */
+    public static final TagKey<Biome> HAS_LUNAR_DUO_SHRINE = create("has_structure/lunar_duo_shrine");
+
+    /** the tag for biomes that can have a forces of nature shrine */
+    public static final TagKey<Biome> HAS_FORCES_OF_NATURE_SHRINE = create("has_structure/forces_of_nature_shrine");
+
+    /** the tag for biomes that can have a groudon shrine */
+    public static final TagKey<Biome> HAS_GROUDON_SHRINE = create("has_structure/groudon_shrine");
+
+    /** the tag for biomes that can have a kyogre shrine */
+    public static final TagKey<Biome> HAS_KYOGRE_SHINE = create("has_structure/kyogre_shrine");
+
+    /** the tag for biomes that can have a regi shrine */
+    public static final TagKey<Biome> HAS_REGI_SHRINE = create("has_structure/regi_shrine");
+
+    /** the tag for biomes that can have a tapu shrine */
+    public static final TagKey<Biome> HAS_TAPU_SHRINE = create("has_structure/tapu_shrine");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

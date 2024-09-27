@@ -40,6 +40,14 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> FIERY_SHRINE = createKey("shrines/fiery_shrine");
     ResourceKey<Structure> STATIC_SHRINE = createKey("shrines/static_shrine");
     ResourceKey<Structure> LUGIA_SHRINE = createKey("shrines/lugia_shrine");
+    ResourceKey<Structure> BURNED_TOWER_SHRINE = createKey("shrines/burned_tower_shrine");
+    ResourceKey<Structure> CREATION_TRIO_SHRINE = createKey("shrines/creation_trio_shrine");
+    ResourceKey<Structure> LUNAR_DUO_SHRINE = createKey("shrines/lunar_duo_shrine");
+    ResourceKey<Structure> FORCES_OF_NATURE_SHRINE = createKey("shrines/forces_of_nature_shrine");
+    ResourceKey<Structure> GROUDON_SHRINE = createKey("shrines/groudon_shrine");
+    ResourceKey<Structure> KYOGRE_SHRINE = createKey("shrines/kyogre_shrine");
+    ResourceKey<Structure> REGI_SHRINE = createKey("shrines/regi_shrine");
+    ResourceKey<Structure> TAPU_SHRINE = createKey("shrines/tapu_shrine");
 
     /** Villages Structure ResourceKeys **/
     ResourceKey<Structure> PLAINS_POKEMART_STREET_STRAIGHT_05 = createKey("village/plains/streets/pokemart/straight_05");

@@ -101,6 +101,38 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_LUGIA_SHRINE)
                     .addTag(BiomeTags.IS_MOUNTAIN)
                     .addTag(BiomeTags.IS_FOREST);
+
+            tag(GenerationsBiomeTags.HAS_BURNED_TOWER_SHRINE)
+                    .addOptionalTag(fabricTagMaker("savanna"))
+                    .add(Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA);
+
+            tag(GenerationsBiomeTags.HAS_CREATION_TRIO_SHRINE)
+                    .addOptionalTag(fabricTagMaker("badlands"))
+                    .add(Biomes.END_BARRENS, Biomes.WINDSWEPT_SAVANNA, Biomes.BADLANDS);
+
+            tag(GenerationsBiomeTags.HAS_FORCES_OF_NATURE_SHRINE)
+                    .addOptionalTag(fabricTagMaker("floral"))
+                    .add(Biomes.FLOWER_FOREST, Biomes.CHERRY_GROVE, Biomes.SUNFLOWER_PLAINS);
+
+            tag(GenerationsBiomeTags.HAS_LUNAR_DUO_SHRINE)
+                    .addOptionalTag(fabricTagMaker("floral_forests"))
+                    .add(Biomes.DARK_FOREST, Biomes.FLOWER_FOREST);
+
+            tag(GenerationsBiomeTags.HAS_GROUDON_SHRINE)
+                    .addOptionalTag(fabricTagMaker("desert"))
+                    .add(Biomes.DESERT);
+
+            tag(GenerationsBiomeTags.HAS_KYOGRE_SHINE)
+                    .addOptionalTag(fabricTagMaker("deep_ocean"))
+                    .add(Biomes.DEEP_FROZEN_OCEAN, Biomes.DEEP_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN);
+
+            tag(GenerationsBiomeTags.HAS_REGI_SHRINE)
+                    .addOptionalTag(fabricTagMaker("icy"))
+                    .add(Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.ICE_SPIKES);
+
+            tag(GenerationsBiomeTags.HAS_TAPU_SHRINE)
+                    .addOptionalTag(fabricTagMaker("jungle"))
+                    .add(Biomes.JUNGLE, Biomes.SPARSE_JUNGLE);
         }
     }
 
@@ -126,7 +158,16 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location())
                     .addOptional(GenerationsStructuresKeys.STATIC_SHRINE.location())
-                    .addOptional(GenerationsStructuresKeys.LUGIA_SHRINE.location());
+                    .addOptional(GenerationsStructuresKeys.LUGIA_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.BURNED_TOWER_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.CREATION_TRIO_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.LUNAR_DUO_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.FORCES_OF_NATURE_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.GROUDON_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.KYOGRE_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.REGI_SHRINE.location())
+                    .addOptional(GenerationsStructuresKeys.TAPU_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
