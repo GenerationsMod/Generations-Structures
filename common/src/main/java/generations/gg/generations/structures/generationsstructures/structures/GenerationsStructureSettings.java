@@ -114,19 +114,6 @@ public class GenerationsStructureSettings {
                 Heightmap.Types.WORLD_SURFACE_WG
         ));
 
-        registerStructure(context, GenerationsStructuresKeys.LUGIA_SHRINE, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LUGIA_SHRINE),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.LUGIA_SHRINE),
-                1,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Heightmap.Types.WORLD_SURFACE_WG
-        ));
-
         registerStructure(context, GenerationsStructuresKeys.ISLANDS, createJigsaw(
                 new Structure.StructureSettings(
                         biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_ISLANDS),

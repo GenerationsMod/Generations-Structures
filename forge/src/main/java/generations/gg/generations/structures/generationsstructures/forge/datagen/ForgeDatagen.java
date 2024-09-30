@@ -50,7 +50,7 @@ public class ForgeDatagen {
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.TEMPLATE_POOL, GenerationsTemplatePools::bootstrap)
+            .add(Registries.TEMPLATE_POOL, context -> GenerationsTemplatePools.TEMPLATE_POOL_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context))))
             .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
             .add(Registries.STRUCTURE_SET, context -> GenerationsStructureSets.STRUCTURE_SET_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context.lookup(Registries.STRUCTURE)))))
             .add(Registries.PROCESSOR_LIST, GenerationsProcessorLists::bootstrap);
