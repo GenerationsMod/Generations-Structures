@@ -71,7 +71,7 @@ dependencies {
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
-    modApi("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
+    modLocalRuntime("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty:$minecraftVersion-${project.properties["BOP_version"]}")
     modRuntimeOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Forge:${project.properties["BWG_version"]}") { isTransitive = false }

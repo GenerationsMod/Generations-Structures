@@ -19,6 +19,5 @@ dependencies {
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 
     //BiomeMod Integration
-    modCompileOnly("com.github.glitchfiend:TerraBlender-common:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Common:${project.properties["BWG_version"]}")
 }

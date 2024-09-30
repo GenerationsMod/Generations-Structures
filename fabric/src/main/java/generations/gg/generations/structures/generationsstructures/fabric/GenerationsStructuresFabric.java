@@ -3,7 +3,6 @@ package generations.gg.generations.structures.generationsstructures.fabric;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.integration.BWG;
 import generations.gg.generations.structures.generationsstructures.integration.Default;
-import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.potionstudios.biomeswevegone.BiomesWeveGone;
@@ -18,6 +17,5 @@ public class GenerationsStructuresFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         GenerationsStructures.init(FabricLoader.getInstance().isModLoaded(BiomesWeveGone.MOD_ID) ? new BWG() : new Default());
-        StructureProcessors.init();
     }
 }
