@@ -53,7 +53,7 @@ public class ForgeDatagen {
             .add(Registries.TEMPLATE_POOL, context -> GenerationsTemplatePools.TEMPLATE_POOL_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context))))
             .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
             .add(Registries.STRUCTURE_SET, context -> GenerationsStructureSets.STRUCTURE_SET_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context.lookup(Registries.STRUCTURE)))))
-            .add(Registries.PROCESSOR_LIST, GenerationsProcessorLists::bootstrap);
+            .add(Registries.PROCESSOR_LIST, context -> GenerationsProcessorLists.STRUCTURE_PROCESSOR_LIST_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context.lookup(Registries.PROCESSOR_LIST)))));
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 

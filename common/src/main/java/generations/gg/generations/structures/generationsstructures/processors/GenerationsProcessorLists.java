@@ -2,20 +2,13 @@ package generations.gg.generations.structures.generationsstructures.processors;
 
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.fiery.FieryShrineRandomizerProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.frozen.FrozenShrineProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.GymProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.PokeCenterProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.ScarletPokeCenterProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.lugia.LugiaShrineRandomizerProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineProcessor;
-import generations.gg.generations.structures.generationsstructures.processors.structure_processors.shrines.staticShrine.StaticShrineRandomizerProcessor;
+import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
+
+import java.util.Map;
 
 /**
  * This class is used to hold all the ProcessorLists
@@ -23,24 +16,22 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.*;
  * @author Joseph T. McQuigg
  */
 public class GenerationsProcessorLists {
+
+	public static final Map<ResourceKey<StructureProcessorList>, StructureProcessorListFactory> STRUCTURE_PROCESSOR_LIST_FACTORIES = new Reference2ObjectOpenHashMap<>();
+
 	public static void init() {}
 
-	public static final ResourceKey<StructureProcessorList> GYM_PROCESSOR_LIST = create("gym_processor_list");
+	//public static final ResourceKey<StructureProcessorList> GYM_PROCESSOR_LIST = create("gym_processor_list");
 	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = create("scarlet_pokecenter_processor_list");
 	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = create("pokecenter_processor_list");
 	public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("shrines/frozen_shrine_processor_list");
 	public static final ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("shrines/fiery_shrine_processor_list");
 	public static final ResourceKey<StructureProcessorList> STATIC_SHRINE_PROCESSOR_LIST = create("shrines/static_shrine_processor_list");
-	public static final ResourceKey<StructureProcessorList> LUGIA_SHRINE_PROCESSOR_LIST = create("shrines/lugia_shrine_processor_list");
 
-	/**
-	 * This method is used to bootstrap the processorlists.
-	 * @param context The bootstrap context
-	 */
+	/*
 	public static void bootstrap(BootstapContext<StructureProcessorList> context) {
 		StructureProcessors.init();
 		register(context, SCARLET_POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new ScarletPokeCenterProcessor())));
-		register(context, GYM_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new GymProcessor())));
 		register(context, POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new PokeCenterProcessor())));
 		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineProcessor(),
 						new RuleProcessor(
@@ -77,14 +68,16 @@ public class GenerationsProcessorLists {
 		register(context, LUGIA_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new LugiaShrineRandomizerProcessor())));
 	}
 
-	/**
-	 * Registers a ProcessorList with the given key and StructureProcessorList.
-	 * @param context The bootstrap context
-	 * @param key The key for the ProcessorList
-	 * @param structureProcessorList The StructureProcessorList to register
 	 */
-	private static void register(BootstapContext<StructureProcessorList> context, ResourceKey<StructureProcessorList> key, StructureProcessorList structureProcessorList) {
-		context.register(key, structureProcessorList);
+
+	private static StructureProcessorList createProcessorList(ProcessorRule... processors) {
+		return new StructureProcessorList(ImmutableList.of(new RuleProcessor(ImmutableList.copyOf(processors))));
+	}
+
+	private static ResourceKey<StructureProcessorList> register(String id, StructureProcessorListFactory factory) {
+		ResourceKey<StructureProcessorList> structureProcessorListResourceKey = create(id + "_processor_list");
+		STRUCTURE_PROCESSOR_LIST_FACTORIES.put(structureProcessorListResourceKey, factory);
+		return structureProcessorListResourceKey;
 	}
 
 	/**
@@ -94,5 +87,10 @@ public class GenerationsProcessorLists {
 	 */
 	private static ResourceKey<StructureProcessorList> create(String name) {
 		return ResourceKey.create(Registries.PROCESSOR_LIST, GenerationsStructures.id(name));
+	}
+
+	@FunctionalInterface
+	public interface StructureProcessorListFactory  {
+		StructureProcessorList generate(HolderGetter<StructureProcessorList> structureProcessorListHolderGetter);
 	}
 }
