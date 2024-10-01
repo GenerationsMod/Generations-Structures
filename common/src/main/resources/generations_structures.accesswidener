@@ -2,3 +2,4 @@ accessWidener v2  named
 
 accessible field net/minecraft/data/worldgen/ProcessorLists EMPTY Lnet/minecraft/resources/ResourceKey;
 accessible field net/minecraft/data/worldgen/PlainVillagePools TERMINATORS_KEY Lnet/minecraft/resources/ResourceKey;
+accessible method net/minecraft/data/worldgen/Structures structure (Lnet/minecraft/core/HolderSet;Ljava/util/Map;Lnet/minecraft/world/level/levelgen/GenerationStep$Decoration;Lnet/minecraft/world/level/levelgen/structure/TerrainAdjustment;)Lnet/minecraft/world/level/levelgen/structure/Structure$StructureSettings;

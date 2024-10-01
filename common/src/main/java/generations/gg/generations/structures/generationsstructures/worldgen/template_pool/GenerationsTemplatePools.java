@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
+import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.village.VanillaVillages;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
@@ -26,21 +27,21 @@ public class GenerationsTemplatePools {
 
     public static final Map<ResourceKey<StructureTemplatePool>, TemplatePoolFactory> TEMPLATE_POOL_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
-    public static final ResourceKey<StructureTemplatePool> BEAST_BALLOON = registerSimple("loot_balloon/beast_balloon", GenerationsStructuresKeys.BEAST_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> GREAT_BALLOON = registerSimple("loot_balloon/great_balloon", GenerationsStructuresKeys.GREAT_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> MASTER_BALLOON = registerSimple("loot_balloon/master_balloon", GenerationsStructuresKeys.MASTER_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = registerSimple("loot_balloon/meowth_balloon", GenerationsStructuresKeys.MEOWTH_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> POKE_BALLOON = registerSimple("loot_balloon/poke_balloon", GenerationsStructuresKeys.POKE_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = registerSimple("loot_balloon/ultra_balloon", GenerationsStructuresKeys.ULTRA_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> BEAST_BALLOON = registerSimple("loot_balloon/beast_balloon", GenerationsStructureSettings.BEAST_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> GREAT_BALLOON = registerSimple("loot_balloon/great_balloon", GenerationsStructureSettings.GREAT_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> MASTER_BALLOON = registerSimple("loot_balloon/master_balloon", GenerationsStructureSettings.MASTER_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = registerSimple("loot_balloon/meowth_balloon", GenerationsStructureSettings.MEOWTH_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> POKE_BALLOON = registerSimple("loot_balloon/poke_balloon", GenerationsStructureSettings.POKE_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = registerSimple("loot_balloon/ultra_balloon", GenerationsStructureSettings.ULTRA_BALLOON);
 
-    public static final ResourceKey<StructureTemplatePool> COMET = registerSimple("comet", GenerationsStructuresKeys.COMET);
-    public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER = registerSimple("scarlet_pokecenter", GenerationsStructuresKeys.SCARLET_POKECENTER, GenerationsProcessorLists.SCARLET_POKECENTER_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> COMET = registerSimple("comet", GenerationsStructureSettings.COMET);
+    public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER = registerSimple("scarlet_pokecenter", GenerationsStructureSettings.SCARLET_POKECENTER, GenerationsProcessorLists.SCARLET_POKECENTER_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER_ANTENNA = registerSimple("scarlet_pokecenter_antenna", GenerationsStructuresKeys.SCARLET_POKECENTER_ANTENNA);
-    public static final ResourceKey<StructureTemplatePool> LARGE_POKECENTER = registerSimple("large_pokecenter", GenerationsStructuresKeys.LARGE_POKECENTER, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST);
-    public static final ResourceKey<StructureTemplatePool> ISLANDS = registerSimple("islands", GenerationsStructuresKeys.ISLANDS);
-    public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = registerSimple("shrines/frozen_shrine", GenerationsStructuresKeys.FROZEN_SHRINE, GenerationsProcessorLists.FROZEN_SHRINE_PROCESSOR_LIST);
-    public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = registerSimple("shrines/fiery_shrine", GenerationsStructuresKeys.FIERY_SHRINE, GenerationsProcessorLists.FIERY_SHRINE_PROCESSOR_LIST);
-    public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = registerSimple("shrines/static_shrine", GenerationsStructuresKeys.STATIC_SHRINE, GenerationsProcessorLists.STATIC_SHRINE_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> LARGE_POKECENTER = registerSimple("large_pokecenter", GenerationsStructureSettings.LARGE_POKECENTER, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> ISLANDS = registerSimple("islands", GenerationsStructureSettings.ISLANDS);
+    public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = registerSimple("shrines/frozen_shrine", GenerationsStructureSettings.FROZEN_SHRINE, GenerationsProcessorLists.FROZEN_SHRINE_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = registerSimple("shrines/fiery_shrine", GenerationsStructureSettings.FIERY_SHRINE, GenerationsProcessorLists.FIERY_SHRINE_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = registerSimple("shrines/static_shrine", GenerationsStructureSettings.STATIC_SHRINE, GenerationsProcessorLists.STATIC_SHRINE_PROCESSOR_LIST);
 
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = register("village/plains/streets/pokecenter", context -> createTemplatePool(getPool(context, VanillaVillages.PLAINS.getVillagePool("streets")), ImmutableList.of(
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_CORNER_01, ProcessorLists.STREET_PLAINS, 1),

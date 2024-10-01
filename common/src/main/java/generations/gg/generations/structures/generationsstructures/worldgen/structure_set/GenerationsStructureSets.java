@@ -2,11 +2,10 @@ package generations.gg.generations.structures.generationsstructures.worldgen.str
 
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
+import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
@@ -31,35 +30,33 @@ public class GenerationsStructureSets {
      * This method is used to bootstrap the structure sets.
      */
     public static void init() {
-        register("comet", GenerationsStructuresKeys.COMET, 150, 85, 1189082690);
+        register("comet", GenerationsStructureSettings.COMET, 150, 85, 1189082690);
 
         register("pokeshops",
                 structureHolderGetter -> new StructureSet(
                 ImmutableList.of(
-                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructuresKeys.SCARLET_POKECENTER, 1),
-                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructuresKeys.LARGE_POKECENTER, 1)
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.SCARLET_POKECENTER, 1),
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.LARGE_POKECENTER, 1)
                 ), createRandomLinearSpreadPlacement(400, 250, 293756737)));
 
         register("loot_balloon",
                 structureHolderGetter -> new StructureSet(
                 ImmutableList.of(
-                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructuresKeys.GREAT_BALLOON, 4),
-                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructuresKeys.MASTER_BALLOON, 1),
-                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructuresKeys.ULTRA_BALLOON, 2),
-                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructuresKeys.BEAST_BALLOON, 2),
-                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructuresKeys.MEOWTH_BALLOON, 3),
-                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructuresKeys.POKE_BALLOON, 5)
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.GREAT_BALLOON, 4),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.MASTER_BALLOON, 1),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.ULTRA_BALLOON, 2),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.BEAST_BALLOON, 2),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.MEOWTH_BALLOON, 3),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.POKE_BALLOON, 5)
                 ), createRandomLinearSpreadPlacement(100, 45, 738478911)));
 
-        register("islands", GenerationsStructuresKeys.ISLANDS, 100, 45, 347680677);
+        register("islands", GenerationsStructureSettings.ISLANDS, 100, 45, 347680677);
 
-        register("shrines/frozen_shrine", GenerationsStructuresKeys.FROZEN_SHRINE, 2000, 350, 989914746);
+        register("shrines/frozen_shrine", GenerationsStructureSettings.FROZEN_SHRINE, 2000, 350, 989914746);
 
-        register("shrines/fiery_shrine", GenerationsStructuresKeys.FIERY_SHRINE, 2000, 350, 333897074);
+        register("shrines/fiery_shrine", GenerationsStructureSettings.FIERY_SHRINE, 2000, 350, 333897074);
 
-        register("shrines/static_shrine", GenerationsStructuresKeys.STATIC_SHRINE, 2000, 350, 442038945);
-
-        register("shrines/lugia_shrine", GenerationsStructuresKeys.LUGIA_SHRINE, 2000, 350, 751341351);
+        register("shrines/static_shrine", GenerationsStructureSettings.STATIC_SHRINE, 2000, 350, 442038945);
     }
 
     private static void register(String id, StructureSetFactory factory) {

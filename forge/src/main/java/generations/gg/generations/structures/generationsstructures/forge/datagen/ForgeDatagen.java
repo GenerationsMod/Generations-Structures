@@ -51,7 +51,7 @@ public class ForgeDatagen {
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.TEMPLATE_POOL, context -> GenerationsTemplatePools.TEMPLATE_POOL_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context))))
-            .add(Registries.STRUCTURE, GenerationsStructureSettings::bootstrap)
+            .add(Registries.STRUCTURE, context -> GenerationsStructureSettings.STRUCTURE_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context))))
             .add(Registries.STRUCTURE_SET, context -> GenerationsStructureSets.STRUCTURE_SET_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context.lookup(Registries.STRUCTURE)))))
             .add(Registries.PROCESSOR_LIST, context -> GenerationsProcessorLists.STRUCTURE_PROCESSOR_LIST_FACTORIES.forEach((key, factory) -> context.register(key, factory.generate(context.lookup(Registries.PROCESSOR_LIST)))));
 
@@ -114,28 +114,27 @@ public class ForgeDatagen {
         @Override
         protected void addTags(HolderLookup.@NotNull Provider provider) {
             tag(GenerationsStructureTags.POKESHOP)
-                    .addOptional(GenerationsStructuresKeys.SCARLET_POKECENTER.location())
-                    .addOptional(GenerationsStructuresKeys.LARGE_POKECENTER.location());
+                    .addOptional(GenerationsStructureSettings.SCARLET_POKECENTER.location())
+                    .addOptional(GenerationsStructureSettings.LARGE_POKECENTER.location());
             tag(GenerationsStructureTags.LOOT_BALLOONS)
-                    .addOptional(GenerationsStructuresKeys.POKE_BALLOON.location())
-                    .addOptional(GenerationsStructuresKeys.GREAT_BALLOON.location())
-                    .addOptional(GenerationsStructuresKeys.ULTRA_BALLOON.location())
-                    .addOptional(GenerationsStructuresKeys.MASTER_BALLOON.location())
-                    .addOptional(GenerationsStructuresKeys.BEAST_BALLOON.location())
-                    .addOptional(GenerationsStructuresKeys.MEOWTH_BALLOON.location());
+                    .addOptional(GenerationsStructureSettings.POKE_BALLOON.location())
+                    .addOptional(GenerationsStructureSettings.GREAT_BALLOON.location())
+                    .addOptional(GenerationsStructureSettings.ULTRA_BALLOON.location())
+                    .addOptional(GenerationsStructureSettings.MASTER_BALLOON.location())
+                    .addOptional(GenerationsStructureSettings.BEAST_BALLOON.location())
+                    .addOptional(GenerationsStructureSettings.MEOWTH_BALLOON.location());
             tag(GenerationsStructureTags.SHRINES)
-                    .addOptional(GenerationsStructuresKeys.FROZEN_SHRINE.location())
-                    .addOptional(GenerationsStructuresKeys.FIERY_SHRINE.location())
-                    .addOptional(GenerationsStructuresKeys.STATIC_SHRINE.location())
-                    .addOptional(GenerationsStructuresKeys.LUGIA_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.FROZEN_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.FIERY_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.STATIC_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
                     .addTag(GenerationsStructureTags.LOOT_BALLOONS)
                     //.addTag(GenerationsStructureTags.GYMS)
                     .addTag(GenerationsStructureTags.SHRINES)
-                    .addOptional(GenerationsStructuresKeys.COMET.location())
-                    .addOptional(GenerationsStructuresKeys.ISLANDS.location());
+                    .addOptional(GenerationsStructureSettings.COMET.location())
+                    .addOptional(GenerationsStructureSettings.ISLANDS.location());
 
         }
     }

@@ -12,34 +12,7 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 public interface GenerationsStructuresKeys {
 
     /** Scarlet Pokeshop Structure ResourceKey **/
-    ResourceKey<Structure> SCARLET_POKECENTER = createKey("scarlet_pokecenter");
     ResourceKey<Structure> SCARLET_POKECENTER_ANTENNA = createKey("scarlet_pokecenter_antenna");
-
-    /** Loot Balloon Structure ResourceKeys **/
-    ResourceKey<Structure> POKE_BALLOON = createKey("loot_balloon/poke_balloon");
-    ResourceKey<Structure> GREAT_BALLOON = createKey("loot_balloon/great_balloon");
-    ResourceKey<Structure> ULTRA_BALLOON = createKey("loot_balloon/ultra_balloon");
-    ResourceKey<Structure> MASTER_BALLOON = createKey("loot_balloon/master_balloon");
-    ResourceKey<Structure> BEAST_BALLOON = createKey("loot_balloon/beast_balloon");
-    ResourceKey<Structure> MEOWTH_BALLOON = createKey("loot_balloon/meowth_balloon");
-
-    /** Comet Structure ResourceKey **/
-    ResourceKey<Structure> COMET = createKey("comet");
-
-    /** PokeShop Structure ResourceKey **/
-    ResourceKey<Structure> LARGE_POKEMART = createKey("large_pokemart");
-
-    /** PokeCenter Structure ResourceKey **/
-    ResourceKey<Structure> LARGE_POKECENTER = createKey("large_pokecenter");
-
-    /** Island Structure ResourceKey **/
-    ResourceKey<Structure> ISLANDS = createKey("islands");
-
-    /** Shrines Structure ResourceKeys **/
-    ResourceKey<Structure> FROZEN_SHRINE = createKey("shrines/frozen_shrine");
-    ResourceKey<Structure> FIERY_SHRINE = createKey("shrines/fiery_shrine");
-    ResourceKey<Structure> STATIC_SHRINE = createKey("shrines/static_shrine");
-    ResourceKey<Structure> LUGIA_SHRINE = createKey("shrines/lugia_shrine");
 
     /** Villages Structure ResourceKeys **/
     ResourceKey<Structure> PLAINS_POKEMART_STREET_STRAIGHT_05 = createKey("village/plains/streets/pokemart/straight_05");

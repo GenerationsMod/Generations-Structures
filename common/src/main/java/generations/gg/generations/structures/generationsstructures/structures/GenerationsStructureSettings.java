@@ -2,13 +2,16 @@ package generations.gg.generations.structures.generationsstructures.structures;
 
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
+import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.Structures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -18,119 +21,72 @@ import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
+import net.potionstudios.biomeswevegone.BiomesWeveGone;
+import net.potionstudios.biomeswevegone.world.level.levelgen.structure.BWGStructures;
 
 import java.util.Map;
 import java.util.Optional;
 
 public class GenerationsStructureSettings {
 
-    public static void bootstrap(BootstapContext<Structure> context) {
-        HolderGetter<Biome> biomeHolderGetter = context.lookup(Registries.BIOME);
-        HolderGetter<StructureTemplatePool> poolHolderGetter = context.lookup(Registries.TEMPLATE_POOL);
+    public static final Map<ResourceKey<Structure>, BWGStructures.StructureFactory> STRUCTURE_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
-        registerStructure(context, GenerationsStructuresKeys.BEAST_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.BEAST_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerStructure(context, GenerationsStructuresKeys.GREAT_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.GREAT_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerStructure(context, GenerationsStructuresKeys.MASTER_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MASTER_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerStructure(context, GenerationsStructuresKeys.POKE_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.POKE_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerStructure(context, GenerationsStructuresKeys.ULTRA_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.ULTRA_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerStructure(context, GenerationsStructuresKeys.MEOWTH_BALLOON, balloonJigsawStructure(poolHolderGetter.getOrThrow(GenerationsTemplatePools.MEOWTH_BALLOON), biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_LOOT_BALLOON)));
-        registerStructure(context, GenerationsStructuresKeys.COMET, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_COMET),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.NONE
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.COMET),
-                1,
-                UniformHeight.of(VerticalAnchor.absolute(250), VerticalAnchor.belowTop(150)),
-                false
-        ));
-        registerStructure(context, GenerationsStructuresKeys.SCARLET_POKECENTER, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_POKECENTER),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.SCARLET_POKECENTER),
-                1,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Heightmap.Types.WORLD_SURFACE_WG
-        ));
+    public static final ResourceKey<Structure> BEAST_BALLOON = register("beast_balloon", (context) ->
+            balloonJigsawStructure(context, GenerationsTemplatePools.BEAST_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-        registerStructure(context, GenerationsStructuresKeys.LARGE_POKECENTER, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_POKECENTER),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.LARGE_POKECENTER),
-                1,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Heightmap.Types.WORLD_SURFACE_WG
-        ));
+    public static final ResourceKey<Structure> GREAT_BALLOON = register("great_balloon", (context) ->
+            balloonJigsawStructure(context, GenerationsTemplatePools.GREAT_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-        registerStructure(context, GenerationsStructuresKeys.FROZEN_SHRINE, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_FROZEN_SHRINE),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.FROZEN_SHRINE),
-                1,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Heightmap.Types.WORLD_SURFACE_WG
-        ));
+    public static final ResourceKey<Structure> MASTER_BALLOON = register("master_balloon", (context) ->
+            balloonJigsawStructure(context, GenerationsTemplatePools.MASTER_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-        registerStructure(context, GenerationsStructuresKeys.FIERY_SHRINE, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_FIERY_SHRINE),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.FIERY_SHRINE),
-                1,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Heightmap.Types.WORLD_SURFACE_WG
-        ));
+    public static final ResourceKey<Structure> POKE_BALLOON = register("poke_balloon", (context) ->
+            balloonJigsawStructure(context, GenerationsTemplatePools.POKE_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-        registerStructure(context, GenerationsStructuresKeys.STATIC_SHRINE, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_STATIC_SHRINE),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.STATIC_SHRINE),
-                1,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Heightmap.Types.WORLD_SURFACE_WG
-        ));
+    public static final ResourceKey<Structure> ULTRA_BALLOON = register("ultra_balloon", (context) ->
+            balloonJigsawStructure(context, GenerationsTemplatePools.ULTRA_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-        registerStructure(context, GenerationsStructuresKeys.ISLANDS, createJigsaw(
-                new Structure.StructureSettings(
-                        biomeHolderGetter.getOrThrow(GenerationsBiomeTags.HAS_ISLANDS),
-                        Map.of(),
-                        GenerationStep.Decoration.SURFACE_STRUCTURES,
-                        TerrainAdjustment.NONE
-                ),
-                poolHolderGetter.getOrThrow(GenerationsTemplatePools.ISLANDS),
-                1,
-                UniformHeight.of(VerticalAnchor.absolute(150), VerticalAnchor.belowTop(100)),
-                false
-        ));
-    }
+    public static final ResourceKey<Structure> MEOWTH_BALLOON = register("meowth_balloon", (context) ->
+            balloonJigsawStructure(context, GenerationsTemplatePools.MEOWTH_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    private static void registerStructure(BootstapContext<Structure> context, ResourceKey<Structure> structureResourceKey, Structure structure){
-        context.register(structureResourceKey, structure);
-    }
+    public static final ResourceKey<Structure> COMET = register("comet", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_COMET), TerrainAdjustment.NONE),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.COMET), 1,
+                    UniformHeight.of(VerticalAnchor.absolute(250), VerticalAnchor.belowTop(150)), false));
+
+    public static final ResourceKey<Structure> SCARLET_POKECENTER = register("scarlet_pokecenter", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_POKECENTER), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.SCARLET_POKECENTER), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
+    public static final ResourceKey<Structure> LARGE_POKECENTER = register("large_pokecenter", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_POKECENTER), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.LARGE_POKECENTER), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
+    public static final ResourceKey<Structure> FROZEN_SHRINE = register("frozen_shrine", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_FROZEN_SHRINE), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FROZEN_SHRINE), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
+    public static final ResourceKey<Structure> FIERY_SHRINE = register("fiery_shrine", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_FIERY_SHRINE), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FIERY_SHRINE), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
+    public static final ResourceKey<Structure> STATIC_SHRINE = register("static_shrine", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_STATIC_SHRINE), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.STATIC_SHRINE), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
+    public static final ResourceKey<Structure> ISLANDS = register("islands", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_ISLANDS), TerrainAdjustment.NONE),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.ISLANDS), 1,
+                    UniformHeight.of(VerticalAnchor.absolute(150), VerticalAnchor.belowTop(100)), false));
 
     private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool,
                                                 Optional<ResourceLocation> startJigsawName, int maxDepth,
@@ -149,8 +105,31 @@ public class GenerationsStructureSettings {
         return new JigsawStructure(settings, startPool, maxDepth, startHeight, false, projectStartToHeightmap);
     }
 
-    private static JigsawStructure balloonJigsawStructure(Holder<StructureTemplatePool> poolHolderGetter, HolderSet<Biome> biomeHolderGetter){
-        return createJigsaw(new Structure.StructureSettings(biomeHolderGetter, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
-                poolHolderGetter, 1, BiasedToBottomHeight.of(VerticalAnchor.absolute(80), VerticalAnchor.belowTop(135), 1), Heightmap.Types.WORLD_SURFACE_WG);
+    private static JigsawStructure balloonJigsawStructure(BootstapContext<Structure> context, ResourceKey<StructureTemplatePool> templatePool, TagKey<Biome> biomeTag){
+        return createJigsaw(new Structure.StructureSettings(context.lookup(Registries.BIOME).getOrThrow(biomeTag), Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
+                context.lookup(Registries.TEMPLATE_POOL).getOrThrow(templatePool), 1, BiasedToBottomHeight.of(VerticalAnchor.absolute(80), VerticalAnchor.belowTop(135), 1), Heightmap.Types.WORLD_SURFACE_WG);
+    }
+
+    private static ResourceKey<Structure> register(String id, BWGStructures.StructureFactory factory) {
+        ResourceKey<Structure> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE, BiomesWeveGone.id(id));
+        STRUCTURE_FACTORIES.put(structureSetResourceKey, factory);
+        return structureSetResourceKey;
+    }
+
+    private static Structure.StructureSettings structure(HolderSet<Biome> tag, TerrainAdjustment adj) {
+        return Structures.structure(tag, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
+    }
+
+    private static Structure.StructureSettings structure(HolderSet<Biome> tag, Map<MobCategory, StructureSpawnOverride> spawnOverrides, TerrainAdjustment adj) {
+        return Structures.structure(tag, spawnOverrides, GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
+    }
+
+    private static Structure.StructureSettings structure(HolderSet<Biome> tag, GenerationStep.Decoration decoration, TerrainAdjustment adj) {
+        return Structures.structure(tag, Map.of(), decoration, adj);
+    }
+
+    @FunctionalInterface
+    public interface StructureFactory {
+        Structure generate(BootstapContext<Structure> structureFactoryBootstapContext);
     }
 }
