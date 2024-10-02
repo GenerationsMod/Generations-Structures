@@ -80,6 +80,9 @@ dependencies {
     modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-Forge:${project.properties["BWG_version"]}")
     implementation("com.eliotlash.mclib:mclib:20")
     forgeRuntimeLibrary("com.eliotlash.mclib:mclib:20")
+
+    //WorldEdit
+    modLocalRuntime("curse.maven:worldedit-225608:4586218")
 }
 
 tasks {
