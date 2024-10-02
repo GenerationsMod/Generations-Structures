@@ -1,5 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
+import biomesoplenty.api.block.BOPBlocks;
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
@@ -36,9 +37,10 @@ public class GenerationsProcessorLists {
 			))));
 	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = register("pokecenter", context -> new StructureProcessorList(ImmutableList.of(
 			//new CompatReplaceProcessor(GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock(), context.get(GenerationsStructures.INTEGRATION).getMirroredFloorReplacement()),
-			//new CompatReplaceProcessor(Blocks.POTTED_RED_TULIP, context.get(GenerationsStructures.INTEGRATION).getRedTulipReplacement()),
-			//new CompatReplaceProcessor(Blocks.POTTED_PINK_TULIP, context.get(GenerationsStructures.INTEGRATION).getPinkTulipReplacement()),
-			new CompatReplaceProcessor(Blocks.BIRCH_LEAVES, BWGWood.FLOWERING_ORCHARD_LEAVES.get())
+			new CompatReplaceProcessor(Blocks.POTTED_RED_TULIP, BOPBlocks.POTTED_ROSE),
+			new CompatReplaceProcessor(Blocks.POTTED_PINK_TULIP, BOPBlocks.POTTED_VIOLET),
+			new CompatReplaceProcessor(Blocks.BIRCH_LEAVES, BWGWood.FLOWERING_ORCHARD_LEAVES.get()),
+			new CompatReplaceProcessor(Blocks.BIRCH_TRAPDOOR, BOPBlocks.FLOWERING_OAK_LEAVES)
 	)));
 	//public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("shrines/frozen_shrine_processor_list");
 	//public static final ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("shrines/fiery_shrine_processor_list");

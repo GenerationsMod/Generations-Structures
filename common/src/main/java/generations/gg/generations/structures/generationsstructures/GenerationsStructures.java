@@ -1,9 +1,6 @@
 package generations.gg.generations.structures.generationsstructures;
-
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.structures.generationsstructures.config.Config;
-import generations.gg.generations.structures.generationsstructures.integration.Default;
-import generations.gg.generations.structures.generationsstructures.integration.Integration;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -24,21 +21,12 @@ public class GenerationsStructures {
     /** generations_structures config */
     public static Config CONFIG;
 
-    /** External Mod Integration Hook */
-    public static Integration INTEGRATION;
-
     /**
      * Initializes the Generations-Structures mod.
-     * @param integration The integration to use.
      */
-    public static void init(Integration integration) {
+    public static void init() {
         CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
-        INTEGRATION = !CONFIG.integration.AllowIntegrations ? new Default() : integration;
         GenerationsProcessorLists.init();
-        if (integration.getModId() != null)
-            if ((integration.getModId().equals("biomesoplenty") && !CONFIG.integration.AllowBiomesOPlentyIntegration)
-                || (integration.getModId().equals("biomeswevegone") && !CONFIG.integration.AllowBiomesWeveGoneIntegration))
-                INTEGRATION = new Default();
     }
 
     /**

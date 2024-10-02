@@ -5,14 +5,6 @@ package generations.gg.generations.structures.generationsstructures.config;
  * @author J.T. McQuigg (JT122406)
  */
 public class Config {
-    public Integration integration = new Integration();
-
-    public static class Integration {
-        public boolean AllowIntegrations = true;
-        public boolean AllowBiomesOPlentyIntegration = true;
-        public boolean AllowBiomesWeveGoneIntegration = true;
-    }
-
     public VillageStructureGeneration villageStructureGeneration = new VillageStructureGeneration();
 
     public static class VillageStructureGeneration {

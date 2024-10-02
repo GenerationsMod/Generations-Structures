@@ -21,4 +21,5 @@ dependencies {
 
     //BiomeMod Integration
     modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Common:${project.properties["BWG_version"]}")
+    modCompileOnly("com.github.glitchfiend:BiomesOPlenty-common:$minecraftVersion-${project.properties["BOP_version"]}")
 }

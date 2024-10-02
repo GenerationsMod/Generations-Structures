@@ -38,7 +38,7 @@ logoFile = "icon.png"
 [[dependencies.generations_structures]]
     modId = "biomesoplenty"
     mandatory = false
-    versionRange = "[18.0.0.592,)"
+    versionRange = "[19.0.0.91,)"
     ordering = "AFTER"
     side = "BOTH"
 

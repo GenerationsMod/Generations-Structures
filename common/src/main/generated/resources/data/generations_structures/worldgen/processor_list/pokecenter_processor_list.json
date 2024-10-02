@@ -1,9 +1,24 @@
 {
   "processors": [
     {
+      "block": "minecraft:potted_red_tulip",
+      "processor_type": "moreprocessors:compat_replace",
+      "replace": "biomesoplenty:potted_rose"
+    },
+    {
+      "block": "minecraft:potted_pink_tulip",
+      "processor_type": "moreprocessors:compat_replace",
+      "replace": "biomesoplenty:potted_violet"
+    },
+    {
       "block": "minecraft:birch_leaves",
       "processor_type": "moreprocessors:compat_replace",
       "replace": "biomeswevegone:flowering_orchard_leaves"
+    },
+    {
+      "block": "minecraft:birch_trapdoor",
+      "processor_type": "moreprocessors:compat_replace",
+      "replace": "biomesoplenty:flowering_oak_leaves"
     }
   ]
 }

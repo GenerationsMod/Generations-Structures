@@ -34,6 +34,7 @@
     "moreprocessors": ">=1.1.0-Indev"
   },
   "suggests": {
-      "biomeswevegone" : ">=1.2.3"
+    "biomeswevegone" : ">=1.2.3",
+    "biomesoplenty": ">= 19.0.0.91"
   }
 }
