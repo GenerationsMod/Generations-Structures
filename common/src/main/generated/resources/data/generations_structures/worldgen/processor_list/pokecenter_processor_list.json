@@ -1,7 +1,9 @@
 {
   "processors": [
     {
-      "processor_type": "generations_structures:pokecenter_processor"
+      "block": "minecraft:birch_leaves",
+      "processor_type": "moreprocessors:compat_replace",
+      "replace": "biomeswevegone:flowering_orchard_leaves"
     }
   ]
 }

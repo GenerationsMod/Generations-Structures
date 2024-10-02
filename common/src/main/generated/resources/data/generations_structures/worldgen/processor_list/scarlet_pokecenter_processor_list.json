@@ -1,7 +1,14 @@
 {
   "processors": [
     {
-      "processor_type": "generations_structures:scarlet_pokeshop_processor"
+      "block": "minecraft:birch_trapdoor",
+      "processor_type": "moreprocessors:compat_replace_same_state",
+      "replace": "biomeswevegone:witch_hazel_trapdoor"
+    },
+    {
+      "block": "generations_core:ghost_trapdoor",
+      "processor_type": "moreprocessors:compat_replace_same_state",
+      "replace": "biomeswevegone:ebony_trapdoor"
     }
   ]
 }

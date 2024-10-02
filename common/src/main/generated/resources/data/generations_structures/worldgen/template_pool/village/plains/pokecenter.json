@@ -4,9 +4,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "generations_structures:village/plains/pokecenter_1",
-        "processors": {
-          "processors": []
-        },
+        "processors": "minecraft:empty",
         "projection": "rigid"
       },
       "weight": 1
@@ -15,9 +13,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "generations_structures:village/plains/pokecenter_2",
-        "processors": {
-          "processors": []
-        },
+        "processors": "minecraft:empty",
         "projection": "rigid"
       },
       "weight": 1
@@ -26,13 +22,11 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "generations_structures:village/plains/pokecenter_3",
-        "processors": {
-          "processors": []
-        },
+        "processors": "minecraft:empty",
         "projection": "rigid"
       },
       "weight": 1
     }
   ],
-  "fallback": "generations_structures:village/plains/pokecenter"
+  "fallback": "minecraft:empty"
 }

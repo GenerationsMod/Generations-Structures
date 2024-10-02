@@ -1,6 +1,7 @@
 package generations.gg.generations.structures.generationsstructures.processors;
 
 import com.google.common.collect.ImmutableList;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
@@ -10,6 +11,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
+import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceProcessor;
+import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceSameStateProcessor;
 import tech.jt_dev.moreprocessors.processor.processors.RandomCompatProcessor;
 
 import java.util.Map;
@@ -26,15 +29,20 @@ public class GenerationsProcessorLists {
 	public static void init() {}
 
 	//public static final ResourceKey<StructureProcessorList> GYM_PROCESSOR_LIST = create("gym_processor_list");
-	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = register("scarlet_pokecenter_processor_list", context ->  new StructureProcessorList(
+	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = register("scarlet_pokecenter", context ->  new StructureProcessorList(
 			ImmutableList.of(
-					new RandomCompatProcessor(Blocks.BIRCH_TRAPDOOR, BWGWood.WITCH_HAZEL.trapdoor(), 1.0f), //TODO: Add BOP
-					new RandomCompatProcessor(GenerationsWood.GHOST_TRAPDOOR.get(), BWGWood.EBONY.trapdoor(), 1.0f)
-			)));
-	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = create("pokecenter_processor_list");
-	public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("shrines/frozen_shrine_processor_list");
-	public static final ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("shrines/fiery_shrine_processor_list");
-	public static final ResourceKey<StructureProcessorList> STATIC_SHRINE_PROCESSOR_LIST = create("shrines/static_shrine_processor_list");
+					new CompatReplaceSameStateProcessor(Blocks.BIRCH_TRAPDOOR, BWGWood.WITCH_HAZEL.trapdoor()), //TODO: Add BOP
+					new CompatReplaceSameStateProcessor(GenerationsWood.GHOST_TRAPDOOR.get(), BWGWood.EBONY.trapdoor()
+			))));
+	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = register("pokecenter", context -> new StructureProcessorList(ImmutableList.of(
+			//new CompatReplaceProcessor(GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock(), context.get(GenerationsStructures.INTEGRATION).getMirroredFloorReplacement()),
+			//new CompatReplaceProcessor(Blocks.POTTED_RED_TULIP, context.get(GenerationsStructures.INTEGRATION).getRedTulipReplacement()),
+			//new CompatReplaceProcessor(Blocks.POTTED_PINK_TULIP, context.get(GenerationsStructures.INTEGRATION).getPinkTulipReplacement()),
+			new CompatReplaceProcessor(Blocks.BIRCH_LEAVES, BWGWood.FLOWERING_ORCHARD_LEAVES.get())
+	)));
+	//public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("shrines/frozen_shrine_processor_list");
+	//public static final ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("shrines/fiery_shrine_processor_list");
+	//public static final ResourceKey<StructureProcessorList> STATIC_SHRINE_PROCESSOR_LIST = create("shrines/static_shrine_processor_list");
 
 	/*
 	public static void bootstrap(BootstapContext<StructureProcessorList> context) {

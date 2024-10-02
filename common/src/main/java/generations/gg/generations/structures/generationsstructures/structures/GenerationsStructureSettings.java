@@ -1,5 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.structures;
 
+import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
@@ -25,32 +26,30 @@ import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
-import net.potionstudios.biomeswevegone.BiomesWeveGone;
-import net.potionstudios.biomeswevegone.world.level.levelgen.structure.BWGStructures;
 
 import java.util.Map;
 import java.util.Optional;
 
 public class GenerationsStructureSettings {
 
-    public static final Map<ResourceKey<Structure>, BWGStructures.StructureFactory> STRUCTURE_FACTORIES = new Reference2ObjectOpenHashMap<>();
+    public static final Map<ResourceKey<Structure>, StructureFactory> STRUCTURE_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
-    public static final ResourceKey<Structure> BEAST_BALLOON = register("beast_balloon", (context) ->
+    public static final ResourceKey<Structure> BEAST_BALLOON = register("loot_balloon/beast_balloon", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.BEAST_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> GREAT_BALLOON = register("great_balloon", (context) ->
+    public static final ResourceKey<Structure> GREAT_BALLOON = register("loot_balloon/great_balloon", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.GREAT_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> MASTER_BALLOON = register("master_balloon", (context) ->
+    public static final ResourceKey<Structure> MASTER_BALLOON = register("loot_balloon/master_balloon", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.MASTER_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> POKE_BALLOON = register("poke_balloon", (context) ->
+    public static final ResourceKey<Structure> POKE_BALLOON = register("loot_balloon/poke_balloon", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.POKE_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> ULTRA_BALLOON = register("ultra_balloon", (context) ->
+    public static final ResourceKey<Structure> ULTRA_BALLOON = register("loot_balloon/ultra_balloon", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.ULTRA_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> MEOWTH_BALLOON = register("meowth_balloon", (context) ->
+    public static final ResourceKey<Structure> MEOWTH_BALLOON = register("loot_balloon/meowth_balloon", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.MEOWTH_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
     public static final ResourceKey<Structure> COMET = register("comet", (context) ->
@@ -68,17 +67,17 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.LARGE_POKECENTER), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
-    public static final ResourceKey<Structure> FROZEN_SHRINE = register("frozen_shrine", (context) ->
+    public static final ResourceKey<Structure> FROZEN_SHRINE = register("shrines/frozen_shrine", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_FROZEN_SHRINE), TerrainAdjustment.BEARD_THIN),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FROZEN_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
-    public static final ResourceKey<Structure> FIERY_SHRINE = register("fiery_shrine", (context) ->
+    public static final ResourceKey<Structure> FIERY_SHRINE = register("shrines/fiery_shrine", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_FIERY_SHRINE), TerrainAdjustment.BEARD_THIN),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FIERY_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
-    public static final ResourceKey<Structure> STATIC_SHRINE = register("static_shrine", (context) ->
+    public static final ResourceKey<Structure> STATIC_SHRINE = register("shrines/static_shrine", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_STATIC_SHRINE), TerrainAdjustment.BEARD_THIN),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.STATIC_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
@@ -110,8 +109,8 @@ public class GenerationsStructureSettings {
                 context.lookup(Registries.TEMPLATE_POOL).getOrThrow(templatePool), 1, BiasedToBottomHeight.of(VerticalAnchor.absolute(80), VerticalAnchor.belowTop(135), 1), Heightmap.Types.WORLD_SURFACE_WG);
     }
 
-    private static ResourceKey<Structure> register(String id, BWGStructures.StructureFactory factory) {
-        ResourceKey<Structure> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE, BiomesWeveGone.id(id));
+    private static ResourceKey<Structure> register(String id, StructureFactory factory) {
+        ResourceKey<Structure> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE, GenerationsStructures.id(id));
         STRUCTURE_FACTORIES.put(structureSetResourceKey, factory);
         return structureSetResourceKey;
     }

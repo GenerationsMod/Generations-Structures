@@ -1,7 +1,0 @@
-{
-  "processors": [
-    {
-      "processor_type": "generations_structures:gym_processor"
-    }
-  ]
-}

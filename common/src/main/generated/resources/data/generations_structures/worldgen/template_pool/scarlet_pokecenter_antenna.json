@@ -10,5 +10,5 @@
       "weight": 1
     }
   ],
-  "fallback": "generations_structures:scarlet_pokecenter_antenna"
+  "fallback": "minecraft:empty"
 }
