@@ -17,7 +17,7 @@
     "homepage": "https://generations.gg/",
     "sources": "https://github.com/GenerationsMod/Generations-Structures"
   },
-  "license": "Insert License Here",
+  "license": "GNU GPL 3.0",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
