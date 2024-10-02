@@ -14,6 +14,7 @@ dependencies {
 
     modCompileOnly("generations.gg.generations.core:Generations-Core-common:${project.properties["generations-core_version"]}") { isChanging = true }
     modCompileOnly("earth.terrarium.botarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
+    modCompileOnly("tech.jt-dev:MoreStructureProcessors-common:${project.properties["moreprocessors_version"]}")
 
     //Cobblemon
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")

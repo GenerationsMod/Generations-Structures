@@ -50,6 +50,8 @@ dependencies {
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
     modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.12.1+kotlin.2.0.20")
 
+    modApi("tech.jt-dev:MoreStructureProcessors-fabric:${project.properties["moreprocessors_version"]}")
+
     //BiomeMod Integration
     modLocalRuntime("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}") { isTransitive = false }

@@ -2,7 +2,6 @@ package generations.gg.generations.structures.generationsstructures.processors.s
 
 import com.mojang.serialization.Codec;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
-import generations.gg.generations.structures.generationsstructures.processors.StructureProcessors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.LevelReader;
