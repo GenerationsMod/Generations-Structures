@@ -33,6 +33,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
+import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -51,7 +52,7 @@ import java.util.function.Consumer;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = GenerationsStructures.MOD_ID)
 public class ForgeDatagen {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    protected static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
@@ -60,6 +61,7 @@ public class ForgeDatagen {
         generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         GenerationsStructureSets.init();
         generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
+        generator.addProvider(event.includeClient(), new GenerationsStructuresLangProvider(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
     }
 
@@ -71,7 +73,7 @@ public class ForgeDatagen {
 
     private static class GenerationsStructuresBiomeTagsProvider extends BiomeTagsProvider {
 
-        public GenerationsStructuresBiomeTagsProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+        private GenerationsStructuresBiomeTagsProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
             super(arg, completableFuture, GenerationsStructures.MOD_ID, existingFileHelper);
         }
 
@@ -121,7 +123,7 @@ public class ForgeDatagen {
 
     private static class GenerationsStructureTagsProvider extends StructureTagsProvider {
 
-        public GenerationsStructureTagsProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+        private GenerationsStructureTagsProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
             super(arg, completableFuture, GenerationsStructures.MOD_ID, existingFileHelper);
         }
 
@@ -194,6 +196,25 @@ public class ForgeDatagen {
 
         private static MutableComponent translateAble(String key) {
             return Component.translatable( "advancements." + GenerationsStructures.MOD_ID +"." + key);
+        }
+    }
+
+    private static class GenerationsStructuresLangProvider extends LanguageProvider {
+
+        private GenerationsStructuresLangProvider(PackOutput output) {
+            super(output, GenerationsStructures.MOD_ID, "en_us");
+        }
+
+        @Override
+        protected void addTranslations() {
+            add(advancement("title.root"), "Generations Structures");
+            add(advancement("description.root"), "Launch a world with the Generations Structures");
+            add(advancement("title.loot_balloon"), "Aeronaut");
+            add(advancement("description.loot_balloon"), "Find all the loot balloons");
+        }
+
+        private static String advancement(String key) {
+            return "advancements." + GenerationsStructures.MOD_ID + "." + key;
         }
     }
 
