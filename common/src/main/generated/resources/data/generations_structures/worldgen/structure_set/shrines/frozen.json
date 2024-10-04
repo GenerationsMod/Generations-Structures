@@ -7,7 +7,7 @@
   },
   "structures": [
     {
-      "structure": "generations_structures:shrines/frozen_shrine",
+      "structure": "generations_structures:shrines/frozen",
       "weight": 1
     }
   ]

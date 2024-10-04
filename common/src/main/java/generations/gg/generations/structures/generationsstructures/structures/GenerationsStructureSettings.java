@@ -67,7 +67,7 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.LARGE_POKECENTER), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
-    public static final ResourceKey<Structure> FROZEN_SHRINE = register("shrines/frozen_shrine", (context) ->
+    public static final ResourceKey<Structure> FROZEN_SHRINE = register("shrines/frozen", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_FROZEN_SHRINE), TerrainAdjustment.BEARD_THIN),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FROZEN_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));

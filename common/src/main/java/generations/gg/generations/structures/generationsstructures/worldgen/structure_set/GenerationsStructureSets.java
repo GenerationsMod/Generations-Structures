@@ -52,7 +52,7 @@ public class GenerationsStructureSets {
 
         register("islands", GenerationsStructureSettings.ISLANDS, 100, 45, 347680677);
 
-        register("shrines/frozen_shrine", GenerationsStructureSettings.FROZEN_SHRINE, 2000, 350, 989914746);
+        register("shrines/frozen", GenerationsStructureSettings.FROZEN_SHRINE, 2000, 350, 989914746);
 
         register("shrines/fiery_shrine", GenerationsStructureSettings.FIERY_SHRINE, 2000, 350, 333897074);
 

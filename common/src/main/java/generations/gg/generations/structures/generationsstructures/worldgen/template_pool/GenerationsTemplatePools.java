@@ -39,7 +39,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER_ANTENNA = registerSimple("scarlet_pokecenter_antenna", GenerationsStructuresKeys.SCARLET_POKECENTER_ANTENNA);
     public static final ResourceKey<StructureTemplatePool> LARGE_POKECENTER = registerSimple("large_pokecenter", GenerationsStructureSettings.LARGE_POKECENTER, GenerationsProcessorLists.POKECENTER_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> ISLANDS = registerSimple("islands", GenerationsStructureSettings.ISLANDS);
-    public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = registerSimple("shrines/frozen_shrine", GenerationsStructureSettings.FROZEN_SHRINE);
+    public static final ResourceKey<StructureTemplatePool> FROZEN_SHRINE = registerSimple("shrines/frozen", GenerationsStructureSettings.FROZEN_SHRINE, GenerationsProcessorLists.FROZEN_SHRINE_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = registerSimple("shrines/fiery_shrine", GenerationsStructureSettings.FIERY_SHRINE);
     public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = registerSimple("shrines/static_shrine", GenerationsStructureSettings.STATIC_SHRINE);
 

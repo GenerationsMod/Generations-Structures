@@ -3,8 +3,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "generations_structures:shrines/frozen_shrine",
-        "processors": "minecraft:empty",
+        "location": "generations_structures:shrines/frozen",
+        "processors": "generations_structures:shrines/frozen_processor_list",
         "projection": "rigid"
       },
       "weight": 1

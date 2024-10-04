@@ -42,7 +42,14 @@ public class GenerationsProcessorLists {
 			new CompatReplaceProcessor(Blocks.BIRCH_LEAVES, BWGWood.FLOWERING_ORCHARD_LEAVES.get()),
 			new CompatReplaceProcessor(Blocks.BIRCH_TRAPDOOR, BOPBlocks.FLOWERING_OAK_LEAVES)
 	)));
-	//public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = create("shrines/frozen_shrine_processor_list");
+	public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = register("shrines/frozen", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAVEL, 0.75f), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAVEL, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.PACKED_ICE.defaultBlockState())
+					)
+			)
+	)));
 	//public static final ResourceKey<StructureProcessorList> FIERY_SHRINE_PROCESSOR_LIST = create("shrines/fiery_shrine_processor_list");
 	//public static final ResourceKey<StructureProcessorList> STATIC_SHRINE_PROCESSOR_LIST = create("shrines/static_shrine_processor_list");
 
