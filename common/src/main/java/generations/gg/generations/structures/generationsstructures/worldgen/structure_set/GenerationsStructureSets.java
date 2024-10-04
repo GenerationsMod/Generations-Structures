@@ -54,7 +54,7 @@ public class GenerationsStructureSets {
 
         register("shrines/frozen", GenerationsStructureSettings.FROZEN_SHRINE, 2000, 350, 989914746);
 
-        register("shrines/fiery_shrine", GenerationsStructureSettings.FIERY_SHRINE, 2000, 350, 333897074);
+        register("shrines/fiery", GenerationsStructureSettings.FIERY_SHRINE, 2000, 350, 333897074);
 
         register("shrines/static", GenerationsStructureSettings.STATIC_SHRINE, 2000, 350, 442038945);
     }

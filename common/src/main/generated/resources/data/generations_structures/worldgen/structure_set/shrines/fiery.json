@@ -7,7 +7,7 @@
   },
   "structures": [
     {
-      "structure": "generations_structures:shrines/fiery_shrine",
+      "structure": "generations_structures:shrines/fiery",
       "weight": 1
     }
   ]
