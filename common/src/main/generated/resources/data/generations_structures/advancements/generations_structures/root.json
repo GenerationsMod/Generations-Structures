@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "tick": {
+      "conditions": {},
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.generations_structures.description.root"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemon:poke_ball"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.generations_structures.title.root"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,6 +1,8 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
 import biomesoplenty.api.biome.BOPBiomes;
+import com.cobblemon.mod.common.CobblemonItems;
+import com.google.common.collect.ImmutableList;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
@@ -8,6 +10,13 @@ import generations.gg.generations.structures.generationsstructures.tags.Generati
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
 import generations.gg.generations.structures.generationsstructures.worldgen.structure_set.GenerationsStructureSets;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.ContextAwarePredicate;
+import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -15,12 +24,15 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +41,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 /**
  * This class is used to register the data generators for the mod.
@@ -42,9 +55,11 @@ public class ForgeDatagen {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
         generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         GenerationsStructureSets.init();
+        generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
     }
 
@@ -140,6 +155,46 @@ public class ForgeDatagen {
 
     private static ResourceLocation fabricTagMaker(String name) {
         return new ResourceLocation("c", name);
+    }
+
+    private static class GenerationsStructureAdvancementProvider implements ForgeAdvancementProvider.AdvancementGenerator {
+
+        @Override
+        public void generate(HolderLookup.@NotNull Provider arg, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
+            Advancement root = Advancement.Builder.advancement()
+                    .addCriterion("tick", new PlayerTrigger.TriggerInstance(CriteriaTriggers.TICK.getId(), ContextAwarePredicate.ANY))
+                    .display(
+                            CobblemonItems.POKE_BALL.asItem(),
+                            translateAble("title.root"),
+                            translateAble("description.root"),
+                            null,
+                            FrameType.TASK, false, false, false
+                    )
+                    .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/root"), existingFileHelper);
+
+            Advancement.Builder.advancement()
+                    .parent(root)
+                    .requirements(RequirementsStrategy.AND)
+                    .addCriterion("poke_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.POKE_BALLOON)))
+                    .addCriterion("great_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.GREAT_BALLOON)))
+                    .addCriterion("ultra_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.ULTRA_BALLOON)))
+                    .addCriterion("master_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.MASTER_BALLOON)))
+                    .addCriterion("beast_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.BEAST_BALLOON)))
+                    .addCriterion("meowth_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.MEOWTH_BALLOON)))
+                    .display(
+                            CobblemonItems.MASTER_BALL.asItem(),
+                            translateAble("title.loot_balloon"),
+                            translateAble("description.loot_balloon"),
+                            null,
+                            FrameType.TASK, true, true, false
+                    )
+                    .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/loot_balloon"), existingFileHelper);
+
+        }
+
+        private static MutableComponent translateAble(String key) {
+            return Component.translatable( "advancements." + GenerationsStructures.MOD_ID +"." + key);
+        }
     }
 
 }

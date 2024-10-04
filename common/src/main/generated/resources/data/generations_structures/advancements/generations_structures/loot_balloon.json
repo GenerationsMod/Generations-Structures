@@ -1,0 +1,137 @@
+{
+  "parent": "generations_structures:generations_structures/root",
+  "criteria": {
+    "beast_balloon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:loot_balloon/beast"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "great_balloon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:loot_balloon/great"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "master_balloon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:loot_balloon/master"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "meowth_balloon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:loot_balloon/meowth"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "poke_balloon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:loot_balloon/poke"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "ultra_balloon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:loot_balloon/ultra"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.generations_structures.description.loot_balloon"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemon:master_ball"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.generations_structures.title.loot_balloon"
+    }
+  },
+  "requirements": [
+    [
+      "poke_balloon"
+    ],
+    [
+      "great_balloon"
+    ],
+    [
+      "ultra_balloon"
+    ],
+    [
+      "master_balloon"
+    ],
+    [
+      "beast_balloon"
+    ],
+    [
+      "meowth_balloon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
