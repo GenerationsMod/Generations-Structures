@@ -2,7 +2,6 @@ package generations.gg.generations.structures.generationsstructures.processors;
 
 import biomesoplenty.api.block.BOPBlocks;
 import com.google.common.collect.ImmutableList;
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
@@ -16,7 +15,6 @@ import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
 import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceProcessor;
 import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceSameStateProcessor;
 import tech.jt_dev.moreprocessors.processor.processors.CompatRuleProcessor;
-import tech.jt_dev.moreprocessors.processor.processors.RandomCompatProcessor;
 import tech.jt_dev.moreprocessors.processor.processors.rules.CompatProcessorRule;
 
 import java.util.Map;
@@ -84,45 +82,6 @@ public class GenerationsProcessorLists {
 					)
 			)
 	)));
-
-	/*
-	public static void bootstrap(BootstapContext<StructureProcessorList> context) {
-		StructureProcessors.init();
-		register(context, SCARLET_POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new ScarletPokeCenterProcessor())));
-		register(context, POKECENTER_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new PokeCenterProcessor())));
-		register(context, FROZEN_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FrozenShrineProcessor(),
-						new RuleProcessor(
-								ImmutableList.of(
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.1F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE_POWDER, 0.15F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE_POWDER, 0.3F), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE_POWDER, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_CONCRETE, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_WOOL, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.SNOW_BLOCK.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_WOOL, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
-										new ProcessorRule(
-												new RandomBlockMatchTest(Blocks.WHITE_WOOL, 0.2F), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState())
-								)
-						)
-				)));
-	}
-
-	 */
 
 	private static StructureProcessorList createProcessorList(ProcessorRule... processors) {
 		return new StructureProcessorList(ImmutableList.of(new RuleProcessor(ImmutableList.copyOf(processors))));
