@@ -3,6 +3,7 @@ package generations.gg.generations.structures.generationsstructures.forge.datage
 import biomesoplenty.api.biome.BOPBiomes;
 import com.cobblemon.mod.common.CobblemonItems;
 import com.google.common.collect.ImmutableList;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
@@ -192,6 +193,21 @@ public class ForgeDatagen {
                     )
                     .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/loot_balloon"), existingFileHelper);
 
+            Advancement.Builder.advancement()
+                    .parent(root)
+                    .requirements(RequirementsStrategy.AND)
+                    .addCriterion("frozen_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FROZEN_SHRINE)))
+                    .addCriterion("fiery_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FIERY_SHRINE)))
+                    .addCriterion("static_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.STATIC_SHRINE)))
+                    .display(
+                            CobblemonItems.MASTER_BALL.asItem(),
+                            translateAble("title.shrines"),
+                            translateAble("description.shrines"),
+                            null,
+                            FrameType.TASK, true, true, false
+                    )
+                    .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/shrines"), existingFileHelper);
+
         }
 
         private static MutableComponent translateAble(String key) {
@@ -211,6 +227,8 @@ public class ForgeDatagen {
             add(advancement("description.root"), "Launch a world with the Generations Structures");
             add(advancement("title.loot_balloon"), "Aeronaut");
             add(advancement("description.loot_balloon"), "Find all the loot balloons");
+            add(advancement("title.shrines"), "Shrines");  //TODO: Add a better title
+            add(advancement("description.shrines"), "Find all the shrines");
         }
 
         private static String advancement(String key) {

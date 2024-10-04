@@ -7,7 +7,7 @@ issueTrackerURL = "https://github.com/GenerationsMod/Generations-Structures"
 modId = "generations_structures"
 version = "${version}"
 displayName = "Generations Structures"
-authors = "J.T. McQuigg (JT122406)"
+authors = "Joseph T. McQuigg (JT122406)"
 credits = "C. Inglis, Strwbry_Moon, CyborgPixel, Nickyboy"
 description = '''
 Adds structures for the Generations Mod Family

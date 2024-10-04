@@ -1,6 +1,8 @@
 {
   "advancements.generations_structures.description.loot_balloon": "Find all the loot balloons",
   "advancements.generations_structures.description.root": "Launch a world with the Generations Structures",
+  "advancements.generations_structures.description.shrines": "Find all the shrines",
   "advancements.generations_structures.title.loot_balloon": "Aeronaut",
-  "advancements.generations_structures.title.root": "Generations Structures"
+  "advancements.generations_structures.title.root": "Generations Structures",
+  "advancements.generations_structures.title.shrines": "Shrines"
 }
