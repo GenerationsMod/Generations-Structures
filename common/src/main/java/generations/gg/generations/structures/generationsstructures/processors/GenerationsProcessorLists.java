@@ -11,10 +11,13 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
+import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
 import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceProcessor;
 import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceSameStateProcessor;
+import tech.jt_dev.moreprocessors.processor.processors.CompatRuleProcessor;
 import tech.jt_dev.moreprocessors.processor.processors.RandomCompatProcessor;
+import tech.jt_dev.moreprocessors.processor.processors.rules.CompatProcessorRule;
 
 import java.util.Map;
 
@@ -67,6 +70,21 @@ public class GenerationsProcessorLists {
 			)
 	)));
 
+	public static final ResourceKey<StructureProcessorList> LUGIA_SHRINE_PROCESSOR_LIST = register("shrines/lugia", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.15f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.15f), AlwaysTrueTest.INSTANCE, Blocks.CRACKED_STONE_BRICKS.defaultBlockState())
+					)
+			),
+			new CompatRuleProcessor(
+					ImmutableList.of(
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.MOSSY_STONE_BRICKS, 0.25f), AlwaysTrueTest.INSTANCE, BWGBlocks.MOSSY_STONE_SET.getBase())
+					)
+			)
+	)));
+
 	/*
 	public static void bootstrap(BootstapContext<StructureProcessorList> context) {
 		StructureProcessors.init();
@@ -102,9 +120,6 @@ public class GenerationsProcessorLists {
 								)
 						)
 				)));
-		register(context, FIERY_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new FieryShrineRandomizerProcessor(), new FieryShrineProcessor())));
-		register(context, STATIC_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new StaticShrineRandomizerProcessor(), new StaticShrineProcessor())));
-		register(context, LUGIA_SHRINE_PROCESSOR_LIST, new StructureProcessorList(ImmutableList.of(new LugiaShrineRandomizerProcessor())));
 	}
 
 	 */

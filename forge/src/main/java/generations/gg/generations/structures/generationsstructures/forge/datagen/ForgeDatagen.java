@@ -143,7 +143,8 @@ public class ForgeDatagen {
             tag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructureSettings.FROZEN_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.FIERY_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.STATIC_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.STATIC_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.LUGIA_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
@@ -199,6 +200,7 @@ public class ForgeDatagen {
                     .addCriterion("frozen_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FROZEN_SHRINE)))
                     .addCriterion("fiery_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FIERY_SHRINE)))
                     .addCriterion("static_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.STATIC_SHRINE)))
+                    .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.LUGIA_SHRINE)))
                     .display(
                             CobblemonItems.MASTER_BALL.asItem(),
                             translateAble("title.shrines"),

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 495104284,
+    "separation": 350,
+    "spacing": 2000
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/lugia",
+      "weight": 1
+    }
+  ]
+}

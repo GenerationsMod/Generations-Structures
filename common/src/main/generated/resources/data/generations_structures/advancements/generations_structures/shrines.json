@@ -33,6 +33,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "lugia_shrine": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/lugia"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "static_shrine": {
       "conditions": {
         "player": [
@@ -74,6 +90,9 @@
     ],
     [
       "static_shrine"
+    ],
+    [
+      "lugia_shrine"
     ]
   ],
   "sends_telemetry_event": true
