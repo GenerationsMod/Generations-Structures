@@ -35,15 +35,15 @@ public class GenerationsStructureSets {
         register("pokeshops",
                 structureHolderGetter -> new StructureSet(
                 ImmutableList.of(
-                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.SCARLET_POKECENTER, 1),
-                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.LARGE_POKECENTER, 1)
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.SCARLET_POKECENTER),
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.LARGE_POKECENTER)
                 ), createRandomLinearSpreadPlacement(400, 250, 293756737)));
 
         register("loot_balloon",
                 structureHolderGetter -> new StructureSet(
                 ImmutableList.of(
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.GREAT_BALLOON, 4),
-                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.MASTER_BALLOON, 1),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.MASTER_BALLOON),
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.ULTRA_BALLOON, 2),
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.BEAST_BALLOON, 2),
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.MEOWTH_BALLOON, 3),
@@ -78,7 +78,7 @@ public class GenerationsStructureSets {
      * @param salt The salt for the structure set
      */
     private static void register(String id, ResourceKey<Structure> structure, int spacing, int seperation, int salt) {
-        register(id, structureHolderGetter -> new StructureSet(ImmutableList.of(createStructureSelectionEntry(structureHolderGetter, structure,1)), createRandomLinearSpreadPlacement(spacing, seperation, salt)));
+        register(id, structureHolderGetter -> new StructureSet(ImmutableList.of(createStructureSelectionEntry(structureHolderGetter, structure)), createRandomLinearSpreadPlacement(spacing, seperation, salt)));
     }
 
     /**
