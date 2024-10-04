@@ -56,7 +56,7 @@ public class GenerationsStructureSets {
 
         register("shrines/fiery_shrine", GenerationsStructureSettings.FIERY_SHRINE, 2000, 350, 333897074);
 
-        register("shrines/static_shrine", GenerationsStructureSettings.STATIC_SHRINE, 2000, 350, 442038945);
+        register("shrines/static", GenerationsStructureSettings.STATIC_SHRINE, 2000, 350, 442038945);
     }
 
     private static void register(String id, StructureSetFactory factory) {

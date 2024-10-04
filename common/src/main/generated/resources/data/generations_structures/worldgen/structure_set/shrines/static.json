@@ -7,7 +7,7 @@
   },
   "structures": [
     {
-      "structure": "generations_structures:shrines/static_shrine",
+      "structure": "generations_structures:shrines/static",
       "weight": 1
     }
   ]

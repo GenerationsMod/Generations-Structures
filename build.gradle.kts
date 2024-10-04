@@ -20,7 +20,6 @@ allprojects {
     group = project.properties["maven_group"] as String
 }
 
-
 subprojects {
     apply(plugin = "dev.architectury.loom")
     apply(plugin = "architectury-plugin")

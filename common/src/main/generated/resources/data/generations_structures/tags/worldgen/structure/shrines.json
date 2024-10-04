@@ -9,7 +9,7 @@
       "required": false
     },
     {
-      "id": "generations_structures:shrines/static_shrine",
+      "id": "generations_structures:shrines/static",
       "required": false
     }
   ]

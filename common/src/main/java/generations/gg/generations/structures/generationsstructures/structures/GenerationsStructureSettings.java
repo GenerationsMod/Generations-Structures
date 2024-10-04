@@ -77,7 +77,7 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FIERY_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
-    public static final ResourceKey<Structure> STATIC_SHRINE = register("shrines/static_shrine", (context) ->
+    public static final ResourceKey<Structure> STATIC_SHRINE = register("shrines/static", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_STATIC_SHRINE), TerrainAdjustment.BEARD_THIN),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.STATIC_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
