@@ -34,22 +34,22 @@ public class GenerationsStructureSettings {
 
     public static final Map<ResourceKey<Structure>, StructureFactory> STRUCTURE_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
-    public static final ResourceKey<Structure> BEAST_BALLOON = register("loot_balloon/beast_balloon", (context) ->
+    public static final ResourceKey<Structure> BEAST_BALLOON = register("loot_balloon/beast", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.BEAST_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> GREAT_BALLOON = register("loot_balloon/great_balloon", (context) ->
+    public static final ResourceKey<Structure> GREAT_BALLOON = register("loot_balloon/great", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.GREAT_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> MASTER_BALLOON = register("loot_balloon/master_balloon", (context) ->
+    public static final ResourceKey<Structure> MASTER_BALLOON = register("loot_balloon/master", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.MASTER_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> POKE_BALLOON = register("loot_balloon/poke_balloon", (context) ->
+    public static final ResourceKey<Structure> POKE_BALLOON = register("loot_balloon/poke", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.POKE_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> ULTRA_BALLOON = register("loot_balloon/ultra_balloon", (context) ->
+    public static final ResourceKey<Structure> ULTRA_BALLOON = register("loot_balloon/ultra", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.ULTRA_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
-    public static final ResourceKey<Structure> MEOWTH_BALLOON = register("loot_balloon/meowth_balloon", (context) ->
+    public static final ResourceKey<Structure> MEOWTH_BALLOON = register("loot_balloon/meowth", (context) ->
             balloonJigsawStructure(context, GenerationsTemplatePools.MEOWTH_BALLOON, GenerationsBiomeTags.HAS_LOOT_BALLOON));
 
     public static final ResourceKey<Structure> COMET = register("comet", (context) ->

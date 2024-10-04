@@ -1,27 +1,27 @@
 {
   "values": [
     {
-      "id": "generations_structures:loot_balloon/poke_balloon",
+      "id": "generations_structures:loot_balloon/poke",
       "required": false
     },
     {
-      "id": "generations_structures:loot_balloon/great_balloon",
+      "id": "generations_structures:loot_balloon/great",
       "required": false
     },
     {
-      "id": "generations_structures:loot_balloon/ultra_balloon",
+      "id": "generations_structures:loot_balloon/ultra",
       "required": false
     },
     {
-      "id": "generations_structures:loot_balloon/master_balloon",
+      "id": "generations_structures:loot_balloon/master",
       "required": false
     },
     {
-      "id": "generations_structures:loot_balloon/beast_balloon",
+      "id": "generations_structures:loot_balloon/beast",
       "required": false
     },
     {
-      "id": "generations_structures:loot_balloon/meowth_balloon",
+      "id": "generations_structures:loot_balloon/meowth",
       "required": false
     }
   ]

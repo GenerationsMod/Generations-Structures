@@ -27,12 +27,12 @@ public class GenerationsTemplatePools {
 
     public static final Map<ResourceKey<StructureTemplatePool>, TemplatePoolFactory> TEMPLATE_POOL_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
-    public static final ResourceKey<StructureTemplatePool> BEAST_BALLOON = registerSimple("loot_balloon/beast_balloon", GenerationsStructureSettings.BEAST_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> GREAT_BALLOON = registerSimple("loot_balloon/great_balloon", GenerationsStructureSettings.GREAT_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> MASTER_BALLOON = registerSimple("loot_balloon/master_balloon", GenerationsStructureSettings.MASTER_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = registerSimple("loot_balloon/meowth_balloon", GenerationsStructureSettings.MEOWTH_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> POKE_BALLOON = registerSimple("loot_balloon/poke_balloon", GenerationsStructureSettings.POKE_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = registerSimple("loot_balloon/ultra_balloon", GenerationsStructureSettings.ULTRA_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> BEAST_BALLOON = registerSimple("loot_balloon/beast", GenerationsStructureSettings.BEAST_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> GREAT_BALLOON = registerSimple("loot_balloon/great", GenerationsStructureSettings.GREAT_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> MASTER_BALLOON = registerSimple("loot_balloon/master", GenerationsStructureSettings.MASTER_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = registerSimple("loot_balloon/meowth", GenerationsStructureSettings.MEOWTH_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> POKE_BALLOON = registerSimple("loot_balloon/poke", GenerationsStructureSettings.POKE_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = registerSimple("loot_balloon/ultra", GenerationsStructureSettings.ULTRA_BALLOON);
 
     public static final ResourceKey<StructureTemplatePool> COMET = registerSimple("comet", GenerationsStructureSettings.COMET);
     public static final ResourceKey<StructureTemplatePool> SCARLET_POKECENTER = registerSimple("scarlet_pokecenter", GenerationsStructureSettings.SCARLET_POKECENTER, GenerationsProcessorLists.SCARLET_POKECENTER_PROCESSOR_LIST);

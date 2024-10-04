@@ -7,27 +7,27 @@
   },
   "structures": [
     {
-      "structure": "generations_structures:loot_balloon/great_balloon",
+      "structure": "generations_structures:loot_balloon/great",
       "weight": 4
     },
     {
-      "structure": "generations_structures:loot_balloon/master_balloon",
+      "structure": "generations_structures:loot_balloon/master",
       "weight": 1
     },
     {
-      "structure": "generations_structures:loot_balloon/ultra_balloon",
+      "structure": "generations_structures:loot_balloon/ultra",
       "weight": 2
     },
     {
-      "structure": "generations_structures:loot_balloon/beast_balloon",
+      "structure": "generations_structures:loot_balloon/beast",
       "weight": 2
     },
     {
-      "structure": "generations_structures:loot_balloon/meowth_balloon",
+      "structure": "generations_structures:loot_balloon/meowth",
       "weight": 3
     },
     {
-      "structure": "generations_structures:loot_balloon/poke_balloon",
+      "structure": "generations_structures:loot_balloon/poke",
       "weight": 5
     }
   ]

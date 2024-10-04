@@ -4,7 +4,6 @@ import biomesoplenty.api.biome.BOPBiomes;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
-import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructuresKeys;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsBiomeTags;
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
 import generations.gg.generations.structures.generationsstructures.worldgen.structure_set.GenerationsStructureSets;

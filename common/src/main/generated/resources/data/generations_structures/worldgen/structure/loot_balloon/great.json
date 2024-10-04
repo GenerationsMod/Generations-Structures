@@ -14,7 +14,7 @@
       "absolute": 80
     }
   },
-  "start_pool": "generations_structures:loot_balloon/great_balloon",
+  "start_pool": "generations_structures:loot_balloon/great",
   "step": "surface_structures",
   "use_expansion_hack": false
 }

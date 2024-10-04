@@ -42,7 +42,7 @@ public class GenerationsStructureSets {
         register("loot_balloon",
                 structureHolderGetter -> new StructureSet(
                 ImmutableList.of(
-                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.GREAT_BALLOON, 4),
+                        createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.GREAT_BALLOON, 4),
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.MASTER_BALLOON, 1),
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.ULTRA_BALLOON, 2),
                         createStructureSelectionEntry(structureHolderGetter,GenerationsStructureSettings.BEAST_BALLOON, 2),

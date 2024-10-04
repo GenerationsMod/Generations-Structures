@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "generations_structures:loot_balloon/poke_balloon",
+        "location": "generations_structures:loot_balloon/great",
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
