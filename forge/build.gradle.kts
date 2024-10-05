@@ -63,7 +63,7 @@ dependencies {
 
     // Generations-Core Forge
     modApi("generations.gg.generations.core:Generations-Core-forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
-    modRuntimeOnly("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
+    modImplementation("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
     modRuntimeOnly("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
 
     //Cobblemon

@@ -84,13 +84,14 @@
   },
   "display": {
     "announce_to_chat": true,
+    "background": "generations_core:textures/block/blue_poke_brick.png",
     "description": {
       "translate": "advancements.generations_structures.description.shrines"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "cobblemon:master_ball"
+      "item": "generations_core:lunar_shrine"
     },
     "show_toast": true,
     "title": {

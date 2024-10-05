@@ -3,6 +3,7 @@ package generations.gg.generations.structures.generationsstructures.forge.datage
 import biomesoplenty.api.biome.BOPBiomes;
 import com.cobblemon.mod.common.CobblemonItems;
 import com.google.common.collect.ImmutableList;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
@@ -176,7 +177,7 @@ public class ForgeDatagen {
                             CobblemonItems.POKE_BALL.asItem(),
                             translateAble("title.root"),
                             translateAble("description.root"),
-                            null,
+                            GenerationsCore.id("textures/block/blue_poke_brick.png"),
                             FrameType.TASK, false, false, false
                     )
                     .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/root"), existingFileHelper);
@@ -191,10 +192,10 @@ public class ForgeDatagen {
                     .addCriterion("beast_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.BEAST_BALLOON)))
                     .addCriterion("meowth_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.MEOWTH_BALLOON)))
                     .display(
-                            CobblemonItems.MASTER_BALL.asItem(),
+                            CobblemonItems.AIR_BALLOON.asItem(),
                             translateAble("title.loot_balloon"),
                             translateAble("description.loot_balloon"),
-                            null,
+                            GenerationsCore.id("textures/block/blue_poke_brick.png"),
                             FrameType.TASK, true, true, false
                     )
                     .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/loot_balloon"), existingFileHelper);
@@ -208,10 +209,10 @@ public class ForgeDatagen {
                     .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.LUGIA_SHRINE)))
                     .addCriterion("regi_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.REGI_SHRINE)))
                     .display(
-                            CobblemonItems.MASTER_BALL.asItem(),
+                            GenerationsShrines.LUNAR_SHRINE.getOrNull(),
                             translateAble("title.shrines"),
                             translateAble("description.shrines"),
-                            null,
+                            GenerationsCore.id("textures/block/blue_poke_brick.png"),
                             FrameType.TASK, true, true, false
                     )
                     .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/shrines"), existingFileHelper);

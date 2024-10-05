@@ -100,13 +100,14 @@
   },
   "display": {
     "announce_to_chat": true,
+    "background": "generations_core:textures/block/blue_poke_brick.png",
     "description": {
       "translate": "advancements.generations_structures.description.loot_balloon"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "cobblemon:master_ball"
+      "item": "cobblemon:air_balloon"
     },
     "show_toast": true,
     "title": {
