@@ -2,6 +2,9 @@ package generations.gg.generations.structures.generationsstructures;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.structures.generationsstructures.config.Config;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
+import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
+import generations.gg.generations.structures.generationsstructures.worldgen.structure_set.GenerationsStructureSets;
+import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,7 +29,10 @@ public class GenerationsStructures {
      */
     public static void init() {
         CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
-        GenerationsProcessorLists.init();
+        GenerationsProcessorLists.processorLists();
+        GenerationsTemplatePools.templatePools();
+        GenerationsStructureSets.structureSets();
+        GenerationsStructureSettings.structures();
     }
 
     /**

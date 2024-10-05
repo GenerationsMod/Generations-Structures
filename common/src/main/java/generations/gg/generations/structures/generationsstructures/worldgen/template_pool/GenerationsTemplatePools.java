@@ -163,4 +163,8 @@ public class GenerationsTemplatePools {
     public interface TemplatePoolFactory {
         StructureTemplatePool generate(BootstapContext<StructureTemplatePool> templatePoolFactoryContext);
     }
+
+    public static void templatePools() {
+        GenerationsStructures.LOGGER.info("Registering Generations-Structures Template Pools");
+    }
 }

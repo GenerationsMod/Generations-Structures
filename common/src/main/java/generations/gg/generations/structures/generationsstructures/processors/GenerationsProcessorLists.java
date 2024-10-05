@@ -8,7 +8,6 @@ import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
 import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
@@ -28,8 +27,6 @@ import java.util.Map;
 public class GenerationsProcessorLists {
 
 	public static final Map<ResourceKey<StructureProcessorList>, StructureProcessorListFactory> STRUCTURE_PROCESSOR_LIST_FACTORIES = new Reference2ObjectOpenHashMap<>();
-
-	public static void init() {}
 
 	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = register("scarlet_pokecenter", context ->  new StructureProcessorList(ImmutableList.of(
 			new SameStateCompatRuleProcessor(
@@ -122,5 +119,9 @@ public class GenerationsProcessorLists {
 	@FunctionalInterface
 	public interface StructureProcessorListFactory  {
 		StructureProcessorList generate(HolderGetter<StructureProcessorList> structureProcessorListHolderGetter);
+	}
+
+	public static void processorLists() {
+		GenerationsStructures.LOGGER.info("Registering Generations-Structures Processor Lists");
 	}
 }

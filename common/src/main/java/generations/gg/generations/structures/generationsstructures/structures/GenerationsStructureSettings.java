@@ -136,4 +136,8 @@ public class GenerationsStructureSettings {
     public interface StructureFactory {
         Structure generate(BootstapContext<Structure> structureFactoryBootstapContext);
     }
+
+    public static void structures() {
+        GenerationsStructures.LOGGER.info("Registering Generations-Structures Structures and Structure Settings");
+    }
 }

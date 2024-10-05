@@ -126,4 +126,8 @@ public class GenerationsStructureSets {
     private static RandomSpreadStructurePlacement createRandomLinearSpreadPlacement(int spread, int separation, int salt) {
         return new RandomSpreadStructurePlacement(spread, separation, RandomSpreadType.LINEAR, salt);
     }
+
+    public static void structureSets() {
+        GenerationsStructures.LOGGER.info("Registering Generations-Structures Structure Sets");
+    }
 }
