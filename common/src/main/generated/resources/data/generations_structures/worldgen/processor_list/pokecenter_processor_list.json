@@ -1,24 +1,71 @@
 {
   "processors": [
     {
-      "block": "minecraft:potted_red_tulip",
-      "processor_type": "moreprocessors:compat_replace",
-      "replace": "biomesoplenty:potted_rose"
-    },
-    {
-      "block": "minecraft:potted_pink_tulip",
-      "processor_type": "moreprocessors:compat_replace",
-      "replace": "biomesoplenty:potted_violet"
-    },
-    {
-      "block": "minecraft:birch_leaves",
-      "processor_type": "moreprocessors:compat_replace",
-      "replace": "biomeswevegone:flowering_orchard_leaves"
-    },
-    {
-      "block": "minecraft:birch_trapdoor",
-      "processor_type": "moreprocessors:compat_replace",
-      "replace": "biomesoplenty:flowering_oak_leaves"
+      "processor_type": "moreprocessors:compat_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:potted_red_tulip",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomesoplenty:potted_rose",
+          "output_state": {
+            "Name": "biomesoplenty:potted_rose"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:potted_pink_tulip",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomesoplenty:potted_violet",
+          "output_state": {
+            "Name": "biomesoplenty:potted_violet"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:birch_leaves",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomeswevegone:flowering_orchard_leaves",
+          "output_state": {
+            "Name": "biomeswevegone:flowering_orchard_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:birch_leaves",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomesoplenty:flowering_oak_leaves",
+          "output_state": {
+            "Name": "biomesoplenty:flowering_oak_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          }
+        }
+      ]
     }
   ]
 }

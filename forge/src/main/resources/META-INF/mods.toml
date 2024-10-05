@@ -59,6 +59,6 @@ logoFile = "icon.png"
 [[dependencies.generations_structures]]
     modId="moreprocessors"
     mandatory = false
-    versionRange = "[1.2.0-Indev,)"
+    versionRange = "[1.4.0-Indev,)"
     ordering = "AFTER"
     side = "SERVER"

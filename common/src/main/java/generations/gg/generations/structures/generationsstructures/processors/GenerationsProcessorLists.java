@@ -8,14 +8,15 @@ import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
 import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
-import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceProcessor;
-import tech.jt_dev.moreprocessors.processor.processors.CompatReplaceSameStateProcessor;
-import tech.jt_dev.moreprocessors.processor.processors.CompatRuleProcessor;
+import tech.jt_dev.moreprocessors.processor.processors.*;
 import tech.jt_dev.moreprocessors.processor.processors.rules.CompatProcessorRule;
+import tech.jt_dev.moreprocessors.processor.processors.rules.SameStateCompatProcessorRule;
+import tech.jt_dev.moreprocessors.processor.processors.rules.SameStateProcessorRule;
 
 import java.util.Map;
 
@@ -30,19 +31,27 @@ public class GenerationsProcessorLists {
 
 	public static void init() {}
 
-	//public static final ResourceKey<StructureProcessorList> GYM_PROCESSOR_LIST = create("gym_processor_list");
-	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = register("scarlet_pokecenter", context ->  new StructureProcessorList(
-			ImmutableList.of(
-					new CompatReplaceSameStateProcessor(Blocks.BIRCH_TRAPDOOR, BWGWood.WITCH_HAZEL.trapdoor()), //TODO: Add BOP
-					new CompatReplaceSameStateProcessor(GenerationsWood.GHOST_TRAPDOOR.get(), BWGWood.EBONY.trapdoor()
-			))));
-	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = register("pokecenter", context -> new StructureProcessorList(ImmutableList.of(
-			//new CompatReplaceProcessor(GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock(), context.get(GenerationsStructures.INTEGRATION).getMirroredFloorReplacement()),
-			new CompatReplaceProcessor(Blocks.POTTED_RED_TULIP, BOPBlocks.POTTED_ROSE),
-			new CompatReplaceProcessor(Blocks.POTTED_PINK_TULIP, BOPBlocks.POTTED_VIOLET),
-			new CompatReplaceProcessor(Blocks.BIRCH_LEAVES, BWGWood.FLOWERING_ORCHARD_LEAVES.get()),
-			new CompatReplaceProcessor(Blocks.BIRCH_TRAPDOOR, BOPBlocks.FLOWERING_OAK_LEAVES)
+	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = register("scarlet_pokecenter", context ->  new StructureProcessorList(ImmutableList.of(
+			new SameStateCompatRuleProcessor(
+					ImmutableList.of(
+							new SameStateCompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_TRAPDOOR), AlwaysTrueTest.INSTANCE, BWGWood.WITCH_HAZEL.trapdoor()),
+							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), AlwaysTrueTest.INSTANCE, BWGWood.EBONY.trapdoor()),
+							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), AlwaysTrueTest.INSTANCE, BOPBlocks.HELLBARK_TRAPDOOR)
+					)
+			)
 	)));
+
+	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = register("pokecenter", context -> new StructureProcessorList(ImmutableList.of(
+			new CompatRuleProcessor(
+					ImmutableList.of(
+							new CompatProcessorRule(new BlockMatchTest(Blocks.POTTED_RED_TULIP), AlwaysTrueTest.INSTANCE, BOPBlocks.POTTED_ROSE),
+							new CompatProcessorRule(new BlockMatchTest(Blocks.POTTED_PINK_TULIP), AlwaysTrueTest.INSTANCE, BOPBlocks.POTTED_VIOLET),
+							new CompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_LEAVES), AlwaysTrueTest.INSTANCE, BWGWood.FLOWERING_ORCHARD_LEAVES.get()),
+							new CompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_LEAVES), AlwaysTrueTest.INSTANCE, BOPBlocks.FLOWERING_OAK_LEAVES)
+					)
+			)
+	)));
+
 	public static final ResourceKey<StructureProcessorList> FROZEN_SHRINE_PROCESSOR_LIST = register("shrines/frozen", context -> new StructureProcessorList(ImmutableList.of(
 			new RuleProcessor(
 					ImmutableList.of(
@@ -74,6 +83,14 @@ public class GenerationsProcessorLists {
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.15f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.15f), AlwaysTrueTest.INSTANCE, Blocks.CRACKED_STONE_BRICKS.defaultBlockState())
+					)
+			),
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_STAIRS),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
 					)
 			),
 			new CompatRuleProcessor(
