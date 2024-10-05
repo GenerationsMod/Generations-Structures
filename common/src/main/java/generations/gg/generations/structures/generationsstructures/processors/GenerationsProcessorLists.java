@@ -2,6 +2,7 @@ package generations.gg.generations.structures.generationsstructures.processors;
 
 import biomesoplenty.api.block.BOPBlocks;
 import com.google.common.collect.ImmutableList;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
@@ -93,6 +94,19 @@ public class GenerationsProcessorLists {
 			new CompatRuleProcessor(
 					ImmutableList.of(
 							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.MOSSY_STONE_BRICKS, 0.25f), AlwaysTrueTest.INSTANCE, BWGBlocks.MOSSY_STONE_SET.getBase())
+					)
+			)
+	)));
+
+	public static final ResourceKey<StructureProcessorList> REGI_SHRINE_PROCESSOR_LIST = register("shrines/regi", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.CALCITE, 0.5f), AlwaysTrueTest.INSTANCE, GenerationsBlocks.BLEACH_STONE_SET.getBaseBlock().defaultBlockState())
+					)
+			),
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.DIORITE_WALL, 0.5f), AlwaysTrueTest.INSTANCE, GenerationsBlocks.BLEACH_STONE_SET.getWall())
 					)
 			)
 	)));

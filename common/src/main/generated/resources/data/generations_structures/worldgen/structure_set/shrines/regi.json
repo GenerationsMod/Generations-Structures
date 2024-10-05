@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 423098801,
+    "separation": 350,
+    "spacing": 2000
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/regi",
+      "weight": 1
+    }
+  ]
+}

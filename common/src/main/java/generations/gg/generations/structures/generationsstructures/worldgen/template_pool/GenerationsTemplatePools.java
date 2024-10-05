@@ -43,6 +43,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> FIERY_SHRINE = registerSimple("shrines/fiery", GenerationsStructureSettings.FIERY_SHRINE, GenerationsProcessorLists.FIERY_SHRINE_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> STATIC_SHRINE = registerSimple("shrines/static", GenerationsStructureSettings.STATIC_SHRINE, GenerationsProcessorLists.STATIC_SHRINE_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = registerSimple("shrines/lugia", GenerationsStructureSettings.LUGIA_SHRINE, GenerationsProcessorLists.LUGIA_SHRINE_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> REGI_SHRINE = registerSimple("shrines/regi", GenerationsStructureSettings.REGI_SHRINE, GenerationsProcessorLists.REGI_SHRINE_PROCESSOR_LIST);
 
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = register("village/plains/streets/pokecenter", context -> createTemplatePool(getPool(context, VanillaVillages.PLAINS.getVillagePool("streets")), ImmutableList.of(
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_CORNER_01, ProcessorLists.STREET_PLAINS, 1),

@@ -119,6 +119,10 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_LUGIA_SHRINE)
                     .addTag(BiomeTags.IS_MOUNTAIN)
                     .addTag(BiomeTags.IS_FOREST);
+
+            tag(GenerationsBiomeTags.HAS_REGI_SHRINE)
+                    .addOptionalTag(Tags.Biomes.IS_SNOWY)
+                    .addOptionalTag(fabricTagMaker("snowy"));
         }
     }
 
@@ -144,7 +148,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.FROZEN_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.FIERY_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.STATIC_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.LUGIA_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.LUGIA_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.REGI_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
@@ -201,6 +206,7 @@ public class ForgeDatagen {
                     .addCriterion("fiery_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FIERY_SHRINE)))
                     .addCriterion("static_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.STATIC_SHRINE)))
                     .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.LUGIA_SHRINE)))
+                    .addCriterion("regi_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.REGI_SHRINE)))
                     .display(
                             CobblemonItems.MASTER_BALL.asItem(),
                             translateAble("title.shrines"),
