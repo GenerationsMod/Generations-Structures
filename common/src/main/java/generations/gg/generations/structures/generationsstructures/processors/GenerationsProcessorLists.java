@@ -111,6 +111,35 @@ public class GenerationsProcessorLists {
 			)
 	)));
 
+	public static final ResourceKey<StructureProcessorList> ISLANDS_PROCESSOR_LIST = register("islands", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COAL_ORE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.COBBLED_DEEPSLATE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.DEEPSLATE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.SANDSTONE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.CUT_SANDSTONE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.OAK_LEAVES, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.AZALEA_LEAVES.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.OAK_LEAVES, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRASS_BLOCK, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSS_BLOCK.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRASS_BLOCK, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.GREEN_CONCRETE_POWDER.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRASS_BLOCK, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.GREEN_TERRACOTTA.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.AZALEA, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.FLOWERING_AZALEA.defaultBlockState())
+					)
+			),
+			new PlaceOnTopProcessor(Blocks.GRASS_BLOCK, Blocks.GREEN_CARPET, 0.1f, true),
+			new PlaceOnTopProcessor(Blocks.GRASS_BLOCK, Blocks.MOSS_CARPET, 0.1f, true),
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.COBBLESTONE_WALL, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE_WALL),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.4f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE_SLAB, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.SANDSTONE_SLAB)
+					)
+			)
+	)));
+
 	private static StructureProcessorList createProcessorList(ProcessorRule... processors) {
 		return new StructureProcessorList(ImmutableList.of(new RuleProcessor(ImmutableList.copyOf(processors))));
 	}
