@@ -86,25 +86,7 @@
         },
         {
           "input_predicate": {
-            "block": "minecraft:oak_leaves",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.33
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "minecraft:azalea_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false",
-              "waterlogged": "false"
-            }
-          }
-        },
-        {
-          "input_predicate": {
-            "block": "minecraft:oak_leaves",
+            "block": "minecraft:azalea_leaves",
             "predicate_type": "minecraft:random_block_match",
             "probability": 0.33
           },
@@ -115,7 +97,25 @@
             "Name": "minecraft:flowering_azalea_leaves",
             "Properties": {
               "distance": "7",
-              "persistent": "false",
+              "persistent": "true",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:azalea_leaves",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:jungle_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "true",
               "waterlogged": "false"
             }
           }
@@ -190,6 +190,15 @@
       "air": true,
       "below": "minecraft:grass_block",
       "chance": 0.1,
+      "processor_type": "moreprocessors:place_on_top"
+    },
+    {
+      "above": {
+        "Name": "minecraft:allium"
+      },
+      "air": true,
+      "below": "minecraft:grass_block",
+      "chance": 0.05,
       "processor_type": "moreprocessors:place_on_top"
     },
     {

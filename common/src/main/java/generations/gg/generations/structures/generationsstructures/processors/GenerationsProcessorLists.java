@@ -10,6 +10,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
 import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
@@ -120,8 +121,8 @@ public class GenerationsProcessorLists {
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.COBBLED_DEEPSLATE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.DEEPSLATE.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.SANDSTONE.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.CUT_SANDSTONE.defaultBlockState()),
-							new ProcessorRule(new RandomBlockMatchTest(Blocks.OAK_LEAVES, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.AZALEA_LEAVES.defaultBlockState()),
-							new ProcessorRule(new RandomBlockMatchTest(Blocks.OAK_LEAVES, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.AZALEA_LEAVES, 0.33f), AlwaysTrueTest.INSTANCE, Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState().setValue(LeavesBlock.PERSISTENT, true)),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.AZALEA_LEAVES, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.JUNGLE_LEAVES.defaultBlockState().setValue(LeavesBlock.PERSISTENT, true)),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRASS_BLOCK, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSS_BLOCK.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRASS_BLOCK, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.GREEN_CONCRETE_POWDER.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRASS_BLOCK, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.GREEN_TERRACOTTA.defaultBlockState()),
@@ -130,6 +131,7 @@ public class GenerationsProcessorLists {
 			),
 			new PlaceOnTopProcessor(Blocks.GRASS_BLOCK, Blocks.GREEN_CARPET, 0.1f, true),
 			new PlaceOnTopProcessor(Blocks.GRASS_BLOCK, Blocks.MOSS_CARPET, 0.1f, true),
+			new PlaceOnTopProcessor(Blocks.GRASS_BLOCK, Blocks.ALLIUM, 0.05f, true),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.COBBLESTONE_WALL, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE_WALL),
