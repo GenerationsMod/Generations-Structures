@@ -39,6 +39,9 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that can have a Regi shrine */
     public static final TagKey<Biome> HAS_REGI_SHRINE = create("has_structure/regi_shrine");
 
+    /** the tag for biomes that can have a Creation Trio shrine */
+    public static final TagKey<Biome> HAS_CREATION_TRIO_SHRINE = create("has_structure/creation_trio_shrine");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

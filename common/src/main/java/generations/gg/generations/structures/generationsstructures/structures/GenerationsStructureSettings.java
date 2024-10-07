@@ -92,6 +92,11 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.REGI_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
+    public static final ResourceKey<Structure> CREATION_TRIO_SHRINE = register("shrines/creation_trio", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_CREATION_TRIO_SHRINE), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.CREATION_TRIO_SHRINE), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
     public static final ResourceKey<Structure> ISLANDS = register("islands", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_ISLANDS), TerrainAdjustment.NONE),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.ISLANDS), 1,

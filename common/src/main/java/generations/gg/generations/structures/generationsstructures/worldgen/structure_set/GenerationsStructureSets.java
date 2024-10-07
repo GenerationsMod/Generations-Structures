@@ -61,6 +61,8 @@ public class GenerationsStructureSets {
         register("shrines/lugia", GenerationsStructureSettings.LUGIA_SHRINE, 2000, 350, 495104284);
 
         register("shrines/regi", GenerationsStructureSettings.REGI_SHRINE, 2000, 350, 423098801);
+
+        register("shrines/creation_trio", GenerationsStructureSettings.CREATION_TRIO_SHRINE, 2000, 350, 913433717);
     }
 
     private static void register(String id, StructureSetFactory factory) {

@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#minecraft:is_badlands",
+    {
+      "id": "#c:badlands",
+      "required": false
+    },
+    "minecraft:end_barrens",
+    "minecraft:windswept_savanna"
+  ]
+}

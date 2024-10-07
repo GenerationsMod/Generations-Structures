@@ -112,6 +112,20 @@ public class GenerationsProcessorLists {
 			)
 	)));
 
+	public static final ResourceKey<StructureProcessorList> CREATION_TRIO_SHRINE_PROCESSOR_LIST = register("shrines/creation_trio", context -> new StructureProcessorList(ImmutableList.of(
+		new RuleProcessor(
+				ImmutableList.of(
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.POLISHED_ANDESITE.defaultBlockState()),
+						new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()
+				)
+		)),
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.POLISHED_ANDESITE_STAIRS),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.20f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
+					)
+			))));
+
 	public static final ResourceKey<StructureProcessorList> ISLANDS_PROCESSOR_LIST = register("islands", context -> new StructureProcessorList(ImmutableList.of(
 			new RuleProcessor(
 					ImmutableList.of(

@@ -124,6 +124,11 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_REGI_SHRINE)
                     .addOptionalTag(Tags.Biomes.IS_SNOWY)
                     .addOptionalTag(fabricTagMaker("snowy"));
+
+            tag(GenerationsBiomeTags.HAS_CREATION_TRIO_SHRINE)
+                    .addTag(BiomeTags.IS_BADLANDS)
+                    .addOptionalTag(fabricTagMaker("badlands"))
+                    .add(Biomes.END_BARRENS, Biomes.WINDSWEPT_SAVANNA);
         }
     }
 
@@ -150,7 +155,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.FIERY_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.STATIC_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.LUGIA_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.REGI_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.REGI_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.CREATION_TRIO_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
@@ -208,6 +214,7 @@ public class ForgeDatagen {
                     .addCriterion("static_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.STATIC_SHRINE)))
                     .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.LUGIA_SHRINE)))
                     .addCriterion("regi_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.REGI_SHRINE)))
+                    .addCriterion("creation_trio_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.CREATION_TRIO_SHRINE)))
                     .display(
                             GenerationsShrines.LUNAR_SHRINE.getOrNull(),
                             translateAble("title.shrines"),

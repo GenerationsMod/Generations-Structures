@@ -45,6 +45,14 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> LUGIA_SHRINE = registerSimple("shrines/lugia", GenerationsStructureSettings.LUGIA_SHRINE, GenerationsProcessorLists.LUGIA_SHRINE_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> REGI_SHRINE = registerSimple("shrines/regi", GenerationsStructureSettings.REGI_SHRINE, GenerationsProcessorLists.REGI_SHRINE_PROCESSOR_LIST);
 
+    public static final ResourceKey<StructureTemplatePool> CREATION_TRIO_SHRINE = registerSimple("shrines/creation_trio", GenerationsStructureSettings.CREATION_TRIO_SHRINE, GenerationsProcessorLists.CREATION_TRIO_SHRINE_PROCESSOR_LIST);
+
+    private static final ResourceKey<StructureTemplatePool> CREATION_TRIO_TOP = register("shrines/creation_trio_top", context -> createTemplatePool(
+            getPool(context, create("shrines/creation_trio_top")), ImmutableList.of(
+                    createPoolElement(context, GenerationsStructuresKeys.CREATION_TRIO_TOP)
+            ))
+    );
+
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = register("village/plains/streets/pokecenter", context -> createTemplatePool(getPool(context, VanillaVillages.PLAINS.getVillagePool("streets")), ImmutableList.of(
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_CORNER_01, ProcessorLists.STREET_PLAINS, 1),
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_STRAIGHT_05, ProcessorLists.STREET_PLAINS, 1)

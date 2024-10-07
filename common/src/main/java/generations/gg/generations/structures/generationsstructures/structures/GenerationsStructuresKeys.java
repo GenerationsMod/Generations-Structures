@@ -37,6 +37,8 @@ public interface GenerationsStructuresKeys {
     ResourceKey<Structure> DESERT_POKECENTER_1 = createKey("village/desert/pokecenter_1");
     ResourceKey<Structure> DESERT_POKECENTER_2 = createKey("village/desert/pokecenter_2");
     ResourceKey<Structure> DESERT_POKECENTER_3 = createKey("village/desert/pokecenter_3");
+
+    ResourceKey<Structure> CREATION_TRIO_TOP = createKey("shrines/creation_trio_top");
     /**
      * Creates a ResourceKey for the structure.
      * @param name The name of the structure or directory with name.
