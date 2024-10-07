@@ -122,7 +122,7 @@ public class GenerationsProcessorLists {
 			new SameStateRuleProcessor(
 					ImmutableList.of(
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.POLISHED_ANDESITE_STAIRS),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.20f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.20f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
 					)
 			))));
 

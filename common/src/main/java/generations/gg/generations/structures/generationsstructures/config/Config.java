@@ -9,15 +9,5 @@ public class Config {
 
     public static class VillageStructureGeneration {
         public boolean AllowStructuresInVillages = true;
-        public boolean randomizeVendingMachineColors = true;
     }
-
-    public Randomization randomization = new Randomization();
-
-    public static class Randomization {
-        public boolean randomizeFieryShrineBlocks = true;
-        public boolean randomizeStaticShrineBlocks = true;
-        public boolean randomizeLugiaShrineBlocks = true;
-    }
-
 }

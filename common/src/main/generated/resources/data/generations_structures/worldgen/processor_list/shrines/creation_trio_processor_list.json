@@ -47,7 +47,7 @@
         },
         {
           "input_predicate": {
-            "block": "minecraft:stone_brick_slab",
+            "block": "minecraft:stone_brick_stairs",
             "predicate_type": "minecraft:random_block_match",
             "probability": 0.2
           },
