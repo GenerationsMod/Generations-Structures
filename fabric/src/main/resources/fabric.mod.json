@@ -35,6 +35,6 @@
   },
   "suggests": {
     "biomeswevegone": ">=1.2.3",
-    "biomesoplenty": ">= 19.0.0.91"
+    "biomesoplenty": ">=19.0.0.91"
   }
 }
