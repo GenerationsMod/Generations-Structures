@@ -126,6 +126,30 @@ public class GenerationsProcessorLists {
 					)
 			))));
 
+	public static final ResourceKey<StructureProcessorList> FORCES_OF_NATURE_SHRINE = register("shrines/forces_of_nature", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.4f), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.WHITE_STAINED_GLASS.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.15f), AlwaysTrueTest.INSTANCE, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.06f), AlwaysTrueTest.INSTANCE, Blocks.DIORITE.defaultBlockState())
+					)
+			),
+			new CompatRuleProcessor(
+					ImmutableList.of(
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, BWGBlocks.PINK_ALLIUM.getBlock()),
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, BWGBlocks.WHITE_ALLIUM.getBlock()),
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, BWGBlocks.ALPINE_BELLFLOWER.getBlock())
+					)
+			),
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.BLUE_ORCHID.defaultBlockState())
+					)
+			)
+	)));
+
 	public static final ResourceKey<StructureProcessorList> ISLANDS_PROCESSOR_LIST = register("islands", context -> new StructureProcessorList(ImmutableList.of(
 			new RuleProcessor(
 					ImmutableList.of(
