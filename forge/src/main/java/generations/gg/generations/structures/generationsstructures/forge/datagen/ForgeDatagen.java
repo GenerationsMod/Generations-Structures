@@ -129,6 +129,10 @@ public class ForgeDatagen {
                     .addTag(BiomeTags.IS_BADLANDS)
                     .addOptionalTag(fabricTagMaker("badlands"))
                     .add(Biomes.END_BARRENS, Biomes.WINDSWEPT_SAVANNA);
+
+            tag(GenerationsBiomeTags.HAS_FORCES_OF_NATURE_SHRINE)
+                    .addOptionalTag(fabricTagMaker("floral"))
+                    .add(Biomes.FLOWER_FOREST, Biomes.CHERRY_GROVE, Biomes.SUNFLOWER_PLAINS);
         }
     }
 
@@ -156,7 +160,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.STATIC_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.LUGIA_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.REGI_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.CREATION_TRIO_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.CREATION_TRIO_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)

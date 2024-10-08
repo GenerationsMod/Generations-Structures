@@ -1,0 +1,11 @@
+{
+  "values": [
+    {
+      "id": "#c:floral",
+      "required": false
+    },
+    "minecraft:flower_forest",
+    "minecraft:cherry_grove",
+    "minecraft:sunflower_plains"
+  ]
+}

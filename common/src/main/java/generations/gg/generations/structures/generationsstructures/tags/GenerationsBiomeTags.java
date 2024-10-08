@@ -42,6 +42,9 @@ public class GenerationsBiomeTags {
     /** the tag for biomes that can have a Creation Trio shrine */
     public static final TagKey<Biome> HAS_CREATION_TRIO_SHRINE = create("has_structure/creation_trio_shrine");
 
+    /** the tag for biomes that can have a Forces of Nature shrine */
+    public static final TagKey<Biome> HAS_FORCES_OF_NATURE_SHRINE = create("has_structure/forces_of_nature_shrine");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

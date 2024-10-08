@@ -23,6 +23,10 @@
     {
       "id": "generations_structures:shrines/creation_trio",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/forces_of_nature",
+      "required": false
     }
   ]
 }

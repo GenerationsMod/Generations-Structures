@@ -63,6 +63,8 @@ public class GenerationsStructureSets {
         register("shrines/regi", GenerationsStructureSettings.REGI_SHRINE, 2000, 350, 423098801);
 
         register("shrines/creation_trio", GenerationsStructureSettings.CREATION_TRIO_SHRINE, 2000, 350, 913433717);
+
+        register("shrines/forces_of_nature", GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE, 2000, 350, 748320000);
     }
 
     private static void register(String id, StructureSetFactory factory) {

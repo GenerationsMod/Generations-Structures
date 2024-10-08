@@ -126,7 +126,7 @@ public class GenerationsProcessorLists {
 					)
 			))));
 
-	public static final ResourceKey<StructureProcessorList> FORCES_OF_NATURE_SHRINE = register("shrines/forces_of_nature", context -> new StructureProcessorList(ImmutableList.of(
+	public static final ResourceKey<StructureProcessorList> FORCES_OF_NATURE_SHRINE_PROCESSOR_LIST = register("shrines/forces_of_nature", context -> new StructureProcessorList(ImmutableList.of(
 			new RuleProcessor(
 					ImmutableList.of(
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.SNOW_BLOCK, 0.4f), AlwaysTrueTest.INSTANCE, Blocks.WHITE_WOOL.defaultBlockState()),
