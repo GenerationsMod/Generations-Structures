@@ -17,6 +17,7 @@ import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
 import tech.jt_dev.moreprocessors.processor.processors.*;
 import tech.jt_dev.moreprocessors.processor.processors.rules.CompatProcessorRule;
+import tech.jt_dev.moreprocessors.processor.processors.rules.FlowingFluidProcessorRule;
 import tech.jt_dev.moreprocessors.processor.processors.rules.SameStateCompatProcessorRule;
 import tech.jt_dev.moreprocessors.processor.processors.rules.SameStateProcessorRule;
 
@@ -149,7 +150,9 @@ public class GenerationsProcessorLists {
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.BLUE_ORCHID.defaultBlockState())
 					)
 			),
-			new FlowingFluidProcessor(Blocks.STONE, Fluids.WATER)
+			new FlowingFluidRuleProcessor(ImmutableList.of(
+					new FlowingFluidProcessorRule(new BlockMatchTest(Blocks.STONE), AlwaysTrueTest.INSTANCE, Fluids.WATER)
+			))
 	)));
 
 	public static final ResourceKey<StructureProcessorList> ISLANDS_PROCESSOR_LIST = register("islands", context -> new StructureProcessorList(ImmutableList.of(
@@ -178,6 +181,11 @@ public class GenerationsProcessorLists {
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.4f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE_SLAB),
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_SLAB),
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE_SLAB, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.SANDSTONE_SLAB)
+					)
+			),
+			new FlowingFluidRuleProcessor(
+					ImmutableList.of(
+							new FlowingFluidProcessorRule(new BlockMatchTest(Blocks.BRICKS), AlwaysTrueTest.INSTANCE, Fluids.WATER)
 					)
 			)
 	)));

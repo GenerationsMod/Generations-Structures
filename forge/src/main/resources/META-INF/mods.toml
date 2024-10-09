@@ -38,7 +38,7 @@ logoFile = "icon.png"
 [[dependencies.generations_structures]]
     modId = "biomesoplenty"
     mandatory = false
-    versionRange = "[19.0.0.91,)"
+    versionRange = "[18.0.0.0,)"
     ordering = "AFTER"
     side = "BOTH"
 
@@ -59,6 +59,6 @@ logoFile = "icon.png"
 [[dependencies.generations_structures]]
     modId="moreprocessors"
     mandatory = false
-    versionRange = "[1.0.0,)"
+    versionRange = "[1.1.0,)"
     ordering = "AFTER"
     side = "SERVER"

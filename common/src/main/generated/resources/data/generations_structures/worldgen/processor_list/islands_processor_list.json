@@ -249,6 +249,21 @@
           "output_location": "minecraft:sandstone_slab"
         }
       ]
+    },
+    {
+      "processor_type": "moreprocessors:flowing_fluid_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:bricks",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:water"
+        }
+      ]
     }
   ]
 }

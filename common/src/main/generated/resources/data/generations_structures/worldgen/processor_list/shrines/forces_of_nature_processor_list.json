@@ -136,9 +136,19 @@
       ]
     },
     {
-      "block": "minecraft:stone",
-      "fluid": "minecraft:water",
-      "processor_type": "moreprocessors:flowing_fluid"
+      "processor_type": "moreprocessors:flowing_fluid_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:stone",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:water"
+        }
+      ]
     }
   ]
 }

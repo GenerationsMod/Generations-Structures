@@ -54,7 +54,7 @@ dependencies {
 
     //BiomeMod Integration
     modLocalRuntime("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
-    modCompileOnly("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}") { isTransitive = false }
+    modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty-fabric:$minecraftVersion-${project.properties["BOP_version"]}")
     modLocalRuntime("com.github.glitchfiend:GlitchCore-fabric:$minecraftVersion-${project.properties["GlitchCore_version"]}")
 }
