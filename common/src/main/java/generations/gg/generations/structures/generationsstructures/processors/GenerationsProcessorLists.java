@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
+import net.minecraft.world.level.material.Fluids;
 import net.potionstudios.biomeswevegone.world.level.block.BWGBlocks;
 import net.potionstudios.biomeswevegone.world.level.block.wood.BWGWood;
 import tech.jt_dev.moreprocessors.processor.processors.*;
@@ -147,7 +148,8 @@ public class GenerationsProcessorLists {
 					ImmutableList.of(
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.BLUE_ORCHID.defaultBlockState())
 					)
-			)
+			),
+			new FlowingFluidProcessor(Blocks.STONE, Fluids.WATER)
 	)));
 
 	public static final ResourceKey<StructureProcessorList> ISLANDS_PROCESSOR_LIST = register("islands", context -> new StructureProcessorList(ImmutableList.of(

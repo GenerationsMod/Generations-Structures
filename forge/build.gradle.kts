@@ -70,7 +70,7 @@ dependencies {
     implementation("thedarkcolour:kotlinforforge:4.11.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
-    modApi("tech.jt-dev:MoreStructureProcessors-forge:${project.properties["moreprocessors_version"]}")
+    modApi("tech.jt-dev:MoreStructureProcessors-forge:${project.properties["moreprocessors_version"]}") { isChanging = true }
 
     //BiomeMod Integration
     modLocalRuntime("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")

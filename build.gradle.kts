@@ -51,6 +51,7 @@ subprojects {
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
         maven("https://maven.jt-dev.tech/releases")
+        maven("https://maven.jt-dev.tech/snapshots")
     }
 
     @Suppress("UnstableApiUsage")
