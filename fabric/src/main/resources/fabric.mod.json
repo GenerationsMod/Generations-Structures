@@ -29,7 +29,7 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20.1",
-    "generations_core": "*",
+    "generations_core": ">=4.0.1-Beta",
     "cobblemon": "1.5.2+1.20.1",
     "moreprocessors": ">=1.1.0"
   },

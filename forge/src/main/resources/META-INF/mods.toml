@@ -31,7 +31,7 @@ logoFile = "icon.png"
 [[dependencies.generations_structures]]
     modId = "generations_core"
     mandatory = true
-    versionRange="*"
+    versionRange="[4.0.1-Beta,)"
     ordering = "AFTER"
     side = "BOTH"
 
