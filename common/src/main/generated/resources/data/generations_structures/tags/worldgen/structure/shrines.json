@@ -27,6 +27,10 @@
     {
       "id": "generations_structures:shrines/forces_of_nature",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/groudon",
+      "required": false
     }
   ]
 }

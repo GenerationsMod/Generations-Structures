@@ -133,6 +133,11 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_FORCES_OF_NATURE_SHRINE)
                     .addOptionalTag(fabricTagMaker("floral"))
                     .add(Biomes.FLOWER_FOREST, Biomes.CHERRY_GROVE, Biomes.SUNFLOWER_PLAINS);
+
+            tag(GenerationsBiomeTags.HAS_GROUDON_SHRINE)
+                    .addOptionalTag(fabricTagMaker("desert"))
+                    .addOptionalTag(Tags.Biomes.IS_DESERT)
+                    .add(Biomes.DESERT);
         }
     }
 
@@ -161,7 +166,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.LUGIA_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.REGI_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.CREATION_TRIO_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.GROUDON_SHRINE.location());
 
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
@@ -220,6 +226,8 @@ public class ForgeDatagen {
                     .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.LUGIA_SHRINE)))
                     .addCriterion("regi_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.REGI_SHRINE)))
                     .addCriterion("creation_trio_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.CREATION_TRIO_SHRINE)))
+                    .addCriterion("forces_of_nature_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE)))
+                    .addCriterion("groudon_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.GROUDON_SHRINE)))
                     .display(
                             GenerationsShrines.LUNAR_SHRINE.getOrNull(),
                             translateAble("title.shrines"),

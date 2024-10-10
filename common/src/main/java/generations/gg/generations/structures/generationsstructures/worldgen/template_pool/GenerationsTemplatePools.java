@@ -46,6 +46,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> REGI_SHRINE = registerSimple("shrines/regi", GenerationsStructureSettings.REGI_SHRINE, GenerationsProcessorLists.REGI_SHRINE_PROCESSOR_LIST);
 
     public static final ResourceKey<StructureTemplatePool> CREATION_TRIO_SHRINE = registerSimple("shrines/creation_trio", GenerationsStructureSettings.CREATION_TRIO_SHRINE, GenerationsProcessorLists.CREATION_TRIO_SHRINE_PROCESSOR_LIST);
+    public static final ResourceKey<StructureTemplatePool> GROUDON_SHRINE = registerSimple("shrines/groudon", GenerationsStructureSettings.GROUDON_SHRINE, GenerationsProcessorLists.GROUDON_SHRINE_PROCESSOR_LIST);
 
     private static final ResourceKey<StructureTemplatePool> CREATION_TRIO_TOP = register("shrines/creation_trio_top", context -> createTemplatePool(
             getPool(context, create("shrines/creation_trio_top")), ImmutableList.of(

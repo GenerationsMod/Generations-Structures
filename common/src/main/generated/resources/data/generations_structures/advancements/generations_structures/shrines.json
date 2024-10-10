@@ -33,6 +33,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "forces_of_nature_shrine": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/forces_of_nature"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "frozen_shrine": {
       "conditions": {
         "player": [
@@ -42,6 +58,22 @@
             "predicate": {
               "location": {
                 "structure": "generations_structures:shrines/frozen"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "groudon_shrine": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/groudon"
               }
             }
           }
@@ -132,6 +164,12 @@
     ],
     [
       "creation_trio_shrine"
+    ],
+    [
+      "forces_of_nature_shrine"
+    ],
+    [
+      "groudon_shrine"
     ]
   ],
   "sends_telemetry_event": true

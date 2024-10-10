@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 629507014,
+    "separation": 350,
+    "spacing": 2000
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/groudon",
+      "weight": 1
+    }
+  ]
+}

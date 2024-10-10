@@ -97,6 +97,11 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.CREATION_TRIO_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
+    public static final ResourceKey<Structure> GROUDON_SHRINE = register("shrines/groudon", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_GROUDON_SHRINE), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.GROUDON_SHRINE), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
     public static final ResourceKey<Structure> FORCES_OF_NATURE_SHRINE = register("shrines/forces_of_nature", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_FORCES_OF_NATURE_SHRINE), TerrainAdjustment.NONE),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.FORCES_OF_NATURE_SHRINE), 1,

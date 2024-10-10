@@ -190,6 +190,11 @@ public class GenerationsProcessorLists {
 			)
 	)));
 
+	public static final ResourceKey<StructureProcessorList> GROUDON_SHRINE_PROCESSOR_LIST = register("shrines/groudon", context -> createProcessorList(
+			new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_BASALT, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.DEEPSLATE_COAL_ORE.defaultBlockState()),
+			new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_BASALT, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.COAL_BLOCK.defaultBlockState()),
+			new ProcessorRule(new RandomBlockMatchTest(Blocks.RED_NETHER_BRICK_STAIRS, 0.45f), AlwaysTrueTest.INSTANCE, Blocks.CRIMSON_HYPHAE.defaultBlockState())));
+
 	private static StructureProcessorList createProcessorList(ProcessorRule... processors) {
 		return new StructureProcessorList(ImmutableList.of(new RuleProcessor(ImmutableList.copyOf(processors))));
 	}
