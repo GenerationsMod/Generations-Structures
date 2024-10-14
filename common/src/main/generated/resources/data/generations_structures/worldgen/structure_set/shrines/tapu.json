@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 647365027,
+    "separation": 350,
+    "spacing": 2000
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/tapu",
+      "weight": 1
+    }
+  ]
+}

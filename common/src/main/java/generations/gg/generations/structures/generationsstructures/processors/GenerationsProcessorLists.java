@@ -195,6 +195,17 @@ public class GenerationsProcessorLists {
 			new ProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_BASALT, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.COAL_BLOCK.defaultBlockState()),
 			new ProcessorRule(new RandomBlockMatchTest(Blocks.RED_NETHER_BRICK_STAIRS, 0.45f), AlwaysTrueTest.INSTANCE, Blocks.CRIMSON_HYPHAE.defaultBlockState())));
 
+	public static final ResourceKey<StructureProcessorList> TAPU_SHRINE_PROCESSOR_LIST = register("shrines/tapu", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.JUNGLE_LEAVES, 0.12f), AlwaysTrueTest.INSTANCE, Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState().setValue(LeavesBlock.PERSISTENT, true)),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.12f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_COBBLESTONE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.12f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE.defaultBlockState())
+					)
+			)
+	)));
+
 	private static StructureProcessorList createProcessorList(ProcessorRule... processors) {
 		return new StructureProcessorList(ImmutableList.of(new RuleProcessor(ImmutableList.copyOf(processors))));
 	}

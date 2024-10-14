@@ -128,6 +128,22 @@
         ]
       },
       "trigger": "minecraft:location"
+    },
+    "tapu_shrine": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/tapu"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
     }
   },
   "display": {
@@ -170,6 +186,9 @@
     ],
     [
       "groudon_shrine"
+    ],
+    [
+      "tapu_shrine"
     ]
   ],
   "sends_telemetry_event": true
