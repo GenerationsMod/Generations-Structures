@@ -203,6 +203,11 @@ public class GenerationsProcessorLists {
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.12f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_COBBLESTONE.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.12f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE.defaultBlockState())
 					)
+			),
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_SLAB)
+					)
 			)
 	)));
 
