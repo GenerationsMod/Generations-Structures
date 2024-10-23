@@ -74,8 +74,8 @@ dependencies {
 
     //BiomeMod Integration
     modLocalRuntime("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
-    modApi("com.github.glitchfiend:BiomesOPlenty-forge:$minecraftVersion-${project.properties["BOP_version"]}")
-    modLocalRuntime("com.github.glitchfiend:GlitchCore-forge:$minecraftVersion-${project.properties["GlitchCore_version"]}")
+    modCompileOnly("com.github.glitchfiend:BiomesOPlenty-forge:$minecraftVersion-${project.properties["BOP_version"]}")
+    //modLocalRuntime("com.github.glitchfiend:GlitchCore-forge:$minecraftVersion-${project.properties["GlitchCore_version"]}")
     modRuntimeOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-Forge:${project.properties["BWG_version"]}")
     implementation("com.eliotlash.mclib:mclib:20")
