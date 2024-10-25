@@ -1,4 +1,4 @@
-# 1.2.0-Beta
+# 1.1.1-Beta
 - Fix Plains PokeMart 3 having a random floating Chest
 - Fix Config Path being Null crash on Forge
 
