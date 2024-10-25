@@ -1,5 +1,6 @@
 # 1.2.0-Beta
 - Fix Plains PokeMart 3 having a random floating Chest
+- Fix Config Path being Null crash on Forge
 
 # 1.1.0-Beta
 - Add Tapu Shrine
