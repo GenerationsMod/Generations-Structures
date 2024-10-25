@@ -35,9 +35,9 @@ public class GenerationsProcessorLists {
 	public static final ResourceKey<StructureProcessorList> SCARLET_POKECENTER_PROCESSOR_LIST = register("scarlet_pokecenter", context ->  new StructureProcessorList(ImmutableList.of(
 			new SameStateCompatRuleProcessor(
 					ImmutableList.of(
-							new SameStateCompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_TRAPDOOR), AlwaysTrueTest.INSTANCE, BWGWood.WITCH_HAZEL.trapdoor()),
-							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), AlwaysTrueTest.INSTANCE, BWGWood.EBONY.trapdoor()),
-							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), AlwaysTrueTest.INSTANCE, BOPBlocks.HELLBARK_TRAPDOOR)
+							new SameStateCompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_TRAPDOOR), BWGWood.WITCH_HAZEL.trapdoor()),
+							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), BWGWood.EBONY.trapdoor()),
+							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), BOPBlocks.HELLBARK_TRAPDOOR)
 					)
 			)
 	)));
@@ -45,10 +45,10 @@ public class GenerationsProcessorLists {
 	public static final ResourceKey<StructureProcessorList> POKECENTER_PROCESSOR_LIST = register("pokecenter", context -> new StructureProcessorList(ImmutableList.of(
 			new CompatRuleProcessor(
 					ImmutableList.of(
-							new CompatProcessorRule(new BlockMatchTest(Blocks.POTTED_RED_TULIP), AlwaysTrueTest.INSTANCE, BOPBlocks.POTTED_ROSE),
-							new CompatProcessorRule(new BlockMatchTest(Blocks.POTTED_PINK_TULIP), AlwaysTrueTest.INSTANCE, BOPBlocks.POTTED_VIOLET),
-							new CompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_LEAVES), AlwaysTrueTest.INSTANCE, BWGWood.FLOWERING_ORCHARD_LEAVES.get()),
-							new CompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_LEAVES), AlwaysTrueTest.INSTANCE, BOPBlocks.FLOWERING_OAK_LEAVES)
+							new CompatProcessorRule(new BlockMatchTest(Blocks.POTTED_RED_TULIP), BOPBlocks.POTTED_ROSE),
+							new CompatProcessorRule(new BlockMatchTest(Blocks.POTTED_PINK_TULIP), BOPBlocks.POTTED_VIOLET),
+							new CompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_LEAVES), BWGWood.FLOWERING_ORCHARD_LEAVES.get()),
+							new CompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_LEAVES), BOPBlocks.FLOWERING_OAK_LEAVES)
 					)
 			)
 	)));
@@ -88,15 +88,15 @@ public class GenerationsProcessorLists {
 			),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_SLAB),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_SLAB),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_STAIRS),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.2f), Blocks.COBBLESTONE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.2f), Blocks.MOSSY_STONE_BRICK_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.2f), Blocks.COBBLESTONE_STAIRS),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.2f), Blocks.MOSSY_STONE_BRICK_STAIRS)
 					)
 			),
 			new CompatRuleProcessor(
 					ImmutableList.of(
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.MOSSY_STONE_BRICKS, 0.25f), AlwaysTrueTest.INSTANCE, BWGBlocks.MOSSY_STONE_SET.getBase())
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.MOSSY_STONE_BRICKS, 0.25f), BWGBlocks.MOSSY_STONE_SET.getBase())
 					)
 			)
 	)));
@@ -109,22 +109,22 @@ public class GenerationsProcessorLists {
 			),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.DIORITE_WALL, 0.5f), AlwaysTrueTest.INSTANCE, GenerationsBlocks.BLEACH_STONE_SET.getWall())
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.DIORITE_WALL, 0.5f), GenerationsBlocks.BLEACH_STONE_SET.getWall())
 					)
 			)
 	)));
 
 	public static final ResourceKey<StructureProcessorList> CREATION_TRIO_SHRINE_PROCESSOR_LIST = register("shrines/creation_trio", context -> new StructureProcessorList(ImmutableList.of(
-		new RuleProcessor(
-				ImmutableList.of(
-						new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.POLISHED_ANDESITE.defaultBlockState()),
-						new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()
-				)
-		)),
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.POLISHED_ANDESITE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.2f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()
+					))
+			),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.35f), AlwaysTrueTest.INSTANCE, Blocks.POLISHED_ANDESITE_STAIRS),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.20f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.35f), Blocks.POLISHED_ANDESITE_STAIRS),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.20f), Blocks.MOSSY_STONE_BRICK_STAIRS)
 					)
 			))));
 
@@ -140,9 +140,9 @@ public class GenerationsProcessorLists {
 			),
 			new CompatRuleProcessor(
 					ImmutableList.of(
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, BWGBlocks.PINK_ALLIUM.getBlock()),
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, BWGBlocks.WHITE_ALLIUM.getBlock()),
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), AlwaysTrueTest.INSTANCE, BWGBlocks.ALPINE_BELLFLOWER.getBlock())
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), BWGBlocks.PINK_ALLIUM.getBlock()),
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), BWGBlocks.WHITE_ALLIUM.getBlock()),
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), BWGBlocks.ALPINE_BELLFLOWER.getBlock())
 					)
 			),
 			new RuleProcessor(
@@ -151,7 +151,7 @@ public class GenerationsProcessorLists {
 					)
 			),
 			new FlowingFluidRuleProcessor(ImmutableList.of(
-					new FlowingFluidProcessorRule(new BlockMatchTest(Blocks.STONE), AlwaysTrueTest.INSTANCE, Fluids.WATER)
+					new FlowingFluidProcessorRule(new BlockMatchTest(Blocks.STONE), Fluids.WATER)
 			))
 	)));
 
@@ -177,15 +177,15 @@ public class GenerationsProcessorLists {
 			new PlaceOnTopProcessor(Blocks.GRASS_BLOCK, Blocks.ALLIUM, 0.05f, true),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.COBBLESTONE_WALL, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE_WALL),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.4f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE_SLAB),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE_SLAB),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE_SLAB, 0.5f), AlwaysTrueTest.INSTANCE, Blocks.SANDSTONE_SLAB)
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.COBBLESTONE_WALL, 0.5f), Blocks.ANDESITE_WALL),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.4f), Blocks.ANDESITE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.1f), Blocks.COBBLESTONE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.SMOOTH_SANDSTONE_SLAB, 0.5f), Blocks.SANDSTONE_SLAB)
 					)
 			),
 			new FlowingFluidRuleProcessor(
 					ImmutableList.of(
-							new FlowingFluidProcessorRule(new BlockMatchTest(Blocks.BRICKS), AlwaysTrueTest.INSTANCE, Fluids.WATER)
+							new FlowingFluidProcessorRule(new BlockMatchTest(Blocks.BRICKS), Fluids.WATER)
 					)
 			)
 	)));
@@ -206,8 +206,8 @@ public class GenerationsProcessorLists {
 			),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_SLAB),
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICK_STAIRS)
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.25f), Blocks.MOSSY_STONE_BRICK_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.25f), Blocks.MOSSY_STONE_BRICK_STAIRS)
 					)
 			)
 	)));
