@@ -22,12 +22,13 @@ public class GenerationsStructures {
     public static final Logger LOGGER = LogManager.getLogger();
 
     /** generations_structures config */
-    public static final Config CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
+    public static Config CONFIG;
 
     /**
      * Initializes the Generations-Structures mod.
      */
     public static void init() {
+        CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
         GenerationsProcessorLists.processorLists();
         GenerationsTemplatePools.templatePools();
         GenerationsStructureSets.structureSets();
