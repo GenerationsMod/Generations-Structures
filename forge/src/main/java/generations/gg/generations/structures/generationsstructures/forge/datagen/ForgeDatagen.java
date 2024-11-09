@@ -24,6 +24,8 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
 import net.minecraft.network.chat.Component;
@@ -31,6 +33,8 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -42,8 +46,10 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 /**
@@ -65,6 +71,7 @@ public class ForgeDatagen {
         generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
         generator.addProvider(event.includeClient(), new GenerationsStructuresLangProvider(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
+        generator.addProvider(event.includeServer(), new GenerationsStructuresLootProvider(output));
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
@@ -270,4 +277,18 @@ public class ForgeDatagen {
         }
     }
 
+    private static class GenerationsStructuresLootProvider extends LootTableProvider {
+
+        private GenerationsStructuresLootProvider(PackOutput output) {
+            super(output, Collections.emptySet(), ImmutableList.of(new SubProviderEntry(GenerationsStructuresChestLootProvider::new, LootContextParamSets.CHEST)));
+        }
+    }
+
+    private static class GenerationsStructuresChestLootProvider implements LootTableSubProvider {
+
+        @Override
+        public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> output) {
+
+        }
+    }
 }
