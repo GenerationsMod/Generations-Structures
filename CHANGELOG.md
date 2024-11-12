@@ -1,4 +1,5 @@
 # 1.1.2-Beta
+- Fix Meowth Balloon having sign and no loot
 
 # 1.1.1-Beta
 - Fix Plains PokeMart 3 having a random floating Chest
