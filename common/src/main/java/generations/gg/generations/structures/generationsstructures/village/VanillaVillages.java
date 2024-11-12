@@ -1,6 +1,5 @@
 package generations.gg.generations.structures.generationsstructures.village;
 
-
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

@@ -140,7 +140,7 @@ public class GenerationsStructureSettings {
     }
 
     private static ResourceKey<Structure> register(String id, StructureFactory factory) {
-        ResourceKey<Structure> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE, GenerationsStructures.id(id));
+        ResourceKey<Structure> structureSetResourceKey = GenerationsStructures.key(Registries.STRUCTURE, id);
         STRUCTURE_FACTORIES.put(structureSetResourceKey, factory);
         return structureSetResourceKey;
     }

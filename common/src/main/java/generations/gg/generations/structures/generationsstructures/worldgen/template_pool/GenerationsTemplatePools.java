@@ -157,7 +157,7 @@ public class GenerationsTemplatePools {
     }
 
     private static ResourceKey<StructureTemplatePool> create(String name) {
-        return ResourceKey.create(Registries.TEMPLATE_POOL, GenerationsStructures.id(name));
+        return GenerationsStructures.key(Registries.TEMPLATE_POOL, name);
     }
 
     private static Holder.Reference<StructureProcessorList> getProcessor(BootstapContext<StructureTemplatePool> context, ResourceKey<StructureProcessorList> processorList) {

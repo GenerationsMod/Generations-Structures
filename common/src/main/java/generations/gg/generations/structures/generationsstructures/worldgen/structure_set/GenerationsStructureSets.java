@@ -109,7 +109,7 @@ public class GenerationsStructureSets {
      * @return ResourceKey<StructureSet>
      */
     private static ResourceKey<StructureSet> create(String name) {
-        return ResourceKey.create(Registries.STRUCTURE_SET, GenerationsStructures.id(name));
+        return GenerationsStructures.key(Registries.STRUCTURE_SET, name);
     }
 
     /**

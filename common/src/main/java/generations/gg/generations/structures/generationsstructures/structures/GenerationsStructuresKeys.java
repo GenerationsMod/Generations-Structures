@@ -45,6 +45,6 @@ public interface GenerationsStructuresKeys {
      * @return ResourceKey<Structure>
      */
     private static ResourceKey<Structure> createKey(String name) {
-        return ResourceKey.create(Registries.STRUCTURE, GenerationsStructures.id(name));
+        return GenerationsStructures.key(Registries.STRUCTURE, name);
     }
 }

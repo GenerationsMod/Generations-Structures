@@ -1,10 +1,13 @@
 package generations.gg.generations.structures.generationsstructures;
+
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.structures.generationsstructures.config.Config;
 import generations.gg.generations.structures.generationsstructures.processors.GenerationsProcessorLists;
 import generations.gg.generations.structures.generationsstructures.structures.GenerationsStructureSettings;
 import generations.gg.generations.structures.generationsstructures.worldgen.structure_set.GenerationsStructureSets;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,5 +43,9 @@ public class GenerationsStructures {
      */
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID, path);
+    }
+
+    public static <T> ResourceKey<T> key(ResourceKey<? extends Registry<T>> registryKey, String path) {
+        return ResourceKey.create(registryKey, id(path));
     }
 }

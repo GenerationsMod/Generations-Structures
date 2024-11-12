@@ -239,7 +239,7 @@ public class GenerationsProcessorLists {
 	 * @return ResourceKey<StructureProcessorList>
 	 */
 	private static ResourceKey<StructureProcessorList> create(String name) {
-		return ResourceKey.create(Registries.PROCESSOR_LIST, GenerationsStructures.id(name));
+		return GenerationsStructures.key(Registries.PROCESSOR_LIST, name);
 	}
 
 	@FunctionalInterface
