@@ -30,7 +30,7 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> BEAST_BALLOON = registerSimple("loot_balloon/beast", GenerationsStructureSettings.BEAST_BALLOON);
     public static final ResourceKey<StructureTemplatePool> GREAT_BALLOON = registerSimple("loot_balloon/great", GenerationsStructureSettings.GREAT_BALLOON);
     public static final ResourceKey<StructureTemplatePool> MASTER_BALLOON = registerSimple("loot_balloon/master", GenerationsStructureSettings.MASTER_BALLOON);
-    public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = registerSimple("loot_balloon/meowth", GenerationsStructureSettings.MEOWTH_BALLOON);
+    public static final ResourceKey<StructureTemplatePool> MEOWTH_BALLOON = registerSimple("loot_balloon/meowth", GenerationsStructureSettings.MEOWTH_BALLOON, GenerationsProcessorLists.MEOWTH_BALLOON_PROCESSOR_LIST);
     public static final ResourceKey<StructureTemplatePool> POKE_BALLOON = registerSimple("loot_balloon/poke", GenerationsStructureSettings.POKE_BALLOON);
     public static final ResourceKey<StructureTemplatePool> ULTRA_BALLOON = registerSimple("loot_balloon/ultra", GenerationsStructureSettings.ULTRA_BALLOON);
 

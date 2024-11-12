@@ -4,7 +4,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "generations_structures:loot_balloon/meowth",
-        "processors": "minecraft:empty",
+        "processors": "generations_structures:meowth_balloon_processor_list",
         "projection": "rigid"
       },
       "weight": 1

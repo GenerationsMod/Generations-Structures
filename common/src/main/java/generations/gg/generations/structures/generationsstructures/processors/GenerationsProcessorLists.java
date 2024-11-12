@@ -3,6 +3,8 @@ package generations.gg.generations.structures.generationsstructures.processors;
 import biomesoplenty.api.block.BOPBlocks;
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsDecorationBlocks;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import generations.gg.generations.structures.generationsstructures.GenerationsStructures;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
@@ -208,6 +210,15 @@ public class GenerationsProcessorLists {
 					ImmutableList.of(
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_SLAB, 0.25f), Blocks.MOSSY_STONE_BRICK_SLAB),
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.25f), Blocks.MOSSY_STONE_BRICK_STAIRS)
+					)
+			)
+	)));
+
+	public static final ResourceKey<StructureProcessorList> MEOWTH_BALLOON_PROCESSOR_LIST = register("meowth_balloon", context -> new StructureProcessorList(ImmutableList.of(
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(GenerationsUtilityBlocks.WING_BALL_LOOT.getOrNull(), 0.33f), AlwaysTrueTest.INSTANCE, GenerationsUtilityBlocks.LEVEL_BALL_LOOT.getOrNull()),
+							new SameStateProcessorRule(new RandomBlockMatchTest(GenerationsUtilityBlocks.WING_BALL_LOOT.getOrNull(), 0.5f), AlwaysTrueTest.INSTANCE, GenerationsUtilityBlocks.JET_BALL_LOOT.getOrNull())
 					)
 			)
 	)));
