@@ -227,7 +227,9 @@ public class GenerationsProcessorLists {
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.DARK_OAK_SLAB, 0.02f), AlwaysTrueTest.INSTANCE, Blocks.AIR.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()),
 							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAY_CONCRETE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.GRAY_CONCRETE_POWDER.defaultBlockState()),
-							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAY_CONCRETE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.GRAY_WOOL.defaultBlockState())
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAY_CONCRETE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.GRAY_WOOL.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.DARK_OAK_PLANKS, 0.15f), AlwaysTrueTest.INSTANCE, Blocks.BROWN_TERRACOTTA.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.DARK_OAK_PLANKS, 0.1f), AlwaysTrueTest.INSTANCE, Blocks.BLACK_TERRACOTTA.defaultBlockState())
 					)
 			),
 			new CompatRuleProcessor(
