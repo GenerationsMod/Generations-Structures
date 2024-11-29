@@ -1,0 +1,14 @@
+{
+  "values": [
+    {
+      "id": "#forge:is_spooky",
+      "required": false
+    },
+    {
+      "id": "#c:floral_forests",
+      "required": false
+    },
+    "minecraft:dark_forest",
+    "minecraft:flower_forest"
+  ]
+}

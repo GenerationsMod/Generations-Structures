@@ -35,6 +35,10 @@
     {
       "id": "generations_structures:shrines/tapu",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/haunted_mansion",
+      "required": false
     }
   ]
 }

@@ -11,6 +11,7 @@ import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
@@ -212,6 +213,29 @@ public class GenerationsProcessorLists {
 							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.25f), Blocks.MOSSY_STONE_BRICK_STAIRS)
 					)
 			)
+	)));
+
+	public static final ResourceKey<StructureProcessorList> HAUNTED_MANSION_PROCESSOR_LIST = register("shrines/haunted_mansion", context -> new StructureProcessorList(ImmutableList.of(
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.COBBLESTONE_WALL, 0.5f), Blocks.MOSSY_COBBLESTONE_WALL)
+					)
+			),
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.DARK_OAK_SLAB, 0.07f), AlwaysTrueTest.INSTANCE, Blocks.COBWEB.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.DARK_OAK_SLAB, 0.02f), AlwaysTrueTest.INSTANCE, Blocks.AIR.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICKS, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.MOSSY_STONE_BRICKS.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAY_CONCRETE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.GRAY_CONCRETE_POWDER.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.GRAY_CONCRETE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.GRAY_WOOL.defaultBlockState())
+					)
+			),
+			new CompatRuleProcessor(
+					ImmutableList.of(
+							new CompatProcessorRule(new BlockMatchTest(Blocks.FLOWER_POT), BWGBlocks.BLACK_ROSE.getPottedBlock())
+					)
+			)
+
 	)));
 
 	public static final ResourceKey<StructureProcessorList> MEOWTH_BALLOON_PROCESSOR_LIST = register("meowth_balloon", context -> new StructureProcessorList(ImmutableList.of(

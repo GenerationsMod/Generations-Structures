@@ -69,6 +69,8 @@ public class GenerationsStructureSets {
         register("shrines/groudon", GenerationsStructureSettings.GROUDON_SHRINE, 2000, 350, 629507014);
 
         register("shrines/tapu", GenerationsStructureSettings.TAPU_SHRINE, 2000, 350, 647365027);
+
+        register("shrines/haunted_mansion", GenerationsStructureSettings.HAUNTED_MANSION, 2000, 350, 282258907);
     }
 
     private static void register(String id, StructureSetFactory factory) {

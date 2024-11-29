@@ -112,6 +112,11 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.TAPU_SHRINE), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
 
+    public static final ResourceKey<Structure> HAUNTED_MANSION = register("shrines/haunted_mansion", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_HAUNTED_MANSION), TerrainAdjustment.NONE),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.HAUNTED_MANSION), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
     public static final ResourceKey<Structure> ISLANDS = register("islands", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_ISLANDS), TerrainAdjustment.NONE),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.ISLANDS), 1,

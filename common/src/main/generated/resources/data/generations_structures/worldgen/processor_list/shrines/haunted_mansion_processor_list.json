@@ -1,0 +1,108 @@
+{
+  "processors": [
+    {
+      "processor_type": "moreprocessors:same_state_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:cobblestone_wall",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:mossy_cobblestone_wall"
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:dark_oak_slab",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.07
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cobweb"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:dark_oak_slab",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.02
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_stone_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:gray_concrete",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:gray_concrete_powder"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:gray_concrete",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:gray_wool"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "moreprocessors:compat_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:flower_pot",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomeswevegone:potted_black_rose",
+          "output_state": {
+            "Name": "biomeswevegone:potted_black_rose"
+          }
+        }
+      ]
+    }
+  ]
+}

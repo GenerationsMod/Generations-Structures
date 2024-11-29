@@ -58,6 +58,8 @@ public class GenerationsTemplatePools {
 
     public static final ResourceKey<StructureTemplatePool> TAPU_SHRINE = registerSimple("shrines/tapu", GenerationsStructureSettings.TAPU_SHRINE, GenerationsProcessorLists.TAPU_SHRINE_PROCESSOR_LIST);
 
+    public static final ResourceKey<StructureTemplatePool> HAUNTED_MANSION = registerSimple("shrines/haunted_mansion", GenerationsStructureSettings.HAUNTED_MANSION, GenerationsProcessorLists.HAUNTED_MANSION_PROCESSOR_LIST);
+
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = register("village/plains/streets/pokecenter", context -> createTemplatePool(getPool(context, VanillaVillages.PLAINS.getVillagePool("streets")), ImmutableList.of(
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_CORNER_01, ProcessorLists.STREET_PLAINS, 1),
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_STRAIGHT_05, ProcessorLists.STREET_PLAINS, 1)

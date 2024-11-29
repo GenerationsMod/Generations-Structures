@@ -1,6 +1,6 @@
 package generations.gg.generations.structures.generationsstructures.forge.datagen;
 
-import biomesoplenty.api.biome.BOPBiomes;
+//import biomesoplenty.api.biome.BOPBiomes;
 import com.cobblemon.mod.common.CobblemonItems;
 import com.google.common.collect.ImmutableList;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
@@ -118,8 +118,8 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_FIERY_SHRINE)
                     .addTag(BiomeTags.IS_NETHER)
                     .addOptionalTag(Tags.Biomes.IS_DESERT)
-                    .addOptionalTag(fabricTagMaker("desert"))
-                    .addOptional(BOPBiomes.VOLCANIC_PLAINS.location());
+                    .addOptionalTag(fabricTagMaker("desert"));
+                    //.addOptional(BOPBiomes.VOLCANIC_PLAINS.location());
 
             tag(GenerationsBiomeTags.HAS_STATIC_SHRINE)
                     .addTag(BiomeTags.IS_SAVANNA);
@@ -149,6 +149,11 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_TAPU_SHRINE)
                     .addTag(BiomeTags.IS_JUNGLE)
                     .addOptionalTag(fabricTagMaker("jungle"));
+
+            tag(GenerationsBiomeTags.HAS_HAUNTED_MANSION)
+                    .addOptionalTag(Tags.Biomes.IS_SPOOKY)
+                    .addOptionalTag(fabricTagMaker("floral_forests"))
+                    .add(Biomes.DARK_FOREST, Biomes.FLOWER_FOREST);
         }
     }
 
@@ -179,7 +184,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.CREATION_TRIO_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.GROUDON_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.TAPU_SHRINE.location());
+                    .addOptional(GenerationsStructureSettings.TAPU_SHRINE.location())
+                    .addOptional(GenerationsStructureSettings.HAUNTED_MANSION.location());
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
                     .addTag(GenerationsStructureTags.LOOT_BALLOONS)
@@ -187,7 +193,6 @@ public class ForgeDatagen {
                     .addTag(GenerationsStructureTags.SHRINES)
                     .addOptional(GenerationsStructureSettings.COMET.location())
                     .addOptional(GenerationsStructureSettings.ISLANDS.location());
-
         }
     }
 
@@ -240,6 +245,7 @@ public class ForgeDatagen {
                     .addCriterion("forces_of_nature_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE)))
                     .addCriterion("groudon_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.GROUDON_SHRINE)))
                     .addCriterion("tapu_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.TAPU_SHRINE)))
+                    .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.HAUNTED_MANSION)))
                     .display(
                             GenerationsShrines.LUNAR_SHRINE.getOrNull(),
                             translateAble("title.shrines"),
