@@ -143,9 +143,9 @@ public class GenerationsProcessorLists {
 			),
 			new CompatRuleProcessor(
 					ImmutableList.of(
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), BWGBlocks.PINK_ALLIUM.getBlock()),
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), BWGBlocks.WHITE_ALLIUM.getBlock()),
-							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.5f), BWGBlocks.ALPINE_BELLFLOWER.getBlock())
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.4f), BWGBlocks.PINK_ALLIUM.getBlock()),
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.375f), BWGBlocks.WHITE_ALLIUM.getBlock()),
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.ALLIUM, 0.35f), BWGBlocks.ALPINE_BELLFLOWER.getBlock())
 					)
 			),
 			new RuleProcessor(

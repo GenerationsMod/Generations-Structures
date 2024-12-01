@@ -1,5 +1,6 @@
 # 1.1.3-Beta
 - Add Haunted Mansion Shrine
+- Slight Changes to Forces of Nature Shrine Processor for better flower variation
 
 # 1.1.2-Beta
 - Fix Meowth Balloon having sign and no loot
