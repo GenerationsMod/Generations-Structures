@@ -5,14 +5,14 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.levelgen.structure.Structure;
 
-public class GenerationsStructureTags {
+public interface GenerationsStructureTags {
 
-    public static final TagKey<Structure> GENERATIONS_STRUCTURES = create("generations_structures");
+    TagKey<Structure> GENERATIONS_STRUCTURES = create("generations_structures");
 
-    public static final TagKey<Structure> POKESHOP = create("pokeshop");
-    public static final TagKey<Structure> LOOT_BALLOONS = create("loot_balloons");
-    public static final TagKey<Structure> GYMS = create("gyms");
-    public static final TagKey<Structure> SHRINES = create("shrines");
+    TagKey<Structure> POKESHOP = create("pokeshop");
+    TagKey<Structure> LOOT_BALLOONS = create("loot_balloons");
+    TagKey<Structure> GYMS = create("gyms");
+    TagKey<Structure> SHRINES = create("shrines");
 
     /**
      * Creates a new {@link TagKey} for the given name.
