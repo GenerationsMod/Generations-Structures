@@ -15,7 +15,8 @@
   ],
   "contact": {
     "homepage": "https://generations.gg/",
-    "sources": "https://github.com/GenerationsMod/Generations-Structures"
+    "sources": "https://github.com/GenerationsMod/Generations-Structures",
+    "issues": "https://github.com/GenerationsMod/Generations-Structures/issues"
   },
   "license": "GNU GPL 3.0",
   "icon": "icon.png",
@@ -36,5 +37,12 @@
   "suggests": {
     "biomeswevegone": ">=1.2.3",
     "biomesoplenty": ">=19.0.0.91"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.com/invite/generations"
+      }
+    }
   }
 }

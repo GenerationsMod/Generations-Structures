@@ -48,7 +48,7 @@ dependencies {
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
-    modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.12.1+kotlin.2.0.20")
+    modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.13.1+kotlin.2.1.10")
 
     modApi("tech.jt-dev:MoreStructureProcessors-fabric:${project.properties["moreprocessors_version"]}") { isChanging = true }
 

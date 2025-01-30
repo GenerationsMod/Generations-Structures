@@ -1,3 +1,6 @@
+# 1.1.4-Beta
+- Add ModMenu Integration (Fabric Only)
+
 # 1.1.3-Beta
 - Add Haunted Mansion Shrine
 - Slight Changes to Forces of Nature Shrine Processor for better flower variation
