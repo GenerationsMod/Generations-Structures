@@ -91,7 +91,7 @@ publisher {
     curseID.set("944403")
     modrinthID.set("vuBdsrzF")
     githubRepo.set("https://github.com/GenerationsMod/Generations-Structures")
-    setReleaseType(ReleaseType.BETA)
+    setReleaseType(ReleaseType.RELEASE)
     projectVersion.set(project.version.toString() + "-${project.name}")
     displayName.set(base.archivesName.get() + "-${project.version}")
     changelog.set(projectDir.toPath().parent.resolve("CHANGELOG.md").toFile().readText())

@@ -5,7 +5,7 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.9-SNAPSHOT" apply false
-    id("com.gradleup.shadow") version "8.3.5" apply false
+    id("com.gradleup.shadow") version "8.3.6" apply false
     java
     idea
     kotlin("jvm") version "2.1.10"
@@ -35,6 +35,7 @@ subprojects {
     repositories {
         mavenCentral()
         mavenLocal()
+        maven("https://maven.minecraftforge.net/")
         maven("https://repo1.maven.org/maven2")
         maven("https://jitpack.io")
         maven("https://maven.generations.gg/snapshots")
@@ -62,7 +63,7 @@ subprojects {
             parchment("org.parchmentmc.data:parchment-$minecraftVersion:${project.properties["parchment"]}@zip")
         })
 
-        compileOnly("org.jetbrains:annotations:26.0.1")
+        compileOnly("org.jetbrains:annotations:26.0.2")
     }
 
     java {

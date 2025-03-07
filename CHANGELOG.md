@@ -1,4 +1,4 @@
-# 1.1.4-Beta
+# 1.0.0
 - Add ModMenu Integration (Fabric Only)
 
 # 1.1.3-Beta

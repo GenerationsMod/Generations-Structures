@@ -8,7 +8,7 @@ import net.minecraft.world.level.biome.Biome;
 /**
  * Contains all the {@link TagKey}s for the generation of structures in the mod.
  */
-public class GenerationsBiomeTags {
+public final class GenerationsBiomeTags {
 
     public static final TagKey<Biome> IS_NOT_MOUNTAIN = create("is_not_mountain");
 
