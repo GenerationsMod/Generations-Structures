@@ -1,5 +1,7 @@
 # 1.0.0
 - Add ModMenu Integration (Fabric Only)
+- Require MoreStructureProcessors 1.2.1 or newer
+- Require Generations-Core 1.0.0 or newer
 
 # 1.1.3-Beta
 - Add Haunted Mansion Shrine

@@ -247,7 +247,7 @@ public class ForgeDatagen {
                     .addCriterion("tapu_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.TAPU_SHRINE)))
                     .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.HAUNTED_MANSION)))
                     .display(
-                            GenerationsShrines.LUNAR_SHRINE.getOrNull(),
+                            GenerationsShrines.LUNAR_SHRINE.get(),
                             translateAble("title.shrines"),
                             translateAble("description.shrines"),
                             GenerationsCore.id("textures/block/blue_poke_brick.png"),
