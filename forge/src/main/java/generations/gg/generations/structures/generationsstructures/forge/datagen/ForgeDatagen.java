@@ -154,6 +154,10 @@ public class ForgeDatagen {
                     .addOptionalTag(Tags.Biomes.IS_SPOOKY)
                     .addOptionalTag(fabricTagMaker("floral_forests"))
                     .add(Biomes.DARK_FOREST, Biomes.FLOWER_FOREST);
+
+            tag(GenerationsBiomeTags.HAS_DRAGON_SPIRAL)
+                    .addTag(BiomeTags.IS_FOREST)
+                    .addOptionalTag(fabricTagMaker("forest"));
         }
     }
 
@@ -185,7 +189,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.GROUDON_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.TAPU_SHRINE.location())
-                    .addOptional(GenerationsStructureSettings.HAUNTED_MANSION.location());
+                    .addOptional(GenerationsStructureSettings.HAUNTED_MANSION.location())
+                    .addOptional(GenerationsStructureSettings.DRAGON_SPIRAL.location());
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
                     .addTag(GenerationsStructureTags.LOOT_BALLOONS)
@@ -197,7 +202,7 @@ public class ForgeDatagen {
     }
 
     private static ResourceLocation fabricTagMaker(String name) {
-        return new ResourceLocation("c", name);
+        return ResourceLocation.fromNamespaceAndPath("c", name);
     }
 
     private static class GenerationsStructureAdvancementProvider implements ForgeAdvancementProvider.AdvancementGenerator {
@@ -246,8 +251,9 @@ public class ForgeDatagen {
                     .addCriterion("groudon_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.GROUDON_SHRINE)))
                     .addCriterion("tapu_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.TAPU_SHRINE)))
                     .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.HAUNTED_MANSION)))
+                    .addCriterion("dragon_spiral", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.DRAGON_SPIRAL)))
                     .display(
-                            GenerationsShrines.LUNAR_SHRINE.getOrNull(),
+                            GenerationsShrines.LUNAR_SHRINE.get(),
                             translateAble("title.shrines"),
                             translateAble("description.shrines"),
                             GenerationsCore.id("textures/block/blue_poke_brick.png"),

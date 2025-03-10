@@ -39,6 +39,10 @@
     {
       "id": "generations_structures:shrines/haunted_mansion",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/dragon_spiral",
+      "required": false
     }
   ]
 }

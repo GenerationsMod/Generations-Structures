@@ -17,6 +17,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "dragon_spiral": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/dragon_spiral"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "fiery_shrine": {
       "conditions": {
         "player": [
@@ -208,6 +224,9 @@
     ],
     [
       "haunted_mansion"
+    ],
+    [
+      "dragon_spiral"
     ]
   ],
   "sends_telemetry_event": true

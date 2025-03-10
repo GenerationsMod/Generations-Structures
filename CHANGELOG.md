@@ -1,5 +1,6 @@
 # 1.0.0
 - Add ModMenu Integration (Fabric Only)
+- Add Dragon Spiral Tower
 
 # 1.1.3-Beta
 - Add Haunted Mansion Shrine

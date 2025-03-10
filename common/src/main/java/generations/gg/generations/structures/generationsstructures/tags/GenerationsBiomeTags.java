@@ -54,6 +54,9 @@ public final class GenerationsBiomeTags {
     /** the tag for biomes that can have a haunted mansion */
     public static final TagKey<Biome> HAS_HAUNTED_MANSION = create("has_structure/haunted_mansion");
 
+    /** the tag for biomes that can have a dragon spiral tower */
+    public static final TagKey<Biome> HAS_DRAGON_SPIRAL = create("has_structure/dragon_spiral");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.
