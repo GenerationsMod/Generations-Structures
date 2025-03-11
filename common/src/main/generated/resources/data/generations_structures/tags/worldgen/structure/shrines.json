@@ -43,6 +43,10 @@
     {
       "id": "generations_structures:shrines/dragon_spiral",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/kyogre_ocean",
+      "required": false
     }
   ]
 }

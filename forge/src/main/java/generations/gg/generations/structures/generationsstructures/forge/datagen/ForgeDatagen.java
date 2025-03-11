@@ -158,6 +158,10 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_DRAGON_SPIRAL)
                     .addTag(BiomeTags.IS_FOREST)
                     .addOptionalTag(fabricTagMaker("forest"));
+
+            tag(GenerationsBiomeTags.HAS_KYOGRE_OCEAN)
+                    .addTag(BiomeTags.IS_OCEAN)
+                    .addOptionalTag(fabricTagMaker("ocean"));
         }
     }
 
@@ -190,7 +194,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.GROUDON_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.TAPU_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.HAUNTED_MANSION.location())
-                    .addOptional(GenerationsStructureSettings.DRAGON_SPIRAL.location());
+                    .addOptional(GenerationsStructureSettings.DRAGON_SPIRAL.location())
+                    .addOptional(GenerationsStructureSettings.KYOGRE_OCEAN.location());
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
                     .addTag(GenerationsStructureTags.LOOT_BALLOONS)
@@ -252,6 +257,7 @@ public class ForgeDatagen {
                     .addCriterion("tapu_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.TAPU_SHRINE)))
                     .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.HAUNTED_MANSION)))
                     .addCriterion("dragon_spiral", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.DRAGON_SPIRAL)))
+                    .addCriterion("kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.KYOGRE_OCEAN)))
                     .display(
                             GenerationsShrines.LUNAR_SHRINE.get(),
                             translateAble("title.shrines"),

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 162114187,
+    "separation": 350,
+    "spacing": 2000
+  },
+  "structures": [
+    {
+      "structure": "generations_structures:shrines/kyogre_ocean",
+      "weight": 1
+    }
+  ]
+}

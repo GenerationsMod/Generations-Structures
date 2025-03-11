@@ -57,6 +57,9 @@ public final class GenerationsBiomeTags {
     /** the tag for biomes that can have a dragon spiral tower */
     public static final TagKey<Biome> HAS_DRAGON_SPIRAL = create("has_structure/dragon_spiral");
 
+    /** the tag for biomes that can have a Kyogre ocean */
+    public static final TagKey<Biome> HAS_KYOGRE_OCEAN = create("has_structure/kyogre_ocean");
+
     /**
      * Creates a new {@link TagKey} for the given name.
      * @param name The name of the tag.

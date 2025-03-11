@@ -113,6 +113,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "kyogre_ocean": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/kyogre_ocean"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "lugia_shrine": {
       "conditions": {
         "player": [
@@ -227,6 +243,9 @@
     ],
     [
       "dragon_spiral"
+    ],
+    [
+      "kyogre_ocean"
     ]
   ],
   "sends_telemetry_event": true
