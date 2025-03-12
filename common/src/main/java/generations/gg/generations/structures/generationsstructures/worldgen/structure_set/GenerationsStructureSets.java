@@ -74,7 +74,11 @@ public class GenerationsStructureSets {
 
         register("shrines/dragon_spiral", GenerationsStructureSettings.DRAGON_SPIRAL, 2000, 350, 509787274);
 
-        register("shrines/kyogre_ocean", GenerationsStructureSettings.KYOGRE_OCEAN, 2000, 350, 162114187);
+        register("shrines/kyogre",
+                structureHolderGetter -> new StructureSet(ImmutableList.of(
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.KYOGRE_OCEAN),
+                        createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.UNDER_WATER_KYOGRE_OCEAN)
+                ), createRandomLinearSpreadPlacement(2000, 350, 162114187)));
     }
 
     private static void register(String id, StructureSetFactory factory) {

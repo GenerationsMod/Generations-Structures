@@ -1,0 +1,14 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "generations_structures:shrines/kyogre_ocean",
+        "processors": "generations_structures:shrines/under_water_kyogre_ocean_processor_list",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "generations_structures:shrines/kyogre_ocean_under_water"
+}

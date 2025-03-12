@@ -63,6 +63,12 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> DRAGON_SPIRAL = registerSimple("shrines/dragon_spiral", GenerationsStructureSettings.DRAGON_SPIRAL, ProcessorLists.EMPTY);
 
     public static final ResourceKey<StructureTemplatePool> KYOGRE_OCEAN = registerSimple("shrines/kyogre_ocean", GenerationsStructureSettings.KYOGRE_OCEAN, ProcessorLists.EMPTY);
+    
+    public static final ResourceKey<StructureTemplatePool> UNDER_WATER_KYOGRE_OCEAN = register("shrines/kyogre_ocean_under_water", context -> createTemplatePool(
+            getPool(context, create("shrines/kyogre_ocean_under_water")), ImmutableList.of(
+                    createPoolElement(context, GenerationsStructureSettings.KYOGRE_OCEAN, GenerationsProcessorLists.UNDER_WATER_KYOGRE_OCEAN_PROCESSOR_LIST)
+            ))
+    );
 
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = register("village/plains/streets/pokecenter", context -> createTemplatePool(getPool(context, VanillaVillages.PLAINS.getVillagePool("streets")), ImmutableList.of(
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_CORNER_01, ProcessorLists.STREET_PLAINS, 1),

@@ -240,6 +240,17 @@ public class GenerationsProcessorLists {
 
 	)));
 
+	public static final ResourceKey<StructureProcessorList> UNDER_WATER_KYOGRE_OCEAN_PROCESSOR_LIST = register("shrines/under_water_kyogre_ocean", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new BlockMatchTest(Blocks.GRASS_BLOCK), AlwaysTrueTest.INSTANCE, Blocks.GRAVEL.defaultBlockState()),
+							new ProcessorRule(new BlockMatchTest(Blocks.DIRT), AlwaysTrueTest.INSTANCE, Blocks.GRAVEL.defaultBlockState()),
+							new ProcessorRule(new BlockMatchTest(Blocks.WATER), AlwaysTrueTest.INSTANCE, Blocks.GRAVEL.defaultBlockState()),
+							new ProcessorRule(new BlockMatchTest(Blocks.AIR), AlwaysTrueTest.INSTANCE, Blocks.WATER.defaultBlockState())
+					)
+			)
+	)));
+
 	public static final ResourceKey<StructureProcessorList> MEOWTH_BALLOON_PROCESSOR_LIST = register("meowth_balloon", context -> new StructureProcessorList(ImmutableList.of(
 			new SameStateRuleProcessor(
 					ImmutableList.of(

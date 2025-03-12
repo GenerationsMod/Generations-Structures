@@ -195,7 +195,8 @@ public class ForgeDatagen {
                     .addOptional(GenerationsStructureSettings.TAPU_SHRINE.location())
                     .addOptional(GenerationsStructureSettings.HAUNTED_MANSION.location())
                     .addOptional(GenerationsStructureSettings.DRAGON_SPIRAL.location())
-                    .addOptional(GenerationsStructureSettings.KYOGRE_OCEAN.location());
+                    .addOptional(GenerationsStructureSettings.KYOGRE_OCEAN.location())
+                    .addOptional(GenerationsStructureSettings.UNDER_WATER_KYOGRE_OCEAN.location());
             tag(GenerationsStructureTags.GENERATIONS_STRUCTURES)
                     .addTag(GenerationsStructureTags.POKESHOP)
                     .addTag(GenerationsStructureTags.LOOT_BALLOONS)
@@ -258,6 +259,7 @@ public class ForgeDatagen {
                     .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.HAUNTED_MANSION)))
                     .addCriterion("dragon_spiral", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.DRAGON_SPIRAL)))
                     .addCriterion("kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.KYOGRE_OCEAN)))
+                    .addCriterion("under_water_kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.UNDER_WATER_KYOGRE_OCEAN)))
                     .display(
                             GenerationsShrines.LUNAR_SHRINE.get(),
                             translateAble("title.shrines"),

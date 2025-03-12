@@ -192,6 +192,22 @@
         ]
       },
       "trigger": "minecraft:location"
+    },
+    "under_water_kyogre_ocean": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/under_water_kyogre_ocean"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
     }
   },
   "display": {
@@ -246,6 +262,9 @@
     ],
     [
       "kyogre_ocean"
+    ],
+    [
+      "under_water_kyogre_ocean"
     ]
   ],
   "sends_telemetry_event": true

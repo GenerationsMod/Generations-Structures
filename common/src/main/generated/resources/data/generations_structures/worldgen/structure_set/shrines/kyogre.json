@@ -9,6 +9,10 @@
     {
       "structure": "generations_structures:shrines/kyogre_ocean",
       "weight": 1
+    },
+    {
+      "structure": "generations_structures:shrines/under_water_kyogre_ocean",
+      "weight": 1
     }
   ]
 }
