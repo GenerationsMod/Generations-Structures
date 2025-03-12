@@ -251,6 +251,34 @@ public class GenerationsProcessorLists {
 			)
 	)));
 
+	public static final ResourceKey<StructureProcessorList> BURNT_TOWER_PROCESSOR_LIST = register("shrines/burnt_tower", context -> new StructureProcessorList(ImmutableList.of(
+			new RuleProcessor(
+					ImmutableList.of(
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.COBBLESTONE.defaultBlockState()),
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.25f), AlwaysTrueTest.INSTANCE, Blocks.ANDESITE.defaultBlockState())
+					)
+			),
+			new SameStateRuleProcessor(
+					ImmutableList.of(
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.25f), Blocks.COBBLESTONE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_SLAB, 0.25f), Blocks.ANDESITE_SLAB),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.25f), Blocks.COBBLESTONE_STAIRS),
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.STONE_BRICK_STAIRS, 0.25f), Blocks.ANDESITE_STAIRS)
+					)
+			),
+			new CompatRuleProcessor(
+					ImmutableList.of(
+							new CompatProcessorRule(new RandomBlockMatchTest(Blocks.STONE, 0.25f), BWGBlocks.ROCKY_STONE_SET.getBase())
+					)
+			),
+			new SameStateCompatRuleProcessor(
+					ImmutableList.of(
+							new SameStateCompatProcessorRule(new BlockMatchTest(Blocks.STONE_SLAB), BWGBlocks.ROCKY_STONE_SET.getSlab()),
+							new SameStateCompatProcessorRule(new BlockMatchTest(Blocks.STONE_STAIRS), BWGBlocks.ROCKY_STONE_SET.getStairs())
+					)
+			)
+	)));
+
 	public static final ResourceKey<StructureProcessorList> MEOWTH_BALLOON_PROCESSOR_LIST = register("meowth_balloon", context -> new StructureProcessorList(ImmutableList.of(
 			new SameStateRuleProcessor(
 					ImmutableList.of(

@@ -79,6 +79,8 @@ public class GenerationsStructureSets {
                         createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.KYOGRE_OCEAN),
                         createStructureSelectionEntry(structureHolderGetter, GenerationsStructureSettings.UNDER_WATER_KYOGRE_OCEAN)
                 ), createRandomLinearSpreadPlacement(2000, 350, 162114187)));
+
+        register("shrines/burnt_tower", GenerationsStructureSettings.BURNT_TOWER, 2000, 350, 781579117);
     }
 
     private static void register(String id, StructureSetFactory factory) {

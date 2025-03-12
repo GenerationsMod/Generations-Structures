@@ -132,6 +132,11 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.UNDER_WATER_KYOGRE_OCEAN), 1,
                     ConstantHeight.of(VerticalAnchor.absolute(0)), Heightmap.Types.OCEAN_FLOOR_WG));
 
+    public static final ResourceKey<Structure> BURNT_TOWER = register("shrines/burnt_tower", (context) ->
+            createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_BURNT_TOWER), TerrainAdjustment.BEARD_THIN),
+                    context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.BURNT_TOWER), 1,
+                    ConstantHeight.of(VerticalAnchor.absolute(1)), Heightmap.Types.WORLD_SURFACE_WG));
+
     public static final ResourceKey<Structure> ISLANDS = register("islands", (context) ->
             createJigsaw(structure(context.lookup(Registries.BIOME).getOrThrow(GenerationsBiomeTags.HAS_ISLANDS), TerrainAdjustment.NONE),
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.ISLANDS), 1,

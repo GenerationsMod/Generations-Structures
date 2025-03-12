@@ -70,6 +70,8 @@ public class GenerationsTemplatePools {
             ))
     );
 
+    public static final ResourceKey<StructureTemplatePool> BURNT_TOWER = registerSimple("shrines/burnt_tower", GenerationsStructureSettings.BURNT_TOWER, GenerationsProcessorLists.BURNT_TOWER_PROCESSOR_LIST);
+
     public static final ResourceKey<StructureTemplatePool> PLAINS_VILLAGE_POKECENTER_STREETS = register("village/plains/streets/pokecenter", context -> createTemplatePool(getPool(context, VanillaVillages.PLAINS.getVillagePool("streets")), ImmutableList.of(
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_CORNER_01, ProcessorLists.STREET_PLAINS, 1),
             createPoolElement(context, GenerationsStructuresKeys.PLAINS_POKECENTER_STREET_STRAIGHT_05, ProcessorLists.STREET_PLAINS, 1)

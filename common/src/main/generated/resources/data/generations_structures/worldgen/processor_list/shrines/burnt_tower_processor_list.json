@@ -1,0 +1,128 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:stone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:andesite"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "moreprocessors:same_state_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_slab",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:cobblestone_slab"
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_slab",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:andesite_slab"
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_brick_stairs",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:cobblestone_stairs"
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_brick_stairs",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "minecraft:andesite_stairs"
+        }
+      ]
+    },
+    {
+      "processor_type": "moreprocessors:compat_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:stone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomeswevegone:rocky_stone",
+          "output_state": {
+            "Name": "biomeswevegone:rocky_stone"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "moreprocessors:same_state_compat_rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_slab",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomeswevegone:rocky_stone_slab"
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_stairs",
+            "predicate_type": "minecraft:block_match"
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_location": "biomeswevegone:rocky_stone_stairs"
+        }
+      ]
+    }
+  ]
+}

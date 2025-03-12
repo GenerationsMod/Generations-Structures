@@ -51,6 +51,10 @@
     {
       "id": "generations_structures:shrines/under_water_kyogre_ocean",
       "required": false
+    },
+    {
+      "id": "generations_structures:shrines/burnt_tower",
+      "required": false
     }
   ]
 }

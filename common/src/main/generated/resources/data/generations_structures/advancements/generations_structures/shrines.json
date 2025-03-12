@@ -1,6 +1,22 @@
 {
   "parent": "generations_structures:generations_structures/root",
   "criteria": {
+    "burnt_tower": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "generations_structures:shrines/burnt_tower"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "creation_trio_shrine": {
       "conditions": {
         "player": [
@@ -265,6 +281,9 @@
     ],
     [
       "under_water_kyogre_ocean"
+    ],
+    [
+      "burnt_tower"
     ]
   ],
   "sends_telemetry_event": true

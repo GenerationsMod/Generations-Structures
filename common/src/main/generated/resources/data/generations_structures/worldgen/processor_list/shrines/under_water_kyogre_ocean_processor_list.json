@@ -48,7 +48,10 @@
             "predicate_type": "minecraft:always_true"
           },
           "output_state": {
-            "Name": "minecraft:water"
+            "Name": "minecraft:water",
+            "Properties": {
+              "level": "0"
+            }
           }
         }
       ]
