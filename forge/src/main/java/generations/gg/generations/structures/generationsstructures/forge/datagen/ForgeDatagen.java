@@ -71,6 +71,7 @@ public class ForgeDatagen {
         generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
         generator.addProvider(event.includeClient(), new GenerationsStructuresEnglishLangProvider(output));
         generator.addProvider(event.includeClient(), new GenerationsStructuresFrenchLangProvider(output));
+        generator.addProvider(event.includeClient(), new GenerationsStructuresChineseLangProvider(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
         generator.addProvider(event.includeServer(), new GenerationsStructuresLootProvider(output));
     }
@@ -319,6 +320,27 @@ public class ForgeDatagen {
             add(advancement("description.loot_balloon"), "Trouvez tous le butin de ballons");
             add(advancement("title.shrines"), "Autels");  //TODO: Add a better title
             add(advancement("description.shrines"), "Trouvez tous les autels");
+        }
+
+        private static String advancement(String key) {
+            return "advancements." + GenerationsStructures.MOD_ID + "." + key;
+        }
+    }
+
+    private static class GenerationsStructuresChineseLangProvider extends LanguageProvider {
+
+        private GenerationsStructuresChineseLangProvider(PackOutput output) {
+            super(output, GenerationsStructures.MOD_ID, "zh_cn");
+        }
+
+        @Override
+        protected void addTranslations() {
+            add(advancement("title.root"), "Generations Structures");
+            add(advancement("description.root"), "使用 Generations Structures 加载器 Mod 创建世界");
+            add(advancement("title.loot_balloon"), "飞行员");
+            add(advancement("description.loot_balloon"), "找到所有气球奖励箱");
+            add(advancement("title.shrines"), "神社");  //TODO: Add a better title
+            add(advancement("description.shrines"), "找到所有神社");
         }
 
         private static String advancement(String key) {
