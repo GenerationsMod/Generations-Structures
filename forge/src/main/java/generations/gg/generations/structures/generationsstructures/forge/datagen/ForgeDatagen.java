@@ -69,7 +69,8 @@ public class ForgeDatagen {
         generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         GenerationsStructureSets.init();
         generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
-        generator.addProvider(event.includeClient(), new GenerationsStructuresLangProvider(output));
+        generator.addProvider(event.includeClient(), new GenerationsStructuresEnglishLangProvider(output));
+        generator.addProvider(event.includeClient(), new GenerationsStructuresFrenchLangProvider(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
         generator.addProvider(event.includeServer(), new GenerationsStructuresLootProvider(output));
     }
@@ -283,9 +284,9 @@ public class ForgeDatagen {
         }
     }
 
-    private static class GenerationsStructuresLangProvider extends LanguageProvider {
+    private static class GenerationsStructuresEnglishLangProvider extends LanguageProvider {
 
-        private GenerationsStructuresLangProvider(PackOutput output) {
+        private GenerationsStructuresEnglishLangProvider(PackOutput output) {
             super(output, GenerationsStructures.MOD_ID, "en_us");
         }
 
@@ -297,6 +298,27 @@ public class ForgeDatagen {
             add(advancement("description.loot_balloon"), "Find all the loot balloons");
             add(advancement("title.shrines"), "Shrines");  //TODO: Add a better title
             add(advancement("description.shrines"), "Find all the shrines");
+        }
+
+        private static String advancement(String key) {
+            return "advancements." + GenerationsStructures.MOD_ID + "." + key;
+        }
+    }
+
+    private static class GenerationsStructuresFrenchLangProvider extends LanguageProvider {
+
+        private GenerationsStructuresFrenchLangProvider(PackOutput output) {
+            super(output, GenerationsStructures.MOD_ID, "fr_fr");
+        }
+
+        @Override
+        protected void addTranslations() {
+            add(advancement("title.root"), "Generations Structures");
+            add(advancement("description.root"), "Créer un monde avec le mod Generations Structures");
+            add(advancement("title.loot_balloon"), "Aéronaute");
+            add(advancement("description.loot_balloon"), "Trouvez tous le butin de ballons");
+            add(advancement("title.shrines"), "Autels");  //TODO: Add a better title
+            add(advancement("description.shrines"), "Trouvez tous les autels");
         }
 
         private static String advancement(String key) {

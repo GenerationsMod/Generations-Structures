@@ -3,6 +3,7 @@
 - Add Dragon Spiral Tower
 - Add Kyogre Shrines
 - Add Burnt Tower
+- Add French Translations
 
 # 1.1.3-Beta
 - Add Haunted Mansion Shrine
