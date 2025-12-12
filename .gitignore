@@ -20,6 +20,6 @@ classes/
 *.launch
 
 ## Datagen .cache folder
-forge/src/main/generated/resources/.cache
+neoforge/src/main/generated/resources/.cache
 fabric/src/main/generated/resources/.cache
 common/src/main/generated/resources/.cache

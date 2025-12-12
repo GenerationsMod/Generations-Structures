@@ -42,9 +42,8 @@ dependencies {
     modLocalRuntime("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     // Generations-Core Fabric
-    modApi("generations.gg.generations.core:Generations-Core-fabric:${project.properties["generations-core_version"]}") { isChanging = true }
-    modRuntimeOnly("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
-    modRuntimeOnly("earth.terrarium.botarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
+//    modApi("generations.gg.generations.core:Generations-Core-fabric:${project.properties["generations-core_version"]}") { isChanging = true }
+    modApi("curse.maven:generations-core-860936:7303086")
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")

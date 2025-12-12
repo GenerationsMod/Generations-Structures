@@ -12,8 +12,8 @@ sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
 
-    modCompileOnly("generations.gg.generations.core:Generations-Core-common:${project.properties["generations-core_version"]}") { isChanging = true }
-    modCompileOnly("earth.terrarium.botarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
+//    modCompileOnly("generations.gg.generations.core:Generations-Core-common:${project.properties["generations-core_version"]}") { isChanging = true }
+    modImplementation("curse.maven:generations-core-860936:7303086")
     modCompileOnly("tech.jt-dev:MoreStructureProcessors-common:${project.properties["moreprocessors_version"]}") { isChanging = true }
 
     //Cobblemon

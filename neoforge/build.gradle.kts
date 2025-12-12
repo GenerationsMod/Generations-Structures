@@ -9,7 +9,7 @@ plugins {
 
 architectury {
     platformSetupLoomIde()
-    forge()
+    neoForge()
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
@@ -33,11 +33,11 @@ configurations {
 loom {
     accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
-    forge {
-        convertAccessWideners.set(true)
-        extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
-        mixinConfig("GenerationsStructures-common.mixins.json")
-    }
+//    forge {
+//        convertAccessWideners.set(true)
+//        extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
+//        mixinConfig("GenerationsStructures-common.mixins.json")
+//    }
 
     runs.create("data") {
         data()
@@ -62,27 +62,26 @@ dependencies {
     modLocalRuntime("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     // Generations-Core Forge
-    modApi("generations.gg.generations.core:Generations-Core-forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
-    modImplementation("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
-    modRuntimeOnly("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")
+//    modApi("generations.gg.generations.core:Generations-Core-forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
+    modApi(implementation("curse.maven:generations-core-860936:7305007"))
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.11.0")
-    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
+    implementation("thedarkcolour:kotlinforforge-neoforge:5.5.0")
+    modApi("com.cobblemon:neoforge:${project.properties["cobblemon_version"]}")
 
-    modApi("tech.jt-dev:MoreStructureProcessors-forge:${project.properties["moreprocessors_version"]}") { isChanging = true }
+    modApi("tech.jt-dev:MoreStructureProcessors-neoforgeforge:${project.properties["moreprocessors_version"]}") { isChanging = true }
 
     //BiomeMod Integration
-    modLocalRuntime("com.github.glitchfiend:TerraBlender-forge:$minecraftVersion-${project.properties["terrablender_version"]}")
-    modCompileOnly("com.github.glitchfiend:BiomesOPlenty-forge:$minecraftVersion-${project.properties["BOP_version"]}")
-    modLocalRuntime("com.github.glitchfiend:GlitchCore-forge:$minecraftVersion-${project.properties["GlitchCore_version"]}")
+    modLocalRuntime("com.github.glitchfiend:TerraBlender-neoforge:$minecraftVersion-${project.properties["terrablender_version"]}")
+    modCompileOnly("com.github.glitchfiend:BiomesOPlenty-neoforge:$minecraftVersion-${project.properties["BOP_version"]}")
+    modLocalRuntime("com.github.glitchfiend:GlitchCore-neoforge:$minecraftVersion-${project.properties["GlitchCore_version"]}")
     modRuntimeOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-Forge:${project.properties["BWG_version"]}")
+    modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-NeoForge:${project.properties["BWG_version"]}")
     implementation("com.eliotlash.mclib:mclib:20")
     forgeRuntimeLibrary("com.eliotlash.mclib:mclib:20")
 
     //WorldEdit
-    modLocalRuntime("curse.maven:worldedit-225608:4586218")
+    modLocalRuntime("curse.maven:worldedit-225608:5830452")
 }
 
 tasks {
