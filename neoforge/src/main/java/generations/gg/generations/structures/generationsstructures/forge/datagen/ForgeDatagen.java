@@ -12,10 +12,7 @@ import generations.gg.generations.structures.generationsstructures.tags.Generati
 import generations.gg.generations.structures.generationsstructures.tags.GenerationsStructureTags;
 import generations.gg.generations.structures.generationsstructures.worldgen.structure_set.GenerationsStructureSets;
 import generations.gg.generations.structures.generationsstructures.worldgen.template_pool.GenerationsTemplatePools;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.advancements.critereon.PlayerTrigger;
@@ -30,34 +27,39 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.StructureTagsProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
-import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.internal.NeoForgeAdvancementProvider;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * This class is used to register the data generators for the mod.
  * @see GatherDataEvent
  * @author J.T. McQuigg (JT122406)
  */
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = GenerationsStructures.MOD_ID)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = GenerationsStructures.MOD_ID)
 public class ForgeDatagen {
     @SubscribeEvent
     protected static void gatherData(GatherDataEvent event) {
@@ -68,12 +70,12 @@ public class ForgeDatagen {
         generator.addProvider(true, new GenerationsStructuresBiomeTagsProvider(output, lookup, event.getExistingFileHelper()));
         generator.addProvider(true, new GenerationsStructureTagsProvider(output, lookup, event.getExistingFileHelper()));
         GenerationsStructureSets.init();
-        generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
+        generator.addProvider(event.includeServer(), new AdvancementProvider(output, lookup, existingFileHelper, ImmutableList.of(new GenerationsStructureAdvancementProvider())));
         generator.addProvider(event.includeClient(), new GenerationsStructuresEnglishLangProvider(output));
         generator.addProvider(event.includeClient(), new GenerationsStructuresFrenchLangProvider(output));
         generator.addProvider(event.includeClient(), new GenerationsStructuresChineseLangProvider(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookup, BUILDER, Set.of(GenerationsStructures.MOD_ID)));
-        generator.addProvider(event.includeServer(), new GenerationsStructuresLootProvider(output));
+        generator.addProvider(event.includeServer(), new GenerationsStructuresLootProvider(output, lookup));
     }
 
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
@@ -99,7 +101,7 @@ public class ForgeDatagen {
             tag(GenerationsBiomeTags.HAS_POKECENTER)
                     .addTag(BiomeTags.IS_SAVANNA)
                     .addOptionalTag(Tags.Biomes.IS_PLAINS.location())
-                    .addOptionalTag(Tags.Biomes.IS_SPARSE_OVERWORLD)
+                    .addOptionalTag(Tags.Biomes.IS_SPARSE_VEGETATION_OVERWORLD)
                     .addOptionalTag(fabricTagMaker("plains"));
 
             tag(GenerationsBiomeTags.HAS_LOOT_BALLOON)
@@ -219,62 +221,63 @@ public class ForgeDatagen {
         return ResourceLocation.fromNamespaceAndPath("c", name);
     }
 
-    private static class GenerationsStructureAdvancementProvider implements ForgeAdvancementProvider.AdvancementGenerator {
+    private static class GenerationsStructureAdvancementProvider implements AdvancementProvider.AdvancementGenerator {
 
         @Override
-        public void generate(HolderLookup.@NotNull Provider arg, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
-            Advancement root = Advancement.Builder.advancement()
-                    .addCriterion("tick", new PlayerTrigger.TriggerInstance(CriteriaTriggers.TICK.getId(), ContextAwarePredicate.ANY))
+        public void generate(HolderLookup.Provider arg, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = Advancement.Builder.advancement()
+                    .addCriterion("tick", new Criterion<>(CriteriaTriggers.TICK, new PlayerTrigger.TriggerInstance(Optional.empty())))
                     .display(
                             CobblemonItems.POKE_BALL.asItem(),
                             translateAble("title.root"),
                             translateAble("description.root"),
                             GenerationsCore.id("textures/block/blue_poke_brick.png"),
-                            FrameType.TASK, false, false, false
-                    )
-                    .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/root"), existingFileHelper);
+                            AdvancementType.TASK, false, false, false
+                    ).save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/root"), existingFileHelper);
+
+            var lookup = arg.lookupOrThrow(Registries.STRUCTURE);
 
             Advancement.Builder.advancement()
                     .parent(root)
-                    .requirements(RequirementsStrategy.AND)
-                    .addCriterion("poke_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.POKE_BALLOON)))
-                    .addCriterion("great_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.GREAT_BALLOON)))
-                    .addCriterion("ultra_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.ULTRA_BALLOON)))
-                    .addCriterion("master_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.MASTER_BALLOON)))
-                    .addCriterion("beast_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.BEAST_BALLOON)))
-                    .addCriterion("meowth_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.MEOWTH_BALLOON)))
+                    .requirements(AdvancementRequirements.Strategy.AND)
+                    .addCriterion("poke_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.POKE_BALLOON))))
+                    .addCriterion("great_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.GREAT_BALLOON))))
+                    .addCriterion("ultra_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.ULTRA_BALLOON))))
+                    .addCriterion("master_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.MASTER_BALLOON))))
+                    .addCriterion("beast_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.BEAST_BALLOON))))
+                    .addCriterion("meowth_balloon", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.MEOWTH_BALLOON))))
                     .display(
                             CobblemonItems.AIR_BALLOON.asItem(),
                             translateAble("title.loot_balloon"),
                             translateAble("description.loot_balloon"),
                             GenerationsCore.id("textures/block/blue_poke_brick.png"),
-                            FrameType.TASK, true, true, false
+                            AdvancementType.TASK, true, true, false
                     )
                     .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/loot_balloon"), existingFileHelper);
 
             Advancement.Builder.advancement()
                     .parent(root)
-                    .requirements(RequirementsStrategy.AND)
-                    .addCriterion("frozen_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FROZEN_SHRINE)))
-                    .addCriterion("fiery_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FIERY_SHRINE)))
-                    .addCriterion("static_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.STATIC_SHRINE)))
-                    .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.LUGIA_SHRINE)))
-                    .addCriterion("regi_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.REGI_SHRINE)))
-                    .addCriterion("creation_trio_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.CREATION_TRIO_SHRINE)))
-                    .addCriterion("forces_of_nature_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE)))
-                    .addCriterion("groudon_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.GROUDON_SHRINE)))
-                    .addCriterion("tapu_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.TAPU_SHRINE)))
-                    .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.HAUNTED_MANSION)))
-                    .addCriterion("dragon_spiral", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.DRAGON_SPIRAL)))
-                    .addCriterion("kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.KYOGRE_OCEAN)))
-                    .addCriterion("under_water_kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.UNDER_WATER_KYOGRE_OCEAN)))
-                    .addCriterion("burnt_tower", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(GenerationsStructureSettings.BURNT_TOWER)))
+                    .requirements(AdvancementRequirements.Strategy.AND)
+                    .addCriterion("frozen_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.FROZEN_SHRINE))))
+                    .addCriterion("fiery_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.FIERY_SHRINE))))
+                    .addCriterion("static_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.STATIC_SHRINE))))
+                    .addCriterion("lugia_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.LUGIA_SHRINE))))
+                    .addCriterion("regi_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.REGI_SHRINE))))
+                    .addCriterion("creation_trio_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.CREATION_TRIO_SHRINE))))
+                    .addCriterion("forces_of_nature_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.FORCES_OF_NATURE_SHRINE))))
+                    .addCriterion("groudon_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.GROUDON_SHRINE))))
+                    .addCriterion("tapu_shrine", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.TAPU_SHRINE))))
+                    .addCriterion("haunted_mansion", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.HAUNTED_MANSION))))
+                    .addCriterion("dragon_spiral", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.DRAGON_SPIRAL))))
+                    .addCriterion("kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.KYOGRE_OCEAN))))
+                    .addCriterion("under_water_kyogre_ocean", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.UNDER_WATER_KYOGRE_OCEAN))))
+                    .addCriterion("burnt_tower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(lookup.getOrThrow(GenerationsStructureSettings.BURNT_TOWER))))
                     .display(
-                            GenerationsShrines.LUNAR_SHRINE.get(),
+                            GenerationsShrines.LUNAR_SHRINE.value(),
                             translateAble("title.shrines"),
                             translateAble("description.shrines"),
                             GenerationsCore.id("textures/block/blue_poke_brick.png"),
-                            FrameType.TASK, true, true, false
+                            AdvancementType.TASK, true, true, false
                     )
                     .save(consumer, GenerationsStructures.id(GenerationsStructures.MOD_ID + "/shrines"), existingFileHelper);
 
@@ -350,15 +353,14 @@ public class ForgeDatagen {
 
     private static class GenerationsStructuresLootProvider extends LootTableProvider {
 
-        private GenerationsStructuresLootProvider(PackOutput output) {
-            super(output, Collections.emptySet(), ImmutableList.of(new SubProviderEntry(GenerationsStructuresChestLootProvider::new, LootContextParamSets.CHEST)));
+        private GenerationsStructuresLootProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+            super(output, Collections.emptySet(), ImmutableList.of(new SubProviderEntry(provider -> new GenerationsStructuresChestLootProvider(), LootContextParamSets.CHEST)), registries);
         }
     }
 
     private static class GenerationsStructuresChestLootProvider implements LootTableSubProvider {
-
         @Override
-        public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> output) {
+        public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output) {
 
         }
     }

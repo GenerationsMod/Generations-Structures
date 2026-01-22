@@ -49,13 +49,15 @@ dependencies {
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
     modRuntimeOnly("net.fabricmc:fabric-language-kotlin:1.13.1+kotlin.2.1.10")
 
-    modApi("tech.jt-dev:MoreStructureProcessors-fabric:${project.properties["moreprocessors_version"]}") { isChanging = true }
+    modApi("curse.maven:more-structure-processors-1113983:6555658")
+//    modApi("tech.jt-dev:MoreStructureProcessors-fabric:${project.properties["moreprocessors_version"]}") { isChanging = true }
 
     //BiomeMod Integration
     modLocalRuntime("com.github.glitchfiend:TerraBlender-fabric:$minecraftVersion-${project.properties["terrablender_version"]}")
     modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-Fabric:${project.properties["BWG_version"]}")
     modApi("com.github.glitchfiend:BiomesOPlenty-fabric:$minecraftVersion-${project.properties["BOP_version"]}")
-    modLocalRuntime("com.github.glitchfiend:GlitchCore-fabric:$minecraftVersion-${project.properties["GlitchCore_version"]}")
+    modLocalRuntime("curse.maven:glitchcore-955399:5660741")
+//    modLocalRuntime("com.github.glitchfiend:GlitchCore-fabric:$minecraftVersion-${project.properties["GlitchCore_version"]}")
 }
 
 tasks {

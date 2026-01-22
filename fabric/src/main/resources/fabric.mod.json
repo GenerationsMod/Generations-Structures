@@ -29,14 +29,14 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.20.1",
-    "generations_core": ">=1.0.0",
-    "cobblemon": "1.5.2+1.20.1",
-    "moreprocessors": ">=1.2.0"
+    "minecraft": ">=1.21.1",
+    "generations_core": ">=1.2.1-1.7.1",
+    "cobblemon": "1.7.1+1.21.1",
+    "moreprocessors": ">=2.0.1"
   },
   "suggests": {
-    "biomeswevegone": ">=1.2.3",
-    "biomesoplenty": ">=19.0.0.91"
+    "biomeswevegone": ">=2.5.1",
+    "biomesoplenty": ">=21.1.0.13"
   },
   "custom": {
     "modmenu": {

@@ -25,7 +25,7 @@ public class GenerationsStructures {
     public static final Logger LOGGER = LogManager.getLogger();
 
     /** generations_structures config */
-    public static final Config CONFIG = ConfigLoader.loadConfig(Config.class, "structures", "config");
+    public static final Config CONFIG = ConfigLoader.INSTANCE.loadConfig(Config.class, "structures", "config");
 
     /**
      * Initializes the Generations-Structures mod.

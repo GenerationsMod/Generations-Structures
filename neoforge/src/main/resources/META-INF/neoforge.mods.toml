@@ -15,50 +15,50 @@ Adds structures for the Generations Mod Family
 logoFile = "icon.png"
 
 [[dependencies.generations_structures]]
-    modId = "forge"
+    modId = "neoforge"
     mandatory = true
-    versionRange = "[47.1.100,)"
+    versionRange = "[21.1.84,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.20.1,)"
+    versionRange = "[1.21.1,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "generations_core"
     mandatory = true
-    versionRange="[1.0.0,)"
+    versionRange="[1.2.1-1.7.1,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId = "biomesoplenty"
     mandatory = false
-    versionRange = "[18.0.0.0,)"
+    versionRange = "[21.1.0.13,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId="biomeswevegone"
     mandatory = false
-    versionRange = "[1.2.3,)"
+    versionRange = "[2.5.1,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId="cobblemon"
     mandatory = true
-    versionRange = "1.5.2+1.20.1"
+    versionRange = "1.7.1+1.21.1"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.generations_structures]]
     modId="moreprocessors"
     mandatory = false
-    versionRange = "[1.2.0,)"
+    versionRange = "[2.0.1,)"
     ordering = "AFTER"
     side = "SERVER"

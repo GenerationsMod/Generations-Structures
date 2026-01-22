@@ -23,7 +23,7 @@ configurations {
     create("shadowBundle")
     compileClasspath.get().extendsFrom(configurations["common"])
     runtimeClasspath.get().extendsFrom(configurations["common"])
-    getByName("developmentForge").extendsFrom(configurations["common"])
+    getByName("developmentNeoForge").extendsFrom(configurations["common"])
     "shadowBundle" {
         isCanBeResolved = true
         isCanBeConsumed = false
@@ -49,12 +49,11 @@ loom {
 
 repositories {
     maven("https://thedarkcolour.github.io/KotlinForForge/")
+    mavenCentral()
 }
 
 dependencies {
-    if ((project.properties["use_neoforge"] as String).toBoolean())
-        forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
-    else forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
+    neoForge("net.neoforged:neoforge:${project.properties["neoforge_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowBundle"(project(":common", "transformProductionForge"))
@@ -63,18 +62,20 @@ dependencies {
 
     // Generations-Core Forge
 //    modApi("generations.gg.generations.core:Generations-Core-forge:${project.properties["generations-core_version"]}@jar") { isChanging = true }
-    modApi(implementation("curse.maven:generations-core-860936:7305007"))
+    modApi("curse.maven:generations-core-860936:7305007")
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge-neoforge:5.5.0")
     modApi("com.cobblemon:neoforge:${project.properties["cobblemon_version"]}")
 
-    modApi("tech.jt-dev:MoreStructureProcessors-neoforgeforge:${project.properties["moreprocessors_version"]}") { isChanging = true }
+    modApi("curse.maven:more-structure-processors-1113983:6555660")
+//    modApi("tech.jt-dev:MoreStructureProcessors-neoforgeforge:${project.properties["moreprocessors_version"]}") { isChanging = true }
 
     //BiomeMod Integration
     modLocalRuntime("com.github.glitchfiend:TerraBlender-neoforge:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("com.github.glitchfiend:BiomesOPlenty-neoforge:$minecraftVersion-${project.properties["BOP_version"]}")
-    modLocalRuntime("com.github.glitchfiend:GlitchCore-neoforge:$minecraftVersion-${project.properties["GlitchCore_version"]}")
+    modLocalRuntime("curse.maven:glitchcore-955399:5660740")
+//    modLocalRuntime("com.github.glitchfiend:GlitchCore-neoforge:$minecraftVersion-${project.properties["GlitchCore_version"]}")
     modRuntimeOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     modApi("net.potionstudios:Oh-The-Biomes-Weve-Gone-NeoForge:${project.properties["BWG_version"]}")
     implementation("com.eliotlash.mclib:mclib:20")

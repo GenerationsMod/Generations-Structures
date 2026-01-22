@@ -58,7 +58,7 @@ public enum VanillaVillages {
     }
 
     public @NotNull ResourceKey<StructureTemplatePool> getVillagePool(String pool) {
-        return ResourceKey.create(Registries.TEMPLATE_POOL, new ResourceLocation("village/plains/" + pool));
+        return ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.parse("village/plains/" + pool));
     }
 
     private static final VanillaVillages[] VALUES = values();

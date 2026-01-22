@@ -14,7 +14,8 @@ dependencies {
 
 //    modCompileOnly("generations.gg.generations.core:Generations-Core-common:${project.properties["generations-core_version"]}") { isChanging = true }
     modImplementation("curse.maven:generations-core-860936:7303086")
-    modCompileOnly("tech.jt-dev:MoreStructureProcessors-common:${project.properties["moreprocessors_version"]}") { isChanging = true }
+    modApi("curse.maven:more-structure-processors-1113983:6555658")
+//    modCompileOnly("tech.jt-dev:MoreStructureProcessors-common:${project.properties["moreprocessors_version"]}") { isChanging = true }
 
     //Cobblemon
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")

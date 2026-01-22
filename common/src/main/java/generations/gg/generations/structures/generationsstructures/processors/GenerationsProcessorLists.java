@@ -39,8 +39,8 @@ public class GenerationsProcessorLists {
 			new SameStateCompatRuleProcessor(
 					ImmutableList.of(
 							new SameStateCompatProcessorRule(new BlockMatchTest(Blocks.BIRCH_TRAPDOOR), BWGWood.WITCH_HAZEL.trapdoor()),
-							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), BWGWood.EBONY.trapdoor()),
-							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.GHOST_TRAPDOOR.get()), BOPBlocks.HELLBARK_TRAPDOOR)
+							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.INSTANCE.getGHOST_TRAPDOOR().value()), BWGWood.EBONY.trapdoor()),
+							new SameStateCompatProcessorRule(new BlockMatchTest(GenerationsWood.INSTANCE.getGHOST_TRAPDOOR().value()), BOPBlocks.HELLBARK_TRAPDOOR)
 					)
 			)
 	)));
@@ -107,12 +107,12 @@ public class GenerationsProcessorLists {
 	public static final ResourceKey<StructureProcessorList> REGI_SHRINE_PROCESSOR_LIST = register("shrines/regi", context -> new StructureProcessorList(ImmutableList.of(
 			new RuleProcessor(
 					ImmutableList.of(
-							new ProcessorRule(new RandomBlockMatchTest(Blocks.CALCITE, 0.5f), AlwaysTrueTest.INSTANCE, GenerationsBlocks.BLEACH_STONE_SET.getBaseBlock().defaultBlockState())
+							new ProcessorRule(new RandomBlockMatchTest(Blocks.CALCITE, 0.5f), AlwaysTrueTest.INSTANCE, GenerationsBlocks.INSTANCE.getBLEACH_STONE_SET().getBaseBlock().defaultBlockState())
 					)
 			),
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.DIORITE_WALL, 0.5f), GenerationsBlocks.BLEACH_STONE_SET.getWall())
+							new SameStateProcessorRule(new RandomBlockMatchTest(Blocks.DIORITE_WALL, 0.5f), GenerationsBlocks.INSTANCE.getBLEACH_STONE_SET().getWall())
 					)
 			)
 	)));
@@ -282,8 +282,8 @@ public class GenerationsProcessorLists {
 	public static final ResourceKey<StructureProcessorList> MEOWTH_BALLOON_PROCESSOR_LIST = register("meowth_balloon", context -> new StructureProcessorList(ImmutableList.of(
 			new SameStateRuleProcessor(
 					ImmutableList.of(
-							new SameStateProcessorRule(new RandomBlockMatchTest(GenerationsUtilityBlocks.WING_BALL_LOOT.getOrNull(), 0.33f), AlwaysTrueTest.INSTANCE, GenerationsUtilityBlocks.LEVEL_BALL_LOOT.getOrNull()),
-							new SameStateProcessorRule(new RandomBlockMatchTest(GenerationsUtilityBlocks.WING_BALL_LOOT.getOrNull(), 0.5f), AlwaysTrueTest.INSTANCE, GenerationsUtilityBlocks.JET_BALL_LOOT.getOrNull())
+							new SameStateProcessorRule(new RandomBlockMatchTest(GenerationsUtilityBlocks.INSTANCE.getWING_BALL_LOOT().value(), 0.33f), AlwaysTrueTest.INSTANCE, GenerationsUtilityBlocks.INSTANCE.getLEVEL_BALL_LOOT().value()),
+							new SameStateProcessorRule(new RandomBlockMatchTest(GenerationsUtilityBlocks.INSTANCE.getWING_BALL_LOOT().value(), 0.5f), AlwaysTrueTest.INSTANCE, GenerationsUtilityBlocks.INSTANCE.getJET_BALL_LOOT().value())
 					)
 			)
 	)));

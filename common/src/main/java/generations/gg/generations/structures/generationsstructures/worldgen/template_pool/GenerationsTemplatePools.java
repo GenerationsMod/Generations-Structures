@@ -10,7 +10,7 @@ import generations.gg.generations.structures.generationsstructures.village.Vanil
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.Pools;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
@@ -124,19 +124,19 @@ public class GenerationsTemplatePools {
     public static final ResourceKey<StructureTemplatePool> TAIGA_VILLAGE_POKEMART = create("village/taiga/pokemart"); */
 
 
-    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstapContext<StructureTemplatePool> context, ResourceKey<Structure> structure) {
+    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstrapContext<StructureTemplatePool> context, ResourceKey<Structure> structure) {
         return createPoolElement(context, structure, 1);
     }
 
-    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstapContext<StructureTemplatePool> context, ResourceKey<Structure> structure, int weight) {
+    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstrapContext<StructureTemplatePool> context, ResourceKey<Structure> structure, int weight) {
         return Pair.of(StructurePoolElement.single(structure.location().toString(), getEmptyProcessor(context)), weight);
     }
 
-    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstapContext<StructureTemplatePool> context, ResourceKey<Structure> structure, ResourceKey<StructureProcessorList> processor) {
+    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstrapContext<StructureTemplatePool> context, ResourceKey<Structure> structure, ResourceKey<StructureProcessorList> processor) {
         return createPoolElement(context, structure, processor, 1);
     }
 
-    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstapContext<StructureTemplatePool> context, ResourceKey<Structure> structure, ResourceKey<StructureProcessorList> processor, int weight) {
+    private static Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer> createPoolElement(BootstrapContext<StructureTemplatePool> context, ResourceKey<Structure> structure, ResourceKey<StructureProcessorList> processor, int weight) {
         return Pair.of(StructurePoolElement.single(structure.location().toString(), getProcessor(context, processor)), weight);
     }
 
@@ -144,7 +144,7 @@ public class GenerationsTemplatePools {
         return new StructureTemplatePool(fallback, rawTemplateFactories, projection);
     }
 
-    private static StructureTemplatePool createTemplatePool(BootstapContext<StructureTemplatePool> context, List<Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer>> rawTemplateFactories) {
+    private static StructureTemplatePool createTemplatePool(BootstrapContext<StructureTemplatePool> context, List<Pair<Function<StructureTemplatePool.Projection, ? extends StructurePoolElement>, Integer>> rawTemplateFactories) {
         return new StructureTemplatePool(getPool(context, Pools.EMPTY), rawTemplateFactories, StructureTemplatePool.Projection.RIGID);
     }
 
@@ -174,22 +174,22 @@ public class GenerationsTemplatePools {
         return GenerationsStructures.key(Registries.TEMPLATE_POOL, name);
     }
 
-    private static Holder.Reference<StructureProcessorList> getProcessor(BootstapContext<StructureTemplatePool> context, ResourceKey<StructureProcessorList> processorList) {
+    private static Holder.Reference<StructureProcessorList> getProcessor(BootstrapContext<StructureTemplatePool> context, ResourceKey<StructureProcessorList> processorList) {
         return context.lookup(Registries.PROCESSOR_LIST).getOrThrow(processorList);
     }
 
-    private static Holder.Reference<StructureTemplatePool> getPool(BootstapContext<StructureTemplatePool> context, ResourceKey<StructureTemplatePool> poolResourceKey) {
+    private static Holder.Reference<StructureTemplatePool> getPool(BootstrapContext<StructureTemplatePool> context, ResourceKey<StructureTemplatePool> poolResourceKey) {
         return context.lookup(Registries.TEMPLATE_POOL).getOrThrow(poolResourceKey);
     }
 
-    private static Holder.Reference<StructureProcessorList> getEmptyProcessor(BootstapContext<StructureTemplatePool> context) {
+    private static Holder.Reference<StructureProcessorList> getEmptyProcessor(BootstrapContext<StructureTemplatePool> context) {
         return context.lookup(Registries.PROCESSOR_LIST).getOrThrow(ProcessorLists.EMPTY);
     }
 
 
     @FunctionalInterface
     public interface TemplatePoolFactory {
-        StructureTemplatePool generate(BootstapContext<StructureTemplatePool> templatePoolFactoryContext);
+        StructureTemplatePool generate(BootstrapContext<StructureTemplatePool> templatePoolFactoryContext);
     }
 
     public static void templatePools() {

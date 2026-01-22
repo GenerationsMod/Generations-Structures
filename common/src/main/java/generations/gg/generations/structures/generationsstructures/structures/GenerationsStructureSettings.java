@@ -7,7 +7,7 @@ import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.Structures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -142,12 +142,13 @@ public class GenerationsStructureSettings {
                     context.lookup(Registries.TEMPLATE_POOL).getOrThrow(GenerationsTemplatePools.ISLANDS), 1,
                     UniformHeight.of(VerticalAnchor.absolute(150), VerticalAnchor.belowTop(100)), false));
 
-    private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool,
-                                                Optional<ResourceLocation> startJigsawName, int maxDepth,
-                                                HeightProvider startHeight, boolean useExpansionHack,
-                                                Optional<Heightmap.Types> projectStartToHeightmap, int maxDistanceToCenter){
-        return new JigsawStructure(settings, startPool, startJigsawName, maxDepth, startHeight, useExpansionHack, projectStartToHeightmap, maxDistanceToCenter);
-    }
+//    TODO: REadd if needed.
+//    private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool,
+//                                                Optional<ResourceLocation> startJigsawName, int maxDepth,
+//                                                HeightProvider startHeight, boolean useExpansionHack,
+//                                                Optional<Heightmap.Types> projectStartToHeightmap, int maxDistanceToCenter){
+//        return new JigsawStructure(settings, startPool, startJigsawName, maxDepth, startHeight, useExpansionHack, projectStartToHeightmap, maxDistanceToCenter);
+//    }
 
     private static JigsawStructure createJigsaw(Structure.StructureSettings settings, Holder<StructureTemplatePool> startPool, int maxDepth,
                                                 HeightProvider startHeight, boolean useExpansionHack){
@@ -159,7 +160,7 @@ public class GenerationsStructureSettings {
         return new JigsawStructure(settings, startPool, maxDepth, startHeight, false, projectStartToHeightmap);
     }
 
-    private static JigsawStructure balloonJigsawStructure(BootstapContext<Structure> context, ResourceKey<StructureTemplatePool> templatePool, TagKey<Biome> biomeTag){
+    private static JigsawStructure balloonJigsawStructure(BootstrapContext<Structure> context, ResourceKey<StructureTemplatePool> templatePool, TagKey<Biome> biomeTag){
         return createJigsaw(new Structure.StructureSettings(context.lookup(Registries.BIOME).getOrThrow(biomeTag), Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
                 context.lookup(Registries.TEMPLATE_POOL).getOrThrow(templatePool), 1, BiasedToBottomHeight.of(VerticalAnchor.absolute(80), VerticalAnchor.belowTop(135), 1), Heightmap.Types.WORLD_SURFACE_WG);
     }
@@ -171,20 +172,20 @@ public class GenerationsStructureSettings {
     }
 
     private static Structure.StructureSettings structure(HolderSet<Biome> tag, TerrainAdjustment adj) {
-        return Structures.structure(tag, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
+        return new Structure.StructureSettings(tag, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
     }
 
     private static Structure.StructureSettings structure(HolderSet<Biome> tag, Map<MobCategory, StructureSpawnOverride> spawnOverrides, TerrainAdjustment adj) {
-        return Structures.structure(tag, spawnOverrides, GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
+        return new Structure.StructureSettings(tag, spawnOverrides, GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
     }
 
     private static Structure.StructureSettings structure(HolderSet<Biome> tag, GenerationStep.Decoration decoration, TerrainAdjustment adj) {
-        return Structures.structure(tag, Map.of(), decoration, adj);
+        return new Structure.StructureSettings(tag, Map.of(), decoration, adj);
     }
 
     @FunctionalInterface
     public interface StructureFactory {
-        Structure generate(BootstapContext<Structure> structureFactoryBootstapContext);
+        Structure generate(BootstrapContext<Structure> structureFactoryBootstapContext);
     }
 
     public static void structures() {
